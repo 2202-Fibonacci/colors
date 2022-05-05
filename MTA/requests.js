@@ -42,14 +42,14 @@ async function getStatusFeed(trainLine) {
       .get(FeedURI, { headers: { "x-api-key": APIkey } }, (res) => {
         let data = [];
         res.on("data", (chunk) => {
-          console.log("Receiving Data");
+          //   console.log("Receiving Data");
           data.push(chunk);
         });
         res.on("end", () => {
           data = Buffer.concat(data);
           const feed =
             GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(data);
-          console.log("Finished receiving data");
+          console.log("***Finished receiving data***");
           resolve(feed);
         });
       })
@@ -63,9 +63,10 @@ async function getStatusFeed(trainLine) {
 async function getArrivals(myTrain, myStop, direction) {
   // get status updates for my train line
   const feed = await getStatusFeed(myTrain);
-
   // filter feed to entries with trip updates
-  const updates = feed.entity.filter((entity) => entity.tripUpdate);
+  const updates = feed.entity
+    .filter((entity) => entity.tripUpdate)
+    .filter((update) => update.tripUpdate.trip.routeId === myTrain);
 
   // for each update find arrivals to my station in the correct direction and push into array
   const relevantStops = [];
@@ -102,7 +103,10 @@ async function getNextArrivalTimes(myTrain, myStop, direction) {
   const result = await mta.stop(myStop);
   const stopName = result.stop_name;
 
+  // log upcoming arrival times in order
+  nextArrivalTimes.sort((a, b) => a - b);
   nextArrivalTimes.forEach((arrival, i) => {
+    // if (i < 3) {
     arrival === 0
       ? console.log(`${i + 1}: The train is arriving now`)
       : console.log(
@@ -110,10 +114,12 @@ async function getNextArrivalTimes(myTrain, myStop, direction) {
             i + 1
           }: The ${direction}-bound ${myTrain} train will arrive at ${stopName} in ${arrival} minutes`
         );
+    // }
   });
 }
 
-getNextArrivalTimes("2", "236", "N");
+getNextArrivalTimes("3", "236", "N");
+// setInterval(() => getNextArrivalTimes("2", "236", "N"), 20000);
 
 // package transit_realtime;
 // syntax = "proto2";
