@@ -1,6 +1,6 @@
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const https = require("https");
-const APIkey = "8aAhU6jgEp4UOhS54yEbK9STXo6mA7sM4wfA5kLy";
+const APIkey = require("../.env");
 const FeedURI =
   "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-nqrw"; // L-train real time endpoint
 

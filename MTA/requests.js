@@ -1,4 +1,4 @@
-const APIkey = "8aAhU6jgEp4UOhS54yEbK9STXo6mA7sM4wfA5kLy";
+const APIkey = require("../.env");
 const baseURI =
   "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs";
 const URIs = {
