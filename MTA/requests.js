@@ -49,7 +49,7 @@ async function getStatusFeed(trainLine) {
           data = Buffer.concat(data);
           const feed =
             GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(data);
-          console.log("***Finished receiving data***");
+          //   console.log("***Finished receiving data***");
           resolve(feed);
         });
       })
@@ -63,6 +63,8 @@ async function getStatusFeed(trainLine) {
 async function getArrivals(myTrain, myStop, direction) {
   // get status updates for my train line
   const feed = await getStatusFeed(myTrain);
+  //   printAlerts(feed);
+
   // filter feed to entries with trip updates
   const updates = feed.entity
     .filter((entity) => entity.tripUpdate)
@@ -92,11 +94,8 @@ async function getNextArrivalTimes(myTrain, myStop, direction) {
   // populate array of time until arrival in minutes
   let nextArrivalTimes = [];
   arrivals.forEach((arrival) => {
-    nextArrivalTimes.push(
-      Math.round(
-        Math.max(0, (arrival.arrival.time - Math.floor(Date.now() / 1000)) / 60)
-      )
-    );
+    const time = (arrival.arrival.time - Math.floor(Date.now() / 1000)) / 60;
+    nextArrivalTimes.push(Math.round(Math.max(0, time)));
   });
 
   // get name of station
@@ -108,7 +107,7 @@ async function getNextArrivalTimes(myTrain, myStop, direction) {
   nextArrivalTimes.forEach((arrival, i) => {
     // if (i < 3) {
     arrival === 0
-      ? console.log(`${i + 1}: The train is arriving now`)
+      ? console.log(`${i + 1}: **The train is arriving now**`)
       : console.log(
           `${
             i + 1
@@ -120,6 +119,65 @@ async function getNextArrivalTimes(myTrain, myStop, direction) {
 
 getNextArrivalTimes("3", "236", "N");
 // setInterval(() => getNextArrivalTimes("2", "236", "N"), 20000);
+
+// get alerts on the trainline
+function printAlerts(feed) {
+  // print all alerts for the route
+  feed.entity.forEach((entity) => {
+    if (entity.alert) {
+      console.log(
+        "ALERT:",
+        entity.alert.headerText.translation[0].text,
+        "on this route"
+      );
+    }
+  });
+}
+
+// get all subway service alerts
+const AlertURI =
+  "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/camsys%2Fsubway-alerts.json";
+
+function getAllServiceAlerts() {
+  https
+    .get(AlertURI, { headers: { "x-api-key": APIkey } }, (resp) => {
+      let data = [];
+      resp.on("data", (chunk) => {
+        data.push(chunk);
+      });
+      resp.on("end", () => {
+        data = Buffer.concat(data);
+        const feed = JSON.parse(data.toString());
+        feed.entity.forEach((entity, i) => {
+          if (entity.alert) {
+            console.log(
+              `${i + 1}: ${
+                entity.alert["transit_realtime.mercury_alert"].alert_type
+              } - ${entity.alert.header_text.translation[0].text}`
+            );
+          }
+        });
+      });
+    })
+    .on("error", (err) => {
+      console.log("Error: " + err.message);
+    });
+}
+
+// getAllServiceAlerts();
+
+// // gets ids, name, lat/long for all subway stops
+// mta
+//   .stop()
+//   .then(function (result) {
+//     console.log(result);
+//   })
+//   .catch(function (err) {
+//     console.log(err);
+//   });
+
+////////////////////////////////////////////
+//--> alternative way to fetch the feed
 
 // package transit_realtime;
 // syntax = "proto2";
