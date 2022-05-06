@@ -2,21 +2,36 @@ const { ApolloServer } = require('apollo-server')
 const { ApolloServerPluginLandingPageGraphQLPlayground } = require('apollo-server-core')
 const fs = require('fs');
 const path = require('path');
-//instatiate pool outside your hotpath --what is hotpath? pool? TODO: research pool/hotpath
-// const alertURL = '' //TODO get jennys feed
-// const { Pool } = require('undici') //what is pool? undici is a strangers things reference. just sayin'
-// const pool = new Pool(alertURL) 
+const tripFeedURL = "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs"
 const resolvers = require('../server/resolvers.js')
+const { RESTDataSource } = require('apollo-datasource-rest');
+const protobuf = require("@apollo/protobufjs");
+const APIkey = "8aAhU6jgEp4UOhS54yEbK9STXo6mA7sM4wfA5kLy"
 const { HTTPDataSource } = require('apollo-datasource-http')
-// const { BaseRedisCache } = require('apollo-server-cache-redis'); //TODO: laurynn research/configure
-// const Redis = require('ioredis');
-// const PORT=  process.env.PORT || 4000; //not necessary for now
 
 
-// data source class
-// const alertdata = new (class AlertAPI extends HTTPDataSource{
-//     constructor(alertURL: St)
-// } )
+
+class TripFeed extends RESTDataSource{
+    constructor(){
+        super();
+        this.baseURL = tripFeedURL;
+    }
+    willSendRequest(request){
+        request.headers.set('x-api-key', APIkey )
+    }
+    async checkURL(){
+        //following jennys lead, we need an array to receive the pieces
+        let data = []
+        let chunk = await this.get('/', undefined, {
+            header: {"x-api-key": APIkey  }
+        })
+        // data.push(chunk)
+        // data = Buffer.concat(data);
+        
+        return JSON.stringify(chunk)
+    }
+}
+
 
 const server = new ApolloServer({
     playground: true,
@@ -26,13 +41,22 @@ const server = new ApolloServer({
             'utf8'
         ),
     resolvers,
-    // dataSource: () => {
-    //     return {
-    //         alertAPI: new AlertAPI(alertURL, pool)
-    //     }
-    // }
+    dataSources: () => ({
+        tripFeed: new TripFeed()
+    })
 })
 
 server.listen().then(({ url }) => {
     console.log(`🚍 JML server ready at ${url}`);
   });
+
+
+
+
+// protobuf.load('../MTA/gtfs-realtime.proto', function (err, root) {
+//     if (err) 
+//         throw err
+//     const FeedMessage = root.lookupType("transit_realtime.FeedMessage");
+
+//     const payload = { }
+// })
