@@ -55,20 +55,26 @@ async function getStatusFeed(trainLine) {
       })
       .on("error", (err) => {
         console.log("Error: " + err.message);
+        reject(err);
       });
   });
 }
 
 // get status of next arrivals for my train
-async function getArrivals(myTrain, myStop, direction) {
-  // get status updates for my train line
+async function getArrivals(myTrain, myStop, direction = "NS") {
+  // array of trains [e.g. N,1,2]
+  // for each train, get dict value => nqrq, ''
+  // for each value, fetch feed
+  // filter based on whole array
+
+  // get all status updates for my train line
   const feed = await getStatusFeed(myTrain);
   //   printAlerts(feed);
 
   // filter feed to entries with trip updates
   const updates = feed.entity
     .filter((entity) => entity.tripUpdate)
-    .filter((update) => update.tripUpdate.trip.routeId === myTrain);
+    .filter((update) => myTrain.includes(update.tripUpdate.trip.routeId));
 
   // for each update find arrivals to my station in the correct direction and push into array
   const relevantStops = [];
@@ -77,8 +83,8 @@ async function getArrivals(myTrain, myStop, direction) {
     arrivals.forEach((stop) => {
       const stopId = stop.stopId;
       const stopDir = stop.stopId[stop.stopId.length - 1];
-      if (stopId.includes(myStop) && stopDir === direction) {
-        relevantStops.push(stop);
+      if (stopId.includes(myStop) && direction.includes(stopDir)) {
+        relevantStops.push({ stop, train: myTrain, direction: stopDir });
       }
     });
   });
@@ -94,8 +100,13 @@ async function getNextArrivalTimes(myTrain, myStop, direction) {
   // populate array of time until arrival in minutes
   let nextArrivalTimes = [];
   arrivals.forEach((arrival) => {
-    const time = (arrival.arrival.time - Math.floor(Date.now() / 1000)) / 60;
-    nextArrivalTimes.push(Math.round(Math.max(0, time)));
+    const time =
+      (arrival.stop.arrival.time - Math.floor(Date.now() / 1000)) / 60;
+    nextArrivalTimes.push({
+      time: Math.round(Math.max(0, time)),
+      train: arrival.train,
+      direction: arrival.direction,
+    });
   });
 
   // get name of station
@@ -103,22 +114,27 @@ async function getNextArrivalTimes(myTrain, myStop, direction) {
   const stopName = result.stop_name;
 
   // log upcoming arrival times in order
-  nextArrivalTimes.sort((a, b) => a - b);
+  nextArrivalTimes.sort((a, b) => a.time - b.time);
   nextArrivalTimes.forEach((arrival, i) => {
-    // if (i < 3) {
-    arrival === 0
-      ? console.log(`${i + 1}: **The train is arriving now**`)
+    arrival.time === 0
+      ? console.log(`${i + 1}: **The ${arrival.train} train is arriving now**`)
       : console.log(
-          `${
-            i + 1
-          }: The ${direction}-bound ${myTrain} train will arrive at ${stopName} in ${arrival} minutes`
+          `${i + 1}: The ${arrival.direction}-bound ${
+            arrival.train
+          } train will arrive at ${stopName} in ${arrival.time} minutes`
         );
-    // }
   });
+  return nextArrivalTimes;
 }
 
-getNextArrivalTimes("3", "236", "N");
-// setInterval(() => getNextArrivalTimes("2", "236", "N"), 20000);
+const trains = ["2"];
+trains.forEach(async (train) => {
+  await getNextArrivalTimes(train, "236", "N");
+  console.log("<<<<<>>>>>>");
+}); // optional direction N or S
+
+// getNextArrivalTimes("3", "236", "N");
+// setInterval(() => getNextArrivalTimes("2", "236", "S"), 20000);
 
 // get alerts on the trainline
 function printAlerts(feed) {
