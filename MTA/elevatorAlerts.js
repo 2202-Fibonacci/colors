@@ -1,10 +1,13 @@
 const APIkey = require("../.env");
 const AlertURI =
   "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fnyct_ene.json";
+const equipmentURI =
+  "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fnyct_ene_equipments.json";
 const https = require("https");
 
 // get all elevator and escalator outages for a specific station
-function getElevatorAlerts(station) {
+async function getElevatorAlerts(stationId) {
+  const stationName = await getStationName(stationId);
   return new Promise((resolve, reject) => {
     https
       .get(AlertURI, { headers: { "x-api-key": APIkey } }, (resp) => {
@@ -19,9 +22,8 @@ function getElevatorAlerts(station) {
           // filter alerts for specified station
           const alerts = feed.filter(
             (alert) =>
-              alert.station === station && alert.isupcomingoutage === "N"
+              alert.station === stationName && alert.isupcomingoutage === "N"
           );
-
           resolve(alerts);
         });
       })
@@ -32,10 +34,36 @@ function getElevatorAlerts(station) {
   });
 }
 
-// -> pass in station name (not id), returns filtered list of current elevator and escalator outages
-Promise.resolve(getElevatorAlerts("Atlantic Av-Barclays Ctr")).then((alerts) =>
-  console.log(alerts)
-);
+// get all equipment a particular Station
+function getStationName(stationId) {
+  return new Promise((resolve, reject) => {
+    https
+      .get(equipmentURI, { headers: { "x-api-key": APIkey } }, (resp) => {
+        let data = [];
+        resp.on("data", (chunk) => {
+          data.push(chunk);
+        });
+        resp.on("end", () => {
+          data = Buffer.concat(data);
+          const feed = JSON.parse(data.toString());
+
+          const equipment = feed.filter((equip) =>
+            equip.elevatorsgtfsstopid.includes(stationId)
+          );
+          if (equipment[0]) {
+            resolve(equipment[0].station);
+          } else resolve(equipment);
+        });
+      })
+      .on("error", (err) => {
+        console.log("Error: " + err.message);
+        reject(err);
+      });
+  });
+}
+
+// -> pass in station id, returns filtered list of current elevator and escalator outages
+Promise.resolve(getElevatorAlerts("726")).then((alerts) => console.log(alerts));
 
 // e.g.
 // {
