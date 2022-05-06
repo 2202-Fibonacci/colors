@@ -1,6 +1,5 @@
 const APIkey = require("../.env");
 const { baseURI, URIs } = require("./data");
-
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const https = require("https");
 
@@ -95,4 +94,4 @@ async function getArrivalTimes(station, train, direction = "NS") {
   return arrivals;
 }
 
-getArrivalTimes("236", "3", "N"); // pass in stationId, trainLine, and optionally direction 'N' or 'S'
+getArrivalTimes("236", "2", "N"); // pass in stationId, trainLine, and optionally direction 'N' or 'S'
