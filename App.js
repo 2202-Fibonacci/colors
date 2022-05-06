@@ -14,6 +14,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    borderWeight: "10px",
+    borderColor: "#00ffff",
+    color: "#00ffff",
+    margin: "10px",
     alignItems: "center",
     justifyContent: "center",
   },
