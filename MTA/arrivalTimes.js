@@ -9,7 +9,7 @@ async function getStatusFeed(trainLine) {
     if (URIs[String(trainLine) === undefined]) {
       return [];
     }
-    const FeedURI = baseURI + URIs[trainLine.toUpperCase()];
+    const FeedURI = baseURI + URIs[String(trainLine).toUpperCase()];
     https
       .get(FeedURI, { headers: { "x-api-key": APIkey } }, (res) => {
         let data = [];
@@ -90,8 +90,10 @@ async function getArrivalTimes(station, train, direction = "NS") {
     nextArrivals,
   };
 
-  console.log(arrivals);
   return arrivals;
 }
 
-getArrivalTimes("236", "2", "N"); // pass in stationId, trainLine, and optionally direction 'N' or 'S'
+// pass in stationId, trainLine, and optionally direction 'N' or 'S'
+Promise.resolve(getArrivalTimes("236", "2", "N")).then((arrivals) =>
+  console.log(arrivals)
+);
