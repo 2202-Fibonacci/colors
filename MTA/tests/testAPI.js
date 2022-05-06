@@ -2,7 +2,7 @@ const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const https = require("https");
 const APIkey = require("../.env");
 const FeedURI =
-  "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-nqrw"; // L-train real time endpoint
+  "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-l"; // X-train real time endpoint
 
 // real time status feeds
 https
@@ -19,13 +19,15 @@ https
       console.log("Finished receiving data");
       feed.entity.forEach((entity) => {
         if (entity.tripUpdate) {
-          const tripArrivals = entity.tripUpdate.stopTimeUpdate; // array of future stops, reflects delay times in seconds
+          // console.log(entity.tripUpdate);
+          // const tripArrivals = entity.tripUpdate.stopTimeUpdate; // array of future stops, reflects delay times in seconds
           // console.log(tripArrivals); // first element is the current station
           // if stopid == mystop, add to relevant stops array. Note N or S. station.arrival.time, calculate time from now if positive, current station
         }
         // if (entity.alert) {
-        //   console.log(entity.alert);
-        //   console.log(entity.alert.headerText.translation[0].text);
+        //   // console.log(entity.alert);
+        //   // console.log(entity.alert.informedEntity[0].trip.tripId);
+        //   console.log(entity.alert.headerText.translation);
         // }
       });
     });
@@ -85,9 +87,9 @@ const mta = new Mta({
 //   });
 
 // gets info for a specific stop from id or array of ids
-mta.stop("S16").then(function (result) {
-  console.log(result);
-});
+// mta.stop("S16").then(function (result) {
+//   console.log(result);
+// });
 
 // get status for all service types (subway, bus, etc.)
 // mta.status().then(function (result) {
