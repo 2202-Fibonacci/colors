@@ -7,7 +7,9 @@ const https = require("https");
 
 // get all elevator and escalator outages for a specific station
 async function getElevatorAlerts(stationId) {
+  // get station name by id
   const stationName = await getStationName(stationId);
+
   return new Promise((resolve, reject) => {
     https
       .get(AlertURI, { headers: { "x-api-key": APIkey } }, (resp) => {
@@ -19,7 +21,7 @@ async function getElevatorAlerts(stationId) {
           data = Buffer.concat(data);
           const feed = JSON.parse(data.toString());
 
-          // filter alerts for specified station
+          // filter alerts feed by specified station
           const alerts = feed.filter(
             (alert) =>
               alert.station === stationName && alert.isupcomingoutage === "N"
@@ -34,7 +36,7 @@ async function getElevatorAlerts(stationId) {
   });
 }
 
-// get all equipment a particular Station
+// find station name by stationid number
 function getStationName(stationId) {
   return new Promise((resolve, reject) => {
     https
@@ -47,9 +49,12 @@ function getStationName(stationId) {
           data = Buffer.concat(data);
           const feed = JSON.parse(data.toString());
 
+          // filter equipment by station id
           const equipment = feed.filter((equip) =>
             equip.elevatorsgtfsstopid.includes(stationId)
           );
+
+          // return corresponding station name
           if (equipment[0]) {
             resolve(equipment[0].station);
           } else resolve(equipment);
@@ -62,8 +67,8 @@ function getStationName(stationId) {
   });
 }
 
-// -> pass in station id, returns filtered list of current elevator and escalator outages
-Promise.resolve(getElevatorAlerts("726")).then((alerts) => console.log(alerts));
+// -> pass in station id, return filtered list of current elevator and escalator outages
+Promise.resolve(getElevatorAlerts("235")).then((alerts) => console.log(alerts));
 
 // e.g.
 // {
