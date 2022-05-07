@@ -1229,7 +1229,7 @@ allStations = {
     borough: 'brooklyn',
     accessible: true,
   },
-  '248': { // ghost station - now lumped in w/President-MEC
+  '248': { // lumped in w/President-MEC
     stop_id: '248',
     stop_code: '',
     stop_name: 'Nostrand Av',
@@ -1255,7 +1255,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['3'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   '250': {
     stop_id: '250',
@@ -2318,7 +2320,7 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-    lines_at: ['4', '5', '6'],
+    lines_at: ['4', '5', '6', 'J', 'Z'],
     borough: 'manhattan',
     accessible: true,
   },
@@ -3263,7 +3265,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['C'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   A51: {
     stop_id: 'A51',
@@ -3456,7 +3460,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'queens',
+    accessible: true,
   },
   B06: {
     stop_id: 'B06',
@@ -3469,7 +3475,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'manhattan',
+    accessible: true,
   },
   B08: {
     stop_id: 'B08',
@@ -3482,7 +3490,7 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-    lines_at: ['F', 'Q', 'W'],
+    lines_at: ['F', 'N', 'Q'],
     borough: 'manhattan',
     accessible: true,
   },
@@ -3497,7 +3505,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'manhattan',
+    accessible: false,
   },
   B12: {
     stop_id: 'B12',
@@ -3510,7 +3520,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   B13: {
     stop_id: 'B13',
@@ -3523,7 +3535,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   B14: {
     stop_id: 'B14',
@@ -3536,7 +3550,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   B15: {
     stop_id: 'B15',
@@ -3549,7 +3565,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   B16: {
     stop_id: 'B16',
@@ -3562,7 +3580,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D', 'N'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   B17: {
     stop_id: 'B17',
@@ -3575,7 +3595,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   B18: {
     stop_id: 'B18',
@@ -3588,7 +3610,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   B19: {
     stop_id: 'B19',
@@ -3601,7 +3625,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   B20: {
     stop_id: 'B20',
@@ -3614,7 +3640,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   B21: {
     stop_id: 'B21',
@@ -3627,7 +3655,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   B22: {
     stop_id: 'B22',
@@ -3640,7 +3670,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   B23: {
     stop_id: 'B23',
@@ -3653,7 +3685,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D01: {
     stop_id: 'D01',
@@ -3666,7 +3700,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D'],
+    borough: 'bronx',
+    accessible: false,
   },
   D03: {
     stop_id: 'D03',
@@ -3679,7 +3715,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D'],
+    borough: 'bronx',
+    accessible: true,
   },
   D04: {
     stop_id: 'D04',
@@ -3692,7 +3730,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D'],
+    borough: 'bronx',
+    accessible: true,
   },
   D05: {
     stop_id: 'D05',
@@ -3705,7 +3745,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D'],
+    borough: 'bronx',
+    accessible: false,
   },
   D06: {
     stop_id: 'D06',
@@ -3718,7 +3760,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D'],
+    borough: 'bronx',
+    accessible: false,
   },
   D07: {
     stop_id: 'D07',
@@ -3731,7 +3775,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D'],
+    borough: 'bronx',
+    accessible: false,
   },
   D08: {
     stop_id: 'D08',
@@ -3744,7 +3790,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D'],
+    borough: 'bronx',
+    accessible: false,
   },
   D09: {
     stop_id: 'D09',
@@ -3757,7 +3805,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D'],
+    borough: 'bronx',
+    accessible: false,
   },
   D10: {
     stop_id: 'D10',
@@ -3770,7 +3820,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D'],
+    borough: 'bronx',
+    accessible: false,
   },
   D11: {
     stop_id: 'D11',
@@ -3798,7 +3850,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D'],
+    borough: 'bronx',
+    accessible: false,
   },
   D13: {
     stop_id: 'D13',
@@ -3826,7 +3880,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D', 'E'],
+    borough: 'manhattan',
+    accessible: false,
   },
   D15: {
     stop_id: 'D15',
@@ -3839,7 +3895,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D', 'F', 'M'],
+    borough: 'manhattan',
+    accessible: true,
   },
   D16: {
     stop_id: 'D16',
@@ -3867,7 +3925,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D', 'F', 'M', 'N', 'Q', 'R', 'W'],
+    borough: 'manhattan',
+    accessible: true,
   },
   D18: {
     stop_id: 'D18',
@@ -3880,7 +3940,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'M',],
+    borough: 'manhattan',
+    accessible: false,
   },
   D19: {
     stop_id: 'D19',
@@ -3893,7 +3955,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'M',],
+    borough: 'manhattan',
+    accessible: false,
   },
   D20: {
     stop_id: 'D20',
@@ -3936,7 +4000,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D',],
+    borough: 'manhattan',
+    accessible: false,
   },
   D24: {
     stop_id: 'D24',
@@ -3964,7 +4030,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D26: {
     stop_id: 'D26',
@@ -3977,7 +4045,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'Q', 'SF'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   D27: {
     stop_id: 'D27',
@@ -3990,7 +4060,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D28: {
     stop_id: 'D28',
@@ -4003,7 +4075,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D29: {
     stop_id: 'D29',
@@ -4016,7 +4090,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D30: {
     stop_id: 'D30',
@@ -4029,7 +4105,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D31: {
     stop_id: 'D31',
@@ -4042,7 +4120,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D32: {
     stop_id: 'D32',
@@ -4055,7 +4135,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['Q'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   D33: {
     stop_id: 'D33',
@@ -4068,7 +4150,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D34: {
     stop_id: 'D34',
@@ -4081,7 +4165,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D35: {
     stop_id: 'D35',
@@ -4094,7 +4180,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'Q'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   D37: {
     stop_id: 'D37',
@@ -4107,7 +4195,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D38: {
     stop_id: 'D38',
@@ -4120,7 +4210,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D39: {
     stop_id: 'D39',
@@ -4133,7 +4225,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D40: {
     stop_id: 'D40',
@@ -4146,7 +4240,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D41: {
     stop_id: 'D41',
@@ -4159,7 +4255,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D42: {
     stop_id: 'D42',
@@ -4172,7 +4270,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'Q'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   D43: {
     stop_id: 'D43',
@@ -4185,7 +4285,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D', 'F', 'N', 'Q'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   E01: {
     stop_id: 'E01',
@@ -4198,7 +4300,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E'],
+    borough: 'manhattan',
+    accessible: true,
   },
   F01: {
     stop_id: 'F01',
@@ -4211,7 +4315,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E', 'F'],
+    borough: 'queens',
+    accessible: true,
   },
   F02: {
     stop_id: 'F02',
@@ -4224,7 +4330,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E', 'F'],
+    borough: 'queens',
+    accessible: false,
   },
   F03: {
     stop_id: 'F03',
@@ -4237,7 +4345,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E', 'F'],
+    borough: 'queens',
+    accessible: false,
   },
   F04: {
     stop_id: 'F04',
@@ -4250,7 +4360,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E', 'F'],
+    borough: 'queens',
+    accessible: false,
   },
   F05: {
     stop_id: 'F05',
@@ -4263,7 +4375,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E', 'F'],
+    borough: 'queens',
+    accessible: false,
   },
   F06: {
     stop_id: 'F06',
@@ -4276,7 +4390,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E', 'F'],
+    borough: 'queens',
+    accessible: true,
   },
   F07: {
     stop_id: 'F07',
@@ -4289,7 +4405,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E', 'F'],
+    borough: 'queens',
+    accessible: false,
   },
   F09: {
     stop_id: 'F09',
@@ -4332,7 +4450,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E', 'M'],
+    borough: 'manhattan',
+    accessible: false,
   },
   F14: {
     stop_id: 'F14',
@@ -4345,20 +4465,24 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'manhattan',
+    accessible: false,
   },
   F15: {
     stop_id: 'F15',
     stop_code: '',
     stop_name: 'Delancey St',
-    stop_desc: '',
+    stop_desc: 'Delancey St-Essex St',
     stop_lat: '40.718611',
     stop_lon: '-73.988114',
     zone_id: '',
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'M', 'J', 'Z'],
+    borough: 'manhattan',
+    accessible: false,
   },
   F16: {
     stop_id: 'F16',
@@ -4371,7 +4495,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'manhattan',
+    accessible: false,
   },
   F18: {
     stop_id: 'F18',
@@ -4384,7 +4510,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F20: {
     stop_id: 'F20',
@@ -4412,7 +4540,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'G'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F22: {
     stop_id: 'F22',
@@ -4425,20 +4555,24 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'G'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F23: {
     stop_id: 'F23',
     stop_code: '',
     stop_name: '4 Av',
-    stop_desc: '',
+    stop_desc: '4 Av - 9 St',
     stop_lat: '40.670272',
     stop_lon: '-73.989779',
     zone_id: '',
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'G', 'N', 'R'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F24: {
     stop_id: 'F24',
@@ -4451,7 +4585,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'G'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F25: {
     stop_id: 'F25',
@@ -4464,7 +4600,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'G'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F26: {
     stop_id: 'F26',
@@ -4477,7 +4615,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'G'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F27: {
     stop_id: 'F27',
@@ -4490,7 +4630,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'G'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   F29: {
     stop_id: 'F29',
@@ -4503,7 +4645,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F30: {
     stop_id: 'F30',
@@ -4516,7 +4660,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F31: {
     stop_id: 'F31',
@@ -4529,7 +4675,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F32: {
     stop_id: 'F32',
@@ -4542,7 +4690,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F33: {
     stop_id: 'F33',
@@ -4555,7 +4705,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F34: {
     stop_id: 'F34',
@@ -4568,7 +4720,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F35: {
     stop_id: 'F35',
@@ -4581,7 +4735,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F36: {
     stop_id: 'F36',
@@ -4594,7 +4750,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F38: {
     stop_id: 'F38',
@@ -4607,7 +4765,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   F39: {
     stop_id: 'F39',
@@ -4620,7 +4780,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   G05: {
     stop_id: 'G05',
@@ -4633,7 +4795,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E', 'J', 'Z'],
+    borough: 'queens',
+    accessible: true,
   },
   G06: {
     stop_id: 'G06',
@@ -4646,7 +4810,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E', 'J', 'Z'],
+    borough: 'queens',
+    accessible: true,
   },
   G07: {
     stop_id: 'G07',
@@ -4659,7 +4825,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E'],
+    borough: 'queens',
+    accessible: true,
   },
   G08: {
     stop_id: 'G08',
@@ -4672,7 +4840,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E', 'F', 'M', 'R'],
+    borough: 'queens',
+    accessible: true,
   },
   G09: {
     stop_id: 'G09',
@@ -4685,7 +4855,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'R'],
+    borough: 'queens',
+    accessible: false,
   },
   G10: {
     stop_id: 'G10',
@@ -4698,7 +4870,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'R'],
+    borough: 'queens',
+    accessible: false,
   },
   G11: {
     stop_id: 'G11',
@@ -4711,7 +4885,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'R'],
+    borough: 'queens',
+    accessible: false,
   },
   G12: {
     stop_id: 'G12',
@@ -4724,7 +4900,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'R'],
+    borough: 'queens',
+    accessible: false,
   },
   G13: {
     stop_id: 'G13',
@@ -4737,7 +4915,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'R'],
+    borough: 'queens',
+    accessible: false,
   },
   G14: {
     stop_id: 'G14',
@@ -4765,7 +4945,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'R'],
+    borough: 'queens',
+    accessible: false,
   },
   G16: {
     stop_id: 'G16',
@@ -4778,7 +4960,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'R'],
+    borough: 'queens',
+    accessible: false,
   },
   G18: {
     stop_id: 'G18',
@@ -4791,7 +4975,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'R'],
+    borough: 'queens',
+    accessible: false,
   },
   G19: {
     stop_id: 'G19',
@@ -4804,7 +4990,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'R'],
+    borough: 'queens',
+    accessible: false,
   },
   G20: {
     stop_id: 'G20',
@@ -4817,7 +5005,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'R'],
+    borough: 'queens',
+    accessible: false,
   },
   G21: {
     stop_id: 'G21',
@@ -4830,7 +5020,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['E', 'M', 'R'],
+    borough: 'queens',
+    accessible: true,
   },
   G22: {
     stop_id: 'G22',
@@ -4845,7 +5037,7 @@ allStations = {
     parent_station: '',
     lines_at: ['7', 'G', 'E', 'M'],
     borough: 'queens',
-    accessible: false,
+    accessible: true,
   },
   G24: {
     stop_id: 'G24',
@@ -4858,7 +5050,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['G'],
+    borough: 'queens',
+    accessible: false,
   },
   G26: {
     stop_id: 'G26',
@@ -4871,7 +5065,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['G'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   G28: {
     stop_id: 'G28',
@@ -4884,7 +5080,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['G'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   G29: {
     stop_id: 'G29',
@@ -4897,7 +5095,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['G', 'L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   G30: {
     stop_id: 'G30',
@@ -4910,7 +5110,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['G'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   G31: {
     stop_id: 'G31',
@@ -4923,7 +5125,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['G'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   G32: {
     stop_id: 'G32',
@@ -4936,7 +5140,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['G'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   G33: {
     stop_id: 'G33',
@@ -4964,7 +5170,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['G'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   G35: {
     stop_id: 'G35',
@@ -4977,7 +5185,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['G'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   G36: {
     stop_id: 'G36',
@@ -5173,7 +5383,6 @@ allStations = {
     lines_at: ['A', 'SR'],
     borough: 'queens',
     accessible: false,
-
   },
   H14: {
     stop_id: 'H14',
@@ -5231,7 +5440,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J', 'Z'],
+    borough: 'queens',
+    accessible: false,
   },
   J13: {
     stop_id: 'J13',
@@ -5244,33 +5455,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
-  },
-  J13N: {
-    stop_id: 'J13N',
-    stop_code: '',
-    stop_name: '111 St',
-    stop_desc: '',
-    stop_lat: '40.697418',
-    stop_lon: '-73.836345',
-    zone_id: '',
-    stop_url: '',
-    location_type: '0',
-    parent_station: 'J13',
-
-  },
-  J13S: {
-    stop_id: 'J13S',
-    stop_code: '',
-    stop_name: '111 St',
-    stop_desc: '',
-    stop_lat: '40.697418',
-    stop_lon: '-73.836345',
-    zone_id: '',
-    stop_url: '',
-    location_type: '0',
-    parent_station: 'J13',
-
+    lines_at: ['J'],
+    borough: 'queens',
+    accessible: false,
   },
   J14: {
     stop_id: 'J14',
@@ -5283,7 +5470,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J', 'Z'],
+    borough: 'queens',
+    accessible: false,
   },
   J15: {
     stop_id: 'J15',
@@ -5296,7 +5485,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J', 'Z'],
+    borough: 'queens',
+    accessible: false,
   },
   J16: {
     stop_id: 'J16',
@@ -5309,7 +5500,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J'],
+    borough: 'queens',
+    accessible: false,
   },
   J17: {
     stop_id: 'J17',
@@ -5322,7 +5515,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J', 'Z'],
+    borough: 'queens',
+    accessible: false,
   },
   J19: {
     stop_id: 'J19',
@@ -5335,7 +5530,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   J20: {
     stop_id: 'J20',
@@ -5348,7 +5545,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J', 'Z'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   J21: {
     stop_id: 'J21',
@@ -5361,7 +5560,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J', 'Z'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   J22: {
     stop_id: 'J22',
@@ -5374,7 +5575,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   J23: {
     stop_id: 'J23',
@@ -5387,7 +5590,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J', 'Z'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   J24: {
     stop_id: 'J24',
@@ -5400,7 +5605,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J', 'Z'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   J27: {
     stop_id: 'J27',
@@ -5428,7 +5635,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J', 'Z'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   J29: {
     stop_id: 'J29',
@@ -5441,7 +5650,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   J30: {
     stop_id: 'J30',
@@ -5454,7 +5665,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J', 'Z'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   J31: {
     stop_id: 'J31',
@@ -5467,7 +5680,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L01: {
     stop_id: 'L01',
@@ -5495,7 +5710,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'M', 'L'],
+    borough: 'manhattan',
+    accessible: false,
   },
   L03: {
     stop_id: 'L03',
@@ -5508,7 +5725,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['4', '5', '6', 'N', 'Q', 'R', 'W', 'L'],
+    borough: 'manhattan',
+    accessible: true,
   },
   L05: {
     stop_id: 'L05',
@@ -5521,7 +5740,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'manhattan',
+    accessible: false,
   },
   L06: {
     stop_id: 'L06',
@@ -5534,7 +5755,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'manhattan',
+    accessible: true,
   },
   L08: {
     stop_id: 'L08',
@@ -5547,7 +5770,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   L10: {
     stop_id: 'L10',
@@ -5560,7 +5785,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['G', 'L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L11: {
     stop_id: 'L11',
@@ -5573,7 +5800,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L12: {
     stop_id: 'L12',
@@ -5586,7 +5815,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L13: {
     stop_id: 'L13',
@@ -5599,7 +5830,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L14: {
     stop_id: 'L14',
@@ -5612,7 +5845,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L15: {
     stop_id: 'L15',
@@ -5625,7 +5860,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L16: {
     stop_id: 'L16',
@@ -5638,7 +5875,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L17: {
     stop_id: 'L17',
@@ -5651,7 +5890,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L', 'M'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   L19: {
     stop_id: 'L19',
@@ -5664,7 +5905,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L20: {
     stop_id: 'L20',
@@ -5677,7 +5920,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   L21: {
     stop_id: 'L21',
@@ -5690,7 +5935,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L22: {
     stop_id: 'L22',
@@ -5718,7 +5965,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L25: {
     stop_id: 'L25',
@@ -5746,7 +5995,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L27: {
     stop_id: 'L27',
@@ -5759,7 +6010,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L28: {
     stop_id: 'L28',
@@ -5772,7 +6025,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   L29: {
     stop_id: 'L29',
@@ -5785,7 +6040,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['L'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   M01: {
     stop_id: 'M01',
@@ -5798,7 +6055,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M'],
+    borough: 'queens',
+    accessible: true,
   },
   M04: {
     stop_id: 'M04',
@@ -5811,7 +6070,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M'],
+    borough: 'queens',
+    accessible: false,
   },
   M05: {
     stop_id: 'M05',
@@ -5824,7 +6085,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M'],
+    borough: 'queens',
+    accessible: false,
   },
   M06: {
     stop_id: 'M06',
@@ -5837,7 +6100,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M'],
+    borough: 'queens',
+    accessible: false,
   },
   M08: {
     stop_id: 'M08',
@@ -5850,7 +6115,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'L'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   M09: {
     stop_id: 'M09',
@@ -5863,7 +6130,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   M10: {
     stop_id: 'M10',
@@ -5876,7 +6145,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   M11: {
     stop_id: 'M11',
@@ -5889,7 +6160,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'J', 'Z'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   M12: {
     stop_id: 'M12',
@@ -5902,7 +6175,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'J'],
+    borough: 'queens',
+    accessible: true,
   },
   M13: {
     stop_id: 'M13',
@@ -5915,7 +6190,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'J'],
+    borough: 'queens',
+    accessible: false,
   },
   M14: {
     stop_id: 'M14',
@@ -5928,7 +6205,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'J'],
+    borough: 'queens',
+    accessible: false,
   },
   M16: {
     stop_id: 'M16',
@@ -5941,20 +6220,24 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['M', 'J', 'Z'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   M18: {
     stop_id: 'M18',
     stop_code: '',
     stop_name: 'Essex St',
-    stop_desc: '',
+    stop_desc: 'Delancey St - Essex St',
     stop_lat: '40.718315',
     stop_lon: '-73.987437',
     zone_id: '',
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'M', 'J', 'Z'],
+    borough: 'manhattan',
+    accessible: false,
   },
   M19: {
     stop_id: 'M19',
@@ -5967,7 +6250,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J', 'Z'],
+    borough: 'manhattan',
+    accessible: false,
   },
   M20: {
     stop_id: 'M20',
@@ -5995,7 +6280,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['4', '5', '6', 'J', 'Z'],
+    borough: 'manhattan',
+    accessible: true,
   },
   M22: {
     stop_id: 'M22',
@@ -6023,7 +6310,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['J', 'Z'],
+    borough: 'manhattan',
+    accessible: false,
   },
   N02: {
     stop_id: 'N02',
@@ -6036,7 +6325,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   N03: {
     stop_id: 'N03',
@@ -6049,7 +6340,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   N04: {
     stop_id: 'N04',
@@ -6062,7 +6355,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D', 'N'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   N05: {
     stop_id: 'N05',
@@ -6075,7 +6370,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   N06: {
     stop_id: 'N06',
@@ -6088,7 +6385,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   N07: {
     stop_id: 'N07',
@@ -6101,7 +6400,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   N08: {
     stop_id: 'N08',
@@ -6114,7 +6415,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   N09: {
     stop_id: 'N09',
@@ -6127,7 +6430,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   N10: {
     stop_id: 'N10',
@@ -6140,20 +6445,24 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   N12: {
     stop_id: 'N12',
     stop_code: '',
     stop_name: 'S.B. Coney Island',
-    stop_desc: '',
+    stop_desc: 'Coney Island - Stillwell Av',
     stop_lat: '40.577422',
     stop_lon: '-73.981233',
     zone_id: '',
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D', 'F', 'N', 'Q'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   Q01: {
     stop_id: 'Q01',
@@ -6181,7 +6490,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['Q'],
+    borough: 'manhattan',
+    accessible: true,
   },
   Q04: {
     stop_id: 'Q04',
@@ -6194,7 +6505,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['Q'],
+    borough: 'manhattan',
+    accessible: true,
   },
   Q05: {
     stop_id: 'Q05',
@@ -6207,7 +6520,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['Q'],
+    borough: 'manhattan',
+    accessible: true,
   },
   R01: {
     stop_id: 'R01',
@@ -6220,7 +6535,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'W'],
+    borough: 'queens',
+    accessible: false,
   },
   R03: {
     stop_id: 'R03',
@@ -6233,7 +6550,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'W'],
+    borough: 'queens',
+    accessible: true,
   },
   R04: {
     stop_id: 'R04',
@@ -6246,7 +6565,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'W'],
+    borough: 'queens',
+    accessible: false,
   },
   R05: {
     stop_id: 'R05',
@@ -6259,7 +6580,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'W'],
+    borough: 'queens',
+    accessible: false,
   },
   R06: {
     stop_id: 'R06',
@@ -6272,20 +6595,24 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'W'],
+    borough: 'queens',
+    accessible: false,
   },
   R08: {
     stop_id: 'R08',
     stop_code: '',
     stop_name: '39 Av',
-    stop_desc: '',
+    stop_desc: '39 Av - Dutch Kills',
     stop_lat: '40.752882',
     stop_lon: '-73.932755',
     zone_id: '',
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'W'],
+    borough: 'queens',
+    accessible: false,
   },
   R09: {
     stop_id: 'R09',
@@ -6328,7 +6655,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'R', 'W'],
+    borough: 'manhattan',
+    accessible: false,
   },
   R14: {
     stop_id: 'R14',
@@ -6341,7 +6670,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'R', 'Q', 'W'],
+    borough: 'manhattan',
+    accessible: false,
   },
   R15: {
     stop_id: 'R15',
@@ -6354,7 +6685,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'R', 'W'],
+    borough: 'manhattan',
+    accessible: true,
   },
   R16: {
     stop_id: 'R16',
@@ -6382,7 +6715,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'D', 'F', 'M', 'N', 'Q', 'R', 'W'],
+    borough: 'manhattan',
+    accessible: true,
   },
   R18: {
     stop_id: 'R18',
@@ -6395,7 +6730,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['R', 'W'],
+    borough: 'manhattan',
+    accessible: false,
   },
   R19: {
     stop_id: 'R19',
@@ -6408,7 +6745,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['R', 'W'],
+    borough: 'manhattan',
+    accessible: false,
   },
   R20: {
     stop_id: 'R20',
@@ -6436,7 +6775,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['R', 'W'],
+    borough: 'manhattan',
+    accessible: false,
   },
   R22: {
     stop_id: 'R22',
@@ -6449,7 +6790,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['R', 'W'],
+    borough: 'manhattan',
+    accessible: false,
   },
   R23: {
     stop_id: 'R23',
@@ -6477,7 +6820,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['R', 'W'],
+    borough: 'manhattan',
+    accessible: false,
   },
   R25: {
     stop_id: 'R25',
@@ -6490,7 +6835,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['R', 'W'],
+    borough: 'manhattan',
+    accessible: true,
   },
   R26: {
     stop_id: 'R26',
@@ -6503,7 +6850,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['R', 'W'],
+    borough: 'manhattan',
+    accessible: false,
   },
   R27: {
     stop_id: 'R27',
@@ -6531,7 +6880,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['R'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   R29: {
     stop_id: 'R29',
@@ -6559,7 +6910,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['B', 'N', 'Q', 'R'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   R31: {
     stop_id: 'R31',
@@ -6587,20 +6940,24 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'R'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   R33: {
     stop_id: 'R33',
     stop_code: '',
     stop_name: '9 St',
-    stop_desc: '',
+    stop_desc: '4 Av - 9 St',
     stop_lat: '40.670847',
     stop_lon: '-73.988302',
     zone_id: '',
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['F', 'G', 'N', 'R'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   R34: {
     stop_id: 'R34',
@@ -6613,7 +6970,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'R'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   R35: {
     stop_id: 'R35',
@@ -6626,7 +6985,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'R'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   R36: {
     stop_id: 'R36',
@@ -6639,7 +7000,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['D', 'N', 'R'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   R39: {
     stop_id: 'R39',
@@ -6652,7 +7015,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'R'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   R40: {
     stop_id: 'R40',
@@ -6665,7 +7030,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'R'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   R41: {
     stop_id: 'R41',
@@ -6678,7 +7045,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['N', 'R'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   R42: {
     stop_id: 'R42',
@@ -6691,7 +7060,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['R'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   R43: {
     stop_id: 'R43',
@@ -6704,7 +7075,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['R'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   R44: {
     stop_id: 'R44',
@@ -6717,7 +7090,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['R'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   R45: {
     stop_id: 'R45',
@@ -6730,7 +7105,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['R'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   S01: {
     stop_id: 'S01',
@@ -6743,7 +7120,7 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-    lines_at: ['A', 'C', 'S'],
+    lines_at: ['A', 'C', 'SF'],
     borough: 'brooklyn',
     accessible: false,
   },
@@ -6758,7 +7135,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SF'],
+    borough: 'brooklyn',
+    accessible: true,
   },
   S04: {
     stop_id: 'S04',
@@ -6771,7 +7150,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SF'],
+    borough: 'brooklyn',
+    accessible: false,
   },
   S09: {
     stop_id: 'S09',
@@ -6784,9 +7165,11 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: true,
   },
-  S10: {
+  S10: { // this station doesn't exist??
     stop_id: 'S10',
     stop_code: '',
     stop_name: 'Atlantic',
@@ -6797,7 +7180,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S11: {
     stop_id: 'S11',
@@ -6810,9 +7195,11 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: true,
   },
-  S12: {
+  S12: { // this station doesn't exist??
     stop_id: 'S12',
     stop_code: '',
     stop_name: 'Nassau',
@@ -6823,7 +7210,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S13: {
     stop_id: 'S13',
@@ -6836,7 +7225,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S14: {
     stop_id: 'S14',
@@ -6849,7 +7240,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S15: {
     stop_id: 'S15',
@@ -6862,7 +7255,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S16: {
     stop_id: 'S16',
@@ -6875,7 +7270,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S17: {
     stop_id: 'S17',
@@ -6888,7 +7285,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S18: {
     stop_id: 'S18',
@@ -6901,7 +7300,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S19: {
     stop_id: 'S19',
@@ -6914,7 +7315,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: true,
   },
   S20: {
     stop_id: 'S20',
@@ -6927,7 +7330,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S21: {
     stop_id: 'S21',
@@ -6940,7 +7345,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S22: {
     stop_id: 'S22',
@@ -6953,7 +7360,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S23: {
     stop_id: 'S23',
@@ -6966,7 +7375,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S24: {
     stop_id: 'S24',
@@ -6979,7 +7390,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S25: {
     stop_id: 'S25',
@@ -6992,7 +7405,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: true,
   },
   S26: {
     stop_id: 'S26',
@@ -7005,7 +7420,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S27: {
     stop_id: 'S27',
@@ -7018,7 +7435,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S28: {
     stop_id: 'S28',
@@ -7031,7 +7450,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S29: {
     stop_id: 'S29',
@@ -7044,7 +7465,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S30: {
     stop_id: 'S30',
@@ -7057,7 +7480,9 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: false,
   },
   S31: {
     stop_id: 'S31',
@@ -7070,6 +7495,8 @@ allStations = {
     stop_url: '',
     location_type: '1',
     parent_station: '',
-
+    lines_at: ['SIR'],
+    borough: 'statenisland',
+    accessible: true,
   },
 }
