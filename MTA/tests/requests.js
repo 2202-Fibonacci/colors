@@ -1,4 +1,4 @@
-const APIkey = require("../.env");
+const APIkey = require("../../.env");
 const baseURI =
   "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs";
 const URIs = {
@@ -31,6 +31,7 @@ const Mta = require("mta-gtfs");
 const mta = new Mta({
   key: APIkey,
 });
+
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const https = require("https");
 
