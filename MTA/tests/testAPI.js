@@ -1,14 +1,15 @@
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const https = require("https");
 const APIkey = require("../../.env");
-const FeedURI =
-  "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs"; // X-train real time endpoint
+const FeedURI = "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs"; // X-train real time endpoint
 
 // real time status feeds
 https
   .get(FeedURI, { headers: { "x-api-key": APIkey } }, (resp) => {
     let data = [];
     resp.on("data", (chunk) => {
+      //ll testing
+      console.log(JSON.stringify(chunk))
       console.log("Receiving Data");
       data.push(chunk);
     });

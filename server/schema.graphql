@@ -1,3 +1,7 @@
 type Query {
     info: String!
+    feed: String!
+    trainFeed(train:String): String
+    arrivalTimes(stationId: String, train: String, direction: String): String
 }
+
