@@ -3,6 +3,7 @@ import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import { Platform, StyleSheet, Text, View, Dimensions } from "react-native";
 import * as Location from "expo-location";
 import { allStations } from "../../MTA/stations";
+import Lines from "./Lines";
 
 export default function Map() {
   const [location, setLocation] = useState(null);
@@ -28,7 +29,7 @@ export default function Map() {
       let location = await Location.getCurrentPositionAsync({});
       setLocation(location);
 
-      // set region to center around user's location
+      // set region to center around user's location - commented out because goes to SF now
       // setRegion({
       //   ...region,
       //   latitude: location.coords.latitude,
@@ -50,42 +51,45 @@ export default function Map() {
   const stations = Object.keys(allStations);
 
   return (
-    <View style={styles.mapContainer}>
-      {/* {text === "Found" ? (
+    <>
+      <Lines lines={allStations[selectedStation].lines_at} />
+      <View style={styles.mapContainer}>
+        {/* {text === "Found" ? (
         <Text>
           Hello you're at {location.coords.latitude}x{location.coords.longitude}
         </Text>
       ) : (
         <Text>{text}</Text>
       )} */}
-      <Text>Selected Station: {allStations[selectedStation].stop_name}</Text>
-      <MapView
-        onRegionChange={() => setRegion(region)}
-        provider={PROVIDER_GOOGLE}
-        region={region}
-        style={styles.map}
-      >
-        {stations.map((station) => (
-          <Marker
-            key={station}
-            coordinate={{
-              latitude: Number(allStations[station].stop_lat),
-              longitude: Number(allStations[station].stop_lon),
-            }}
-            title={allStations[station].stop_name}
-            description={`Lines: ${allStations[station].lines_at.join(", ")}`}
-            onPress={() => {
-              setSelectedStation(station);
-              setRegion({
-                ...region,
+        <Text>Selected Station: {allStations[selectedStation].stop_name}</Text>
+        <MapView
+          onRegionChangeComplete={(region) => setRegion(region)}
+          provider={PROVIDER_GOOGLE}
+          region={region}
+          style={styles.map}
+        >
+          {stations.map((station) => (
+            <Marker
+              key={station}
+              coordinate={{
                 latitude: Number(allStations[station].stop_lat),
                 longitude: Number(allStations[station].stop_lon),
-              });
-            }}
-          />
-        ))}
-      </MapView>
-    </View>
+              }}
+              title={allStations[station].stop_name}
+              description={`Lines: ${allStations[station].lines_at.join(", ")}`}
+              onPress={() => {
+                setSelectedStation(station);
+                setRegion({
+                  ...region,
+                  latitude: Number(allStations[station].stop_lat),
+                  longitude: Number(allStations[station].stop_lon),
+                });
+              }}
+            />
+          ))}
+        </MapView>
+      </View>
+    </>
   );
 }
 
