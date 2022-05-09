@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     width: "100%",
-    borderWidth: 1,
+    // borderWidth: 1,
   },
   alert: {
     fontWeight: "bold",

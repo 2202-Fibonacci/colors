@@ -11,7 +11,9 @@ export default function LineUpdates(props) {
 
   return (
     <View style={styles.updatesContainer}>
-      <Text>The next {props.line} train will arrive in 5 minutes</Text>
+      <Text>The {props.line} train will arrive in 5 minutes</Text>
+      <Text>The {props.line} train will arrive in 8 minutes</Text>
+      <Text>The {props.line} train will arrive in 12 minutes</Text>
     </View>
   );
 }
