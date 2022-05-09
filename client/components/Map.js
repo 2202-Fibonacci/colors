@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MapView, { Marker } from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import { Platform, StyleSheet, Text, View, Dimensions } from "react-native";
 import * as Location from "expo-location";
 import { allStations } from "../../MTA/stations";
@@ -13,6 +13,7 @@ export default function Map() {
     latitudeDelta: 0.05,
     longitudeDelta: 0.05,
   });
+  const [selectedStation, setSelectedStation] = useState("128");
 
   useEffect(() => {
     (async () => {
@@ -57,20 +58,23 @@ export default function Map() {
       ) : (
         <Text>{text}</Text>
       )} */}
+      <Text>Selected Station: {allStations[selectedStation].stop_name}</Text>
       <MapView
-        onRegionChange={(region) => setRegion(region)}
+        onRegionChange={() => setRegion(region)}
+        provider={PROVIDER_GOOGLE}
         region={region}
         style={styles.map}
       >
         {stations.map((station) => (
           <Marker
+            key={station}
             coordinate={{
               latitude: Number(allStations[station].stop_lat),
               longitude: Number(allStations[station].stop_lon),
             }}
             title={allStations[station].stop_name}
             description={`Lines: ${allStations[station].lines_at.join(", ")}`}
-            key={station}
+            onPress={() => setSelectedStation(station)}
           />
         ))}
       </MapView>
