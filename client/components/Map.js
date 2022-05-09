@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
+import MapView, {
+  PROVIDER_GOOGLE,
+  Marker,
+  AnimatedRegion,
+  Animated,
+} from "react-native-maps";
 import { Platform, StyleSheet, Text, View, Dimensions } from "react-native";
 import * as Location from "expo-location";
 import { allStations } from "../../MTA/stations";
@@ -63,10 +68,11 @@ export default function Map() {
       ) : (
         <Text>{text}</Text>
       )} */}
-        <Text>Selected Station: {allStations[selectedStation].stop_name}</Text>
+        {/* <Text>Selected Station: {allStations[selectedStation].stop_name}</Text> */}
         <MapView
           onRegionChangeComplete={(region) => setRegion(region)}
           provider={PROVIDER_GOOGLE}
+          initialRegion={region}
           region={region}
           style={styles.map}
         >
@@ -87,6 +93,7 @@ export default function Map() {
                   longitude: Number(allStations[station].stop_lon),
                 });
               }}
+              // pinColor="orange"
             />
           ))}
         </MapView>
@@ -104,6 +111,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   map: {
+    flex: 1,
     width: Dimensions.get("window").width,
     height: Dimensions.get("window").height * 0.6,
   },

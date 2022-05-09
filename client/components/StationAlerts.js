@@ -35,12 +35,12 @@ export default function StationAlerts(props) {
   return (
     <View style={styles.alertsContainer}>
       {dummyData.map((alert) => (
-        <>
+        <View key={alert.equipment}>
           <Text style={styles.alert}>
             {alert.equipmenttype === "ES" ? "Escalator" : "Elevator"} outage:
           </Text>
           <Text>{alert.serving}</Text>
-        </>
+        </View>
       ))}
     </View>
   );
