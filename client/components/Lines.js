@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Platform, StyleSheet, Text, View, Pressable } from "react-native";
 import { lineColor } from "../../MTA/data";
+import LineUpdates from "./LineUpdates";
 
 export default function Lines(props) {
   const [selectedLine, setSelectedLine] = useState(null);
@@ -12,16 +13,18 @@ export default function Lines(props) {
   });
 
   return (
-    <View style={styles.linesContainer}>
-      <Text>{selectedLine}</Text>
-      {props.lines.map((line) => (
-        <Pressable key={line} onPress={() => setSelectedLine(line)}>
-          <View style={getColor(lineColor[line]).circle}>
-            <Text style={styles.line}>{line}</Text>
-          </View>
-        </Pressable>
-      ))}
-    </View>
+    <>
+      <View style={styles.linesContainer}>
+        {props.lines.map((line) => (
+          <Pressable key={line} onPress={() => setSelectedLine(line)}>
+            <View style={getColor(lineColor[line]).circle}>
+              <Text style={styles.line}>{line}</Text>
+            </View>
+          </Pressable>
+        ))}
+      </View>
+      <LineUpdates line={selectedLine} />
+    </>
   );
 }
 
