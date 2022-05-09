@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Platform, StyleSheet, Text, View, Dimensions } from "react-native";
-import { allStations } from "../../MTA/stations";
+// import { getElevatorAlerts } from "../../MTA/elevatorAlerts";
 
 const dummyData = [
   {
@@ -21,7 +21,17 @@ const dummyData = [
 ];
 
 export default function StationAlerts(props) {
-  // make hook to get station alerts for props.station
+  const [alerts, setAlerts] = useState([]);
+  //   make hook to get station alerts for props.station
+
+  //   useEffect(() => {
+  //     (async () => {
+  //       // get elevator/escalator alerts for the selected station
+  //       let alerts = await getElevatorAlerts(props.station);
+  //       setAlerts(alerts);
+  //     })();
+  //   }, []);
+
   return (
     <View style={styles.alertsContainer}>
       {dummyData.map((alert) => (
