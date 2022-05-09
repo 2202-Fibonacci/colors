@@ -16,7 +16,16 @@ export default function Lines(props) {
     <>
       <View style={styles.linesContainer}>
         {props.lines.map((line) => (
-          <Pressable key={line} onPress={() => setSelectedLine(line)}>
+          <Pressable
+            key={line}
+            onPress={() => setSelectedLine(line)}
+            style={({ pressed }) => [
+              {
+                transform: pressed ? [{ scale: 1.1 }] : [{ scale: 1.0 }],
+              },
+              styles.wrapperCustom,
+            ]}
+          >
             <View style={getColor(lineColor[line]).circle}>
               <Text style={styles.line}>{line}</Text>
             </View>
