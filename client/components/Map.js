@@ -69,6 +69,7 @@ export default function Map() {
               longitude: Number(allStations[station].stop_lon),
             }}
             title={allStations[station].stop_name}
+            description={`Lines: ${allStations[station].lines_at.join(", ")}`}
             key={station}
           />
         ))}
