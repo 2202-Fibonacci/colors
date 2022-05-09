@@ -4,12 +4,19 @@ import { lineColor } from "../../MTA/data";
 
 export default function Lines(props) {
   const [selectedLine, setSelectedLine] = useState(null);
-  console.log("SELECTED LINE", selectedLine);
+
+  useEffect(() => {
+    if (!props.lines.includes(selectedLine)) {
+      setSelectedLine(props.lines[0]);
+    }
+  });
+
   return (
     <View style={styles.linesContainer}>
+      <Text>{selectedLine}</Text>
       {props.lines.map((line) => (
-        <Pressable onPress={() => setSelectedLine(line)}>
-          <View key={line} style={getColor(lineColor[line]).circle}>
+        <Pressable key={line} onPress={() => setSelectedLine(line)}>
+          <View style={getColor(lineColor[line]).circle}>
             <Text style={styles.line}>{line}</Text>
           </View>
         </Pressable>
