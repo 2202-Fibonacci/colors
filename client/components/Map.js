@@ -50,13 +50,13 @@ export default function Map() {
 
   return (
     <View style={styles.mapContainer}>
-      {text === "Found" ? (
+      {/* {text === "Found" ? (
         <Text>
           Hello you're at {location.coords.latitude}x{location.coords.longitude}
         </Text>
       ) : (
         <Text>{text}</Text>
-      )}
+      )} */}
       <MapView
         onRegionChange={(region) => setRegion(region)}
         region={region}
@@ -68,6 +68,7 @@ export default function Map() {
               latitude: Number(allStations[station].stop_lat),
               longitude: Number(allStations[station].stop_lon),
             }}
+            title={allStations[station].stop_name}
             key={station}
           />
         ))}
@@ -86,6 +87,6 @@ const styles = StyleSheet.create({
   },
   map: {
     width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height * 0.5,
+    height: Dimensions.get("window").height * 0.6,
   },
 });
