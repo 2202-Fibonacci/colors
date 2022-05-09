@@ -18,14 +18,13 @@ const styles = StyleSheet.create({
   linesContainer: {
     display: "flex",
     flexDirection: "row",
-    flex: 0.4,
+    marginTop: "10%",
+    padding: "5%",
     backgroundColor: "#fff",
-    borderWidth: 2,
     color: "#00ffff",
-    margin: "10%",
     alignItems: "center",
     justifyContent: "center",
-    width: Dimensions.get("window").width,
+    width: "100%",
   },
   line: {
     color: "white",

@@ -4,6 +4,7 @@ import { Platform, StyleSheet, Text, View, Dimensions } from "react-native";
 import * as Location from "expo-location";
 import { allStations } from "../../MTA/stations";
 import Lines from "./Lines";
+import StationAlerts from "./StationAlerts";
 
 export default function Map() {
   const [location, setLocation] = useState(null);
@@ -53,6 +54,7 @@ export default function Map() {
   return (
     <>
       <Lines lines={allStations[selectedStation].lines_at} />
+      <StationAlerts station={selectedStation} />
       <View style={styles.mapContainer}>
         {/* {text === "Found" ? (
         <Text>
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     color: "#00ffff",
-    justifyContent: "flex-end",
+    justifyContent: "center",
     alignItems: "center",
   },
   map: {
