@@ -71,7 +71,7 @@ export default function Map() {
         {/* <Text>Selected Station: {allStations[selectedStation].stop_name}</Text> */}
         <MapView
           onRegionChangeComplete={(region) => setRegion(region)}
-          provider={PROVIDER_GOOGLE}
+          // provider={PROVIDER_GOOGLE}
           initialRegion={region}
           region={region}
           style={styles.map}
@@ -93,7 +93,7 @@ export default function Map() {
                   longitude: Number(allStations[station].stop_lon),
                 });
               }}
-              // pinColor="orange"
+              pinColor="teal"
             />
           ))}
         </MapView>
