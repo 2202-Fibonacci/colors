@@ -9,8 +9,9 @@ const APIkey = require('../.env')
 const { baseURI, URIs } = require("../MTA/data")
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const https = require("https");
-const stations = require("../MTA/stations_test")
-
+const allStations = require("../MTA/stations_test")
+//TODO do we need dataloader since we are not really using DataSource? maybe at our level it doesn't matter?
+//dataloader, to "batch and de-dupe requests"
 
 class TripFeed extends RESTDataSource {
     constructor(){
@@ -114,13 +115,46 @@ class TripFeed extends RESTDataSource {
       }
       getStationById(stationId){
         return {
-          stationId: stationId,
-          name: stations[stationId].stop_name,
-          lat: stations[stationId].stop_lat,
-          lon: stations[stationId].stop_lon,
-          borough: stations[stationId].borough,
-          accessible: stations[stationId].accessible,
-          trainLines: JSON.stringify(stations[stationId].lines_at)
+          id: stationId,
+          name: allStations[stationId].stop_name,
+          lat: allStations[stationId].stop_lat,
+          lon: allStations[stationId].stop_lon,
+          borough: allStations[stationId].borough,
+          accessible: allStations[stationId].accessible,
+          trainLines: JSON.stringify(allStations[stationId].lines_at)
+        }
+      }
+      // getTrainsByStation(stationId){
+      //   return {
+      //     trainLines: allStations[stationId].lines_at
+      //   }
+      // }
+      getStationByName(stationName){
+        for(let station in allStations){
+          let stationInfo = allStations[station]
+          for(let info in stationInfo){
+            let datapoint = stationInfo[info]
+            if(datapoint === stationName){
+              let id = stationInfo.stop_id
+              console.log(id)
+              return this.getStationById(id)
+            }
+          }
+        }
+      }
+      getStationByLatAndLong(lat, long){
+        for(let station in allStations){
+          let stationInfo = allStations[station]
+          for(let info in stationInfo){
+            let datapoint = stationInfo[info]
+            if(datapoint === String(lat)){
+              console.log(datapoint, stationInfo.stop_lon)
+              if(stationInfo.stop_lon === String(long)){
+                let id = stationInfo.stop_id
+                return this.getStationById(id)
+              }
+            }
+          }
         }
       }
 

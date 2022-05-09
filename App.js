@@ -8,6 +8,7 @@ import {
   InMemoryCache} from '@apollo/client';
 import {ApolloClient} from '@apollo/client';
 import ArrivalTimes from './client/components/ArrivalTimes'
+import GetStation from './client/components/GetStation'
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:4000'
@@ -36,7 +37,7 @@ export default function App() {
       <View style={styles.container}>
         <Text>Hello World!</Text>
           <ApolloProvider client={client}>
-            <ArrivalTimes />
+            <GetStation />
           </ApolloProvider>
         <StatusBar style="auto" />
       </View>
