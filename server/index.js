@@ -9,21 +9,20 @@ const APIkey = require('../.env')
 const { baseURI, URIs } = require("../MTA/data")
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const https = require("https");
+const stations = require("../MTA/stations_test")
 
 
-class TripFeed extends RESTDataSource{
+class TripFeed extends RESTDataSource {
     constructor(){
         super();
         this.baseURL = tripFeedURL;
     }
+    //code block below kept for testing purposes, but commented so that is does not affect functioning methods
     // willSendRequest(request){
     //     request.headers.set('x-api-key', APIkey )
     // }
-    async checkURL(){
-        // let chunk = await this.get('/', undefined, {
-        //     header: {"x-api-key": APIkey  }
-        // })
-        let chunk = await this.get('/')
+    async checkURL(){ //checkURL will only work if willSendRequest is enabled
+        let chunk = await this.get('/') 
         return JSON.stringify(chunk)
     }
 
@@ -43,7 +42,6 @@ class TripFeed extends RESTDataSource{
                   data = Buffer.concat(data);
                   const feed =
                     GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(data);
-                //    let stringed = JSON.stringify(feed)
                   resolve(feed);
                 });
               })
@@ -52,22 +50,10 @@ class TripFeed extends RESTDataSource{
                 reject(err);
               });
           });
-        
-            // const URI = URIs[train.toUpperCase()];
-            // const chunk = await this.get(`${URI}`)
-            //     // let data = [];
-            //     // data.push(chunk)
-            //     // data = Buffer.concat(data);
-            //     console.log(chunk)
-            //     let data = Buffer.from(chunk)
-            //     const feed = GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(data);
-            //     return feed
-       
     }
 
       async getStatus(train, direction = "NS"){
           const feed = await this.getStatusFeed(train)
-          console.log(feed.entity)
 
           let trips = feed.entity
             .filter((entity) => entity.tripUpdate)
@@ -91,6 +77,7 @@ class TripFeed extends RESTDataSource{
             };
             return status;
       }
+
       async getArrivalTimes(station, train, direction="NS"){
         const status = await this.getStatus(train, direction.toUpperCase());
 
@@ -110,15 +97,32 @@ class TripFeed extends RESTDataSource{
             .filter((arrival) => arrival.arrivalTime)
             .sort((a, b) => (a.arrivalTime > b.arrivalTime ? 1 : -1))
 
-            const arrivals = {
-                routeId: train,
-                stationId: station,
-                nextArrivals,
-            };
-        
-            return JSON.stringify(arrivals)
-      }
+            // const arrivals = {
+            //     routeId: train,
+            //     stationId: station,
+            //     nextArrivals,
+            // };
+            
+            const nextTrain = nextArrivals.map((train)=>train.arrivalTime)
 
+            // consolelog is correct but 
+            console.log(nextTrain)
+            return JSON.stringify(nextTrain)
+            // return nextTrain
+            // return arrivals
+            // return JSON.stringify(arrivals)
+      }
+      getStationById(stationId){
+        return {
+          stationId: stationId,
+          name: stations[stationId].stop_name,
+          lat: stations[stationId].stop_lat,
+          lon: stations[stationId].stop_lon,
+          borough: stations[stationId].borough,
+          accessible: stations[stationId].accessible,
+          trainLines: JSON.stringify(stations[stationId].lines_at)
+        }
+      }
 
 }
 

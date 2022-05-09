@@ -93,13 +93,18 @@ async function getArrivalTimes(station, train, direction = "NS") {
     nextArrivals,
   };
 
-  console.log(arrivals)
-  return arrivals;
+  // console.log(arrivals)
+  // return arrivals;
+
+  const nextTrain = nextArrivals.map((train)=>train.arrivalTime)
+  return nextTrain
 }
 
 // pass in stationId, trainLine, and optionally direction 'N' or 'S'
-// Promise.resolve(getArrivalTimes("236", "2", "N")).then((arrivals) =>
-//   console.log(arrivals)
-// );
+Promise.resolve(getArrivalTimes("236", "2", "N")).then((arrivals) =>
+  console.log(arrivals)
+);
 
-getArrivalTimes("101", "1", "N")
+// getArrivalTimes("101", "1", "N")
+
+module.exports= getArrivalTimes

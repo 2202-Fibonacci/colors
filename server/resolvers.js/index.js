@@ -7,6 +7,7 @@ module.exports = {
         feed: (_, __, { dataSources}) => dataSources.tripFeed.checkURL(),
         trainFeed:(_, {train}, { dataSources}) => dataSources.tripFeed.getStatusFeed(train),
         arrivalTimes: (_, {stationId, train, direction}, { dataSources}) => dataSources.tripFeed.getArrivalTimes(stationId, train, direction),
+        stationInfo:(_, {stationId}, {dataSources}) => dataSources.tripFeed.getStationById(stationId)
     }
     
 }

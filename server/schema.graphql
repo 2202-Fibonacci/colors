@@ -2,6 +2,60 @@ type Query {
     info: String!
     feed: String!
     trainFeed(train:String): String
+    # arrivalTimes(stationId: String, train: String, direction: String): [Time]
     arrivalTimes(stationId: String, train: String, direction: String): String
+    stationInfo(stationId:String):Station
 }
+
+
+# this would need to be created as a class somewhere, and then linked back to 
+# type Time {
+#     nextTime: Int
+# }
+
+
+type Station {
+    stationId: ID!
+    name: String!
+    trainLines: String #TODO: set this to see 
+    lat: Float!
+    lon: Float!
+    borough: String
+    accessible: Boolean! #this means wheelchair accessible? or something else?
+}
+
+type Train {
+    name: String!
+    # nextTime(stationId: Station, direction: Direction): Int
+    #ask Jenny what other information we may want
+}
+
+
+# perhaps we need a new graphql scalar type for the array we want of arritval times
+
+
+enum Direction {
+    North
+    South
+}
+
+type Route { #Route would be determined by user, user could subscribe to it
+    # a route would require a stationId, train line, and direction
+    # nextArrivalTimes: [Time] #?? redudant?
+    delays: String #any delays for the station/train?
+    alerts: String #any alters for the station/train?
+    #any other information that would be helpful?
+}
+
+type TimeToNextTrain {
+    minutesTillNextTrain: Int   # a single unit of time
+}
+
+type User {
+    email: String!
+    password: String!
+    myRoutes:[Route]
+}
+
+
 
