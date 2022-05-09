@@ -74,7 +74,14 @@ export default function Map() {
             }}
             title={allStations[station].stop_name}
             description={`Lines: ${allStations[station].lines_at.join(", ")}`}
-            onPress={() => setSelectedStation(station)}
+            onPress={() => {
+              setSelectedStation(station);
+              setRegion({
+                ...region,
+                latitude: Number(allStations[station].stop_lat),
+                longitude: Number(allStations[station].stop_lon),
+              });
+            }}
           />
         ))}
       </MapView>
