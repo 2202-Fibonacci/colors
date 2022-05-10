@@ -6,7 +6,7 @@ const equipmentURI =
 const https = require("https");
 
 // get all elevator and escalator outages for a specific station
-async function getElevatorAlerts(stationId) {
+export async function getElevatorAlerts(stationId) {
   // get station name by id
   const stationName = await getStationName(stationId);
 
