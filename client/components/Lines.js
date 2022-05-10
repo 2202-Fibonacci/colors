@@ -21,12 +21,13 @@ export default function Lines(props) {
             onPress={() => setSelectedLine(line)}
             style={({ pressed }) => [
               {
-                transform: pressed ? [{ scale: 1.1 }] : [{ scale: 1.0 }],
+                transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
               },
-              styles.wrapperCustom,
             ]}
           >
-            <View style={getColor(lineColor[line]).circle}>
+            <View
+              style={getColor(lineColor[line], selectedLine === line).circle}
+            >
               <Text style={styles.line}>{line}</Text>
             </View>
           </Pressable>
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const getColor = (color) =>
+const getColor = (color, selected) =>
   StyleSheet.create({
     circle: {
       height: 30,
@@ -66,5 +67,10 @@ const getColor = (color) =>
       justifyContent: "center",
       alignItems: "center",
       margin: "1%",
+      opacity: selected ? 1 : 0.8,
+      shadowColor: selected ? "#171717" : "white",
+      shadowOffset: { width: 1, height: 1 },
+      shadowOpacity: 0.2,
+      shadowRadius: 2,
     },
   });

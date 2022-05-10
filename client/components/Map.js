@@ -66,10 +66,12 @@ export default function Map() {
         {/* <Text>Selected Station: {allStations[selectedStation].stop_name}</Text> */}
         <MapView
           onRegionChangeComplete={(region) => setRegion(region)}
-          // provider={PROVIDER_GOOGLE}
+          provider={PROVIDER_GOOGLE}
           initialRegion={region}
           region={region}
           style={styles.map}
+          showsUserLocation={true}
+          showsMyLocationButton={true}
         >
           {stations.map((station) => (
             <Marker
@@ -82,11 +84,11 @@ export default function Map() {
               description={`Lines: ${allStations[station].lines_at.join(", ")}`}
               onPress={() => {
                 setSelectedStation(station);
-                setRegion({
-                  ...region,
-                  latitude: Number(allStations[station].stop_lat),
-                  longitude: Number(allStations[station].stop_lon),
-                });
+                // setRegion({
+                //   ...region,
+                //   latitude: Number(allStations[station].stop_lat),
+                //   longitude: Number(allStations[station].stop_lon),
+                // });
               }}
               pinColor="teal"
             />
