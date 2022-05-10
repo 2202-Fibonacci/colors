@@ -5,6 +5,7 @@ import Map from "./client/components/Map";
 import {
   ApolloProvider,
   ApolloClient,
+  InMemoryCache,
   createHttpLink,
   gql,
 } from "@apollo/client";
@@ -14,6 +15,7 @@ const httpLink= createHttpLink({
 });
 
 const client = new ApolloClient({
+  cache: new InMemoryCache,
   link: httpLink,
 });
 

@@ -5,10 +5,11 @@ import allStations from "../../MTA/stations_test"
 // import getArrivalTimes from "../../MTA/arrivalTimes_test"
 
 
-const STATION_NAME = gql `
+const STATION = gql `
     {
         stationInfo(stationId:$stationId){
             name
+            
         }
     }
 `
@@ -27,27 +28,6 @@ const NEXT_ARRIVALS = gql `
     }
 `
 
-// class Station {
-//     constructor(stationId){
-//         this.stationId = stationId,
-//         this.stationName = allStations[stationId].stop_name
-//         this.trainLines = allStations[stationId].lines_at
-//     }
-    
-//     arrivalTimes(line, direction){
-//         try{
-//             let times = getArrivalTimes(this.stationId, line, direction)
-//             return times;
-//         }
-//         catch (err){
-//             console.log(err)
-//         }
-//         // return getArrivalTimes(this.stationId, line, direction)
-//     }
-//     getTrains(){
-//         return allStations[this.stationId].lines_at
-//     }
-// }
 
 
 
@@ -117,3 +97,27 @@ const ArrivalTimes = () => {
 
 
 export default ArrivalTimes;
+
+
+
+// class Station {
+//     constructor(stationId){
+//         this.stationId = stationId,
+//         this.stationName = allStations[stationId].stop_name
+//         this.trainLines = allStations[stationId].lines_at
+//     }
+    
+//     arrivalTimes(line, direction){
+//         try{
+//             let times = getArrivalTimes(this.stationId, line, direction)
+//             return times;
+//         }
+//         catch (err){
+//             console.log(err)
+//         }
+//         // return getArrivalTimes(this.stationId, line, direction)
+//     }
+//     getTrains(){
+//         return allStations[this.stationId].lines_at
+//     }
+// }

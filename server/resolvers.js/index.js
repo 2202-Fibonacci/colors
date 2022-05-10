@@ -7,16 +7,16 @@ module.exports = {
         // stations: (root, _, {allStations}) => allStations
     },
     Station: {
-        name: (root) => root.name,
+        // name: (root) => root.name,
         lat: (root) => root.lat,
         long: (root) => root.long,
         accessible: (root) => root.accessible,
-        trainLines: (root) => root.trainLines
+        trainLines: (root) => root.trainLines,
         // trainLines: ({id}, _, {dataSources}) => dataSources.tripFeed.getTrainsbyStation(id),
-        // name: async({ id }, _, {dataSources}) => {
-        //     const { name } = await dataSources.tripFeed.getStationById(id)
-        //     return name;
-        // },
+        name: async({ id }, _, {dataSources}) => {
+            const { name } = await dataSources.tripFeed.getStationById(id)
+            return name;
+        },
         // trainLines: async({ id }) => {
         //     const { trainLines } = await dataSources.tripFeed.getStationTrains(id);
         // },
