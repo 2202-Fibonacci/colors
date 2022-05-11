@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import Map from "./client/components/Map";
+import NavBar from "./client/components/NavBar";
 import {
   ApolloProvider,
   ApolloClient,
@@ -36,9 +37,10 @@ client
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <StatusBar style="auto" /> */}
       <ApolloProvider client={client}>
         <Map />
+        <NavBar />
+        {/* <StatusBar style="auto" /> */}
         {/* <Text>Hello</Text> */}
       </ApolloProvider>
     </View>
