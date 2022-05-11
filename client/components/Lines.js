@@ -33,7 +33,7 @@ export default function Lines(props) {
           </Pressable>
         ))}
       </View>
-      <LineUpdates line={selectedLine} />
+      <LineUpdates line={selectedLine} station={props.station} />
     </>
   );
 }

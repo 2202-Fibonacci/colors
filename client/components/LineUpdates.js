@@ -1,19 +1,48 @@
 import React, { useState, useEffect } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
+import { useQuery, gql } from "@apollo/client";
 
-export default function LineUpdates(props) {
-  // need hook to get arrival times
-  //   useEffect(() => {
-  //     (async () => {
-  //       let arrivalTimes = await getArrivalTimes(props.station, props.line);
-  //     })();
-  //   }, []);
+const NEXT_ARRIVALS = gql`
+  query ArrivalsQuery(
+    $stationId: String!
+    $train: String!
+    $direction: String
+  ) {
+    arrivalTimes(stationId: $stationId, train: $train, direction: $direction) {
+      nextArrivals {
+        direction
+        arrivalTime
+      }
+    }
+  }
+`;
+
+const maxUpdates = 3;
+
+export default function LineUpdates({ station, line }) {
+  // hook to get arrival data
+  const { data, loading, error } = useQuery(NEXT_ARRIVALS, {
+    variables: { stationId: station, train: line, direction: "S" },
+    fetchPolicy: "no-cache",
+    notifyOnNetworkStatusChange: true,
+  });
 
   return (
     <View style={styles.updatesContainer}>
-      <Text>The {props.line} train will arrive in 5 minutes</Text>
-      <Text>The {props.line} train will arrive in 8 minutes</Text>
-      <Text>The {props.line} train will arrive in 12 minutes</Text>
+      {loading ? (
+        <Text>Loading...</Text>
+      ) : error ? (
+        <Text>Error: {error.message}</Text>
+      ) : (
+        data.arrivalTimes.nextArrivals.map((arrival, i) =>
+          i < maxUpdates ? (
+            <Text key={arrival.arrivalTime}>
+              The {arrival.direction}-bound {line} train will arrive in{" "}
+              {arrival.arrivalTime} minutes
+            </Text>
+          ) : null
+        )
+      )}
     </View>
   );
 }
