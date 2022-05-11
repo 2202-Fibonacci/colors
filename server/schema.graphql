@@ -1,16 +1,9 @@
 type Query {
     info: String!
     station (id: ID): Station
-    # route: Route
-    # arrivalTimes(stationId: String, train: String, direction: String): String  #WORKS
-    # arrivalTimes(stationId: String, train: String, direction: String): Int #WORKS
-    # arrivalTimes(stationId: String, train: String, direction: String): Time
-    arrivalTimes(stationId: String, train: String, direction: String): TripUpdate
+    arrivalTimes(stationId: String, train: String, direction: Direction): TripUpdate
+    serviceAlert(train:String, activeAlert: Boolean): ServiceUpdate
 }
-
-# type Time {
-#     min: Int
-# }
 
 type TripUpdate {
     routeId: String
@@ -24,6 +17,16 @@ type Arrival {
     arrivalTime: Int
 }
 
+type ServiceUpdate {
+    routeId: String
+    alerts: [Alert]
+}
+
+type Alert {
+    type: String
+    text: String
+    activePeriodText: String
+}
 
 type Station {
     id: ID!
@@ -35,24 +38,9 @@ type Station {
     accessible: Boolean! #this means wheelchair accessible? 
 }
 
-# type Train {
-#     name: String
-# }
-
-# type Route { 
-#     trains: [Train] #a route might have more than one train, if changes are needed
-#     stations: [Station] #a route would need AT LEAST a beginning station so that next arrival times can be calculated. A stretch goal might be an end station, so that all problems along the way can be taken into account
-#     direction: Direction
-#     nextArrival: [Time] #where Jenny's arrivalTimes will end up? or a query on it's own?
-# }
-
 enum Direction {
-    North
-    South
-}
-
-type Time{  #Time till next train
-    minutesTillNextTrain: Int   # a single unit of time
+    N
+    S
 }
 
 type User {
@@ -60,53 +48,4 @@ type User {
     lastName: String!
     email: String!
     password: String!
-    # myRoutes:[Route]
 }
-
-#query station returns station object - so one resolver takes in any type of information
-
-    # feed: String!
-    # trainFeed(train:String): String
-    # arrivalTimes(stationId: String, train: String, direction: String): [Time]
-    # arrivalTimes(stationId: String, train: String, direction: String): String
-    # stationInfoById(stationId:String):Station
-    # stationInfoByName(stationName:String):Station
-    # stationInfoByLatAndLong(lat: Float, long: Float):Station
-
-# this would need to be created as a class somewhere, and then linked back to 
-# type Time {
-#     nextTime: Int
-# }
-
-#define a custom resolvers for individual properties for trains
-# how to resolve individual properties
-# subresolver on a type
-# 
-
-
-
-
-# type Train {
-#     name: String!
-#     # nextTime(stationId: Station, direction: Direction): Int
-#     #ask Jenny what other information we may want
-# }
-
-
-# perhaps we need a new graphql scalar type for the array we want of arritval times
-
-
-
-
-# type Route { #Route would be determined by user, user could subscribe to it
-#     # a route would require a stationId, train line, and direction
-#     # nextArrivalTimes: [Time] #?? redudant?
-#     delays: String #any delays for the station/train?
-#     alerts: String #any alters for the station/train?
-#     #any other information that would be helpful?
-# }
-
-
-
-
-
