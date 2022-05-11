@@ -20,7 +20,6 @@ const NEXT_ARRIVALS = gql`
 const maxUpdates = 3;
 
 export default function LineUpdates({ station, line }) {
-  // console.log(station, line);
   // hook to get arrival data
   const { data, loading, error } = useQuery(NEXT_ARRIVALS, {
     variables: { stationId: station, train: line, direction: "S" },

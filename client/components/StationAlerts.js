@@ -2,20 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Platform, StyleSheet, Text, View, Dimensions } from "react-native";
 import { useQuery, gql } from "@apollo/client";
 
-// const NEXT_ARRIVALS = gql`
-//   query ArrivalsQuery(
-//     $stationId: String!
-//     $train: String!
-//     $direction: String
-//   ) {
-//     arrivalTimes(stationId: $stationId, train: $train, direction: $direction) {
-//       nextArrivals {
-//         arrivalTime
-//       }
-//     }
-//   }
-// `;
-
 const dummyData = [
   {
     station: "Atlantic Av-Barclays Ctr",
@@ -36,18 +22,6 @@ const dummyData = [
 
 export default function StationAlerts(props) {
   const [alerts, setAlerts] = useState([]);
-
-  // const { data, loading, error } = useQuery(NEXT_ARRIVALS, {
-  //   variables: { stationId: "106", train: "1", direction: "s" },
-  //   notifyOnNetworkStatusChange: true,
-  // });
-
-  // if (loading) return <Text>Loading ...</Text>;
-  // if (error) return <Text>Error: {error.message}</Text>;
-  // console.log(
-  //   "DATA ",
-  //   data.arrivalTimes.nextArrivals.map((arrival) => arrival.arrivalTime)
-  // );
 
   return (
     <View style={styles.alertsContainer}>
@@ -71,21 +45,8 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     width: "100%",
-    // borderWidth: 1,
   },
   alert: {
     fontWeight: "bold",
   },
 });
-
-// query ArrivalsQuery(
-//   $stationId: String!
-//   $train: String!
-//   $direction: String
-// ) {
-//   arrivalTimes(stationId:$stationId, train:$train, direction:$direction){
-//     nextArrivals {
-//       arrivalTime
-//     }
-//   }
-// }
