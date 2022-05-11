@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 
-//data
-
 export default function LineUpdates(props) {
   // need hook to get arrival times
   //   useEffect(() => {

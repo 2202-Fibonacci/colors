@@ -93,13 +93,10 @@ async function getArrivalTimes(station, train, direction = "NS") {
     nextArrivals,
   };
 
-  console.log(arrivals)
   return arrivals;
 }
 
 // pass in stationId, trainLine, and optionally direction 'N' or 'S'
-// Promise.resolve(getArrivalTimes("236", "2", "N")).then((arrivals) =>
-//   console.log(arrivals)
-// );
-
-getArrivalTimes("101", "1", "N")
+Promise.resolve(getArrivalTimes("236", "2", "N")).then((arrivals) =>
+  console.log(arrivals)
+);

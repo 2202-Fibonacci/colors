@@ -6,6 +6,7 @@ import { allStations } from "../../MTA/stations";
 import Lines from "./Lines";
 import StationAlerts from "./StationAlerts";
 
+
 export default function Map() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
@@ -66,7 +67,7 @@ export default function Map() {
         {/* <Text>Selected Station: {allStations[selectedStation].stop_name}</Text> */}
         <MapView
           onRegionChangeComplete={(region) => setRegion(region)}
-          provider={PROVIDER_GOOGLE}
+          // provider={PROVIDER_GOOGLE}
           initialRegion={region}
           region={region}
           style={styles.map}
