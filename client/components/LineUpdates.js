@@ -17,6 +17,8 @@ const NEXT_ARRIVALS = gql`
   }
 `;
 
+const maxUpdates = 3;
+
 export default function LineUpdates({ station, line }) {
   // console.log(station, line);
   // hook to get arrival data
@@ -34,7 +36,7 @@ export default function LineUpdates({ station, line }) {
         <Text>Error: {error.message}</Text>
       ) : (
         data.arrivalTimes.nextArrivals.map((arrival, i) =>
-          i < 3 ? (
+          i < maxUpdates ? (
             <Text key={arrival.arrivalTime}>
               The {arrival.direction}-bound {line} train will arrive in{" "}
               {arrival.arrivalTime} minutes
