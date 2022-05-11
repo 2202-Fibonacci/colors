@@ -30,7 +30,6 @@ async function getStatusFeed(trainLine) {
   });
 }
 
-
 // get status for specific train and, optionally, direction
 async function getStatus(train, direction = "NS") {
   const feed = await getStatusFeed(train);
@@ -60,7 +59,6 @@ async function getStatus(train, direction = "NS") {
     routeId: train.toUpperCase(),
     trips,
   };
-  console.log(status)
   return status;
 }
 
@@ -84,8 +82,6 @@ async function getArrivalTimes(station, train, direction = "NS") {
   nextArrivals = nextArrivals
     .filter((arrival) => arrival.arrivalTime)
     .sort((a, b) => (a.arrivalTime > b.arrivalTime ? 1 : -1));
-
-    console.log(nextArrivals)
 
   const arrivals = {
     routeId: train,

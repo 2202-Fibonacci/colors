@@ -1,7 +1,27 @@
 type Query {
-    info: String!
-    feed: String!
-    trainFeed(train:String): String
-    arrivalTimes(stationId: String, train: String, direction: String): String
+  info: String!
+  feed: String!
+  trainFeed(train: String): String
+  arrivalTimes(stationId: String, train: String, direction: String): TripUpdate
 }
 
+type TripUpdate {
+  routeId: String
+  stationID: String
+  nextArrivals: [Arrival]
+}
+
+type Arrival {
+  tripId: String
+  direction: String
+  arrivalTime: Int
+}
+
+# SAMPLE QUERY
+# query {
+#   arrivalTimes(stationId:"106", train:"1", direction:"s") {
+#     nextArrivals {
+#       arrivalTime
+#     }
+#   }
+# }
