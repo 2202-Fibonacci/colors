@@ -10,7 +10,6 @@ const ElevatorAlert = require("./datasources/ElevatorAlert")
 //dataloader, to "batch and de-dupe requests"
 
 
-
 const server = new ApolloServer({
     playground: true,
     plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
@@ -27,7 +26,6 @@ const server = new ApolloServer({
 })
 
 server.listen().then(({ url }) => {
-    console.log(`🚍 JML server ready at ${url}`);
-  });
-
+  console.log(`🚍 JML server ready at ${url}`);
+});
 

@@ -11,7 +11,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@apollo/client": "^3.6.2",
+    "@apollo/client": "^3.5.10",
     "@apollo/protobufjs": "^1.2.2",
     "apollo-datasource-http": "^0.20.0",
     "apollo-datasource-rest": "^3.5.3",

@@ -11,28 +11,26 @@ import {
 } from "@apollo/client";
 
 const client = new ApolloClient({
-  cache: new InMemoryCache,
-  uri: 'http://localhost:4000'
+  cache: new InMemoryCache(),
+  uri: "http://localhost:4000",
 });
 
-client
-      .query({
-          query: gql`
-            query {
-              arrivalTimes(stationId:"106", train:"1", direction:"s"){
-                nextArrivals{
-                  arrivalTime
-                }
-              }
-            }
-          `
-      })
-      .then(result =>
-        {
-          console.log('graphQL contact made')
-          console.log(result)
-        })
-
+// client
+//   .query({
+//     query: gql`
+//       query {
+//         arrivalTimes(stationId: "106", train: "1", direction: "s") {
+//           nextArrivals {
+//             arrivalTime
+//           }
+//         }
+//       }
+//     `,
+//   })
+//   .then((result) => {
+//     console.log("graphQL contact made");
+//     console.log(result);
+//   });
 
 export default function App() {
   return (
