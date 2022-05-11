@@ -38,7 +38,6 @@ class ServiceAlert extends RESTDataSource {
                     alerts.push({
                       type: entity.alert["transit_realtime.mercury_alert"].alert_type,
                       text: entity.alert.header_text.translation[0].text,
-                      // activePeriod: entity.alert.active_period,
                       activePeriodText,
                     });
                   }

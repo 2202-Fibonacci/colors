@@ -3,6 +3,22 @@ type Query {
     station (id: ID): Station
     arrivalTimes(stationId: String, train: String, direction: Direction): TripUpdate
     serviceAlert(train:String, activeAlert: Boolean): ServiceUpdate
+    elevatorAlert(stationId:String): [ElevatorUpdate]
+}
+
+type ElevatorUpdate {
+    station: String
+    borough: String
+    trainno: String
+    equipment: String
+    equipmenttype: String
+    serving: String
+    ADA: String
+    outagedate: String
+    estimatedreturntoservice: String
+    reason: String
+    isupcomingoutage: String
+    ismaintenanceoutage: String
 }
 
 type TripUpdate {

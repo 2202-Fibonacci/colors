@@ -2,9 +2,10 @@ const { ApolloServer } = require('apollo-server')
 const { ApolloServerPluginLandingPageGraphQLPlayground } = require('apollo-server-core')
 const fs = require('fs');
 const path = require('path');
-const resolvers = require('../server/resolvers.js')
+const resolvers = require('./resolvers/index.js')
 const ServiceAlert = require('./datasources/ServiceAlert')
 const TripFeed = require("./datasources/TripFeed")
+const ElevatorAlert = require("./datasources/ElevatorAlert")
 //TODO do we need dataloader since we are not really using DataSource? maybe at our level it doesn't matter?
 //dataloader, to "batch and de-dupe requests"
 
@@ -20,7 +21,8 @@ const server = new ApolloServer({
     resolvers,
     dataSources: () => ({
         tripFeed: new TripFeed(),
-        alertFeed: new ServiceAlert()
+        alertFeed: new ServiceAlert(),
+        elevatorFeed: new ElevatorAlert()
     })
 })
 
