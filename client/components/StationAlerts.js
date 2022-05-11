@@ -1,66 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Platform, StyleSheet, Text, View, Dimensions } from "react-native";
-// import { getElevatorAlerts } from "../../MTA/elevatorAlerts";
 import { useQuery, gql } from "@apollo/client";
 
-const NEXT_ARRIVALS = gql`
-  query {
-    arrivalTimes(stationId: $stationId, train: $train, direction: $direction) {
-      nextArrivals {
-        arrivalTime
-      }
-    }
-  }
-`;
-
-// const NEXT_ARRIVALS = gql `
-//     query ($stationId:String,
-//                 $train:String,
-//                 $direction:String)
-//                 {
-//                   arrivalTimes(stationId:$stationId, train:$train, direction:$direction){
-//                       nextArrivals {
-//                           arrivalTime
-//           }
-//         }
+// const NEXT_ARRIVALS = gql`
+//   query ArrivalsQuery(
+//     $stationId: String!
+//     $train: String!
+//     $direction: String
+//   ) {
+//     arrivalTimes(stationId: $stationId, train: $train, direction: $direction) {
+//       nextArrivals {
+//         arrivalTime
 //       }
-// `;
-
-// query ArrivalsQuery(
-//   $stationId: String!
-//   $train: String!
-//   $direction: String
-// ) {
-//   arrivalTimes(stationId:$stationId, train:$train, direction:$direction){
-//     nextArrivals {
-//       arrivalTime
 //     }
 //   }
-// }
-
-// const GET_GREETING = gql`
-// query GetGreeting($language: String!) {
-//   greeting(language: $language) {
-//     message
-//   }
-// }
 // `;
-
-// query {
-//   arrivalTimes(stationId:"106", train:"1", direction:"s"){
-//     nextArrivals {
-//       arrivalTime
-//     }
-//   }
-// }
-
-// function Hello() {
-//   const { loading, error, data } = useQuery(GET_GREETING, {
-//     variables: { language: 'english' },
-//   });
-//   if (loading) return <p>Loading ...</p>;
-//   return <h1>Hello {data.greeting.message}!</h1>;
-// }
 
 const dummyData = [
   {
@@ -83,35 +37,17 @@ const dummyData = [
 export default function StationAlerts(props) {
   const [alerts, setAlerts] = useState([]);
 
-  // const { loading, error, data } = useQuery(NEXT_ARRIVALS, {
-  //   variables: { stationId: '106', train:'1', direction:'s' },
+  // const { data, loading, error } = useQuery(NEXT_ARRIVALS, {
+  //   variables: { stationId: "106", train: "1", direction: "s" },
+  //   notifyOnNetworkStatusChange: true,
   // });
-  // console.log('DATA ', data)
 
-  const { data, loading, error } = useQuery(NEXT_ARRIVALS, {
-    variables: { stationId: "106", train: "1", direction: "s" },
-  });
-
-  if (loading) return <Text>Loading ...</Text>;
-  if (error) return <Text>Error: {error}</Text>;
-  console.log(
-    "DATA ",
-    data.arrivalTimes.nextArrivals.map((arrival) => arrival.arrivalTime)
-  );
-
-  // useEffect(()=>{
-
-  // })
-
-  //   make hook to get station alerts for props.station
-
-  //   useEffect(() => {
-  //     (async () => {
-  //       // get elevator/escalator alerts for the selected station
-  //       let alerts = await getElevatorAlerts(props.station);
-  //       setAlerts(alerts);
-  //     })();
-  //   }, []);
+  // if (loading) return <Text>Loading ...</Text>;
+  // if (error) return <Text>Error: {error.message}</Text>;
+  // console.log(
+  //   "DATA ",
+  //   data.arrivalTimes.nextArrivals.map((arrival) => arrival.arrivalTime)
+  // );
 
   return (
     <View style={styles.alertsContainer}>

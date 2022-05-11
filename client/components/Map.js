@@ -44,16 +44,19 @@ export default function Map() {
   if (errorMsg) {
     text = errorMsg;
   } else if (location) {
-    console.log("locaish", location.coords.latitude, location.coords.longitude);
+    // console.log("locaish", location.coords.latitude, location.coords.longitude);
     text = "Found";
   }
-  console.log("text", text);
+  // console.log("text", text);
 
   const stations = Object.keys(allStations);
 
   return (
     <>
-      <Lines lines={allStations[selectedStation].lines_at} />
+      <Lines
+        lines={allStations[selectedStation].lines_at}
+        station={selectedStation}
+      />
       <StationAlerts station={selectedStation} />
       <View style={styles.mapContainer}>
         {/* {text === "Found" ? (
