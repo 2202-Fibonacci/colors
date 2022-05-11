@@ -9,21 +9,21 @@ const APIkey = require('../.env')
 const { baseURI, URIs } = require("../MTA/data")
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const https = require("https");
+const allStations = require("../MTA/stations_test")
+//TODO do we need dataloader since we are not really using DataSource? maybe at our level it doesn't matter?
+//dataloader, to "batch and de-dupe requests"
 
-
-class TripFeed extends RESTDataSource{
+class TripFeed extends RESTDataSource {
     constructor(){
         super();
         this.baseURL = tripFeedURL;
     }
+    //code block below kept for testing purposes, but commented so that is does not affect functioning methods
     // willSendRequest(request){
     //     request.headers.set('x-api-key', APIkey )
     // }
-    async checkURL(){
-        // let chunk = await this.get('/', undefined, {
-        //     header: {"x-api-key": APIkey  }
-        // })
-        let chunk = await this.get('/')
+    async checkURL(){ //checkURL will only work if willSendRequest is enabled
+        let chunk = await this.get('/') 
         return JSON.stringify(chunk)
     }
 
@@ -43,7 +43,6 @@ class TripFeed extends RESTDataSource{
                   data = Buffer.concat(data);
                   const feed =
                     GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(data);
-                //    let stringed = JSON.stringify(feed)
                   resolve(feed);
                 });
               })
@@ -52,22 +51,10 @@ class TripFeed extends RESTDataSource{
                 reject(err);
               });
           });
-        
-            // const URI = URIs[train.toUpperCase()];
-            // const chunk = await this.get(`${URI}`)
-            //     // let data = [];
-            //     // data.push(chunk)
-            //     // data = Buffer.concat(data);
-            //     console.log(chunk)
-            //     let data = Buffer.from(chunk)
-            //     const feed = GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(data);
-            //     return feed
-       
     }
 
       async getStatus(train, direction = "NS"){
           const feed = await this.getStatusFeed(train)
-          console.log(feed.entity)
 
           let trips = feed.entity
             .filter((entity) => entity.tripUpdate)
@@ -91,6 +78,7 @@ class TripFeed extends RESTDataSource{
             };
             return status;
       }
+
       async getArrivalTimes(station, train, direction="NS"){
         const status = await this.getStatus(train, direction.toUpperCase());
 
@@ -115,10 +103,60 @@ class TripFeed extends RESTDataSource{
                 stationId: station,
                 nextArrivals,
             };
-        
-            return JSON.stringify(arrivals)
-      }
+            
+            const nextTrain = nextArrivals.map((train)=>train.arrivalTime)
 
+            // consolelog is correct but 
+            // console.log(nextTrain)
+            // return nextTrain[0]
+            // return nextTrain
+            return arrivals
+            // return JSON.stringify(arrivals)
+      }
+      getStationById(stationId){
+        return {
+          id: stationId,
+          name: allStations[stationId].stop_name,
+          lat: allStations[stationId].stop_lat,
+          lon: allStations[stationId].stop_lon,
+          borough: allStations[stationId].borough,
+          accessible: allStations[stationId].accessible,
+          trainLines: JSON.stringify(allStations[stationId].lines_at)
+        }
+      }
+      // getTrainsByStation(stationId){
+      //   return {
+      //     trainLines: allStations[stationId].lines_at
+      //   }
+      // }
+      getStationByName(stationName){
+        for(let station in allStations){
+          let stationInfo = allStations[station]
+          for(let info in stationInfo){
+            let datapoint = stationInfo[info]
+            if(datapoint === stationName){
+              let id = stationInfo.stop_id
+              console.log(id)
+              return this.getStationById(id)
+            }
+          }
+        }
+      }
+      getStationByLatAndLong(lat, long){
+        for(let station in allStations){
+          let stationInfo = allStations[station]
+          for(let info in stationInfo){
+            let datapoint = stationInfo[info]
+            if(datapoint === String(lat)){
+              console.log(datapoint, stationInfo.stop_lon)
+              if(stationInfo.stop_lon === String(long)){
+                let id = stationInfo.stop_id
+                return this.getStationById(id)
+              }
+            }
+          }
+        }
+      }
 
 }
 
@@ -140,5 +178,11 @@ server.listen().then(({ url }) => {
     console.log(`🚍 JML server ready at ${url}`);
   });
 
-
-
+// mapping out object returned
+  // DATA  {
+  //               "__typename": "TripUpdate", 
+  //               "nextArrivals": 
+  //               [{"__typename": "Arrival", "arrivalTime": 6}, 
+  //               {"__typename": "Arrival", "arrivalTime": 14}, 
+  //               {"__typename": "Arrival", "arrivalTime": 22}, 
+  //               {"__typename": "Arrival", "arrivalTime": 30}]}
