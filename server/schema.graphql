@@ -2,8 +2,28 @@ type Query {
     info: String!
     station (id: ID): Station
     # route: Route
-    arrivalTimes(stationId: String, train: String, direction: String): String
+    # arrivalTimes(stationId: String, train: String, direction: String): String  #WORKS
+    # arrivalTimes(stationId: String, train: String, direction: String): Int #WORKS
+    # arrivalTimes(stationId: String, train: String, direction: String): Time
+    arrivalTimes(stationId: String, train: String, direction: String): TripUpdate
 }
+
+# type Time {
+#     min: Int
+# }
+
+type TripUpdate {
+    routeId: String
+    stationId: String
+    nextArrivals: [Arrival]
+}
+
+type Arrival {
+    tripId: String
+    direction: String
+    arrivalTime: Int
+}
+
 
 type Station {
     id: ID!

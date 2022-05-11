@@ -6,30 +6,31 @@ import {
   ApolloProvider,
   ApolloClient,
   InMemoryCache,
-  createHttpLink,
   gql,
 } from "@apollo/client";
 
-const httpLink= createHttpLink({
-  uri: 'http://localhost:4000'
-});
-
 const client = new ApolloClient({
   cache: new InMemoryCache,
-  link: httpLink,
+  uri: 'http://localhost:4000'
 });
 
 client
       .query({
           query: gql`
-              query {
-    	          stationInfo(stationId:"101"){
-                  name
-                    }
-                  }
+            query {
+              arrivalTimes(stationId:"106", train:"1", direction:"s"){
+                nextArrivals{
+                  arrivalTime
+                }
+              }
+            }
           `
       })
-      .then(result => console.log(result))
+      .then(result =>
+        {
+          console.log('graphQL contact made')
+          console.log(result)
+        })
 
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
       {/* <StatusBar style="auto" /> */}
       <ApolloProvider client={client}>
         <Map />
+        {/* <Text>Hello</Text> */}
       </ApolloProvider>
     </View>
   );

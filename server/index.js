@@ -98,19 +98,19 @@ class TripFeed extends RESTDataSource {
             .filter((arrival) => arrival.arrivalTime)
             .sort((a, b) => (a.arrivalTime > b.arrivalTime ? 1 : -1))
 
-            // const arrivals = {
-            //     routeId: train,
-            //     stationId: station,
-            //     nextArrivals,
-            // };
+            const arrivals = {
+                routeId: train,
+                stationId: station,
+                nextArrivals,
+            };
             
             const nextTrain = nextArrivals.map((train)=>train.arrivalTime)
 
             // consolelog is correct but 
-            console.log(nextTrain)
-            return JSON.stringify(nextTrain)
+            // console.log(nextTrain)
+            // return nextTrain[0]
             // return nextTrain
-            // return arrivals
+            return arrivals
             // return JSON.stringify(arrivals)
       }
       getStationById(stationId){
@@ -178,5 +178,11 @@ server.listen().then(({ url }) => {
     console.log(`🚍 JML server ready at ${url}`);
   });
 
-
-
+// mapping out object returned
+  // DATA  {
+  //               "__typename": "TripUpdate", 
+  //               "nextArrivals": 
+  //               [{"__typename": "Arrival", "arrivalTime": 6}, 
+  //               {"__typename": "Arrival", "arrivalTime": 14}, 
+  //               {"__typename": "Arrival", "arrivalTime": 22}, 
+  //               {"__typename": "Arrival", "arrivalTime": 30}]}

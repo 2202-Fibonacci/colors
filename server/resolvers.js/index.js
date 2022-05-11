@@ -4,6 +4,7 @@ module.exports = {
     Query: {
         info: () => 'This is JML group MTA app',
         station: (root, {id}, {dataSources}) => dataSources.tripFeed.getStationById(id),
+        arrivalTimes: async (_, {stationId, train, direction}, { dataSources}) => await dataSources.tripFeed.getArrivalTimes(stationId, train, direction),
         // stations: (root, _, {allStations}) => allStations
     },
     Station: {
