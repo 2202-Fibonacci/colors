@@ -1,5 +1,5 @@
 export const allStations = {
-  "101": {
+  101: {
     stop_id: "101",
     stop_code: "",
     stop_name: "Van Cortlandt Park - 242 St",
@@ -13,10 +13,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "bronx",
     accessible: false,
-	north_label: "",
-	south_label: "Manhattan",
+    north_label: "",
+    south_label: "Manhattan",
   },
-  "103": {
+  103: {
     stop_id: "103",
     stop_code: "",
     stop_name: "238 St",
@@ -30,10 +30,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "bronx",
     accessible: false,
-	north_label: "242 St",
-	south_label: "Manhattan",
+    north_label: "242 St",
+    south_label: "Manhattan",
   },
-  "104": {
+  104: {
     stop_id: "104",
     stop_code: "",
     stop_name: "231 St",
@@ -47,10 +47,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "bronx",
     accessible: true,
-	north_label: "242 St",
-	south_label: "Manhattan",
+    north_label: "242 St",
+    south_label: "Manhattan",
   },
-  "106": {
+  106: {
     stop_id: "106",
     stop_code: "",
     stop_name: "Marble Hill - 225 St",
@@ -64,10 +64,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "242 St",
-	south_label: "Downtown",
+    north_label: "242 St",
+    south_label: "Downtown",
   },
-  "107": {
+  107: {
     stop_id: "107",
     stop_code: "",
     stop_name: "215 St",
@@ -81,10 +81,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "The Bronx",
-	south_label: "Downtown",
+    north_label: "The Bronx",
+    south_label: "Downtown",
   },
-  "108": {
+  108: {
     stop_id: "108",
     stop_code: "",
     stop_name: "207 St",
@@ -98,10 +98,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "109": {
+  109: {
     stop_id: "109",
     stop_code: "",
     stop_name: "Dyckman St",
@@ -115,10 +115,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: true,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "110": {
+  110: {
     stop_id: "110",
     stop_code: "",
     stop_name: "191 St",
@@ -132,10 +132,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "111": {
+  111: {
     stop_id: "111",
     stop_code: "",
     stop_name: "181 St",
@@ -149,10 +149,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "112": {
+  112: {
     stop_id: "112",
     stop_code: "",
     stop_name: "168 St - Washington Hts",
@@ -166,10 +166,10 @@ export const allStations = {
     lines_at: ["A", "C", "1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "113": {
+  113: {
     stop_id: "113",
     stop_code: "",
     stop_name: "157 St",
@@ -183,10 +183,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "114": {
+  114: {
     stop_id: "114",
     stop_code: "",
     stop_name: "145 St",
@@ -200,10 +200,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "115": {
+  115: {
     stop_id: "115",
     stop_code: "",
     stop_name: "137 St - City College",
@@ -217,10 +217,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "116": {
+  116: {
     stop_id: "116",
     stop_code: "",
     stop_name: "125 St",
@@ -234,10 +234,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "117": {
+  117: {
     stop_id: "117",
     stop_code: "",
     stop_name: "116 St - Columbia University",
@@ -251,10 +251,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "118": {
+  118: {
     stop_id: "118",
     stop_code: "",
     stop_name: "Cathedral Pkwy",
@@ -268,10 +268,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "119": {
+  119: {
     stop_id: "119",
     stop_code: "",
     stop_name: "103 St",
@@ -285,10 +285,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "120": {
+  120: {
     stop_id: "120",
     stop_code: "",
     stop_name: "96 St",
@@ -302,10 +302,10 @@ export const allStations = {
     lines_at: ["1", "2", "3"],
     borough: "manhattan",
     accessible: true,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown & Brooklyn",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown & Brooklyn",
   },
-  "121": {
+  121: {
     stop_id: "121",
     stop_code: "",
     stop_name: "86 St",
@@ -319,10 +319,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "122": {
+  122: {
     stop_id: "122",
     stop_code: "",
     stop_name: "79 St",
@@ -336,10 +336,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "123": {
+  123: {
     stop_id: "123",
     stop_code: "",
     stop_name: "72 St",
@@ -353,10 +353,10 @@ export const allStations = {
     lines_at: ["1", "2", "3"],
     borough: "manhattan",
     accessible: true,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown & Brooklyn",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown & Brooklyn",
   },
-  "124": {
+  124: {
     stop_id: "124",
     stop_code: "",
     stop_name: "66 St - Lincoln Center",
@@ -370,10 +370,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: true,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "125": {
+  125: {
     stop_id: "125",
     stop_code: "",
     stop_name: "59 St - Columbus Circle",
@@ -387,10 +387,10 @@ export const allStations = {
     lines_at: ["1", "2", "3", "A", "C", "B", "D"],
     borough: "manhattan",
     accessible: true,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "126": {
+  126: {
     stop_id: "126",
     stop_code: "",
     stop_name: "50 St",
@@ -404,10 +404,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "127": {
+  127: {
     stop_id: "127",
     stop_code: "",
     stop_name: "Times Sq - 42 St",
@@ -421,10 +421,10 @@ export const allStations = {
     lines_at: ["1", "2", "3", "7", "N", "Q", "R", "W"],
     borough: "manhattan",
     accessible: true,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown & Brooklyn",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown & Brooklyn",
   },
-  "128": {
+  128: {
     stop_id: "128",
     stop_code: "",
     stop_name: "34 St - Penn Station",
@@ -438,10 +438,10 @@ export const allStations = {
     lines_at: ["1", "2", "3"],
     borough: "manhattan",
     accessible: true,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown & Brooklyn",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown & Brooklyn",
   },
-  "129": {
+  129: {
     stop_id: "129",
     stop_code: "",
     stop_name: "28 St",
@@ -455,10 +455,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "130": {
+  130: {
     stop_id: "130",
     stop_code: "",
     stop_name: "23 St",
@@ -472,10 +472,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "131": {
+  131: {
     stop_id: "131",
     stop_code: "",
     stop_name: "18 St",
@@ -489,10 +489,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "132": {
+  132: {
     stop_id: "132",
     stop_code: "",
     stop_name: "14 St",
@@ -506,10 +506,10 @@ export const allStations = {
     lines_at: ["1", "2", "3"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown & Brooklyn",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown & Brooklyn",
   },
-  "133": {
+  133: {
     stop_id: "133",
     stop_code: "",
     stop_name: "Christopher St - Sheridan Sq",
@@ -523,10 +523,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "134": {
+  134: {
     stop_id: "134",
     stop_code: "",
     stop_name: "Houston St",
@@ -540,10 +540,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "135": {
+  135: {
     stop_id: "135",
     stop_code: "",
     stop_name: "Canal St",
@@ -557,10 +557,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "136": {
+  136: {
     stop_id: "136",
     stop_code: "",
     stop_name: "Franklin St",
@@ -574,10 +574,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "137": {
+  137: {
     stop_id: "137",
     stop_code: "",
     stop_name: "Chambers St",
@@ -591,10 +591,10 @@ export const allStations = {
     lines_at: ["1", "2", "3"],
     borough: "manhattan",
     accessible: true,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown & Brooklyn",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown & Brooklyn",
   },
-  "138": {
+  138: {
     stop_id: "138",
     stop_code: "",
     stop_name: "WTC Cortlandt St",
@@ -608,10 +608,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: true,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "139": {
+  139: {
     stop_id: "139",
     stop_code: "",
     stop_name: "Rector St",
@@ -625,10 +625,10 @@ export const allStations = {
     lines_at: ["1"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown",
   },
-  "140": { //same as 142
+  140: { //same as 142
     stop_id: "140",
     stop_code: "",
     stop_name: "South Ferry Loop",
@@ -642,10 +642,10 @@ export const allStations = {
     lines_at: ["1", "R", "W"],
     borough: "manhattan",
     accessible: true,
-	north_label: "Uptown & The Bronx",
-	south_label: "",
+    north_label: "Uptown & The Bronx",
+    south_label: "",
   },
-  "142": { // same as 140
+  142: { // same as 140
     stop_id: "142",
     stop_code: "",
     stop_name: "South Ferry",
@@ -659,10 +659,10 @@ export const allStations = {
     lines_at: ["1", "R", "W"],
     borough: "manhattan",
     accessible: true,
-	north_label: "Uptown & The Bronx",
-	south_label: "",
+    north_label: "Uptown & The Bronx",
+    south_label: "",
   },
-  "201": {
+  201: {
     stop_id: "201",
     stop_code: "",
     stop_name: "Wakefield - 241 St",
@@ -676,10 +676,10 @@ export const allStations = {
     lines_at: ["2"],
     borough: "bronx",
     accessible: false,
-	north_label: "",
-	south_label: "Manhattan",
+    north_label: "",
+    south_label: "Manhattan",
   },
-  "204": {
+  204: {
     stop_id: "204",
     stop_code: "",
     stop_name: "Nereid Av",
@@ -693,10 +693,10 @@ export const allStations = {
     lines_at: ["2"],
     borough: "bronx",
     accessible: false,
-	north_label: "Wakefield - 241 St",
-	south_label: "Manhattan",
+    north_label: "Wakefield - 241 St",
+    south_label: "Manhattan",
   },
-  "205": {
+  205: {
     stop_id: "205",
     stop_code: "",
     stop_name: "233 St",
@@ -710,10 +710,10 @@ export const allStations = {
     lines_at: ["2"],
     borough: "bronx",
     accessible: true,
-	north_label: "Wakefield - 241 St",
-	south_label: "Manhattan",
+    north_label: "Wakefield - 241 St",
+    south_label: "Manhattan",
   },
-  "206": {
+  206: {
     stop_id: "206",
     stop_code: "",
     stop_name: "225 St",
@@ -727,10 +727,10 @@ export const allStations = {
     lines_at: ["2"],
     borough: "bronx",
     accessible: false,
-	north_label: "Wakefield - 241 St",
-	south_label: "Manhattan",
+    north_label: "Wakefield - 241 St",
+    south_label: "Manhattan",
   },
-  "207": {
+  207: {
     stop_id: "207",
     stop_code: "",
     stop_name: "219 St",
@@ -744,10 +744,10 @@ export const allStations = {
     lines_at: ["2"],
     borough: "bronx",
     accessible: false,
-	north_label: "Wakefield - 241 St",
-	south_label: "Manhattan",
+    north_label: "Wakefield - 241 St",
+    south_label: "Manhattan",
   },
-  "208": {
+  208: {
     stop_id: "208",
     stop_code: "",
     stop_name: "Gun Hill Rd",
@@ -761,10 +761,10 @@ export const allStations = {
     lines_at: ["2"],
     borough: "bronx",
     accessible: true,
-	north_label: "Wakefield - 241 St",
-	south_label: "Manhattan",
+    north_label: "Wakefield - 241 St",
+    south_label: "Manhattan",
   },
-  "209": {
+  209: {
     stop_id: "209",
     stop_code: "",
     stop_name: "Burke Av",
@@ -778,10 +778,10 @@ export const allStations = {
     lines_at: ["2"],
     borough: "bronx",
     accessible: false,
-	north_label: "Wakefield - 241 St",
-	south_label: "Manhattan",
+    north_label: "Wakefield - 241 St",
+    south_label: "Manhattan",
   },
-  "210": {
+  210: {
     stop_id: "210",
     stop_code: "",
     stop_name: "Allerton Av",
@@ -795,10 +795,10 @@ export const allStations = {
     lines_at: ["2"],
     borough: "bronx",
     accessible: false,
-	north_label: "Wakefield - 241 St",
-	south_label: "Manhattan",
+    north_label: "Wakefield - 241 St",
+    south_label: "Manhattan",
   },
-  "211": {
+  211: {
     stop_id: "211",
     stop_code: "",
     stop_name: "Pelham Pkwy",
@@ -812,10 +812,10 @@ export const allStations = {
     lines_at: ["2"],
     borough: "bronx",
     accessible: true,
-	north_label: "Wakefield - 241 St",
-	south_label: "Manhattan",
+    north_label: "Wakefield - 241 St",
+    south_label: "Manhattan",
   },
-  "212": {
+  212: {
     stop_id: "212",
     stop_code: "",
     stop_name: "Bronx Park East",
@@ -829,10 +829,10 @@ export const allStations = {
     lines_at: ["2"],
     borough: "bronx",
     accessible: false,
-	north_label: "Wakefield - 241 St",
-	south_label: "Manhattan",
+    north_label: "Wakefield - 241 St",
+    south_label: "Manhattan",
   },
-  "213": {
+  213: {
     stop_id: "213",
     stop_code: "",
     stop_name: "E 180 St",
@@ -846,10 +846,10 @@ export const allStations = {
     lines_at: ["2", "5"],
     borough: "bronx",
     accessible: true,
-	north_label: "Wakefield - Eastchester",
-	south_label: "Manhattan",
+    north_label: "Wakefield - Eastchester",
+    south_label: "Manhattan",
   },
-  "214": {
+  214: {
     stop_id: "214",
     stop_code: "",
     stop_name: "West Farms Sq - E Tremont Av",
@@ -863,10 +863,10 @@ export const allStations = {
     lines_at: ["2", "5"],
     borough: "bronx",
     accessible: false,
-	north_label: "Wakefield - Eastchester",
-	south_label: "Manhattan",
+    north_label: "Wakefield - Eastchester",
+    south_label: "Manhattan",
   },
-  "215": {
+  215: {
     stop_id: "215",
     stop_code: "",
     stop_name: "174 St",
@@ -880,10 +880,10 @@ export const allStations = {
     lines_at: ["2", "5"],
     borough: "bronx",
     accessible: false,
-	north_label: "Wakefield - Eastchester",
-	south_label: "Manhattan",
+    north_label: "Wakefield - Eastchester",
+    south_label: "Manhattan",
   },
-  "216": {
+  216: {
     stop_id: "216",
     stop_code: "",
     stop_name: "Freeman St",
@@ -897,10 +897,10 @@ export const allStations = {
     lines_at: ["2", "5"],
     borough: "bronx",
     accessible: false,
-	north_label: "Wakefield - Eastchester",
-	south_label: "Manhattan",
+    north_label: "Wakefield - Eastchester",
+    south_label: "Manhattan",
   },
-  "217": {
+  217: {
     stop_id: "217",
     stop_code: "",
     stop_name: "Simpson St",
@@ -914,10 +914,10 @@ export const allStations = {
     lines_at: ["2", "5"],
     borough: "bronx",
     accessible: true,
-	north_label: "Wakefield - Eastchester",
-	south_label: "Manhattan",
+    north_label: "Wakefield - Eastchester",
+    south_label: "Manhattan",
   },
-  "218": {
+  218: {
     stop_id: "218",
     stop_code: "",
     stop_name: "Intervale Av",
@@ -931,10 +931,10 @@ export const allStations = {
     lines_at: ["2", "5"],
     borough: "bronx",
     accessible: false,
-	north_label: "Wakefield - Eastchester",
-	south_label: "Manhattan",
+    north_label: "Wakefield - Eastchester",
+    south_label: "Manhattan",
   },
-  "219": {
+  219: {
     stop_id: "219",
     stop_code: "",
     stop_name: "Prospect Av",
@@ -948,10 +948,10 @@ export const allStations = {
     lines_at: ["2", "5"],
     borough: "bronx",
     accessible: false,
-	north_label: "Wakefield - Eastchester",
-	south_label: "Manhattan",
+    north_label: "Wakefield - Eastchester",
+    south_label: "Manhattan",
   },
-  "220": {
+  220: {
     stop_id: "220",
     stop_code: "",
     stop_name: "Jackson Av",
@@ -965,10 +965,10 @@ export const allStations = {
     lines_at: ["2", "5"],
     borough: "bronx",
     accessible: false,
-	north_label: "Wakefield - Eastchester",
-	south_label: "Manhattan",
+    north_label: "Wakefield - Eastchester",
+    south_label: "Manhattan",
   },
-  "221": {
+  221: {
     stop_id: "221",
     stop_code: "",
     stop_name: "3 Av - 149 St",
@@ -982,10 +982,10 @@ export const allStations = {
     lines_at: ["2", "5"],
     borough: "bronx",
     accessible: true,
-	north_label: "Wakefield - Eastchester",
-	south_label: "Manhattan",
+    north_label: "Wakefield - Eastchester",
+    south_label: "Manhattan",
   },
-  "222": {
+  222: {
     stop_id: "222",
     stop_code: "",
     stop_name: "149 St - Grand Concourse",
@@ -999,10 +999,10 @@ export const allStations = {
     lines_at: ["2", "4", "5"],
     borough: "bronx",
     accessible: false,
-	north_label: "Wakefield - Eastchester",
-	south_label: "Manhattan",
+    north_label: "Wakefield - Eastchester",
+    south_label: "Manhattan",
   },
-  "224": {
+  224: {
     stop_id: "224",
     stop_code: "",
     stop_name: "135 St",
@@ -1016,10 +1016,10 @@ export const allStations = {
     lines_at: ["2", "3"],
     borough: "manhattan",
     accessible: true,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown & Brooklyn",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown & Brooklyn",
   },
-  "225": {
+  225: {
     stop_id: "225",
     stop_code: "",
     stop_name: "125 St",
@@ -1033,10 +1033,10 @@ export const allStations = {
     lines_at: ["2", "3"],
     borough: "manhattan",
     accessible: false,
-	north_label: "Uptown & The Bronx",
-	south_label: "Downtown & Brooklyn",
+    north_label: "Uptown & The Bronx",
+    south_label: "Downtown & Brooklyn",
   },
-  "226": {
+  226: {
     stop_id: "226",
     stop_code: "",
     stop_name: "116 St",
@@ -1053,7 +1053,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown & Brooklyn",
   },
-  "227": {
+  227: {
     stop_id: "227",
     stop_code: "",
     stop_name: "Central Park North (110 St)",
@@ -1070,7 +1070,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown & Brooklyn",
   },
-  "228": {
+  228: {
     stop_id: "228",
     stop_code: "",
     stop_name: "Park Pl",
@@ -1087,7 +1087,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown & Brooklyn",
   },
-  "229": {
+  229: {
     stop_id: "229",
     stop_code: "",
     stop_name: "Fulton St",
@@ -1104,7 +1104,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown & Brooklyn",
   },
-  "230": {
+  230: {
     stop_id: "230",
     stop_code: "",
     stop_name: "Wall St",
@@ -1121,7 +1121,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Brooklyn",
   },
-  "231": {
+  231: {
     stop_id: "231",
     stop_code: "",
     stop_name: "Clark St",
@@ -1138,7 +1138,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush - New Lots",
   },
-  "232": {
+  232: {
     stop_id: "232",
     stop_code: "",
     stop_name: "Borough Hall",
@@ -1155,7 +1155,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush - New Lots",
   },
-  "233": {
+  233: {
     stop_id: "233",
     stop_code: "",
     stop_name: "Hoyt St",
@@ -1172,7 +1172,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush - New Lots",
   },
-  "234": {
+  234: {
     stop_id: "234",
     stop_code: "",
     stop_name: "Nevins St",
@@ -1189,7 +1189,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush - Utica - New Lots",
   },
-  "235": {
+  235: {
     stop_id: "235",
     stop_code: "",
     stop_name: "Atlantic Av - Barclays Ctr",
@@ -1206,7 +1206,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush - New Lots",
   },
-  "236": {
+  236: {
     stop_id: "236",
     stop_code: "",
     stop_name: "Bergen St",
@@ -1223,7 +1223,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush - New Lots",
   },
-  "237": {
+  237: {
     stop_id: "237",
     stop_code: "",
     stop_name: "Grand Army Plaza",
@@ -1240,7 +1240,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush - New Lots",
   },
-  "238": {
+  238: {
     stop_id: "238",
     stop_code: "",
     stop_name: "Eastern Pkwy - Brooklyn Museum",
@@ -1257,7 +1257,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush - New Lots",
   },
-  "239": {
+  239: {
     stop_id: "239",
     stop_code: "",
     stop_name: "Franklin Av - Medgar Evers College",
@@ -1274,7 +1274,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush - Utica - New Lots",
   },
-  "241": {
+  241: {
     stop_id: "241",
     stop_code: "",
     stop_name: "President St - Medgar Evers College",
@@ -1291,7 +1291,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush",
   },
-  "242": {
+  242: {
     stop_id: "242",
     stop_code: "",
     stop_name: "Sterling St",
@@ -1308,7 +1308,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush",
   },
-  "243": {
+  243: {
     stop_id: "243",
     stop_code: "",
     stop_name: "Winthrop St",
@@ -1325,7 +1325,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush",
   },
-  "244": {
+  244: {
     stop_id: "244",
     stop_code: "",
     stop_name: "Church Av",
@@ -1342,7 +1342,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush",
   },
-  "245": {
+  245: {
     stop_id: "245",
     stop_code: "",
     stop_name: "Beverly Rd",
@@ -1359,7 +1359,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush",
   },
-  "246": {
+  246: {
     stop_id: "246",
     stop_code: "",
     stop_name: "Newkirk Av - Little Haiti",
@@ -1376,7 +1376,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush",
   },
-  "247": {
+  247: {
     stop_id: "247",
     stop_code: "",
     stop_name: "Flatbush Av - Brooklyn College",
@@ -1393,7 +1393,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "",
   },
-  "248": { // lumped in w/President-MEC
+  248: { // lumped in w/President-MEC
     stop_id: "248",
     stop_code: "",
     stop_name: "Nostrand Av",
@@ -1410,7 +1410,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "New Lots",
   },
-  "249": {
+  249: {
     stop_id: "249",
     stop_code: "",
     stop_name: "Kingston Av",
@@ -1427,7 +1427,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "New Lots",
   },
-  "250": {
+  250: {
     stop_id: "250",
     stop_code: "",
     stop_name: "Crown Hts - Utica Av",
@@ -1444,7 +1444,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "New Lots",
   },
-  "251": {
+  251: {
     stop_id: "251",
     stop_code: "",
     stop_name: "Sutter Av - Rutland Rd",
@@ -1461,7 +1461,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "New Lots",
   },
-  "252": {
+  252: {
     stop_id: "252",
     stop_code: "",
     stop_name: "Saratoga Av",
@@ -1478,7 +1478,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "New Lots",
   },
-  "253": {
+  253: {
     stop_id: "253",
     stop_code: "",
     stop_name: "Rockaway Av",
@@ -1495,7 +1495,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "New Lots",
   },
-  "254": {
+  254: {
     stop_id: "254",
     stop_code: "",
     stop_name: "Junius St",
@@ -1512,7 +1512,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "New Lots",
   },
-  "255": {
+  255: {
     stop_id: "255",
     stop_code: "",
     stop_name: "Pennsylvania Av",
@@ -1529,7 +1529,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "New Lots",
   },
-  "256": {
+  256: {
     stop_id: "256",
     stop_code: "",
     stop_name: "Van Siclen Av",
@@ -1546,7 +1546,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "New Lots",
   },
-  "257": {
+  257: {
     stop_id: "257",
     stop_code: "",
     stop_name: "New Lots Av",
@@ -1563,7 +1563,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "",
   },
-  "301": {
+  301: {
     stop_id: "301",
     stop_code: "",
     stop_name: "Harlem - 148 St",
@@ -1580,7 +1580,7 @@ export const allStations = {
     north_label: "",
     south_label: "Downtown & Brooklyn",
   },
-  "302": {
+  302: {
     stop_id: "302",
     stop_code: "",
     stop_name: "145 St",
@@ -1597,7 +1597,7 @@ export const allStations = {
     north_label: "148 St",
     south_label: "Downtown & Brooklyn",
   },
-  "401": {
+  401: {
     stop_id: "401",
     stop_code: "",
     stop_name: "Woodlawn",
@@ -1614,7 +1614,7 @@ export const allStations = {
     north_label: "",
     south_label: "Manhattan",
   },
-  "402": {
+  402: {
     stop_id: "402",
     stop_code: "",
     stop_name: "Mosholu Pkwy",
@@ -1631,7 +1631,7 @@ export const allStations = {
     north_label: "Woodlawn",
     south_label: "Manhattan",
   },
-  "405": {
+  405: {
     stop_id: "405",
     stop_code: "",
     stop_name: "Bedford Park Blvd - Lehman College",
@@ -1648,7 +1648,7 @@ export const allStations = {
     north_label: "Woodlawn",
     south_label: "Manhattan",
   },
-  "406": {
+  406: {
     stop_id: "406",
     stop_code: "",
     stop_name: "Kingsbridge Rd",
@@ -1665,7 +1665,7 @@ export const allStations = {
     north_label: "Woodlawn",
     south_label: "Manhattan",
   },
-  "407": {
+  407: {
     stop_id: "407",
     stop_code: "",
     stop_name: "Fordham Rd",
@@ -1682,7 +1682,7 @@ export const allStations = {
     north_label: "Woodlawn",
     south_label: "Manhattan",
   },
-  "408": {
+  408: {
     stop_id: "408",
     stop_code: "",
     stop_name: "183 St",
@@ -1699,7 +1699,7 @@ export const allStations = {
     north_label: "Woodlawn",
     south_label: "Manhattan",
   },
-  "409": {
+  409: {
     stop_id: "409",
     stop_code: "",
     stop_name: "Burnside Av",
@@ -1716,7 +1716,7 @@ export const allStations = {
     north_label: "Woodlawn",
     south_label: "Manhattan",
   },
-  "410": {
+  410: {
     stop_id: "410",
     stop_code: "",
     stop_name: "176 St",
@@ -1733,7 +1733,7 @@ export const allStations = {
     north_label: "Woodlawn",
     south_label: "Manhattan",
   },
-  "411": {
+  411: {
     stop_id: "411",
     stop_code: "",
     stop_name: "Mt Eden Av",
@@ -1750,7 +1750,7 @@ export const allStations = {
     north_label: "Woodlawn",
     south_label: "Manhattan",
   },
-  "412": {
+  412: {
     stop_id: "412",
     stop_code: "",
     stop_name: "170 St",
@@ -1767,7 +1767,7 @@ export const allStations = {
     north_label: "Woodlawn",
     south_label: "Manhattan",
   },
-  "413": {
+  413: {
     stop_id: "413",
     stop_code: "",
     stop_name: "167 St",
@@ -1784,7 +1784,7 @@ export const allStations = {
     north_label: "Woodlawn",
     south_label: "Manhattan",
   },
-  "414": {
+  414: {
     stop_id: "414",
     stop_code: "",
     stop_name: "161 St - Yankee Stadium",
@@ -1801,7 +1801,7 @@ export const allStations = {
     north_label: "Woodlawn",
     south_label: "Manhattan",
   },
-  "415": {
+  415: {
     stop_id: "415",
     stop_code: "",
     stop_name: "149 St - Grand Concourse",
@@ -1818,7 +1818,7 @@ export const allStations = {
     north_label: "Woodlawn",
     south_label: "Manhattan",
   },
-  "416": {
+  416: {
     stop_id: "416",
     stop_code: "",
     stop_name: "138 St - Grand Concourse",
@@ -1835,7 +1835,7 @@ export const allStations = {
     north_label: "Woodlawn - Eastchester",
     south_label: "Manhattan",
   },
-  "418": {
+  418: {
     stop_id: "418",
     stop_code: "",
     stop_name: "Fulton St",
@@ -1852,7 +1852,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown & Brooklyn",
   },
-  "419": {
+  419: {
     stop_id: "419",
     stop_code: "",
     stop_name: "Wall St",
@@ -1869,7 +1869,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown & Brooklyn",
   },
-  "420": {
+  420: {
     stop_id: "420",
     stop_code: "",
     stop_name: "Bowling Green",
@@ -1886,7 +1886,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Brooklyn",
   },
-  "423": {
+  423: {
     stop_id: "423",
     stop_code: "",
     stop_name: "Borough Hall",
@@ -1903,7 +1903,7 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "Flatbush - Utica",
   },
-  "501": {
+  501: {
     stop_id: "501",
     stop_code: "",
     stop_name: "Eastchester - Dyre Av",
@@ -1920,7 +1920,7 @@ export const allStations = {
     north_label: "",
     south_label: "Manhattan",
   },
-  "502": {
+  502: {
     stop_id: "502",
     stop_code: "",
     stop_name: "Baychester Av",
@@ -1937,7 +1937,7 @@ export const allStations = {
     north_label: "Eastchester - Dyre Av",
     south_label: "Manhattan",
   },
-  "503": {
+  503: {
     stop_id: "503",
     stop_code: "",
     stop_name: "Gun Hill Rd",
@@ -1954,7 +1954,7 @@ export const allStations = {
     north_label: "Eastchester - Dyre Av",
     south_label: "Manhattan",
   },
-  "504": {
+  504: {
     stop_id: "504",
     stop_code: "",
     stop_name: "Pelham Pkwy",
@@ -1971,7 +1971,7 @@ export const allStations = {
     north_label: "Eastchester - Dyre Av",
     south_label: "Manhattan",
   },
-  "505": {
+  505: {
     stop_id: "505",
     stop_code: "",
     stop_name: "Morris Park",
@@ -1988,7 +1988,7 @@ export const allStations = {
     north_label: "Eastchester - Dyre Av",
     south_label: "Manhattan",
   },
-  "601": {
+  601: {
     stop_id: "601",
     stop_code: "",
     stop_name: "Pelham Bay Park",
@@ -2005,7 +2005,7 @@ export const allStations = {
     north_label: "",
     south_label: "Manhattan",
   },
-  "602": {
+  602: {
     stop_id: "602",
     stop_code: "",
     stop_name: "Buhre Av",
@@ -2022,7 +2022,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "603": {
+  603: {
     stop_id: "603",
     stop_code: "",
     stop_name: "Middletown Rd",
@@ -2039,7 +2039,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "604": {
+  604: {
     stop_id: "604",
     stop_code: "",
     stop_name: "Westchester Sq - E Tremont Av",
@@ -2056,7 +2056,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "606": {
+  606: {
     stop_id: "606",
     stop_code: "",
     stop_name: "Zerega Av",
@@ -2073,7 +2073,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "607": {
+  607: {
     stop_id: "607",
     stop_code: "",
     stop_name: "Castle Hill Av",
@@ -2090,7 +2090,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "608": {
+  608: {
     stop_id: "608",
     stop_code: "",
     stop_name: "Parkchester",
@@ -2107,7 +2107,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "609": {
+  609: {
     stop_id: "609",
     stop_code: "",
     stop_name: "St Lawrence Av",
@@ -2124,7 +2124,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "610": {
+  610: {
     stop_id: "610",
     stop_code: "",
     stop_name: "Morrison Av- Sound View",
@@ -2141,7 +2141,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "611": {
+  611: {
     stop_id: "611",
     stop_code: "",
     stop_name: "Elder Av",
@@ -2158,7 +2158,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "612": {
+  612: {
     stop_id: "612",
     stop_code: "",
     stop_name: "Whitlock Av",
@@ -2175,7 +2175,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "613": {
+  613: {
     stop_id: "613",
     stop_code: "",
     stop_name: "Hunts Point Av",
@@ -2192,7 +2192,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "614": {
+  614: {
     stop_id: "614",
     stop_code: "",
     stop_name: "Longwood Av",
@@ -2209,7 +2209,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "615": {
+  615: {
     stop_id: "615",
     stop_code: "",
     stop_name: "E 149 St",
@@ -2226,7 +2226,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "616": {
+  616: {
     stop_id: "616",
     stop_code: "",
     stop_name: "E 143 St - St Mary's St",
@@ -2243,7 +2243,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "617": {
+  617: {
     stop_id: "617",
     stop_code: "",
     stop_name: "Cypress Av",
@@ -2260,7 +2260,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "618": {
+  618: {
     stop_id: "618",
     stop_code: "",
     stop_name: "Brook Av",
@@ -2277,7 +2277,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "619": {
+  619: {
     stop_id: "619",
     stop_code: "",
     stop_name: "3 Av - 138 St",
@@ -2294,7 +2294,7 @@ export const allStations = {
     north_label: "Pelham Bay Park",
     south_label: "Manhattan",
   },
-  "621": {
+  621: {
     stop_id: "621",
     stop_code: "",
     stop_name: "125 St",
@@ -2311,7 +2311,7 @@ export const allStations = {
     north_label: "The Bronx",
     south_label: "Downtown & Brooklyn",
   },
-  "622": {
+  622: {
     stop_id: "622",
     stop_code: "",
     stop_name: "116 St",
@@ -2328,7 +2328,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "623": {
+  623: {
     stop_id: "623",
     stop_code: "",
     stop_name: "110 St",
@@ -2345,7 +2345,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "624": {
+  624: {
     stop_id: "624",
     stop_code: "",
     stop_name: "103 St",
@@ -2362,7 +2362,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "625": {
+  625: {
     stop_id: "625",
     stop_code: "",
     stop_name: "96 St",
@@ -2379,7 +2379,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "626": {
+  626: {
     stop_id: "626",
     stop_code: "",
     stop_name: "86 St",
@@ -2396,7 +2396,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown & Brooklyn",
   },
-  "627": {
+  627: {
     stop_id: "627",
     stop_code: "",
     stop_name: "77 St",
@@ -2413,7 +2413,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "628": {
+  628: {
     stop_id: "628",
     stop_code: "",
     stop_name: "68 St - Hunter College",
@@ -2430,7 +2430,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "629": {
+  629: {
     stop_id: "629",
     stop_code: "",
     stop_name: "59 St",
@@ -2447,7 +2447,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown & Brooklyn",
   },
-  "630": { // should this combine with LexAv/53 St ?
+  630: { // should this combine with LexAv/53 St ?
     stop_id: "630",
     stop_code: "",
     stop_name: "51 St",
@@ -2464,7 +2464,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "631": {
+  631: {
     stop_id: "631",
     stop_code: "",
     stop_name: "Grand Central - 42 St",
@@ -2481,7 +2481,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown & Brooklyn",
   },
-  "632": {
+  632: {
     stop_id: "632",
     stop_code: "",
     stop_name: "33 St",
@@ -2498,7 +2498,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "633": {
+  633: {
     stop_id: "633",
     stop_code: "",
     stop_name: "28 St",
@@ -2515,7 +2515,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "634": {
+  634: {
     stop_id: "634",
     stop_code: "",
     stop_name: "23 St",
@@ -2532,7 +2532,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "635": {
+  635: {
     stop_id: "635",
     stop_code: "",
     stop_name: "14 St - Union Sq",
@@ -2549,7 +2549,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown & Brooklyn",
   },
-  "636": {
+  636: {
     stop_id: "636",
     stop_code: "",
     stop_name: "Astor Pl",
@@ -2566,7 +2566,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "637": {
+  637: {
     stop_id: "637",
     stop_code: "",
     stop_name: "Bleecker St",
@@ -2583,7 +2583,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "638": {
+  638: {
     stop_id: "638",
     stop_code: "",
     stop_name: "Spring St",
@@ -2600,7 +2600,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "639": {
+  639: {
     stop_id: "639",
     stop_code: "",
     stop_name: "Canal St",
@@ -2617,7 +2617,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown",
   },
-  "640": {
+  640: {
     stop_id: "640",
     stop_code: "",
     stop_name: "Brooklyn Bridge - City Hall",
@@ -2634,7 +2634,7 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown & Brooklyn",
   },
-  "701": {
+  701: {
     stop_id: "701",
     stop_code: "",
     stop_name: "Flushing - Main St",
@@ -2651,7 +2651,7 @@ export const allStations = {
     north_label: "",
     south_label: "Manhattan",
   },
-  "702": {
+  702: {
     stop_id: "702",
     stop_code: "",
     stop_name: "Mets - Willets Point",
@@ -2668,7 +2668,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "705": {
+  705: {
     stop_id: "705",
     stop_code: "",
     stop_name: "111 St",
@@ -2685,7 +2685,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "706": {
+  706: {
     stop_id: "706",
     stop_code: "",
     stop_name: "103 St - Corona Plaza",
@@ -2702,7 +2702,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "707": {
+  707: {
     stop_id: "707",
     stop_code: "",
     stop_name: "Junction Blvd",
@@ -2719,7 +2719,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "708": {
+  708: {
     stop_id: "708",
     stop_code: "",
     stop_name: "90 St - Elmhurst Av",
@@ -2736,7 +2736,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "709": {
+  709: {
     stop_id: "709",
     stop_code: "",
     stop_name: "82 St - Jackson Hts",
@@ -2753,7 +2753,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "710": {
+  710: {
     stop_id: "710",
     stop_code: "",
     stop_name: "74 St - Broadway",
@@ -2770,7 +2770,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "711": {
+  711: {
     stop_id: "711",
     stop_code: "",
     stop_name: "69 St",
@@ -2787,7 +2787,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "712": {
+  712: {
     stop_id: "712",
     stop_code: "",
     stop_name: "Woodside - 61 St",
@@ -2804,7 +2804,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "713": {
+  713: {
     stop_id: "713",
     stop_code: "",
     stop_name: "52 St",
@@ -2821,7 +2821,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "714": {
+  714: {
     stop_id: "714",
     stop_code: "",
     stop_name: "46 St - Bliss St",
@@ -2838,7 +2838,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "715": {
+  715: {
     stop_id: "715",
     stop_code: "",
     stop_name: "40 St - Lowery St",
@@ -2855,7 +2855,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "716": {
+  716: {
     stop_id: "716",
     stop_code: "",
     stop_name: "33 St - Rawson St",
@@ -2872,7 +2872,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "718": {
+  718: {
     stop_id: "718",
     stop_code: "",
     stop_name: "Queensboro Plaza",
@@ -2889,7 +2889,7 @@ export const allStations = {
     north_label: "Astoria - Flushing",
     south_label: "Manhattan",
   },
-  "719": {
+  719: {
     stop_id: "719",
     stop_code: "",
     stop_name: "Court Sq",
@@ -2906,7 +2906,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "720": {
+  720: {
     stop_id: "720",
     stop_code: "",
     stop_name: "Hunters Point Av",
@@ -2923,7 +2923,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "721": {
+  721: {
     stop_id: "721",
     stop_code: "",
     stop_name: "Vernon Blvd - Jackson Av",
@@ -2940,7 +2940,7 @@ export const allStations = {
     north_label: "Flushing",
     south_label: "Manhattan",
   },
-  "723": {
+  723: {
     stop_id: "723",
     stop_code: "",
     stop_name: "Grand Central - 42 St",
@@ -2957,7 +2957,7 @@ export const allStations = {
     north_label: "Queens",
     south_label: "34 St -  Hudson Yards",
   },
-  "724": {
+  724: {
     stop_id: "724",
     stop_code: "",
     stop_name: "5 Av",
@@ -2974,7 +2974,7 @@ export const allStations = {
     north_label: "Queens",
     south_label: "34 St -  Hudson Yards",
   },
-  "725": {
+  725: {
     stop_id: "725",
     stop_code: "",
     stop_name: "Times Sq - 42 St",
@@ -2991,7 +2991,7 @@ export const allStations = {
     north_label: "Queens",
     south_label: "34 St -  Hudson Yards",
   },
-  "726": {
+  726: {
     stop_id: "726",
     stop_code: "",
     stop_name: "34 St - Hudson Yards",
@@ -3008,7 +3008,7 @@ export const allStations = {
     north_label: "Queens",
     south_label: "",
   },
-  "901": {
+  901: {
     stop_id: "901",
     stop_code: "",
     stop_name: "Grand Central - 42 St",
@@ -3025,7 +3025,7 @@ export const allStations = {
     north_label: "Times Sq",
     south_label: "",
   },
-  "902": {
+  902: {
     stop_id: "902",
     stop_code: "",
     stop_name: "Times Sq - 42 St",
