@@ -24,12 +24,15 @@ const maxUpdates = 3;
 
 export default function LineUpdates({ station, line }) {
   // hook to get arrival data
-  const { data, loading, error } = useQuery(NEXT_ARRIVALS, {
+  const { data, loading, error, refetch } = useQuery(NEXT_ARRIVALS, {
     variables: { stationId: station, train: line, direction: "N" },
     pollInterval: 1000,
   });
 
-  console.log('DATA ', data)
+  // prevent refetch on first render by comparing with previous props
+  useEffect(() => {
+    refetch();
+  }, [line]);
 
   return (
     <View style={styles.updatesContainer}>
