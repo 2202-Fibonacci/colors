@@ -28,12 +28,12 @@ export default function ServiceAlert({line}) {
         variables: {train: line}
     });
 
-    const serviceAlert = data["serviceAlert"]
-    const alerts = serviceAlert["alerts"]
+    // const serviceAlert = data["serviceAlert"]
+    // const alerts = serviceAlert["alerts"]
 
     return (
         <View style={styles.updatesContainer}>
-            {loading ? (<Text>Loading...</Text>)
+            {/* {loading ? (<Text>Loading...</Text>)
                 : error ? (<Text>Error: {error.message}</Text>)
                 : (alerts.map((alert)=>
                     <View key={alert.type}>
@@ -44,7 +44,7 @@ export default function ServiceAlert({line}) {
                         </Text>
                     </View>
                     ))
-        }
+        } */}
         </View>
     )
 }
