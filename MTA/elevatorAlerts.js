@@ -1,4 +1,3 @@
-const APIkey = require("../.env");
 const AlertURI =
   "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fnyct_ene.json";
 const equipmentURI =
@@ -12,23 +11,27 @@ async function getElevatorAlerts(stationId) {
 
   return new Promise((resolve, reject) => {
     https
-      .get(AlertURI, { headers: { "x-api-key": APIkey } }, (resp) => {
-        let data = [];
-        resp.on("data", (chunk) => {
-          data.push(chunk);
-        });
-        resp.on("end", () => {
-          data = Buffer.concat(data);
-          const feed = JSON.parse(data.toString());
+      .get(
+        AlertURI,
+        { headers: { "x-api-key": process.env.API_KEY } },
+        (resp) => {
+          let data = [];
+          resp.on("data", (chunk) => {
+            data.push(chunk);
+          });
+          resp.on("end", () => {
+            data = Buffer.concat(data);
+            const feed = JSON.parse(data.toString());
 
-          // filter alerts feed by specified station
-          const alerts = feed.filter(
-            (alert) =>
-              alert.station === stationName && alert.isupcomingoutage === "N"
-          );
-          resolve(alerts);
-        });
-      })
+            // filter alerts feed by specified station
+            const alerts = feed.filter(
+              (alert) =>
+                alert.station === stationName && alert.isupcomingoutage === "N"
+            );
+            resolve(alerts);
+          });
+        }
+      )
       .on("error", (err) => {
         console.log("Error: " + err.message);
         reject(err);
@@ -40,26 +43,30 @@ async function getElevatorAlerts(stationId) {
 function getStationName(stationId) {
   return new Promise((resolve, reject) => {
     https
-      .get(equipmentURI, { headers: { "x-api-key": APIkey } }, (resp) => {
-        let data = [];
-        resp.on("data", (chunk) => {
-          data.push(chunk);
-        });
-        resp.on("end", () => {
-          data = Buffer.concat(data);
-          const feed = JSON.parse(data.toString());
+      .get(
+        equipmentURI,
+        { headers: { "x-api-key": process.env.API_KEY } },
+        (resp) => {
+          let data = [];
+          resp.on("data", (chunk) => {
+            data.push(chunk);
+          });
+          resp.on("end", () => {
+            data = Buffer.concat(data);
+            const feed = JSON.parse(data.toString());
 
-          // filter equipment by station id
-          const equipment = feed.filter((equip) =>
-            equip.elevatorsgtfsstopid.includes(stationId)
-          );
+            // filter equipment by station id
+            const equipment = feed.filter((equip) =>
+              equip.elevatorsgtfsstopid.includes(stationId)
+            );
 
-          // return corresponding station name
-          if (equipment[0]) {
-            resolve(equipment[0].station);
-          } else resolve(equipment);
-        });
-      })
+            // return corresponding station name
+            if (equipment[0]) {
+              resolve(equipment[0].station);
+            } else resolve(equipment);
+          });
+        }
+      )
       .on("error", (err) => {
         console.log("Error: " + err.message);
         reject(err);
