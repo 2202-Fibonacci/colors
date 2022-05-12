@@ -105,7 +105,7 @@ export default function Map() {
 const styles = StyleSheet.create({
   mapContainer: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#000",
     color: "#00ffff",
     justifyContent: "center",
     alignItems: "center",

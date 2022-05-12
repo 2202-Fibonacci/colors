@@ -25,7 +25,7 @@ const maxUpdates = 3;
 export default function LineUpdates({ station, line }) {
   // hook to get arrival data
   const { data, loading, error, refetch } = useQuery(NEXT_ARRIVALS, {
-    variables: { stationId: station, train: line, direction: "N" },
+    variables: { stationId: station, train: line }, /*, direction: "N" */
     pollInterval: 1000,
   });
 
@@ -43,13 +43,15 @@ export default function LineUpdates({ station, line }) {
       ) : (
         data.arrivalTimes.nextArrivals.map((arrival, i) =>
           i < maxUpdates ? (
-            <Text key={arrival.tripId}>
-              The {data.arrivalTimes.routeId} to{" "}
+            <Text style={styles.arrival} key={arrival.tripId}>
+              {" "}{data.arrivalTimes.routeId} {"  "}
               {arrival.direction === "N"
                 ? allStations[station].north_label
-                : allStations[station].south_label}{" "}
-              arrives in {arrival.arrivalTime}{" "}
-              {arrival.arrivalTime === 1 ? "min" : "mins"}
+                : allStations[station].south_label}
+                {"                             ".slice(0, 30 - (arrival.direction === "N"
+                ? allStations[station].north_label.length
+                : allStations[station].south_label.length ))}
+              {"  ".slice(0, (arrival.arrivalTime > 9 ? 1 :2))}{arrival.arrivalTime}{"M "}
             </Text>
           ) : null
         )
@@ -60,11 +62,23 @@ export default function LineUpdates({ station, line }) {
 
 const styles = StyleSheet.create({
   updatesContainer: {
-    backgroundColor: "#fff",
-    padding: "4%",
+    backgroundColor: "#000",
+    paddingVertical: "4%",
+    paddingHorizontal: "0%",
     color: "#00ffff",
     alignItems: "flex-start",
     justifyContent: "flex-start",
     width: "100%",
   },
+  arrival: {
+    backgroundColor: "#222",
+    color: "#eeff00",
+    fontSize: "16",
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    borderWidth: "1",
+    borderColor: "#eeff00",
+    paddingVertical: "1%",
+  }
 });

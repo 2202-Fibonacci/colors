@@ -73,7 +73,7 @@ export default function StationAlerts( {station}) {
 const styles = StyleSheet.create({
   alertsContainer: {
     backgroundColor: "#fff",
-    padding: "4%",
+    padding: "2%",
     color: "#00ffff",
     alignItems: "flex-start",
     justifyContent: "flex-start",
