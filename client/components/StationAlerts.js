@@ -6,7 +6,7 @@ const STATION_ALERTS = gql `
   query StationAlert(
     $stationId: String!
   ) {
-    serviceAlert(stationId: $stationId){
+    elevatorAlert(stationId: $stationId){
       station
       borough
       trainno
@@ -48,18 +48,24 @@ export default function StationAlerts( {station}) {
    variables: { stationId: station }
  })
 
-  console.log('data ', data)
+  if(loading) return <Text>Loading . . .</Text>
+  if(error) console.log('Error ', error)
 
   return (
     <View style={styles.alertsContainer}>
-      {dummyData.map((alert) => (
+
+      {loading ? (<Text>Loading ...</Text>)
+        : error? (<Text>Error: {error.message}</Text>)
+        :
+        (data.elevatorAlert
+          .map((alert) => (
         <View key={alert.equipment}>
           <Text style={styles.alert}>
             {alert.equipmenttype === "ES" ? "Escalator" : "Elevator"} outage:
           </Text>
           <Text>{alert.serving}</Text>
         </View>
-      ))}
+      )))}
     </View>
   );
 }
