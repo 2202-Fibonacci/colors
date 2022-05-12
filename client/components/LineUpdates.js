@@ -29,6 +29,8 @@ export default function LineUpdates({ station, line }) {
     pollInterval: 1000,
   });
 
+  console.log('DATA ', data)
+
   return (
     <View style={styles.updatesContainer}>
       {loading ? (
