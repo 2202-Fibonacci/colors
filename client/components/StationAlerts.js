@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Platform, StyleSheet, Text, View, Dimensions } from "react-native";
 import { useQuery, gql } from "@apollo/client";
 
-const STATION_ALERTS = gql`
-  query StationAlerts(
-    $stationId: String
-  ){
+const STATION_ALERTS = gql `
+  query StationAlert(
+    $stationId: String!
+  ) {
     serviceAlert(stationId: $stationId){
       station
       borough
@@ -41,12 +41,12 @@ const dummyData = [
   },
 ];
 
-export default function StationAlerts(props) {
+export default function StationAlerts( {station}) {
   const [alerts, setAlerts] = useState([]);
   
-  const { data, loading, error } = useQuery(STATION_ALERTS, {
-    variables: {stationId: stationId}
-  })
+ const { data, loading, error } = useQuery(STATION_ALERTS, {
+   variables: { stationId: station }
+ })
 
   console.log('data ', data)
 
