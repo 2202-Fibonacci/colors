@@ -1,4 +1,3 @@
-const APIkey = require("../../.env");
 const baseURI =
   "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs";
 const URIs = {
@@ -29,7 +28,7 @@ const URIs = {
 
 const Mta = require("mta-gtfs");
 const mta = new Mta({
-  key: APIkey,
+  key: process.env.API_KEY,
 });
 
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
@@ -40,20 +39,24 @@ async function getStatusFeed(trainLine) {
   return new Promise((resolve, reject) => {
     const FeedURI = baseURI + URIs[trainLine.toUpperCase()];
     https
-      .get(FeedURI, { headers: { "x-api-key": APIkey } }, (res) => {
-        let data = [];
-        res.on("data", (chunk) => {
-          //   console.log("Receiving Data");
-          data.push(chunk);
-        });
-        res.on("end", () => {
-          data = Buffer.concat(data);
-          const feed =
-            GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(data);
-          //   console.log("***Finished receiving data***");
-          resolve(feed);
-        });
-      })
+      .get(
+        FeedURI,
+        { headers: { "x-api-key": process.env.API_KEY } },
+        (res) => {
+          let data = [];
+          res.on("data", (chunk) => {
+            //   console.log("Receiving Data");
+            data.push(chunk);
+          });
+          res.on("end", () => {
+            data = Buffer.concat(data);
+            const feed =
+              GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(data);
+            //   console.log("***Finished receiving data***");
+            resolve(feed);
+          });
+        }
+      )
       .on("error", (err) => {
         console.log("Error: " + err.message);
         reject(err);
@@ -157,25 +160,29 @@ const AlertURI =
 
 function getAllServiceAlerts() {
   https
-    .get(AlertURI, { headers: { "x-api-key": APIkey } }, (resp) => {
-      let data = [];
-      resp.on("data", (chunk) => {
-        data.push(chunk);
-      });
-      resp.on("end", () => {
-        data = Buffer.concat(data);
-        const feed = JSON.parse(data.toString());
-        feed.entity.forEach((entity, i) => {
-          if (entity.alert) {
-            console.log(
-              `${i + 1}: ${
-                entity.alert["transit_realtime.mercury_alert"].alert_type
-              } - ${entity.alert.header_text.translation[0].text}`
-            );
-          }
+    .get(
+      AlertURI,
+      { headers: { "x-api-key": process.env.API_KEY } },
+      (resp) => {
+        let data = [];
+        resp.on("data", (chunk) => {
+          data.push(chunk);
         });
-      });
-    })
+        resp.on("end", () => {
+          data = Buffer.concat(data);
+          const feed = JSON.parse(data.toString());
+          feed.entity.forEach((entity, i) => {
+            if (entity.alert) {
+              console.log(
+                `${i + 1}: ${
+                  entity.alert["transit_realtime.mercury_alert"].alert_type
+                } - ${entity.alert.header_text.translation[0].text}`
+              );
+            }
+          });
+        });
+      }
+    )
     .on("error", (err) => {
       console.log("Error: " + err.message);
     });

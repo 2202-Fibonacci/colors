@@ -4,7 +4,6 @@ const tripFeedURL =
   "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs";
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const https = require("https");
-const APIkey = require("../../.env");
 
 class TripFeed extends RESTDataSource {
   constructor() {
@@ -19,18 +18,22 @@ class TripFeed extends RESTDataSource {
       }
       const FeedURI = this.baseURL + URIs[train.toUpperCase()];
       https
-        .get(FeedURI, { headers: { "x-api-key": APIkey } }, (res) => {
-          let data = [];
-          res.on("data", (chunk) => {
-            data.push(chunk);
-          });
-          res.on("end", () => {
-            data = Buffer.concat(data);
-            const feed =
-              GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(data);
-            resolve(feed);
-          });
-        })
+        .get(
+          FeedURI,
+          { headers: { "x-api-key": process.env.API_KEY } },
+          (res) => {
+            let data = [];
+            res.on("data", (chunk) => {
+              data.push(chunk);
+            });
+            res.on("end", () => {
+              data = Buffer.concat(data);
+              const feed =
+                GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(data);
+              resolve(feed);
+            });
+          }
+        )
         .on("error", (err) => {
           console.log("Error: " + err.message);
           reject(err);

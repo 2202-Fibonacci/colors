@@ -1,15 +1,15 @@
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const https = require("https");
-const APIkey = require("../../.env");
-const FeedURI = "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs"; // X-train real time endpoint
+const FeedURI =
+  "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs"; // X-train real time endpoint
 
 // real time status feeds
 https
-  .get(FeedURI, { headers: { "x-api-key": APIkey } }, (resp) => {
+  .get(FeedURI, { headers: { "x-api-key": process.env.API_KEY } }, (resp) => {
     let data = [];
     resp.on("data", (chunk) => {
       //ll testing
-      console.log(JSON.stringify(chunk))
+      console.log(JSON.stringify(chunk));
       console.log("Receiving Data");
       data.push(chunk);
     });
@@ -48,7 +48,7 @@ const AlertURI =
   "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/camsys%2Fsubway-alerts.json";
 
 https
-  .get(AlertURI, { headers: { "x-api-key": APIkey } }, (resp) => {
+  .get(AlertURI, { headers: { "x-api-key": process.env.API_KEY } }, (resp) => {
     let data = [];
     resp.on("data", (chunk) => {
       // console.log("Receiving Data");
@@ -76,7 +76,7 @@ https
 // var parser = require("./parsers");
 const Mta = require("mta-gtfs");
 const mta = new Mta({
-  key: APIkey,
+  key: process.env.API_KEY,
   feed_id: 1, // optional, default = 1
 });
 
