@@ -1,67 +1,67 @@
 type Query {
-    info: String!
-    station (id: ID): Station
-    arrivalTimes(stationId: String, train: String, direction: String): TripUpdate
-    serviceAlert(train:String): ServiceUpdate
-    elevatorAlert(stationId:String): [ElevatorUpdate]
+  info: String!
+  station(id: ID): Station
+  arrivalTimes(stationId: String, train: String, direction: String): TripUpdate
+  serviceAlert(train: String, onlyActive: Boolean): ServiceUpdate
+  elevatorAlert(stationId: String): [ElevatorUpdate]
 }
 
 type ElevatorUpdate {
-    station: String
-    borough: String
-    trainno: String
-    equipment: String
-    equipmenttype: String
-    serving: String
-    ADA: String
-    outagedate: String
-    estimatedreturntoservice: String
-    reason: String
-    isupcomingoutage: String
-    ismaintenanceoutage: String
+  station: String
+  borough: String
+  trainno: String
+  equipment: String
+  equipmenttype: String
+  serving: String
+  ADA: String
+  outagedate: String
+  estimatedreturntoservice: String
+  reason: String
+  isupcomingoutage: String
+  ismaintenanceoutage: String
 }
 
 type TripUpdate {
-    routeId: String
-    stationId: String
-    nextArrivals: [Arrival]
+  routeId: String
+  stationId: String
+  nextArrivals: [Arrival]
 }
 
 type Arrival {
-    tripId: String
-    direction: String
-    arrivalTime: Int
+  tripId: String
+  direction: String
+  arrivalTime: Int
 }
 
 type ServiceUpdate {
-    routeId: String
-    alerts: [Alert]
+  routeId: String
+  alerts: [Alert]
 }
 
 type Alert {
-    type: String
-    text: String
-    activePeriodText: String
+  type: String
+  text: String
+  activePeriodText: String
 }
 
 type Station {
-    id: ID!
-    name: String!
-    trainLines: String  #[Train] #TODO: set this to see 
-    lat: Float!
-    long: Float!
-    borough: String
-    accessible: Boolean! #this means wheelchair accessible? 
+  id: ID!
+  name: String!
+  trainLines: String #[Train] #TODO: set this to see
+  lat: Float!
+  long: Float!
+  borough: String
+  accessible: Boolean! #this means wheelchair accessible?
 }
 
 enum Direction {
-    N
-    S
+  N
+  S
 }
 
 type User {
-    firstName: String!
-    lastName: String!
-    email: String!
-    password: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
 }
