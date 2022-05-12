@@ -1,8 +1,8 @@
 type Query {
     info: String!
     station (id: ID): Station
-    arrivalTimes(stationId: String, train: String, direction: Direction): TripUpdate
-    serviceAlert(train:String, activeAlert: Boolean): ServiceUpdate
+    arrivalTimes(stationId: String, train: String, direction: String): TripUpdate
+    serviceAlert(train:String): ServiceUpdate
     elevatorAlert(stationId:String): [ElevatorUpdate]
 }
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Platform, StyleSheet, Text, View, Pressable } from "react-native";
 import { lineColor } from "../../MTA/data";
 import LineUpdates from "./LineUpdates";
+import ServiceAlert from "./ServiceAlert"
 
 export default function Lines(props) {
   const [selectedLine, setSelectedLine] = useState(null);
@@ -34,6 +35,7 @@ export default function Lines(props) {
         ))}
       </View>
       <LineUpdates line={selectedLine} station={props.station} />
+      <ServiceAlert line={selectedLine} />
     </>
   );
 }

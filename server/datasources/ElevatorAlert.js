@@ -31,7 +31,6 @@ class ElevatorAlert extends RESTDataSource {
                   (alert) =>
                     alert.station === stationName && alert.isupcomingoutage === "N"
                 );
-                console.log(alerts)
                 resolve(alerts);
               });
             })
