@@ -34,7 +34,7 @@ function getStationByLatAndLong(lat, long) {
     for (let info in stationInfo) {
       let datapoint = stationInfo[info];
       if (datapoint === String(lat)) {
-        console.log(datapoint, stationInfo.stop_lon);
+        console.log("hello",datapoint, stationInfo.stop_lon);
         if (stationInfo.stop_lon === String(long)) {
           let id = stationInfo.stop_id;
           return this.getStationById(id);
