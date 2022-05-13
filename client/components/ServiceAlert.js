@@ -20,6 +20,8 @@ export default function ServiceAlert({ line }) {
     variables: { train: line, onlyActive: true },
   });
 
+  if (!line) return null;
+
   return (
     <View style={styles.updatesContainer}>
       {loading ? (
