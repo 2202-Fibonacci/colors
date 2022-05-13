@@ -65,7 +65,7 @@ export default function LineUpdates({ station, line }) {
       ) : (
         arrivalsList.map((arrival, i) => (
           i < maxUpdates ? (
-            <Text style={styles.arrival} key={`${arrival.routeId}_${arrival.arrivalTime}`}>
+            <Text style={styles.arrival} key={`${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
               {" "}{arrival.routeId}{"  "}{arrival.directionLabel}
               {"                             ".slice(0, 30 - arrival.directionLabel.length)}
               {"  ".slice(0, arrival.arrivalTime > 9 ? 1 : 2)}{arrival.arrivalTime}{"m "}
