@@ -1,6 +1,7 @@
 module.exports = {
   101: {
     complex: false,
+    draw: true,
     stop_id: "101",
     stop_name: "Van Cortlandt Park - 242 St",
     stop_desc: "",
@@ -15,6 +16,7 @@ module.exports = {
   },
   103: {
     complex: false,
+    draw: true,
     stop_id: "103",
     stop_name: "238 St",
     stop_desc: "",
@@ -29,6 +31,7 @@ module.exports = {
   },
   104: {
     complex: false,
+    draw: true,
     stop_id: "104",
     stop_name: "231 St",
     stop_desc: "",
@@ -43,6 +46,7 @@ module.exports = {
   },
   106: {
     complex: false,
+    draw: true,
     stop_id: "106",
     stop_name: "Marble Hill - 225 St",
     stop_desc: "",
@@ -57,6 +61,7 @@ module.exports = {
   },
   107: {
     complex: false,
+    draw: true,
     stop_id: "107",
     stop_name: "215 St",
     stop_desc: "",
@@ -71,6 +76,7 @@ module.exports = {
   },
   108: {
     complex: false,
+    draw: true,
     stop_id: "108",
     stop_name: "207 St",
     stop_desc: "",
@@ -85,6 +91,7 @@ module.exports = {
   },
   109: {
     complex: false,
+    draw: true,
     stop_id: "109",
     stop_name: "Dyckman St",
     stop_desc: "",
@@ -99,6 +106,7 @@ module.exports = {
   },
   110: {
     complex: false,
+    draw: true,
     stop_id: "110",
     stop_name: "191 St",
     stop_desc: "",
@@ -113,6 +121,7 @@ module.exports = {
   },
   111: {
     complex: false,
+    draw: true,
     stop_id: "111",
     stop_name: "181 St",
     stop_desc: "",
@@ -127,6 +136,7 @@ module.exports = {
   },
   112: {
     complex: false,
+    draw: true,
     stop_id: "112",
     stop_name: "168 St - Washington Hts",
     stop_desc: "",
@@ -141,6 +151,7 @@ module.exports = {
   },
   113: {
     complex: false,
+    draw: true,
     stop_id: "113",
     stop_name: "157 St",
     stop_desc: "",
@@ -155,6 +166,7 @@ module.exports = {
   },
   114: {
     complex: false,
+    draw: true,
     stop_id: "114",
     stop_name: "145 St",
     stop_desc: "",
@@ -169,6 +181,7 @@ module.exports = {
   },
   115: {
     complex: false,
+    draw: true,
     stop_id: "115",
     stop_name: "137 St - City College",
     stop_desc: "",
@@ -183,6 +196,7 @@ module.exports = {
   },
   116: {
     complex: false,
+    draw: true,
     stop_id: "116",
     stop_name: "125 St",
     stop_desc: "",
@@ -197,6 +211,7 @@ module.exports = {
   },
   117: {
     complex: false,
+    draw: true,
     stop_id: "117",
     stop_name: "116 St - Columbia University",
     stop_desc: "",
@@ -211,6 +226,7 @@ module.exports = {
   },
   118: {
     complex: false,
+    draw: true,
     stop_id: "118",
     stop_name: "Cathedral Pkwy",
     stop_desc: "",
@@ -225,6 +241,7 @@ module.exports = {
   },
   119: {
     complex: false,
+    draw: true,
     stop_id: "119",
     stop_name: "103 St",
     stop_desc: "",
@@ -239,6 +256,7 @@ module.exports = {
   },
   120: {
     complex: false,
+    draw: true,
     stop_id: "120",
     stop_name: "96 St",
     stop_desc: "",
@@ -253,6 +271,7 @@ module.exports = {
   },
   121: {
     complex: false,
+    draw: true,
     stop_id: "121",
     stop_name: "86 St",
     stop_desc: "",
@@ -267,6 +286,7 @@ module.exports = {
   },
   122: {
     complex: false,
+    draw: true,
     stop_id: "122",
     stop_name: "79 St",
     stop_desc: "",
@@ -281,6 +301,7 @@ module.exports = {
   },
   123: {
     complex: false,
+    draw: true,
     stop_id: "123",
     stop_name: "72 St",
     stop_desc: "",
@@ -295,6 +316,7 @@ module.exports = {
   },
   124: {
     complex: false,
+    draw: true,
     stop_id: "124",
     stop_name: "66 St - Lincoln Center",
     stop_desc: "",
@@ -309,6 +331,7 @@ module.exports = {
   },
   125: {
     complex: false,
+    draw: true,
     stop_id: "125",
     stop_name: "59 St - Columbus Circle",
     stop_desc: "",
@@ -323,6 +346,7 @@ module.exports = {
   },
   126: {
     complex: false,
+    draw: true,
     stop_id: "126",
     stop_name: "50 St",
     stop_desc: "",
@@ -337,6 +361,7 @@ module.exports = {
   },
   127: {
     complex: false,
+    draw: true,
     stop_id: "127",
     stop_name: "Times Sq - 42 St",
     stop_desc: "",
@@ -351,6 +376,7 @@ module.exports = {
   },
   128: {
     complex: false,
+    draw: true,
     stop_id: "128",
     stop_name: "34 St - Penn Station",
     stop_desc: "",
@@ -365,6 +391,7 @@ module.exports = {
   },
   129: {
     complex: false,
+    draw: true,
     stop_id: "129",
     stop_name: "28 St",
     stop_desc: "",
@@ -379,6 +406,7 @@ module.exports = {
   },
   130: {
     complex: false,
+    draw: true,
     stop_id: "130",
     stop_name: "23 St",
     stop_desc: "",
@@ -393,6 +421,7 @@ module.exports = {
   },
   131: {
     complex: false,
+    draw: true,
     stop_id: "131",
     stop_name: "18 St",
     stop_desc: "",
@@ -407,6 +436,7 @@ module.exports = {
   },
   132: {
     complex: false,
+    draw: true,
     stop_id: "132",
     stop_name: "14 St",
     stop_desc: "",
@@ -421,6 +451,7 @@ module.exports = {
   },
   133: {
     complex: false,
+    draw: true,
     stop_id: "133",
     stop_name: "Christopher St - Sheridan Sq",
     stop_desc: "",
@@ -435,6 +466,7 @@ module.exports = {
   },
   134: {
     complex: false,
+    draw: true,
     stop_id: "134",
     stop_name: "Houston St",
     stop_desc: "",
@@ -449,6 +481,7 @@ module.exports = {
   },
   135: {
     complex: false,
+    draw: true,
     stop_id: "135",
     stop_name: "Canal St",
     stop_desc: "",
@@ -463,6 +496,7 @@ module.exports = {
   },
   136: {
     complex: false,
+    draw: true,
     stop_id: "136",
     stop_name: "Franklin St",
     stop_desc: "",
@@ -477,6 +511,7 @@ module.exports = {
   },
   137: {
     complex: false,
+    draw: true,
     stop_id: "137",
     stop_name: "Chambers St",
     stop_desc: "",
@@ -491,6 +526,7 @@ module.exports = {
   },
   138: {
     complex: false,
+    draw: true,
     stop_id: "138",
     stop_name: "WTC Cortlandt St",
     stop_desc: "",
@@ -505,6 +541,7 @@ module.exports = {
   },
   139: {
     complex: false,
+    draw: true,
     stop_id: "139",
     stop_name: "Rector St",
     stop_desc: "",
@@ -549,6 +586,7 @@ module.exports = {
   },
   201: {
     complex: false,
+    draw: true,
     stop_id: "201",
     stop_name: "Wakefield - 241 St",
     stop_desc: "",
@@ -563,6 +601,7 @@ module.exports = {
   },
   204: {
     complex: false,
+    draw: true,
     stop_id: "204",
     stop_name: "Nereid Av",
     stop_desc: "",
@@ -577,6 +616,7 @@ module.exports = {
   },
   205: {
     complex: false,
+    draw: true,
     stop_id: "205",
     stop_name: "233 St",
     stop_desc: "",
@@ -591,6 +631,7 @@ module.exports = {
   },
   206: {
     complex: false,
+    draw: true,
     stop_id: "206",
     stop_name: "225 St",
     stop_desc: "",
@@ -605,6 +646,7 @@ module.exports = {
   },
   207: {
     complex: false,
+    draw: true,
     stop_id: "207",
     stop_name: "219 St",
     stop_desc: "",
@@ -619,6 +661,7 @@ module.exports = {
   },
   208: {
     complex: false,
+    draw: true,
     stop_id: "208",
     stop_name: "Gun Hill Rd",
     stop_desc: "",
@@ -633,6 +676,7 @@ module.exports = {
   },
   209: {
     complex: false,
+    draw: true,
     stop_id: "209",
     stop_name: "Burke Av",
     stop_desc: "",
@@ -647,6 +691,7 @@ module.exports = {
   },
   210: {
     complex: false,
+    draw: true,
     stop_id: "210",
     stop_name: "Allerton Av",
     stop_desc: "",
@@ -661,6 +706,7 @@ module.exports = {
   },
   211: {
     complex: false,
+    draw: true,
     stop_id: "211",
     stop_name: "Pelham Pkwy",
     stop_desc: "",
@@ -675,6 +721,7 @@ module.exports = {
   },
   212: {
     complex: false,
+    draw: true,
     stop_id: "212",
     stop_name: "Bronx Park East",
     stop_desc: "",
@@ -689,6 +736,7 @@ module.exports = {
   },
   213: {
     complex: false,
+    draw: true,
     stop_id: "213",
     stop_name: "E 180 St",
     stop_desc: "",
@@ -703,6 +751,7 @@ module.exports = {
   },
   214: {
     complex: false,
+    draw: true,
     stop_id: "214",
     stop_name: "West Farms Sq - E Tremont Av",
     stop_desc: "",
@@ -717,6 +766,7 @@ module.exports = {
   },
   215: {
     complex: false,
+    draw: true,
     stop_id: "215",
     stop_name: "174 St",
     stop_desc: "",
@@ -731,6 +781,7 @@ module.exports = {
   },
   216: {
     complex: false,
+    draw: true,
     stop_id: "216",
     stop_name: "Freeman St",
     stop_desc: "",
@@ -745,6 +796,7 @@ module.exports = {
   },
   217: {
     complex: false,
+    draw: true,
     stop_id: "217",
     stop_name: "Simpson St",
     stop_desc: "",
@@ -759,6 +811,7 @@ module.exports = {
   },
   218: {
     complex: false,
+    draw: true,
     stop_id: "218",
     stop_name: "Intervale Av",
     stop_desc: "",
@@ -773,6 +826,7 @@ module.exports = {
   },
   219: {
     complex: false,
+    draw: true,
     stop_id: "219",
     stop_name: "Prospect Av",
     stop_desc: "",
@@ -787,6 +841,7 @@ module.exports = {
   },
   220: {
     complex: false,
+    draw: true,
     stop_id: "220",
     stop_name: "Jackson Av",
     stop_desc: "",
@@ -801,6 +856,7 @@ module.exports = {
   },
   221: {
     complex: false,
+    draw: true,
     stop_id: "221",
     stop_name: "3 Av - 149 St",
     stop_desc: "",
@@ -815,6 +871,7 @@ module.exports = {
   },
   222: {
     complex: false,
+    draw: true,
     stop_id: "222",
     stop_name: "149 St - Grand Concourse",
     stop_desc: "",
@@ -829,6 +886,7 @@ module.exports = {
   },
   224: {
     complex: false,
+    draw: true,
     stop_id: "224",
     stop_name: "135 St",
     stop_desc: "",
@@ -843,6 +901,7 @@ module.exports = {
   },
   225: {
     complex: false,
+    draw: true,
     stop_id: "225",
     stop_name: "125 St",
     stop_desc: "",
@@ -857,6 +916,7 @@ module.exports = {
   },
   226: {
     complex: false,
+    draw: true,
     stop_id: "226",
     stop_name: "116 St",
     stop_desc: "",
@@ -871,6 +931,7 @@ module.exports = {
   },
   227: {
     complex: false,
+    draw: true,
     stop_id: "227",
     stop_name: "Central Park North (110 St)",
     stop_desc: "",
@@ -885,6 +946,7 @@ module.exports = {
   },
   228: {
     complex: false,
+    draw: true,
     stop_id: "228",
     stop_name: "Park Pl",
     stop_desc: "",
@@ -899,6 +961,7 @@ module.exports = {
   },
   229: {
     complex: false,
+    draw: true,
     stop_id: "229",
     stop_name: "Fulton St",
     stop_desc: "",
@@ -914,6 +977,7 @@ module.exports = {
   },
   230: {
     complex: false,
+    draw: true,
     stop_id: "230",
     stop_name: "Wall St",
     stop_desc: "",
@@ -928,6 +992,7 @@ module.exports = {
   },
   231: {
     complex: false,
+    draw: true,
     stop_id: "231",
     stop_name: "Clark St",
     stop_desc: "",
@@ -942,6 +1007,7 @@ module.exports = {
   },
   232: {
     complex: false,
+    draw: true,
     stop_id: "232",
     stop_name: "Borough Hall",
     stop_desc: "",
@@ -956,6 +1022,7 @@ module.exports = {
   },
   233: {
     complex: false,
+    draw: true,
     stop_id: "233",
     stop_name: "Hoyt St",
     stop_desc: "",
@@ -970,6 +1037,7 @@ module.exports = {
   },
   234: {
     complex: false,
+    draw: true,
     stop_id: "234",
     stop_name: "Nevins St",
     stop_desc: "",
@@ -984,6 +1052,7 @@ module.exports = {
   },
   235: {
     complex: false,
+    draw: true,
     stop_id: "235",
     stop_name: "Atlantic Av - Barclays Ctr",
     stop_desc: "",
@@ -998,6 +1067,7 @@ module.exports = {
   },
   236: {
     complex: false,
+    draw: true,
     stop_id: "236",
     stop_name: "Bergen St",
     stop_desc: "",
@@ -1012,6 +1082,7 @@ module.exports = {
   },
   237: {
     complex: false,
+    draw: true,
     stop_id: "237",
     stop_name: "Grand Army Plaza",
     stop_desc: "",
@@ -1026,6 +1097,7 @@ module.exports = {
   },
   238: {
     complex: false,
+    draw: true,
     stop_id: "238",
     stop_name: "Eastern Pkwy - Brooklyn Museum",
     stop_desc: "",
@@ -1040,6 +1112,7 @@ module.exports = {
   },
   239: {
     complex: false,
+    draw: true,
     stop_id: "239",
     stop_name: "Franklin Av - Medgar Evers College",
     stop_desc: "",
@@ -1054,6 +1127,7 @@ module.exports = {
   },
   241: {
     complex: false,
+    draw: true,
     stop_id: "241",
     stop_name: "President St - Medgar Evers College",
     stop_desc: "",
@@ -1068,6 +1142,7 @@ module.exports = {
   },
   242: {
     complex: false,
+    draw: true,
     stop_id: "242",
     stop_name: "Sterling St",
     stop_desc: "",
@@ -1082,6 +1157,7 @@ module.exports = {
   },
   243: {
     complex: false,
+    draw: true,
     stop_id: "243",
     stop_name: "Winthrop St",
     stop_desc: "",
@@ -1096,6 +1172,7 @@ module.exports = {
   },
   244: {
     complex: false,
+    draw: true,
     stop_id: "244",
     stop_name: "Church Av",
     stop_desc: "",
@@ -1110,6 +1187,7 @@ module.exports = {
   },
   245: {
     complex: false,
+    draw: true,
     stop_id: "245",
     stop_name: "Beverly Rd",
     stop_desc: "",
@@ -1124,6 +1202,7 @@ module.exports = {
   },
   246: {
     complex: false,
+    draw: true,
     stop_id: "246",
     stop_name: "Newkirk Av - Little Haiti",
     stop_desc: "",
@@ -1138,6 +1217,7 @@ module.exports = {
   },
   247: {
     complex: false,
+    draw: true,
     stop_id: "247",
     stop_name: "Flatbush Av - Brooklyn College",
     stop_desc: "",
@@ -1166,6 +1246,7 @@ module.exports = {
   },
   249: {
     complex: false,
+    draw: true,
     stop_id: "249",
     stop_name: "Kingston Av",
     stop_desc: "",
@@ -1180,6 +1261,7 @@ module.exports = {
   },
   250: {
     complex: false,
+    draw: true,
     stop_id: "250",
     stop_name: "Crown Hts - Utica Av",
     stop_desc: "",
@@ -1194,6 +1276,7 @@ module.exports = {
   },
   251: {
     complex: false,
+    draw: true,
     stop_id: "251",
     stop_name: "Sutter Av - Rutland Rd",
     stop_desc: "",
@@ -1208,6 +1291,7 @@ module.exports = {
   },
   252: {
     complex: false,
+    draw: true,
     stop_id: "252",
     stop_name: "Saratoga Av",
     stop_desc: "",
@@ -1222,6 +1306,7 @@ module.exports = {
   },
   253: {
     complex: false,
+    draw: true,
     stop_id: "253",
     stop_name: "Rockaway Av",
     stop_desc: "",
@@ -1236,6 +1321,7 @@ module.exports = {
   },
   254: {
     complex: false,
+    draw: true,
     stop_id: "254",
     stop_name: "Junius St",
     stop_desc: "",
@@ -1250,6 +1336,7 @@ module.exports = {
   },
   255: {
     complex: false,
+    draw: true,
     stop_id: "255",
     stop_name: "Pennsylvania Av",
     stop_desc: "",
@@ -1264,6 +1351,7 @@ module.exports = {
   },
   256: {
     complex: false,
+    draw: true,
     stop_id: "256",
     stop_name: "Van Siclen Av",
     stop_desc: "",
@@ -1278,6 +1366,7 @@ module.exports = {
   },
   257: {
     complex: false,
+    draw: true,
     stop_id: "257",
     stop_name: "New Lots Av",
     stop_desc: "",
@@ -1292,6 +1381,7 @@ module.exports = {
   },
   301: {
     complex: false,
+    draw: true,
     stop_id: "301",
     stop_name: "Harlem - 148 St",
     stop_desc: "",
@@ -1306,6 +1396,7 @@ module.exports = {
   },
   302: {
     complex: false,
+    draw: true,
     stop_id: "302",
     stop_name: "145 St",
     stop_desc: "",
@@ -1320,6 +1411,7 @@ module.exports = {
   },
   401: {
     complex: false,
+    draw: true,
     stop_id: "401",
     stop_name: "Woodlawn",
     stop_desc: "",
@@ -1334,6 +1426,7 @@ module.exports = {
   },
   402: {
     complex: false,
+    draw: true,
     stop_id: "402",
     stop_name: "Mosholu Pkwy",
     stop_desc: "",
@@ -1348,6 +1441,7 @@ module.exports = {
   },
   405: {
     complex: false,
+    draw: true,
     stop_id: "405",
     stop_name: "Bedford Park Blvd - Lehman College",
     stop_desc: "",
@@ -1362,6 +1456,7 @@ module.exports = {
   },
   406: {
     complex: false,
+    draw: true,
     stop_id: "406",
     stop_name: "Kingsbridge Rd",
     stop_desc: "",
@@ -1376,6 +1471,7 @@ module.exports = {
   },
   407: {
     complex: false,
+    draw: true,
     stop_id: "407",
     stop_name: "Fordham Rd",
     stop_desc: "",
@@ -1390,6 +1486,7 @@ module.exports = {
   },
   408: {
     complex: false,
+    draw: true,
     stop_id: "408",
     stop_name: "183 St",
     stop_desc: "",
@@ -1404,6 +1501,7 @@ module.exports = {
   },
   409: {
     complex: false,
+    draw: true,
     stop_id: "409",
     stop_name: "Burnside Av",
     stop_desc: "",
@@ -1418,6 +1516,7 @@ module.exports = {
   },
   410: {
     complex: false,
+    draw: true,
     stop_id: "410",
     stop_name: "176 St",
     stop_desc: "",
@@ -1432,6 +1531,7 @@ module.exports = {
   },
   411: {
     complex: false,
+    draw: true,
     stop_id: "411",
     stop_name: "Mt Eden Av",
     stop_desc: "",
@@ -1446,6 +1546,7 @@ module.exports = {
   },
   412: {
     complex: false,
+    draw: true,
     stop_id: "412",
     stop_name: "170 St",
     stop_desc: "",
@@ -1460,6 +1561,7 @@ module.exports = {
   },
   413: {
     complex: false,
+    draw: true,
     stop_id: "413",
     stop_name: "167 St",
     stop_desc: "",
@@ -1474,6 +1576,7 @@ module.exports = {
   },
   414: {
     complex: false,
+    draw: true,
     stop_id: "414",
     stop_name: "161 St - Yankee Stadium",
     stop_desc: "",
@@ -1488,6 +1591,7 @@ module.exports = {
   },
   415: {
     complex: false,
+    draw: true,
     stop_id: "415",
     stop_name: "149 St - Grand Concourse",
     stop_desc: "",
@@ -1502,6 +1606,7 @@ module.exports = {
   },
   416: {
     complex: false,
+    draw: true,
     stop_id: "416",
     stop_name: "138 St - Grand Concourse",
     stop_desc: "",
@@ -1516,6 +1621,7 @@ module.exports = {
   },
   418: {
     complex: false,
+    draw: true,
     stop_id: "418",
     stop_name: "Fulton St",
     stop_desc: "",
@@ -1531,6 +1637,7 @@ module.exports = {
   },
   419: {
     complex: false,
+    draw: true,
     stop_id: "419",
     stop_name: "Wall St",
     stop_desc: "",
@@ -1545,6 +1652,7 @@ module.exports = {
   },
   420: {
     complex: false,
+    draw: true,
     stop_id: "420",
     stop_name: "Bowling Green",
     stop_desc: "",
@@ -1559,6 +1667,7 @@ module.exports = {
   },
   423: {
     complex: false,
+    draw: true,
     stop_id: "423",
     stop_name: "Borough Hall",
     stop_desc: "",
@@ -1573,6 +1682,7 @@ module.exports = {
   },
   501: {
     complex: false,
+    draw: true,
     stop_id: "501",
     stop_name: "Eastchester - Dyre Av",
     stop_desc: "",
@@ -1587,6 +1697,7 @@ module.exports = {
   },
   502: {
     complex: false,
+    draw: true,
     stop_id: "502",
     stop_name: "Baychester Av",
     stop_desc: "",
@@ -1601,6 +1712,7 @@ module.exports = {
   },
   503: {
     complex: false,
+    draw: true,
     stop_id: "503",
     stop_name: "Gun Hill Rd",
     stop_desc: "",
@@ -1615,6 +1727,7 @@ module.exports = {
   },
   504: {
     complex: false,
+    draw: true,
     stop_id: "504",
     stop_name: "Pelham Pkwy",
     stop_desc: "",
@@ -1629,6 +1742,7 @@ module.exports = {
   },
   505: {
     complex: false,
+    draw: true,
     stop_id: "505",
     stop_name: "Morris Park",
     stop_desc: "",
@@ -1643,6 +1757,7 @@ module.exports = {
   },
   601: {
     complex: false,
+    draw: true,
     stop_id: "601",
     stop_name: "Pelham Bay Park",
     stop_desc: "",
@@ -1657,6 +1772,7 @@ module.exports = {
   },
   602: {
     complex: false,
+    draw: true,
     stop_id: "602",
     stop_name: "Buhre Av",
     stop_desc: "",
@@ -1671,6 +1787,7 @@ module.exports = {
   },
   603: {
     complex: false,
+    draw: true,
     stop_id: "603",
     stop_name: "Middletown Rd",
     stop_desc: "",
@@ -1685,6 +1802,7 @@ module.exports = {
   },
   604: {
     complex: false,
+    draw: true,
     stop_id: "604",
     stop_name: "Westchester Sq - E Tremont Av",
     stop_desc: "",
@@ -1699,6 +1817,7 @@ module.exports = {
   },
   606: {
     complex: false,
+    draw: true,
     stop_id: "606",
     stop_name: "Zerega Av",
     stop_desc: "",
@@ -1713,6 +1832,7 @@ module.exports = {
   },
   607: {
     complex: false,
+    draw: true,
     stop_id: "607",
     stop_name: "Castle Hill Av",
     stop_desc: "",
@@ -1727,6 +1847,7 @@ module.exports = {
   },
   608: {
     complex: false,
+    draw: true,
     stop_id: "608",
     stop_name: "Parkchester",
     stop_desc: "",
@@ -1741,6 +1862,7 @@ module.exports = {
   },
   609: {
     complex: false,
+    draw: true,
     stop_id: "609",
     stop_name: "St Lawrence Av",
     stop_desc: "",
@@ -1755,6 +1877,7 @@ module.exports = {
   },
   610: {
     complex: false,
+    draw: true,
     stop_id: "610",
     stop_name: "Morrison Av- Sound View",
     stop_desc: "",
@@ -1769,6 +1892,7 @@ module.exports = {
   },
   611: {
     complex: false,
+    draw: true,
     stop_id: "611",
     stop_name: "Elder Av",
     stop_desc: "",
@@ -1783,6 +1907,7 @@ module.exports = {
   },
   612: {
     complex: false,
+    draw: true,
     stop_id: "612",
     stop_name: "Whitlock Av",
     stop_desc: "",
@@ -1797,6 +1922,7 @@ module.exports = {
   },
   613: {
     complex: false,
+    draw: true,
     stop_id: "613",
     stop_name: "Hunts Point Av",
     stop_desc: "",
@@ -1811,6 +1937,7 @@ module.exports = {
   },
   614: {
     complex: false,
+    draw: true,
     stop_id: "614",
     stop_name: "Longwood Av",
     stop_desc: "",
@@ -1825,6 +1952,7 @@ module.exports = {
   },
   615: {
     complex: false,
+    draw: true,
     stop_id: "615",
     stop_name: "E 149 St",
     stop_desc: "",
@@ -1839,6 +1967,7 @@ module.exports = {
   },
   616: {
     complex: false,
+    draw: true,
     stop_id: "616",
     stop_name: "E 143 St - St Mary's St",
     stop_desc: "",
@@ -1853,6 +1982,7 @@ module.exports = {
   },
   617: {
     complex: false,
+    draw: true,
     stop_id: "617",
     stop_name: "Cypress Av",
     stop_desc: "",
@@ -1867,6 +1997,7 @@ module.exports = {
   },
   618: {
     complex: false,
+    draw: true,
     stop_id: "618",
     stop_name: "Brook Av",
     stop_desc: "",
@@ -1881,6 +2012,7 @@ module.exports = {
   },
   619: {
     complex: false,
+    draw: true,
     stop_id: "619",
     stop_name: "3 Av - 138 St",
     stop_desc: "",
@@ -1895,6 +2027,7 @@ module.exports = {
   },
   621: {
     complex: false,
+    draw: true,
     stop_id: "621",
     stop_name: "125 St",
     stop_desc: "",
@@ -1909,6 +2042,7 @@ module.exports = {
   },
   622: {
     complex: false,
+    draw: true,
     stop_id: "622",
     stop_name: "116 St",
     stop_desc: "",
@@ -1923,6 +2057,7 @@ module.exports = {
   },
   623: {
     complex: false,
+    draw: true,
     stop_id: "623",
     stop_name: "110 St",
     stop_desc: "",
@@ -1937,6 +2072,7 @@ module.exports = {
   },
   624: {
     complex: false,
+    draw: true,
     stop_id: "624",
     stop_name: "103 St",
     stop_desc: "",
@@ -1951,6 +2087,7 @@ module.exports = {
   },
   625: {
     complex: false,
+    draw: true,
     stop_id: "625",
     stop_name: "96 St",
     stop_desc: "",
@@ -1965,6 +2102,7 @@ module.exports = {
   },
   626: {
     complex: false,
+    draw: true,
     stop_id: "626",
     stop_name: "86 St",
     stop_desc: "",
@@ -1979,6 +2117,7 @@ module.exports = {
   },
   627: {
     complex: false,
+    draw: true,
     stop_id: "627",
     stop_name: "77 St",
     stop_desc: "",
@@ -1993,6 +2132,7 @@ module.exports = {
   },
   628: {
     complex: false,
+    draw: true,
     stop_id: "628",
     stop_name: "68 St - Hunter College",
     stop_desc: "",
@@ -2007,6 +2147,7 @@ module.exports = {
   },
   629: {
     complex: false,
+    draw: true,
     stop_id: "629",
     stop_name: "59 St",
     stop_desc: "",
@@ -2035,6 +2176,7 @@ module.exports = {
   },
   631: {
     complex: false,
+    draw: true,
     stop_id: "631",
     stop_name: "Grand Central - 42 St",
     stop_desc: "",
@@ -2049,6 +2191,7 @@ module.exports = {
   },
   632: {
     complex: false,
+    draw: true,
     stop_id: "632",
     stop_name: "33 St",
     stop_desc: "",
@@ -2063,6 +2206,7 @@ module.exports = {
   },
   633: {
     complex: false,
+    draw: true,
     stop_id: "633",
     stop_name: "28 St",
     stop_desc: "",
@@ -2077,6 +2221,7 @@ module.exports = {
   },
   634: {
     complex: false,
+    draw: true,
     stop_id: "634",
     stop_name: "23 St",
     stop_desc: "",
@@ -2091,6 +2236,7 @@ module.exports = {
   },
   635: {
     complex: false,
+    draw: true,
     stop_id: "635",
     stop_name: "14 St - Union Sq",
     stop_desc: "",
@@ -2106,6 +2252,7 @@ module.exports = {
   },
   636: {
     complex: false,
+    draw: true,
     stop_id: "636",
     stop_name: "Astor Pl",
     stop_desc: "",
@@ -2120,6 +2267,7 @@ module.exports = {
   },
   637: {
     complex: false,
+    draw: true,
     stop_id: "637",
     stop_name: "Bleecker St",
     stop_desc: "",
@@ -2135,6 +2283,7 @@ module.exports = {
   },
   638: {
     complex: false,
+    draw: true,
     stop_id: "638",
     stop_name: "Spring St",
     stop_desc: "",
@@ -2149,6 +2298,7 @@ module.exports = {
   },
   639: {
     complex: false,
+    draw: true,
     stop_id: "639",
     stop_name: "Canal St",
     stop_desc: "",
@@ -2164,6 +2314,7 @@ module.exports = {
   },
   640: {
     complex: false,
+    draw: true,
     stop_id: "640",
     stop_name: "Brooklyn Bridge - City Hall",
     stop_desc: "",
@@ -2179,6 +2330,7 @@ module.exports = {
   },
   701: {
     complex: false,
+    draw: true,
     stop_id: "701",
     stop_name: "Flushing - Main St",
     stop_desc: "",
@@ -2193,6 +2345,7 @@ module.exports = {
   },
   702: {
     complex: false,
+    draw: true,
     stop_id: "702",
     stop_name: "Mets - Willets Point",
     stop_desc: "",
@@ -2207,6 +2360,7 @@ module.exports = {
   },
   705: {
     complex: false,
+    draw: true,
     stop_id: "705",
     stop_name: "111 St",
     stop_desc: "",
@@ -2221,6 +2375,7 @@ module.exports = {
   },
   706: {
     complex: false,
+    draw: true,
     stop_id: "706",
     stop_name: "103 St - Corona Plaza",
     stop_desc: "",
@@ -2235,6 +2390,7 @@ module.exports = {
   },
   707: {
     complex: false,
+    draw: true,
     stop_id: "707",
     stop_name: "Junction Blvd",
     stop_desc: "",
@@ -2249,6 +2405,7 @@ module.exports = {
   },
   708: {
     complex: false,
+    draw: true,
     stop_id: "708",
     stop_name: "90 St - Elmhurst Av",
     stop_desc: "",
@@ -2263,6 +2420,7 @@ module.exports = {
   },
   709: {
     complex: false,
+    draw: true,
     stop_id: "709",
     stop_name: "82 St - Jackson Hts",
     stop_desc: "",
@@ -2277,6 +2435,7 @@ module.exports = {
   },
   710: {
     complex: false,
+    draw: true,
     stop_id: "710",
     stop_name: "74 St - Broadway",
     stop_desc: "",
@@ -2291,6 +2450,7 @@ module.exports = {
   },
   711: {
     complex: false,
+    draw: true,
     stop_id: "711",
     stop_name: "69 St",
     stop_desc: "",
@@ -2305,6 +2465,7 @@ module.exports = {
   },
   712: {
     complex: false,
+    draw: true,
     stop_id: "712",
     stop_name: "Woodside - 61 St",
     stop_desc: "",
@@ -2319,6 +2480,7 @@ module.exports = {
   },
   713: {
     complex: false,
+    draw: true,
     stop_id: "713",
     stop_name: "52 St",
     stop_desc: "",
@@ -2333,6 +2495,7 @@ module.exports = {
   },
   714: {
     complex: false,
+    draw: true,
     stop_id: "714",
     stop_name: "46 St - Bliss St",
     stop_desc: "",
@@ -2347,6 +2510,7 @@ module.exports = {
   },
   715: {
     complex: false,
+    draw: true,
     stop_id: "715",
     stop_name: "40 St - Lowery St",
     stop_desc: "",
@@ -2361,6 +2525,7 @@ module.exports = {
   },
   716: {
     complex: false,
+    draw: true,
     stop_id: "716",
     stop_name: "33 St - Rawson St",
     stop_desc: "",
@@ -2375,6 +2540,7 @@ module.exports = {
   },
   718: {
     complex: false,
+    draw: true,
     stop_id: "718",
     stop_name: "Queensboro Plaza",
     stop_desc: "",
@@ -2389,6 +2555,7 @@ module.exports = {
   },
   719: {
     complex: false,
+    draw: true,
     stop_id: "719",
     stop_name: "Court Sq",
     stop_desc: "",
@@ -2404,6 +2571,7 @@ module.exports = {
   },
   720: {
     complex: false,
+    draw: true,
     stop_id: "720",
     stop_name: "Hunters Point Av",
     stop_desc: "",
@@ -2418,6 +2586,7 @@ module.exports = {
   },
   721: {
     complex: false,
+    draw: true,
     stop_id: "721",
     stop_name: "Vernon Blvd - Jackson Av",
     stop_desc: "",
@@ -2432,6 +2601,7 @@ module.exports = {
   },
   723: {
     complex: false,
+    draw: true,
     stop_id: "723",
     stop_name: "Grand Central - 42 St",
     stop_desc: "",
@@ -2446,6 +2616,7 @@ module.exports = {
   },
   724: {
     complex: false,
+    draw: true,
     stop_id: "724",
     stop_name: "5 Av",
     stop_desc: "",
@@ -2460,6 +2631,7 @@ module.exports = {
   },
   725: {
     complex: false,
+    draw: true,
     stop_id: "725",
     stop_name: "Times Sq - 42 St",
     stop_desc: "",
@@ -2474,6 +2646,7 @@ module.exports = {
   },
   726: {
     complex: false,
+    draw: true,
     stop_id: "726",
     stop_name: "34 St - Hudson Yards",
     stop_desc: "",
@@ -2488,6 +2661,7 @@ module.exports = {
   },
   901: {
     complex: false,
+    draw: true,
     stop_id: "901",
     stop_name: "Grand Central - 42 St",
     stop_desc: "",
@@ -2502,6 +2676,7 @@ module.exports = {
   },
   902: {
     complex: false,
+    draw: true,
     stop_id: "902",
     stop_name: "Times Sq - 42 St",
     stop_desc: "",
@@ -2516,6 +2691,7 @@ module.exports = {
   },
   A02: {
     complex: false,
+    draw: true,
     stop_id: "A02",
     stop_name: "Inwood - 207 St",
     stop_desc: "",
@@ -2530,6 +2706,7 @@ module.exports = {
   },
   A03: {
     complex: false,
+    draw: true,
     stop_id: "A03",
     stop_name: "Dyckman St",
     stop_desc: "",
@@ -2544,6 +2721,7 @@ module.exports = {
   },
   A05: {
     complex: false,
+    draw: true,
     stop_id: "A05",
     stop_name: "190 St",
     stop_desc: "",
@@ -2558,6 +2736,7 @@ module.exports = {
   },
   A06: {
     complex: false,
+    draw: true,
     stop_id: "A06",
     stop_name: "181 St",
     stop_desc: "",
@@ -2572,6 +2751,7 @@ module.exports = {
   },
   A07: {
     complex: false,
+    draw: true,
     stop_id: "A07",
     stop_name: "175 St",
     stop_desc: "",
@@ -2586,6 +2766,7 @@ module.exports = {
   },
   A09: {
     complex: false,
+    draw: true,
     stop_id: "A09",
     stop_name: "168 St",
     stop_desc: "",
@@ -2600,6 +2781,7 @@ module.exports = {
   },
   A10: {
     complex: false,
+    draw: true,
     stop_id: "A10",
     stop_name: "163 St - Amsterdam Av",
     stop_desc: "",
@@ -2614,6 +2796,7 @@ module.exports = {
   },
   A11: {
     complex: false,
+    draw: true,
     stop_id: "A11",
     stop_name: "155 St",
     stop_desc: "",
@@ -2628,6 +2811,7 @@ module.exports = {
   },
   A12: {
     complex: false,
+    draw: true,
     stop_id: "A12",
     stop_name: "145 St",
     stop_desc: "",
@@ -2642,6 +2826,7 @@ module.exports = {
   },
   A15: {
     complex: false,
+    draw: true,
     stop_id: "A15",
     stop_name: "125 St",
     stop_desc: "",
@@ -2656,6 +2841,7 @@ module.exports = {
   },
   A16: {
     complex: false,
+    draw: true,
     stop_id: "A16",
     stop_name: "116 St",
     stop_desc: "",
@@ -2670,6 +2856,7 @@ module.exports = {
   },
   A17: {
     complex: false,
+    draw: true,
     stop_id: "A17",
     stop_name: "Cathedral Pkwy (110 St)",
     stop_desc: "",
@@ -2684,6 +2871,7 @@ module.exports = {
   },
   A18: {
     complex: false,
+    draw: true,
     stop_id: "A18",
     stop_name: "103 St",
     stop_desc: "",
@@ -2698,6 +2886,7 @@ module.exports = {
   },
   A19: {
     complex: false,
+    draw: true,
     stop_id: "A19",
     stop_name: "96 St",
     stop_desc: "",
@@ -2712,6 +2901,7 @@ module.exports = {
   },
   A20: {
     complex: false,
+    draw: true,
     stop_id: "A20",
     stop_name: "86 St",
     stop_desc: "",
@@ -2726,6 +2916,7 @@ module.exports = {
   },
   A21: {
     complex: false,
+    draw: true,
     stop_id: "A21",
     stop_name: "81 St - Museum of Natural History",
     stop_desc: "",
@@ -2740,6 +2931,7 @@ module.exports = {
   },
   A22: {
     complex: false,
+    draw: true,
     stop_id: "A22",
     stop_name: "72 St",
     stop_desc: "",
@@ -2754,6 +2946,7 @@ module.exports = {
   },
   A24: {
     complex: false,
+    draw: true,
     stop_id: "A24",
     stop_name: "59 St - Columbus Circle",
     stop_desc: "",
@@ -2768,6 +2961,7 @@ module.exports = {
   },
   A25: {
     complex: false,
+    draw: true,
     stop_id: "A25",
     stop_name: "50 St",
     stop_desc: "",
@@ -2782,6 +2976,7 @@ module.exports = {
   },
   A27: {
     complex: false,
+    draw: true,
     stop_id: "A27",
     stop_name: "42 St - Port Authority Bus Terminal",
     stop_desc: "",
@@ -2796,6 +2991,7 @@ module.exports = {
   },
   A28: {
     complex: false,
+    draw: true,
     stop_id: "A28",
     stop_name: "34 St - Penn Station",
     stop_desc: "",
@@ -2810,6 +3006,7 @@ module.exports = {
   },
   A30: {
     complex: false,
+    draw: true,
     stop_id: "A30",
     stop_name: "23 St",
     stop_desc: "",
@@ -2824,6 +3021,7 @@ module.exports = {
   },
   A31: {
     complex: false,
+    draw: true,
     stop_id: "A31",
     stop_name: "14 St",
     stop_desc: "",
@@ -2838,6 +3036,7 @@ module.exports = {
   },
   A32: {
     complex: false,
+    draw: true,
     stop_id: "A32",
     stop_name: "W 4 St - Washington Sq",
     stop_desc: "",
@@ -2853,6 +3052,7 @@ module.exports = {
   },
   A33: {
     complex: false,
+    draw: true,
     stop_id: "A33",
     stop_name: "Spring St",
     stop_desc: "",
@@ -2867,6 +3067,7 @@ module.exports = {
   },
   A34: {
     complex: false,
+    draw: true,
     stop_id: "A34",
     stop_name: "Canal St",
     stop_desc: "",
@@ -2881,6 +3082,7 @@ module.exports = {
   },
   A36: {
     complex: false,
+    draw: true,
     stop_id: "A36",
     stop_name: "Chambers St",
     stop_desc: "",
@@ -2895,6 +3097,7 @@ module.exports = {
   },
   A38: {
     complex: false,
+    draw: true,
     stop_id: "A38",
     stop_name: "Fulton St",
     stop_desc: "",
@@ -2910,6 +3113,7 @@ module.exports = {
   },
   A40: {
     complex: false,
+    draw: true,
     stop_id: "A40",
     stop_name: "High St",
     stop_desc: "",
@@ -2924,6 +3128,7 @@ module.exports = {
   },
   A41: {
     complex: false,
+    draw: true,
     stop_id: "A41",
     stop_name: "Jay St - MetroTech",
     stop_desc: "",
@@ -2938,6 +3143,7 @@ module.exports = {
   },
   A42: {
     complex: false,
+    draw: true,
     stop_id: "A42",
     stop_name: "Hoyt - Schermerhorn Sts",
     stop_desc: "",
@@ -2952,6 +3158,7 @@ module.exports = {
   },
   A43: {
     complex: false,
+    draw: true,
     stop_id: "A43",
     stop_name: "Lafayette Av",
     stop_desc: "",
@@ -2966,6 +3173,7 @@ module.exports = {
   },
   A44: {
     complex: false,
+    draw: true,
     stop_id: "A44",
     stop_name: "Clinton - Washington Avs",
     stop_desc: "",
@@ -2980,6 +3188,7 @@ module.exports = {
   },
   A45: {
     complex: false,
+    draw: true,
     stop_id: "A45",
     stop_name: "Franklin Av",
     stop_desc: "",
@@ -2994,6 +3203,7 @@ module.exports = {
   },
   A46: {
     complex: false,
+    draw: true,
     stop_id: "A46",
     stop_name: "Nostrand Av",
     stop_desc: "",
@@ -3008,6 +3218,7 @@ module.exports = {
   },
   A47: {
     complex: false,
+    draw: true,
     stop_id: "A47",
     stop_name: "Kingston - Throop Avs",
     stop_desc: "",
@@ -3022,6 +3233,7 @@ module.exports = {
   },
   A48: {
     complex: false,
+    draw: true,
     stop_id: "A48",
     stop_name: "Utica Av",
     stop_desc: "",
@@ -3036,6 +3248,7 @@ module.exports = {
   },
   A49: {
     complex: false,
+    draw: true,
     stop_id: "A49",
     stop_name: "Ralph Av",
     stop_desc: "",
@@ -3050,6 +3263,7 @@ module.exports = {
   },
   A50: {
     complex: false,
+    draw: true,
     stop_id: "A50",
     stop_name: "Rockaway Av",
     stop_desc: "",
@@ -3064,6 +3278,7 @@ module.exports = {
   },
   A51: {
     complex: false,
+    draw: true,
     stop_id: "A51",
     stop_name: "Broadway Jct",
     stop_desc: "",
@@ -3078,6 +3293,7 @@ module.exports = {
   },
   A52: {
     complex: false,
+    draw: true,
     stop_id: "A52",
     stop_name: "Liberty Av",
     stop_desc: "",
@@ -3092,6 +3308,7 @@ module.exports = {
   },
   A53: {
     complex: false,
+    draw: true,
     stop_id: "A53",
     stop_name: "Van Siclen Av",
     stop_desc: "",
@@ -3106,6 +3323,7 @@ module.exports = {
   },
   A54: {
     complex: false,
+    draw: true,
     stop_id: "A54",
     stop_name: "Shepherd Av",
     stop_desc: "",
@@ -3120,6 +3338,7 @@ module.exports = {
   },
   A55: {
     complex: false,
+    draw: true,
     stop_id: "A55",
     stop_name: "Euclid Av",
     stop_desc: "",
@@ -3134,6 +3353,7 @@ module.exports = {
   },
   A57: {
     complex: false,
+    draw: true,
     stop_id: "A57",
     stop_name: "Grant Av",
     stop_desc: "",
@@ -3148,6 +3368,7 @@ module.exports = {
   },
   A59: {
     complex: false,
+    draw: true,
     stop_id: "A59",
     stop_name: "80 St",
     stop_desc: "",
@@ -3162,6 +3383,7 @@ module.exports = {
   },
   A60: {
     complex: false,
+    draw: true,
     stop_id: "A60",
     stop_name: "88 St",
     stop_desc: "",
@@ -3176,6 +3398,7 @@ module.exports = {
   },
   A61: {
     complex: false,
+    draw: true,
     stop_id: "A61",
     stop_name: "Rockaway Blvd",
     stop_desc: "",
@@ -3190,6 +3413,7 @@ module.exports = {
   },
   A63: {
     complex: false,
+    draw: true,
     stop_id: "A63",
     stop_name: "104 St",
     stop_desc: "",
@@ -3204,6 +3428,7 @@ module.exports = {
   },
   A64: {
     complex: false,
+    draw: true,
     stop_id: "A64",
     stop_name: "111 St",
     stop_desc: "",
@@ -3218,6 +3443,7 @@ module.exports = {
   },
   A65: {
     complex: false,
+    draw: true,
     stop_id: "A65",
     stop_name: "Ozone Park - Lefferts Blvd",
     stop_desc: "",
@@ -3232,6 +3458,7 @@ module.exports = {
   },
   B04: {
     complex: false,
+    draw: true,
     stop_id: "B04",
     stop_name: "21 St - Queensbridge",
     stop_desc: "",
@@ -3246,6 +3473,7 @@ module.exports = {
   },
   B06: {
     complex: false,
+    draw: true,
     stop_id: "B06",
     stop_name: "Roosevelt Island",
     stop_desc: "",
@@ -3260,6 +3488,7 @@ module.exports = {
   },
   B08: {
     complex: false,
+    draw: true,
     stop_id: "B08",
     stop_name: "Lexington Av/63 St",
     stop_desc: "",
@@ -3274,6 +3503,7 @@ module.exports = {
   },
   B10: {
     complex: false,
+    draw: true,
     stop_id: "B10",
     stop_name: "57 St",
     stop_desc: "",
@@ -3288,6 +3518,7 @@ module.exports = {
   },
   B12: {
     complex: false,
+    draw: true,
     stop_id: "B12",
     stop_name: "9 Av",
     stop_desc: "",
@@ -3302,6 +3533,7 @@ module.exports = {
   },
   B13: {
     complex: false,
+    draw: true,
     stop_id: "B13",
     stop_name: "Fort Hamilton Pkwy",
     stop_desc: "",
@@ -3316,6 +3548,7 @@ module.exports = {
   },
   B14: {
     complex: false,
+    draw: true,
     stop_id: "B14",
     stop_name: "50 St",
     stop_desc: "",
@@ -3330,6 +3563,7 @@ module.exports = {
   },
   B15: {
     complex: false,
+    draw: true,
     stop_id: "B15",
     stop_name: "55 St",
     stop_desc: "",
@@ -3344,6 +3578,7 @@ module.exports = {
   },
   B16: {
     complex: false,
+    draw: true,
     stop_id: "B16",
     stop_name: "62 St",
     stop_desc: "",
@@ -3359,6 +3594,7 @@ module.exports = {
   },
   B17: {
     complex: false,
+    draw: true,
     stop_id: "B17",
     stop_name: "71 St",
     stop_desc: "",
@@ -3373,6 +3609,7 @@ module.exports = {
   },
   B18: {
     complex: false,
+    draw: true,
     stop_id: "B18",
     stop_name: "79 St",
     stop_desc: "",
@@ -3387,6 +3624,7 @@ module.exports = {
   },
   B19: {
     complex: false,
+    draw: true,
     stop_id: "B19",
     stop_name: "18 Av",
     stop_desc: "",
@@ -3401,6 +3639,7 @@ module.exports = {
   },
   B20: {
     complex: false,
+    draw: true,
     stop_id: "B20",
     stop_name: "20 Av",
     stop_desc: "",
@@ -3415,6 +3654,7 @@ module.exports = {
   },
   B21: {
     complex: false,
+    draw: true,
     stop_id: "B21",
     stop_name: "Bay Pkwy",
     stop_desc: "",
@@ -3429,6 +3669,7 @@ module.exports = {
   },
   B22: {
     complex: false,
+    draw: true,
     stop_id: "B22",
     stop_name: "25 Av",
     stop_desc: "",
@@ -3443,6 +3684,7 @@ module.exports = {
   },
   B23: {
     complex: false,
+    draw: true,
     stop_id: "B23",
     stop_name: "Bay 50 St",
     stop_desc: "",
@@ -3457,6 +3699,7 @@ module.exports = {
   },
   D01: {
     complex: false,
+    draw: true,
     stop_id: "D01",
     stop_name: "Norwood - 205 St",
     stop_desc: "",
@@ -3471,6 +3714,7 @@ module.exports = {
   },
   D03: {
     complex: false,
+    draw: true,
     stop_id: "D03",
     stop_name: "Bedford Park Blvd",
     stop_desc: "",
@@ -3485,6 +3729,7 @@ module.exports = {
   },
   D04: {
     complex: false,
+    draw: true,
     stop_id: "D04",
     stop_name: "Kingsbridge Rd",
     stop_desc: "",
@@ -3499,6 +3744,7 @@ module.exports = {
   },
   D05: {
     complex: false,
+    draw: true,
     stop_id: "D05",
     stop_name: "Fordham Rd",
     stop_desc: "",
@@ -3513,6 +3759,7 @@ module.exports = {
   },
   D06: {
     complex: false,
+    draw: true,
     stop_id: "D06",
     stop_name: "182-183 Sts",
     stop_desc: "",
@@ -3527,6 +3774,7 @@ module.exports = {
   },
   D07: {
     complex: false,
+    draw: true,
     stop_id: "D07",
     stop_name: "Tremont Av",
     stop_desc: "",
@@ -3541,6 +3789,7 @@ module.exports = {
   },
   D08: {
     complex: false,
+    draw: true,
     stop_id: "D08",
     stop_name: "174-175 Sts",
     stop_desc: "",
@@ -3555,6 +3804,7 @@ module.exports = {
   },
   D09: {
     complex: false,
+    draw: true,
     stop_id: "D09",
     stop_name: "170 St",
     stop_desc: "",
@@ -3569,6 +3819,7 @@ module.exports = {
   },
   D10: {
     complex: false,
+    draw: true,
     stop_id: "D10",
     stop_name: "167 St",
     stop_desc: "",
@@ -3583,6 +3834,7 @@ module.exports = {
   },
   D11: {
     complex: false,
+    draw: true,
     stop_id: "D11",
     stop_name: "161 St - Yankee Stadium",
     stop_desc: "",
@@ -3597,6 +3849,7 @@ module.exports = {
   },
   D12: {
     complex: false,
+    draw: true,
     stop_id: "D12",
     stop_name: "155 St",
     stop_desc: "",
@@ -3611,6 +3864,7 @@ module.exports = {
   },
   D13: {
     complex: false,
+    draw: true,
     stop_id: "D13",
     stop_name: "145 St",
     stop_desc: "",
@@ -3625,6 +3879,7 @@ module.exports = {
   },
   D14: {
     complex: false,
+    draw: true,
     stop_id: "D14",
     stop_name: "7 Av",
     stop_desc: "",
@@ -3639,6 +3894,7 @@ module.exports = {
   },
   D15: {
     complex: false,
+    draw: true,
     stop_id: "D15",
     stop_name: "47-50 Sts - Rockefeller Ctr",
     stop_desc: "",
@@ -3653,6 +3909,7 @@ module.exports = {
   },
   D16: {
     complex: false,
+    draw: true,
     stop_id: "D16",
     stop_name: "42 St - Bryant Pk",
     stop_desc: "",
@@ -3667,6 +3924,7 @@ module.exports = {
   },
   D17: {
     complex: false,
+    draw: true,
     stop_id: "D17",
     stop_name: "34 St - Herald Sq",
     stop_desc: "",
@@ -3681,6 +3939,7 @@ module.exports = {
   },
   D18: {
     complex: false,
+    draw: true,
     stop_id: "D18",
     stop_name: "23 St",
     stop_desc: "",
@@ -3695,13 +3954,14 @@ module.exports = {
   },
   D19: {
     complex: false,
+    draw: false,
     stop_id: "D19",
     stop_name: "14 St",
     stop_desc: "",
     stop_lat: "40.738228",
     stop_lon: "-73.996209",
     location_type: "1",
-    lines_at: ["F", "M",],
+    lines_at: ["F", "M"],
     borough: "manhattan",
     accessible: false,
     north_label: "Uptown & Queens",
@@ -3709,6 +3969,7 @@ module.exports = {
   },
   D20: {
     complex: false,
+    draw: true,
     stop_id: "D20",
     stop_name: "W 4 St - Washington Sq",
     stop_desc: "",
@@ -3724,6 +3985,7 @@ module.exports = {
   },
   D21: {
     complex: false,
+    draw: true,
     stop_id: "D21",
     stop_name: "Broadway-Lafayette St",
     stop_desc: "",
@@ -3739,6 +4001,7 @@ module.exports = {
   },
   D22: {
     complex: false,
+    draw: true,
     stop_id: "D22",
     stop_name: "Grand St",
     stop_desc: "",
@@ -3753,6 +4016,7 @@ module.exports = {
   },
   D24: {
     complex: false,
+    draw: true,
     stop_id: "D24",
     stop_name: "Atlantic Av - Barclays Ctr",
     stop_desc: "",
@@ -3767,6 +4031,7 @@ module.exports = {
   },
   D25: {
     complex: false,
+    draw: true,
     stop_id: "D25",
     stop_name: "7 Av",
     stop_desc: "",
@@ -3781,6 +4046,7 @@ module.exports = {
   },
   D26: {
     complex: false,
+    draw: true,
     stop_id: "D26",
     stop_name: "Prospect Park",
     stop_desc: "",
@@ -3795,6 +4061,7 @@ module.exports = {
   },
   D27: {
     complex: false,
+    draw: true,
     stop_id: "D27",
     stop_name: "Parkside Av",
     stop_desc: "",
@@ -3809,6 +4076,7 @@ module.exports = {
   },
   D28: {
     complex: false,
+    draw: true,
     stop_id: "D28",
     stop_name: "Church Av",
     stop_desc: "",
@@ -3823,6 +4091,7 @@ module.exports = {
   },
   D29: {
     complex: false,
+    draw: true,
     stop_id: "D29",
     stop_name: "Beverley Rd",
     stop_desc: "",
@@ -3837,6 +4106,7 @@ module.exports = {
   },
   D30: {
     complex: false,
+    draw: true,
     stop_id: "D30",
     stop_name: "Cortelyou Rd",
     stop_desc: "",
@@ -3851,6 +4121,7 @@ module.exports = {
   },
   D31: {
     complex: false,
+    draw: true,
     stop_id: "D31",
     stop_name: "Newkirk Plaza",
     stop_desc: "",
@@ -3865,6 +4136,7 @@ module.exports = {
   },
   D32: {
     complex: false,
+    draw: true,
     stop_id: "D32",
     stop_name: "Avenue H",
     stop_desc: "",
@@ -3879,6 +4151,7 @@ module.exports = {
   },
   D33: {
     complex: false,
+    draw: true,
     stop_id: "D33",
     stop_name: "Avenue J",
     stop_desc: "",
@@ -3893,6 +4166,7 @@ module.exports = {
   },
   D34: {
     complex: false,
+    draw: true,
     stop_id: "D34",
     stop_name: "Avenue M",
     stop_desc: "",
@@ -3907,6 +4181,7 @@ module.exports = {
   },
   D35: {
     complex: false,
+    draw: true,
     stop_id: "D35",
     stop_name: "Kings Hwy",
     stop_desc: "",
@@ -3921,6 +4196,7 @@ module.exports = {
   },
   D37: {
     complex: false,
+    draw: true,
     stop_id: "D37",
     stop_name: "Avenue U",
     stop_desc: "",
@@ -3935,6 +4211,7 @@ module.exports = {
   },
   D38: {
     complex: false,
+    draw: true,
     stop_id: "D38",
     stop_name: "Neck Rd",
     stop_desc: "",
@@ -3949,6 +4226,7 @@ module.exports = {
   },
   D39: {
     complex: false,
+    draw: true,
     stop_id: "D39",
     stop_name: "Sheepshead Bay",
     stop_desc: "",
@@ -3963,6 +4241,7 @@ module.exports = {
   },
   D40: {
     complex: false,
+    draw: true,
     stop_id: "D40",
     stop_name: "Brighton Beach",
     stop_desc: "",
@@ -3977,6 +4256,7 @@ module.exports = {
   },
   D41: {
     complex: false,
+    draw: true,
     stop_id: "D41",
     stop_name: "Ocean Pkwy",
     stop_desc: "",
@@ -3991,6 +4271,7 @@ module.exports = {
   },
   D42: {
     complex: false,
+    draw: true,
     stop_id: "D42",
     stop_name: "W 8 St - NY Aquarium",
     stop_desc: "",
@@ -4005,6 +4286,7 @@ module.exports = {
   },
   D43: {
     complex: false,
+    draw: true,
     stop_id: "D43",
     stop_name: "Coney Island - Stillwell Av",
     stop_desc: "",
@@ -4019,6 +4301,7 @@ module.exports = {
   },
   E01: {
     complex: false,
+    draw: true,
     stop_id: "E01",
     stop_name: "World Trade Center",
     stop_desc: "",
@@ -4033,6 +4316,7 @@ module.exports = {
   },
   F01: {
     complex: false,
+    draw: true,
     stop_id: "F01",
     stop_name: "Jamaica - 179 St",
     stop_desc: "",
@@ -4047,6 +4331,7 @@ module.exports = {
   },
   F02: {
     complex: false,
+    draw: true,
     stop_id: "F02",
     stop_name: "169 St",
     stop_desc: "",
@@ -4061,6 +4346,7 @@ module.exports = {
   },
   F03: {
     complex: false,
+    draw: true,
     stop_id: "F03",
     stop_name: "Parsons Blvd",
     stop_desc: "",
@@ -4075,6 +4361,7 @@ module.exports = {
   },
   F04: {
     complex: false,
+    draw: true,
     stop_id: "F04",
     stop_name: "Sutphin Blvd",
     stop_desc: "",
@@ -4089,6 +4376,7 @@ module.exports = {
   },
   F05: {
     complex: false,
+    draw: true,
     stop_id: "F05",
     stop_name: "Briarwood - Van Wyck Blvd",
     stop_desc: "",
@@ -4103,6 +4391,7 @@ module.exports = {
   },
   F06: {
     complex: false,
+    draw: true,
     stop_id: "F06",
     stop_name: "Kew Gardens - Union Tpke",
     stop_desc: "",
@@ -4117,6 +4406,7 @@ module.exports = {
   },
   F07: {
     complex: false,
+    draw: true,
     stop_id: "F07",
     stop_name: "75 Av",
     stop_desc: "",
@@ -4131,6 +4421,7 @@ module.exports = {
   },
   F09: {
     complex: false,
+    draw: true,
     stop_id: "F09",
     stop_name: "Court Sq - 23 St",
     stop_desc: "",
@@ -4146,6 +4437,7 @@ module.exports = {
   },
   F11: {
     complex: false,
+    draw: true,
     stop_id: "F11",
     stop_name: "Lexington Av/53 St",
     stop_desc: "",
@@ -4160,6 +4452,7 @@ module.exports = {
   },
   F12: {
     complex: false,
+    draw: true,
     stop_id: "F12",
     stop_name: "5 Av/53 St",
     stop_desc: "",
@@ -4174,6 +4467,7 @@ module.exports = {
   },
   F14: {
     complex: false,
+    draw: true,
     stop_id: "F14",
     stop_name: "2 Av",
     stop_desc: "",
@@ -4188,6 +4482,7 @@ module.exports = {
   },
   F15: {
     complex: false,
+    draw: true,
     stop_id: "F15",
     stop_name: "Delancey St",
     stop_desc: "Delancey St-Essex St",
@@ -4202,6 +4497,7 @@ module.exports = {
   },
   F16: {
     complex: false,
+    draw: true,
     stop_id: "F16",
     stop_name: "East Broadway",
     stop_desc: "",
@@ -4216,6 +4512,7 @@ module.exports = {
   },
   F18: {
     complex: false,
+    draw: true,
     stop_id: "F18",
     stop_name: "York St",
     stop_desc: "",
@@ -4230,6 +4527,7 @@ module.exports = {
   },
   F20: {
     complex: false,
+    draw: true,
     stop_id: "F20",
     stop_name: "Bergen St",
     stop_desc: "",
@@ -4244,6 +4542,7 @@ module.exports = {
   },
   F21: {
     complex: false,
+    draw: true,
     stop_id: "F21",
     stop_name: "Carroll St",
     stop_desc: "",
@@ -4258,6 +4557,7 @@ module.exports = {
   },
   F22: {
     complex: false,
+    draw: true,
     stop_id: "F22",
     stop_name: "Smith - 9 Sts",
     stop_desc: "",
@@ -4272,6 +4572,7 @@ module.exports = {
   },
   F23: {
     complex: false,
+    draw: true,
     stop_id: "F23",
     stop_name: "4 Av",
     stop_desc: "4 Av - 9 St",
@@ -4287,6 +4588,7 @@ module.exports = {
   },
   F24: {
     complex: false,
+    draw: true,
     stop_id: "F24",
     stop_name: "7 Av",
     stop_desc: "",
@@ -4301,6 +4603,7 @@ module.exports = {
   },
   F25: {
     complex: false,
+    draw: true,
     stop_id: "F25",
     stop_name: "15 St - Prospect Park",
     stop_desc: "",
@@ -4315,6 +4618,7 @@ module.exports = {
   },
   F26: {
     complex: false,
+    draw: true,
     stop_id: "F26",
     stop_name: "Fort Hamilton Pkwy",
     stop_desc: "",
@@ -4329,6 +4633,7 @@ module.exports = {
   },
   F27: {
     complex: false,
+    draw: true,
     stop_id: "F27",
     stop_name: "Church Av",
     stop_desc: "",
@@ -4343,6 +4648,7 @@ module.exports = {
   },
   F29: {
     complex: false,
+    draw: true,
     stop_id: "F29",
     stop_name: "Ditmas Av",
     stop_desc: "",
@@ -4357,6 +4663,7 @@ module.exports = {
   },
   F30: {
     complex: false,
+    draw: true,
     stop_id: "F30",
     stop_name: "18 Av",
     stop_desc: "",
@@ -4371,6 +4678,7 @@ module.exports = {
   },
   F31: {
     complex: false,
+    draw: true,
     stop_id: "F31",
     stop_name: "Avenue I",
     stop_desc: "",
@@ -4385,6 +4693,7 @@ module.exports = {
   },
   F32: {
     complex: false,
+    draw: true,
     stop_id: "F32",
     stop_name: "Bay Pkwy",
     stop_desc: "",
@@ -4399,6 +4708,7 @@ module.exports = {
   },
   F33: {
     complex: false,
+    draw: true,
     stop_id: "F33",
     stop_name: "Avenue N",
     stop_desc: "",
@@ -4413,6 +4723,7 @@ module.exports = {
   },
   F34: {
     complex: false,
+    draw: true,
     stop_id: "F34",
     stop_name: "Avenue P",
     stop_desc: "",
@@ -4427,6 +4738,7 @@ module.exports = {
   },
   F35: {
     complex: false,
+    draw: true,
     stop_id: "F35",
     stop_name: "Kings Hwy",
     stop_desc: "",
@@ -4441,6 +4753,7 @@ module.exports = {
   },
   F36: {
     complex: false,
+    draw: true,
     stop_id: "F36",
     stop_name: "Avenue U",
     stop_desc: "",
@@ -4455,6 +4768,7 @@ module.exports = {
   },
   F38: {
     complex: false,
+    draw: true,
     stop_id: "F38",
     stop_name: "Avenue X",
     stop_desc: "",
@@ -4469,6 +4783,7 @@ module.exports = {
   },
   F39: {
     complex: false,
+    draw: true,
     stop_id: "F39",
     stop_name: "Neptune Av",
     stop_desc: "",
@@ -4483,6 +4798,7 @@ module.exports = {
   },
   G05: {
     complex: false,
+    draw: true,
     stop_id: "G05",
     stop_name: "Jamaica Center - Parsons/Archer",
     stop_desc: "",
@@ -4497,6 +4813,7 @@ module.exports = {
   },
   G06: {
     complex: false,
+    draw: true,
     stop_id: "G06",
     stop_name: "Sutphin Blvd - Archer Av - JFK Airport",
     stop_desc: "",
@@ -4511,6 +4828,7 @@ module.exports = {
   },
   G07: {
     complex: false,
+    draw: true,
     stop_id: "G07",
     stop_name: "Jamaica - Van Wyck",
     stop_desc: "",
@@ -4525,6 +4843,7 @@ module.exports = {
   },
   G08: {
     complex: false,
+    draw: true,
     stop_id: "G08",
     stop_name: "Forest Hills - 71 Av",
     stop_desc: "",
@@ -4539,6 +4858,7 @@ module.exports = {
   },
   G09: {
     complex: false,
+    draw: true,
     stop_id: "G09",
     stop_name: "67 Av",
     stop_desc: "",
@@ -4553,6 +4873,7 @@ module.exports = {
   },
   G10: {
     complex: false,
+    draw: true,
     stop_id: "G10",
     stop_name: "63 Dr - Rego Park",
     stop_desc: "",
@@ -4567,6 +4888,7 @@ module.exports = {
   },
   G11: {
     complex: false,
+    draw: true,
     stop_id: "G11",
     stop_name: "Woodhaven Blvd",
     stop_desc: "",
@@ -4581,6 +4903,7 @@ module.exports = {
   },
   G12: {
     complex: false,
+    draw: true,
     stop_id: "G12",
     stop_name: "Grand Av - Newtown",
     stop_desc: "",
@@ -4595,6 +4918,7 @@ module.exports = {
   },
   G13: {
     complex: false,
+    draw: true,
     stop_id: "G13",
     stop_name: "Elmhurst Av",
     stop_desc: "",
@@ -4609,6 +4933,7 @@ module.exports = {
   },
   G14: {
     complex: false,
+    draw: true,
     stop_id: "G14",
     stop_name: "Jackson Hts - Roosevelt Av",
     stop_desc: "",
@@ -4623,6 +4948,7 @@ module.exports = {
   },
   G15: {
     complex: false,
+    draw: true,
     stop_id: "G15",
     stop_name: "65 St",
     stop_desc: "",
@@ -4637,6 +4963,7 @@ module.exports = {
   },
   G16: {
     complex: false,
+    draw: true,
     stop_id: "G16",
     stop_name: "Northern Blvd",
     stop_desc: "",
@@ -4651,6 +4978,7 @@ module.exports = {
   },
   G18: {
     complex: false,
+    draw: true,
     stop_id: "G18",
     stop_name: "46 St",
     stop_desc: "",
@@ -4665,6 +4993,7 @@ module.exports = {
   },
   G19: {
     complex: false,
+    draw: true,
     stop_id: "G19",
     stop_name: "Steinway St",
     stop_desc: "",
@@ -4679,6 +5008,7 @@ module.exports = {
   },
   G20: {
     complex: false,
+    draw: true,
     stop_id: "G20",
     stop_name: "36 St",
     stop_desc: "",
@@ -4693,6 +5023,7 @@ module.exports = {
   },
   G21: {
     complex: false,
+    draw: true,
     stop_id: "G21",
     stop_name: "Queens Plaza",
     stop_desc: "",
@@ -4707,6 +5038,7 @@ module.exports = {
   },
   G22: {
     complex: false,
+    draw: true,
     stop_id: "G22",
     stop_name: "Court Sq",
     stop_desc: "",
@@ -4722,6 +5054,7 @@ module.exports = {
   },
   G24: {
     complex: false,
+    draw: true,
     stop_id: "G24",
     stop_name: "21 St",
     stop_desc: "",
@@ -4736,6 +5069,7 @@ module.exports = {
   },
   G26: {
     complex: false,
+    draw: true,
     stop_id: "G26",
     stop_name: "Greenpoint Av",
     stop_desc: "",
@@ -4750,6 +5084,7 @@ module.exports = {
   },
   G28: {
     complex: false,
+    draw: true,
     stop_id: "G28",
     stop_name: "Nassau Av",
     stop_desc: "",
@@ -4764,6 +5099,7 @@ module.exports = {
   },
   G29: {
     complex: false,
+    draw: true,
     stop_id: "G29",
     stop_name: "Metropolitan Av",
     stop_desc: "",
@@ -4778,6 +5114,7 @@ module.exports = {
   },
   G30: {
     complex: false,
+    draw: true,
     stop_id: "G30",
     stop_name: "Broadway",
     stop_desc: "",
@@ -4792,6 +5129,7 @@ module.exports = {
   },
   G31: {
     complex: false,
+    draw: true,
     stop_id: "G31",
     stop_name: "Flushing Av",
     stop_desc: "",
@@ -4806,6 +5144,7 @@ module.exports = {
   },
   G32: {
     complex: false,
+    draw: true,
     stop_id: "G32",
     stop_name: "Myrtle - Willoughby Avs",
     stop_desc: "",
@@ -4820,6 +5159,7 @@ module.exports = {
   },
   G33: {
     complex: false,
+    draw: true,
     stop_id: "G33",
     stop_name: "Bedford - Nostrand Avs",
     stop_desc: "",
@@ -4834,6 +5174,7 @@ module.exports = {
   },
   G34: {
     complex: false,
+    draw: true,
     stop_id: "G34",
     stop_name: "Classon Av",
     stop_desc: "",
@@ -4848,6 +5189,7 @@ module.exports = {
   },
   G35: {
     complex: false,
+    draw: true,
     stop_id: "G35",
     stop_name: "Clinton - Washington Avs",
     stop_desc: "",
@@ -4862,6 +5204,7 @@ module.exports = {
   },
   G36: {
     complex: false,
+    draw: true,
     stop_id: "G36",
     stop_name: "Fulton St",
     stop_desc: "",
@@ -4890,6 +5233,7 @@ module.exports = {
   },
   H02: {
     complex: false,
+    draw: true,
     stop_id: "H02",
     stop_name: "Aqueduct - N Conduit Av",
     stop_desc: "",
@@ -4904,6 +5248,7 @@ module.exports = {
   },
   H03: {
     complex: false,
+    draw: true,
     stop_id: "H03",
     stop_name: "Howard Beach - JFK Airport",
     stop_desc: "",
@@ -4918,6 +5263,7 @@ module.exports = {
   },
   H04: {
     complex: false,
+    draw: true,
     stop_id: "H04",
     stop_name: "Broad Channel",
     stop_desc: "",
@@ -4932,6 +5278,7 @@ module.exports = {
   },
   H06: {
     complex: false,
+    draw: true,
     stop_id: "H06",
     stop_name: "Beach 67 St",
     stop_desc: "",
@@ -4946,6 +5293,7 @@ module.exports = {
   },
   H07: {
     complex: false,
+    draw: true,
     stop_id: "H07",
     stop_name: "Beach 60 St",
     stop_desc: "",
@@ -4960,6 +5308,7 @@ module.exports = {
   },
   H08: {
     complex: false,
+    draw: true,
     stop_id: "H08",
     stop_name: "Beach 44 St",
     stop_desc: "",
@@ -4974,6 +5323,7 @@ module.exports = {
   },
   H09: {
     complex: false,
+    draw: true,
     stop_id: "H09",
     stop_name: "Beach 36 St",
     stop_desc: "",
@@ -4988,6 +5338,7 @@ module.exports = {
   },
   H10: {
     complex: false,
+    draw: true,
     stop_id: "H10",
     stop_name: "Beach 25 St",
     stop_desc: "",
@@ -5002,6 +5353,7 @@ module.exports = {
   },
   H11: {
     complex: false,
+    draw: true,
     stop_id: "H11",
     stop_name: "Far Rockaway - Mott Av",
     stop_desc: "",
@@ -5016,6 +5368,7 @@ module.exports = {
   },
   H12: {
     complex: false,
+    draw: true,
     stop_id: "H12",
     stop_name: "Beach 90 St",
     stop_desc: "",
@@ -5030,6 +5383,7 @@ module.exports = {
   },
   H13: {
     complex: false,
+    draw: true,
     stop_id: "H13",
     stop_name: "Beach 98 St",
     stop_desc: "",
@@ -5044,6 +5398,7 @@ module.exports = {
   },
   H14: {
     complex: false,
+    draw: true,
     stop_id: "H14",
     stop_name: "Beach 105 St",
     stop_desc: "",
@@ -5058,6 +5413,7 @@ module.exports = {
   },
   H15: {
     complex: false,
+    draw: true,
     stop_id: "H15",
     stop_name: "Rockaway Park - Beach 116 St",
     stop_desc: "",
@@ -5072,6 +5428,7 @@ module.exports = {
   },
   // H19: { // why another broad channel?
   //   complex: false,
+    draw: true,
   //   stop_id: "H19",
   //   stop_name: "Broad Channel",
   //   stop_desc: "",
@@ -5086,6 +5443,7 @@ module.exports = {
   // },
   J12: {
     complex: false,
+    draw: true,
     stop_id: "J12",
     stop_name: "121 St",
     stop_desc: "",
@@ -5100,6 +5458,7 @@ module.exports = {
   },
   J13: {
     complex: false,
+    draw: true,
     stop_id: "J13",
     stop_name: "111 St",
     stop_desc: "",
@@ -5114,6 +5473,7 @@ module.exports = {
   },
   J14: {
     complex: false,
+    draw: true,
     stop_id: "J14",
     stop_name: "104 St",
     stop_desc: "",
@@ -5128,6 +5488,7 @@ module.exports = {
   },
   J15: {
     complex: false,
+    draw: true,
     stop_id: "J15",
     stop_name: "Woodhaven Blvd",
     stop_desc: "",
@@ -5142,6 +5503,7 @@ module.exports = {
   },
   J16: {
     complex: false,
+    draw: true,
     stop_id: "J16",
     stop_name: "85 St - Forest Pkwy",
     stop_desc: "",
@@ -5156,6 +5518,7 @@ module.exports = {
   },
   J17: {
     complex: false,
+    draw: true,
     stop_id: "J17",
     stop_name: "75 St",
     stop_desc: "",
@@ -5170,6 +5533,7 @@ module.exports = {
   },
   J19: {
     complex: false,
+    draw: true,
     stop_id: "J19",
     stop_name: "Cypress Hills",
     stop_desc: "",
@@ -5184,6 +5548,7 @@ module.exports = {
   },
   J20: {
     complex: false,
+    draw: true,
     stop_id: "J20",
     stop_name: "Crescent St",
     stop_desc: "",
@@ -5198,6 +5563,7 @@ module.exports = {
   },
   J21: {
     complex: false,
+    draw: true,
     stop_id: "J21",
     stop_name: "Norwood Av",
     stop_desc: "",
@@ -5212,6 +5578,7 @@ module.exports = {
   },
   J22: {
     complex: false,
+    draw: true,
     stop_id: "J22",
     stop_name: "Cleveland St",
     stop_desc: "",
@@ -5226,6 +5593,7 @@ module.exports = {
   },
   J23: {
     complex: false,
+    draw: true,
     stop_id: "J23",
     stop_name: "Van Siclen Av",
     stop_desc: "",
@@ -5240,6 +5608,7 @@ module.exports = {
   },
   J24: {
     complex: false,
+    draw: true,
     stop_id: "J24",
     stop_name: "Alabama Av",
     stop_desc: "",
@@ -5254,6 +5623,7 @@ module.exports = {
   },
   J27: {
     complex: false,
+    draw: true,
     stop_id: "J27",
     stop_name: "Broadway Jct",
     stop_desc: "",
@@ -5268,6 +5638,7 @@ module.exports = {
   },
   J28: {
     complex: false,
+    draw: true,
     stop_id: "J28",
     stop_name: "Chauncey St",
     stop_desc: "",
@@ -5282,6 +5653,7 @@ module.exports = {
   },
   J29: {
     complex: false,
+    draw: true,
     stop_id: "J29",
     stop_name: "Halsey St",
     stop_desc: "",
@@ -5296,6 +5668,7 @@ module.exports = {
   },
   J30: {
     complex: false,
+    draw: true,
     stop_id: "J30",
     stop_name: "Gates Av",
     stop_desc: "",
@@ -5310,6 +5683,7 @@ module.exports = {
   },
   J31: {
     complex: false,
+    draw: true,
     stop_id: "J31",
     stop_name: "Kosciuszko St",
     stop_desc: "",
@@ -5324,6 +5698,7 @@ module.exports = {
   },
   L01: {
     complex: false,
+    draw: true,
     stop_id: "L01",
     stop_name: "8 Av",
     stop_desc: "",
@@ -5338,13 +5713,14 @@ module.exports = {
   },
   L02: {
     complex: false,
+    draw: false,
     stop_id: "L02",
     stop_name: "6 Av",
     stop_desc: "",
     stop_lat: "40.737335",
     stop_lon: "-73.996786",
     location_type: "1",
-    lines_at: ["F", "M", "L"],
+    lines_at: ["L"],
     borough: "manhattan",
     accessible: false,
     north_label: "8 Av",
@@ -5352,6 +5728,7 @@ module.exports = {
   },
   L03: {
     complex: false,
+    draw: true,
     stop_id: "L03",
     stop_name: "Union Sq - 14 St",
     stop_desc: "",
@@ -5367,6 +5744,7 @@ module.exports = {
   },
   L05: {
     complex: false,
+    draw: true,
     stop_id: "L05",
     stop_name: "3 Av",
     stop_desc: "",
@@ -5381,6 +5759,7 @@ module.exports = {
   },
   L06: {
     complex: false,
+    draw: true,
     stop_id: "L06",
     stop_name: "1 Av",
     stop_desc: "",
@@ -5395,6 +5774,7 @@ module.exports = {
   },
   L08: {
     complex: false,
+    draw: true,
     stop_id: "L08",
     stop_name: "Bedford Av",
     stop_desc: "",
@@ -5409,6 +5789,7 @@ module.exports = {
   },
   L10: {
     complex: false,
+    draw: true,
     stop_id: "L10",
     stop_name: "Lorimer St",
     stop_desc: "",
@@ -5423,6 +5804,7 @@ module.exports = {
   },
   L11: {
     complex: false,
+    draw: true,
     stop_id: "L11",
     stop_name: "Graham Av",
     stop_desc: "",
@@ -5437,6 +5819,7 @@ module.exports = {
   },
   L12: {
     complex: false,
+    draw: true,
     stop_id: "L12",
     stop_name: "Grand St",
     stop_desc: "",
@@ -5451,6 +5834,7 @@ module.exports = {
   },
   L13: {
     complex: false,
+    draw: true,
     stop_id: "L13",
     stop_name: "Montrose Av",
     stop_desc: "",
@@ -5465,6 +5849,7 @@ module.exports = {
   },
   L14: {
     complex: false,
+    draw: true,
     stop_id: "L14",
     stop_name: "Morgan Av",
     stop_desc: "",
@@ -5479,6 +5864,7 @@ module.exports = {
   },
   L15: {
     complex: false,
+    draw: true,
     stop_id: "L15",
     stop_name: "Jefferson St",
     stop_desc: "",
@@ -5493,6 +5879,7 @@ module.exports = {
   },
   L16: {
     complex: false,
+    draw: true,
     stop_id: "L16",
     stop_name: "DeKalb Av",
     stop_desc: "",
@@ -5507,6 +5894,7 @@ module.exports = {
   },
   L17: {
     complex: false,
+    draw: true,
     stop_id: "L17",
     stop_name: "Myrtle - Wyckoff Avs",
     stop_desc: "",
@@ -5521,6 +5909,7 @@ module.exports = {
   },
   L19: {
     complex: false,
+    draw: true,
     stop_id: "L19",
     stop_name: "Halsey St",
     stop_desc: "",
@@ -5535,6 +5924,7 @@ module.exports = {
   },
   L20: {
     complex: false,
+    draw: true,
     stop_id: "L20",
     stop_name: "Wilson Av",
     stop_desc: "",
@@ -5549,6 +5939,7 @@ module.exports = {
   },
   L21: {
     complex: false,
+    draw: true,
     stop_id: "L21",
     stop_name: "Bushwick Av - Aberdeen St",
     stop_desc: "",
@@ -5563,6 +5954,7 @@ module.exports = {
   },
   L22: {
     complex: false,
+    draw: true,
     stop_id: "L22",
     stop_name: "Broadway Jct",
     stop_desc: "",
@@ -5577,6 +5969,7 @@ module.exports = {
   },
   L24: {
     complex: false,
+    draw: true,
     stop_id: "L24",
     stop_name: "Atlantic Av",
     stop_desc: "",
@@ -5591,6 +5984,7 @@ module.exports = {
   },
   L25: {
     complex: false,
+    draw: true,
     stop_id: "L25",
     stop_name: "Sutter Av",
     stop_desc: "",
@@ -5605,6 +5999,7 @@ module.exports = {
   },
   L26: {
     complex: false,
+    draw: true,
     stop_id: "L26",
     stop_name: "Livonia Av",
     stop_desc: "",
@@ -5619,6 +6014,7 @@ module.exports = {
   },
   L27: {
     complex: false,
+    draw: true,
     stop_id: "L27",
     stop_name: "New Lots Av",
     stop_desc: "",
@@ -5633,6 +6029,7 @@ module.exports = {
   },
   L28: {
     complex: false,
+    draw: true,
     stop_id: "L28",
     stop_name: "E 105 St",
     stop_desc: "",
@@ -5647,6 +6044,7 @@ module.exports = {
   },
   L29: {
     complex: false,
+    draw: true,
     stop_id: "L29",
     stop_name: "Canarsie - Rockaway Pkwy",
     stop_desc: "",
@@ -5661,6 +6059,7 @@ module.exports = {
   },
   M01: {
     complex: false,
+    draw: true,
     stop_id: "M01",
     stop_name: "Middle Village - Metropolitan Av",
     stop_desc: "",
@@ -5675,6 +6074,7 @@ module.exports = {
   },
   M04: {
     complex: false,
+    draw: true,
     stop_id: "M04",
     stop_name: "Fresh Pond Rd",
     stop_desc: "",
@@ -5689,6 +6089,7 @@ module.exports = {
   },
   M05: {
     complex: false,
+    draw: true,
     stop_id: "M05",
     stop_name: "Forest Av",
     stop_desc: "",
@@ -5703,6 +6104,7 @@ module.exports = {
   },
   M06: {
     complex: false,
+    draw: true,
     stop_id: "M06",
     stop_name: "Seneca Av",
     stop_desc: "",
@@ -5717,6 +6119,7 @@ module.exports = {
   },
   M08: {
     complex: false,
+    draw: true,
     stop_id: "M08",
     stop_name: "Myrtle - Wyckoff Avs",
     stop_desc: "",
@@ -5731,6 +6134,7 @@ module.exports = {
   },
   M09: {
     complex: false,
+    draw: true,
     stop_id: "M09",
     stop_name: "Knickerbocker Av",
     stop_desc: "",
@@ -5745,6 +6149,7 @@ module.exports = {
   },
   M10: {
     complex: false,
+    draw: true,
     stop_id: "M10",
     stop_name: "Central Av",
     stop_desc: "",
@@ -5759,6 +6164,7 @@ module.exports = {
   },
   M11: {
     complex: false,
+    draw: true,
     stop_id: "M11",
     stop_name: "Myrtle Av",
     stop_desc: "",
@@ -5773,6 +6179,7 @@ module.exports = {
   },
   M12: {
     complex: false,
+    draw: true,
     stop_id: "M12",
     stop_name: "Flushing Av",
     stop_desc: "",
@@ -5787,6 +6194,7 @@ module.exports = {
   },
   M13: {
     complex: false,
+    draw: true,
     stop_id: "M13",
     stop_name: "Lorimer St",
     stop_desc: "",
@@ -5801,6 +6209,7 @@ module.exports = {
   },
   M14: {
     complex: false,
+    draw: true,
     stop_id: "M14",
     stop_name: "Hewes St",
     stop_desc: "",
@@ -5815,6 +6224,7 @@ module.exports = {
   },
   M16: {
     complex: false,
+    draw: true,
     stop_id: "M16",
     stop_name: "Marcy Av",
     stop_desc: "",
@@ -5829,6 +6239,7 @@ module.exports = {
   },
   M18: {
     complex: false,
+    draw: true,
     stop_id: "M18",
     stop_name: "Essex St",
     stop_desc: "Delancey St - Essex St",
@@ -5843,6 +6254,7 @@ module.exports = {
   },
   M19: {
     complex: false,
+    draw: true,
     stop_id: "M19",
     stop_name: "Bowery",
     stop_desc: "",
@@ -5857,6 +6269,7 @@ module.exports = {
   },
   M20: {
     complex: false,
+    draw: true,
     stop_id: "M20",
     stop_name: "Canal St",
     stop_desc: "",
@@ -5872,6 +6285,7 @@ module.exports = {
   },
   M21: {
     complex: false,
+    draw: true,
     stop_id: "M21",
     stop_name: "Chambers St",
     stop_desc: "",
@@ -5887,6 +6301,7 @@ module.exports = {
   },
   M22: {
     complex: false,
+    draw: true,
     stop_id: "M22",
     stop_name: "Fulton St",
     stop_desc: "",
@@ -5902,6 +6317,7 @@ module.exports = {
   },
   M23: {
     complex: false,
+    draw: true,
     stop_id: "M23",
     stop_name: "Broad St",
     stop_desc: "",
@@ -5916,6 +6332,7 @@ module.exports = {
   },
   N02: {
     complex: false,
+    draw: true,
     stop_id: "N02",
     stop_name: "8 Av",
     stop_desc: "",
@@ -5930,6 +6347,7 @@ module.exports = {
   },
   N03: {
     complex: false,
+    draw: true,
     stop_id: "N03",
     stop_name: "Fort Hamilton Pkwy",
     stop_desc: "",
@@ -5944,6 +6362,7 @@ module.exports = {
   },
   N04: {
     complex: false,
+    draw: true,
     stop_id: "N04",
     stop_name: "New Utrecht Av",
     stop_desc: "",
@@ -5959,6 +6378,7 @@ module.exports = {
   },
   N05: {
     complex: false,
+    draw: true,
     stop_id: "N05",
     stop_name: "18 Av",
     stop_desc: "",
@@ -5973,6 +6393,7 @@ module.exports = {
   },
   N06: {
     complex: false,
+    draw: true,
     stop_id: "N06",
     stop_name: "20 Av",
     stop_desc: "",
@@ -5987,6 +6408,7 @@ module.exports = {
   },
   N07: {
     complex: false,
+    draw: true,
     stop_id: "N07",
     stop_name: "Bay Pkwy",
     stop_desc: "",
@@ -6001,6 +6423,7 @@ module.exports = {
   },
   N08: {
     complex: false,
+    draw: true,
     stop_id: "N08",
     stop_name: "Kings Hwy",
     stop_desc: "",
@@ -6015,6 +6438,7 @@ module.exports = {
   },
   N09: {
     complex: false,
+    draw: true,
     stop_id: "N09",
     stop_name: "Avenue U",
     stop_desc: "",
@@ -6029,6 +6453,7 @@ module.exports = {
   },
   N10: {
     complex: false,
+    draw: true,
     stop_id: "N10",
     stop_name: "86 St",
     stop_desc: "",
@@ -6043,6 +6468,7 @@ module.exports = {
   },
   N12: {
     complex: false,
+    draw: true,
     stop_id: "N12",
     stop_name: "S.B. Coney Island",
     stop_desc: "Coney Island - Stillwell Av",
@@ -6057,6 +6483,7 @@ module.exports = {
   },
   Q01: {
     complex: false,
+    draw: true,
     stop_id: "Q01",
     stop_name: "Canal St",
     stop_desc: "",
@@ -6072,6 +6499,7 @@ module.exports = {
   },
   Q03: {
     complex: false,
+    draw: true,
     stop_id: "Q03",
     stop_name: "72 St",
     stop_desc: "",
@@ -6086,6 +6514,7 @@ module.exports = {
   },
   Q04: {
     complex: false,
+    draw: true,
     stop_id: "Q04",
     stop_name: "86 St",
     stop_desc: "",
@@ -6100,6 +6529,7 @@ module.exports = {
   },
   Q05: {
     complex: false,
+    draw: true,
     stop_id: "Q05",
     stop_name: "96 St",
     stop_desc: "",
@@ -6114,6 +6544,7 @@ module.exports = {
   },
   R01: {
     complex: false,
+    draw: true,
     stop_id: "R01",
     stop_name: "Astoria - Ditmars Blvd",
     stop_desc: "",
@@ -6128,6 +6559,7 @@ module.exports = {
   },
   R03: {
     complex: false,
+    draw: true,
     stop_id: "R03",
     stop_name: "Astoria Blvd",
     stop_desc: "",
@@ -6142,6 +6574,7 @@ module.exports = {
   },
   R04: {
     complex: false,
+    draw: true,
     stop_id: "R04",
     stop_name: "30 Av",
     stop_desc: "",
@@ -6156,6 +6589,7 @@ module.exports = {
   },
   R05: {
     complex: false,
+    draw: true,
     stop_id: "R05",
     stop_name: "Broadway",
     stop_desc: "",
@@ -6170,6 +6604,7 @@ module.exports = {
   },
   R06: {
     complex: false,
+    draw: true,
     stop_id: "R06",
     stop_name: "36 Av",
     stop_desc: "",
@@ -6184,6 +6619,7 @@ module.exports = {
   },
   R08: {
     complex: false,
+    draw: true,
     stop_id: "R08",
     stop_name: "39 Av",
     stop_desc: "39 Av - Dutch Kills",
@@ -6198,6 +6634,7 @@ module.exports = {
   },
   R09: {
     complex: false,
+    draw: true,
     stop_id: "R09",
     stop_name: "Queensboro Plaza",
     stop_desc: "",
@@ -6212,6 +6649,7 @@ module.exports = {
   },
   R11: {
     complex: false,
+    draw: true,
     stop_id: "R11",
     stop_name: "Lexington Av/59 St",
     stop_desc: "",
@@ -6226,6 +6664,7 @@ module.exports = {
   },
   R13: {
     complex: false,
+    draw: true,
     stop_id: "R13",
     stop_name: "5 Av/59 St",
     stop_desc: "",
@@ -6240,6 +6679,7 @@ module.exports = {
   },
   R14: {
     complex: false,
+    draw: true,
     stop_id: "R14",
     stop_name: "57 St - 7 Av",
     stop_desc: "",
@@ -6254,6 +6694,7 @@ module.exports = {
   },
   R15: {
     complex: false,
+    draw: true,
     stop_id: "R15",
     stop_name: "49 St",
     stop_desc: "",
@@ -6268,6 +6709,7 @@ module.exports = {
   },
   R16: {
     complex: false,
+    draw: true,
     stop_id: "R16",
     stop_name: "Times Sq - 42 St",
     stop_desc: "",
@@ -6282,6 +6724,7 @@ module.exports = {
   },
   R17: {
     complex: false,
+    draw: true,
     stop_id: "R17",
     stop_name: "34 St - Herald Sq",
     stop_desc: "",
@@ -6296,6 +6739,7 @@ module.exports = {
   },
   R18: {
     complex: false,
+    draw: true,
     stop_id: "R18",
     stop_name: "28 St",
     stop_desc: "",
@@ -6310,6 +6754,7 @@ module.exports = {
   },
   R19: {
     complex: false,
+    draw: true,
     stop_id: "R19",
     stop_name: "23 St",
     stop_desc: "",
@@ -6324,6 +6769,7 @@ module.exports = {
   },
   R20: {
     complex: false,
+    draw: true,
     stop_id: "R20",
     stop_name: "14 St - Union Sq",
     stop_desc: "",
@@ -6339,6 +6785,7 @@ module.exports = {
   },
   R21: {
     complex: false,
+    draw: true,
     stop_id: "R21",
     stop_name: "8 St - NYU",
     stop_desc: "",
@@ -6353,6 +6800,7 @@ module.exports = {
   },
   R22: {
     complex: false,
+    draw: true,
     stop_id: "R22",
     stop_name: "Prince St",
     stop_desc: "",
@@ -6367,6 +6815,7 @@ module.exports = {
   },
   R23: {
     complex: false,
+    draw: true,
     stop_id: "R23",
     stop_name: "Canal St",
     stop_desc: "",
@@ -6382,6 +6831,7 @@ module.exports = {
   },
   R24: {
     complex: false,
+    draw: true,
     stop_id: "R24",
     stop_name: "City Hall",
     stop_desc: "",
@@ -6396,6 +6846,7 @@ module.exports = {
   },
   R25: {
     complex: false,
+    draw: true,
     stop_id: "R25",
     stop_name: "Cortlandt St",
     stop_desc: "",
@@ -6410,6 +6861,7 @@ module.exports = {
   },
   R26: {
     complex: false,
+    draw: true,
     stop_id: "R26",
     stop_name: "Rector St",
     stop_desc: "",
@@ -6424,6 +6876,7 @@ module.exports = {
   },
   R27: {
     complex: false,
+    draw: true,
     stop_id: "R27",
     stop_name: "Whitehall St",
     stop_desc: "",
@@ -6439,6 +6892,7 @@ module.exports = {
   },
   R28: {
     complex: false,
+    draw: true,
     stop_id: "R28",
     stop_name: "Court St",
     stop_desc: "",
@@ -6453,6 +6907,7 @@ module.exports = {
   },
   R29: {
     complex: false,
+    draw: true,
     stop_id: "R29",
     stop_name: "Jay St - MetroTech",
     stop_desc: "",
@@ -6467,6 +6922,7 @@ module.exports = {
   },
   R30: {
     complex: false,
+    draw: true,
     stop_id: "R30",
     stop_name: "DeKalb Av",
     stop_desc: "",
@@ -6481,6 +6937,7 @@ module.exports = {
   },
   R31: {
     complex: false,
+    draw: true,
     stop_id: "R31",
     stop_name: "Atlantic Av - Barclays Ctr",
     stop_desc: "",
@@ -6495,6 +6952,7 @@ module.exports = {
   },
   R32: {
     complex: false,
+    draw: true,
     stop_id: "R32",
     stop_name: "Union St",
     stop_desc: "",
@@ -6509,6 +6967,7 @@ module.exports = {
   },
   R33: {
     complex: false,
+    draw: true,
     stop_id: "R33",
     stop_name: "9 St",
     stop_desc: "4 Av - 9 St",
@@ -6524,6 +6983,7 @@ module.exports = {
   },
   R34: {
     complex: false,
+    draw: true,
     stop_id: "R34",
     stop_name: "Prospect Av",
     stop_desc: "",
@@ -6538,6 +6998,7 @@ module.exports = {
   },
   R35: {
     complex: false,
+    draw: true,
     stop_id: "R35",
     stop_name: "25 St",
     stop_desc: "",
@@ -6552,6 +7013,7 @@ module.exports = {
   },
   R36: {
     complex: false,
+    draw: true,
     stop_id: "R36",
     stop_name: "36 St",
     stop_desc: "",
@@ -6566,6 +7028,7 @@ module.exports = {
   },
   R39: {
     complex: false,
+    draw: true,
     stop_id: "R39",
     stop_name: "45 St",
     stop_desc: "",
@@ -6580,6 +7043,7 @@ module.exports = {
   },
   R40: {
     complex: false,
+    draw: true,
     stop_id: "R40",
     stop_name: "53 St",
     stop_desc: "",
@@ -6594,6 +7058,7 @@ module.exports = {
   },
   R41: {
     complex: false,
+    draw: true,
     stop_id: "R41",
     stop_name: "59 St",
     stop_desc: "",
@@ -6608,6 +7073,7 @@ module.exports = {
   },
   R42: {
     complex: false,
+    draw: true,
     stop_id: "R42",
     stop_name: "Bay Ridge Av",
     stop_desc: "",
@@ -6622,6 +7088,7 @@ module.exports = {
   },
   R43: {
     complex: false,
+    draw: true,
     stop_id: "R43",
     stop_name: "77 St",
     stop_desc: "",
@@ -6636,6 +7103,7 @@ module.exports = {
   },
   R44: {
     complex: false,
+    draw: true,
     stop_id: "R44",
     stop_name: "86 St",
     stop_desc: "",
@@ -6650,6 +7118,7 @@ module.exports = {
   },
   R45: {
     complex: false,
+    draw: true,
     stop_id: "R45",
     stop_name: "Bay Ridge - 95 St",
     stop_desc: "",
@@ -6664,6 +7133,7 @@ module.exports = {
   },
   S01: {
     complex: false,
+    draw: true,
     stop_id: "S01",
     stop_name: "Franklin Av",
     stop_desc: "",
@@ -6678,6 +7148,7 @@ module.exports = {
   },
   S03: {
     complex: false,
+    draw: true,
     stop_id: "S03",
     stop_name: "Park Pl",
     stop_desc: "",
@@ -6692,6 +7163,7 @@ module.exports = {
   },
   S04: {
     complex: false,
+    draw: true,
     stop_id: "S04",
     stop_name: "Botanic Garden",
     stop_desc: "",
@@ -6706,6 +7178,7 @@ module.exports = {
   },
   S09: {
     complex: false,
+    draw: true,
     stop_id: "S09",
     stop_name: "Tottenville",
     stop_desc: "",
@@ -6720,6 +7193,7 @@ module.exports = {
   },
   // S10: {// this station doesn"t exist??
   //   complex: false,
+    draw: true,
   //   stop_id: "S10",
   //   stop_name: "Atlantic",
   //   stop_desc: "",
@@ -6733,6 +7207,7 @@ module.exports = {
   // },
   S11: {
     complex: false,
+    draw: true,
     stop_id: "S11",
     stop_name: "Arthur Kill",
     stop_desc: "",
@@ -6761,6 +7236,7 @@ module.exports = {
   },
   S13: {
     complex: false,
+    draw: true,
     stop_id: "S13",
     stop_name: "Richmond Valley",
     stop_desc: "",
@@ -6775,6 +7251,7 @@ module.exports = {
   },
   S14: {
     complex: false,
+    draw: true,
     stop_id: "S14",
     stop_name: "Pleasant Plains",
     stop_desc: "",
@@ -6789,6 +7266,7 @@ module.exports = {
   },
   S15: {
     complex: false,
+    draw: true,
     stop_id: "S15",
     stop_name: "Prince's Bay",
     stop_desc: "",
@@ -6803,6 +7281,7 @@ module.exports = {
   },
   S16: {
     complex: false,
+    draw: true,
     stop_id: "S16",
     stop_name: "Huguenot",
     stop_desc: "",
@@ -6817,6 +7296,7 @@ module.exports = {
   },
   S17: {
     complex: false,
+    draw: true,
     stop_id: "S17",
     stop_name: "Annadale",
     stop_desc: "",
@@ -6831,6 +7311,7 @@ module.exports = {
   },
   S18: {
     complex: false,
+    draw: true,
     stop_id: "S18",
     stop_name: "Eltingville",
     stop_desc: "",
@@ -6845,6 +7326,7 @@ module.exports = {
   },
   S19: {
     complex: false,
+    draw: true,
     stop_id: "S19",
     stop_name: "Great Kills",
     stop_desc: "",
@@ -6859,6 +7341,7 @@ module.exports = {
   },
   S20: {
     complex: false,
+    draw: true,
     stop_id: "S20",
     stop_name: "Bay Terrace",
     stop_desc: "",
@@ -6873,6 +7356,7 @@ module.exports = {
   },
   S21: {
     complex: false,
+    draw: true,
     stop_id: "S21",
     stop_name: "Oakwood Heights",
     stop_desc: "",
@@ -6887,6 +7371,7 @@ module.exports = {
   },
   S22: {
     complex: false,
+    draw: true,
     stop_id: "S22",
     stop_name: "New Dorp",
     stop_desc: "",
@@ -6901,6 +7386,7 @@ module.exports = {
   },
   S23: {
     complex: false,
+    draw: true,
     stop_id: "S23",
     stop_name: "Grant City",
     stop_desc: "",
@@ -6915,6 +7401,7 @@ module.exports = {
   },
   S24: {
     complex: false,
+    draw: true,
     stop_id: "S24",
     stop_name: "Jefferson Av",
     stop_desc: "",
@@ -6929,6 +7416,7 @@ module.exports = {
   },
   S25: {
     complex: false,
+    draw: true,
     stop_id: "S25",
     stop_name: "Dongan Hills",
     stop_desc: "",
@@ -6943,6 +7431,7 @@ module.exports = {
   },
   S26: {
     complex: false,
+    draw: true,
     stop_id: "S26",
     stop_name: "Old Town",
     stop_desc: "",
@@ -6957,6 +7446,7 @@ module.exports = {
   },
   S27: {
     complex: false,
+    draw: true,
     stop_id: "S27",
     stop_name: "Grasmere",
     stop_desc: "",
@@ -6971,6 +7461,7 @@ module.exports = {
   },
   S28: {
     complex: false,
+    draw: true,
     stop_id: "S28",
     stop_name: "Clifton",
     stop_desc: "",
@@ -6985,6 +7476,7 @@ module.exports = {
   },
   S29: {
     complex: false,
+    draw: true,
     stop_id: "S29",
     stop_name: "Stapleton",
     stop_desc: "",
@@ -6999,6 +7491,7 @@ module.exports = {
   },
   S30: {
     complex: false,
+    draw: true,
     stop_id: "S30",
     stop_name: "Tompkinsville",
     stop_desc: "",
@@ -7013,6 +7506,7 @@ module.exports = {
   },
   S31: {
     complex: false,
+    draw: true,
     stop_id: "S31",
     stop_name: "St George",
     stop_desc: "",
@@ -7025,17 +7519,20 @@ module.exports = {
     north_label: "",
     south_label: "Tottenville",
   },
-  // comp01: { 
-  //   complex: true,
-  //   stop_name: "14 St / 6 Av",
-  //   stop_lat: "",
-  //   stop_long: "",
-  //   stops_at: [],
-  //   borough: "manhattan",
-  //   accessible: false,
-  // },
+  comp01: {
+    complex: true,
+    draw: true,
+    stop_name: "14 St / 6 Av",
+    stop_lat: "40.737335",
+    stop_lon: "-73.996786",
+    stops_at: ["L02", "D19"],
+    lines_at: ["F", "M", "L"],
+    borough: "manhattan",
+    accessible: false,
+  },
   // comp02: {
   //   complex: true,
+  //   draw: true,
   //   stop_name: "14 St - Union Sq",
   //   stop_lat: "",
   //   stop_long: "",
@@ -7045,6 +7542,7 @@ module.exports = {
   // },
   // comp03: {
   //   complex: true,
+  //   draw: true,
   //   stop_name: "149 St - Grand Concourse",
   //   stop_lat: "",
   //   stop_long: "",
@@ -7054,6 +7552,7 @@ module.exports = {
   // },
   // comp04: {
   //   complex: true,
+  //   draw: true,
   //   stop_name: "161 St - Yankee Stadium",
   //   stop_lat: "",
   //   stop_long: "",
@@ -7063,6 +7562,7 @@ module.exports = {
   // },
   // comp05: {
   //   complex: true,
+  //   draw: true,
   //   stop_name: "168 St - Washington Hts",
   //   stop_lat: "",
   //   stop_long: "",
@@ -7072,6 +7572,7 @@ module.exports = {
   // },
   // comp06: {
   //   complex: true,
+  //   draw: true,
   //   stop_name: "Court Sq - 23 St",
   //   stop_lat: "",
   //   stop_long: "",

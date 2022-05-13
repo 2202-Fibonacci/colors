@@ -70,10 +70,7 @@ export default function LineUpdates({ station, line }) {
       ) : (
         arrivalsList.map((arrival, i) =>
           i < maxUpdates ? (
-            <Text
-              style={styles.arrival}
-              key={`${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}
-            >
+            <Text style={styles.arrival} key={`${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
               {" "}
               {arrival.routeId}
               {"  "}
@@ -112,6 +109,7 @@ const stationToArrivals = (stationData) => {
       if (dirLabel !== "")
         // get rid of stations arriving at terminal (and not going anywhere next)
         arrivalsList.push({
+          stationId: stationData[line].stationId,
           routeId: stationData[line].routeId,
           arrivalTime: stationData[line].nextArrivals[arrival].arrivalTime,
           direction: dir,
@@ -119,14 +117,6 @@ const stationToArrivals = (stationData) => {
         });
     }
   }
-  // const arrivalsSorted = arrivalsList.sort(
-  //   (arrivalA, arrivalB) => arrivalA.arrivalTime > arrivalB.arrivalTime
-  // );
-  // console.log('SORTED ASS LIST sample:')
-  // for (let i=0; i < Math.min(arrivalsSorted.length, 10); i++){
-  //   if (arrivalsSorted[i])
-  //   console.log(arrivalsSorted[i].routeId, '\t', arrivalsSorted[i].arrivalTime, '\t', arrivalsSorted[i].direction, '\t', arrivalsSorted[i].directionLabel);
-  // }
 
   return arrivalsList.sort(
     (arrivalA, arrivalB) => arrivalA.arrivalTime > arrivalB.arrivalTime
@@ -155,31 +145,3 @@ const styles = StyleSheet.create({
     paddingVertical: "1%",
   },
 });
-
-/* 
-stationData.map((update) => (
-          <Text style={styles.arrival}>{update.routeId}</Text>
-        ))
-*/
-
-// data.arrivalTimes.nextArrivals.map((arrival, i) =>
-// i < maxUpdates ? (
-//   <Text style={styles.arrival} key={arrival.tripId}>
-//     {" "}
-//     {data.arrivalTimes.routeId} {"  "}
-//     {arrival.direction === "N"
-//       ? allStations[station].north_label
-//       : allStations[station].south_label}
-//     {"                             ".slice(
-//       0,
-//       30 -
-//         (arrival.direction === "N"
-//           ? allStations[station].north_label.length
-//           : allStations[station].south_label.length)
-//     )}
-//     {"  ".slice(0, arrival.arrivalTime > 9 ? 1 : 2)}
-//     {arrival.arrivalTime}
-//     {"M "}
-//   </Text>
-// ) : null
-// )
