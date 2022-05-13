@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import { Platform, StyleSheet, Text, View, Dimensions } from "react-native";
 import * as Location from "expo-location";
-import { allStations } from "../../MTA/stations";
+const allStations = require("../../MTA/stations");
 import Lines from "./Lines";
 import StationAlerts from "./StationAlerts";
 

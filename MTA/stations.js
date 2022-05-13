@@ -1,4 +1,4 @@
-export const allStations = {
+module.exports = {
   101: {
     stop_id: "101",
     stop_code: "",
@@ -646,7 +646,8 @@ export const allStations = {
   //   north_label: "Uptown & The Bronx",
   //   south_label: "",
   // },
-  142: { // same as 140
+  142: {
+    // same as 140
     stop_id: "142",
     stop_code: "",
     stop_name: "South Ferry",
@@ -1396,7 +1397,8 @@ export const allStations = {
     north_label: "Manhattan",
     south_label: "",
   },
-  248: { // lumped in w/President-MEC
+  248: {
+    // lumped in w/President-MEC
     stop_id: "248",
     stop_code: "",
     stop_name: "Nostrand Av",
@@ -2451,7 +2453,8 @@ export const allStations = {
     north_label: "Uptown & The Bronx",
     south_label: "Downtown & Brooklyn",
   },
-  630: { // should this combine with LexAv/53 St ?
+  630: {
+    // should this combine with LexAv/53 St ?
     stop_id: "630",
     stop_code: "",
     stop_name: "51 St",
@@ -3505,7 +3508,7 @@ export const allStations = {
     stop_url: "",
     location_type: "1",
     parent_station: "",
-    lines_at: ["A", "C",],
+    lines_at: ["A", "C"],
     borough: "manhattan",
     accessible: false,
     north_label: "Uptown",
@@ -4476,7 +4479,7 @@ export const allStations = {
     stop_url: "",
     location_type: "1",
     parent_station: "",
-    lines_at: ["F", "M",],
+    lines_at: ["F", "M"],
     borough: "manhattan",
     accessible: false,
     north_label: "Uptown & Queens",
@@ -4493,7 +4496,7 @@ export const allStations = {
     stop_url: "",
     location_type: "1",
     parent_station: "",
-    lines_at: ["F", "M",],
+    lines_at: ["F", "M"],
     borough: "manhattan",
     accessible: false,
     north_label: "Uptown & Queens",
@@ -4546,7 +4549,7 @@ export const allStations = {
     stop_url: "",
     location_type: "1",
     parent_station: "",
-    lines_at: ["B", "D",],
+    lines_at: ["B", "D"],
     borough: "manhattan",
     accessible: false,
     north_label: "Uptown & The Bronx",
@@ -5915,7 +5918,8 @@ export const allStations = {
     north_label: "Queens",
     south_label: "Church Av",
   },
-  H01: { // H is the A line extention to Rockaways
+  H01: {
+    // H is the A line extention to Rockaways
     stop_id: "H01",
     stop_code: "",
     stop_name: "Aqueduct Racetrack",
@@ -7359,7 +7363,7 @@ export const allStations = {
     stop_url: "",
     location_type: "1",
     parent_station: "",
-    lines_at: ["N", "Q", ],
+    lines_at: ["N", "Q"],
     transfers: ["6", "R", "W", "J", "Z"],
     borough: "manhattan",
     accessible: false,
@@ -7735,7 +7739,7 @@ export const allStations = {
     stop_url: "",
     location_type: "1",
     parent_station: "",
-    lines_at: ["R", "W",],
+    lines_at: ["R", "W"],
     transfers: ["6", "N", "Q", "J", "Z"],
     borough: "manhattan",
     accessible: false,
@@ -8185,7 +8189,8 @@ export const allStations = {
     north_label: "St George",
     south_label: "Tottenville",
   },
-  S12: { // this station doesn"t exist??
+  S12: {
+    // this station doesn"t exist??
     stop_id: "S12",
     stop_code: "",
     stop_name: "Nassau",
@@ -8525,4 +8530,4 @@ export const allStations = {
     north_label: "",
     south_label: "Tottenville",
   },
-}
+};

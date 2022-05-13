@@ -1,6 +1,7 @@
 const { baseURI, URIs } = require("./data");
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const https = require("https");
+require("dotenv").config();
 
 // get real time status feed for trainline passed in as parameter
 async function getStatusFeed(trainLine) {
@@ -97,7 +98,8 @@ async function getArrivalTimes(station, train, direction = "NS") {
 
 // pass in stationId, trainLine, and optionally direction 'N' or 'S'
 Promise.resolve(getArrivalTimes("236", "2", "N")).then((arrivals) =>
-  console.log(arrivals)
+  // console.log(arrivals)
+  console.log("function ran")
 );
 
-module.exports = { getArrivalTimes };
+module.exports = getArrivalTimes;
