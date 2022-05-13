@@ -44,10 +44,8 @@ export default function Map() {
   if (errorMsg) {
     text = errorMsg;
   } else if (location) {
-    // console.log("locaish", location.coords.latitude, location.coords.longitude);
     text = "Found";
   }
-  // console.log("text", text);
 
   const stations = Object.keys(allStations);
 
