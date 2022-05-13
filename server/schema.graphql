@@ -4,6 +4,7 @@ type Query {
   arrivalTimes(stationId: String, train: String, direction: String): TripUpdate
   serviceAlert(train: String, onlyActive: Boolean): ServiceUpdate
   elevatorAlert(stationId: String): [ElevatorUpdate]
+  stationUpdate(stationId: String): [TripUpdate]
 }
 
 type ElevatorUpdate {

@@ -9,5 +9,7 @@ module.exports = {
       await dataSources.alertFeed.getServiceAlert(train, onlyActive),
     elevatorAlert: async (_, { stationId }, { dataSources }) =>
       await dataSources.elevatorFeed.getElevatorAlerts(stationId),
+    stationUpdate: async (_, { stationId }, { dataSources }) =>
+      await dataSources.tripFeed.getStationUpdate(stationId),
   },
 };
