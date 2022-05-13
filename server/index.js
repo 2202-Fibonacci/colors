@@ -1,4 +1,5 @@
 const { ApolloServer } = require('apollo-server')
+const prisma = new PrismaClient()
 const { ApolloServerPluginLandingPageGraphQLPlayground } = require('apollo-server-core')
 const fs = require('fs');
 const path = require('path');
@@ -18,6 +19,7 @@ const server = new ApolloServer({
             'utf8'
         ),
     resolvers,
+    context: { prisma },
     dataSources: () => ({
         tripFeed: new TripFeed(),
         alertFeed: new ServiceAlert(),
