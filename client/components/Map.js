@@ -76,7 +76,9 @@ export default function Map() {
           showsUserLocation={true}
           showsMyLocationButton={true}
         >
-          {stations.map((station) => (
+          {stations
+          .filter(station => (allStations[station].draw))
+          .map((station) => (
             <Marker
               key={station}
               coordinate={{

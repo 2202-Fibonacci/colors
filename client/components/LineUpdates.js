@@ -65,7 +65,7 @@ export default function LineUpdates({ station, line }) {
       ) : (
         arrivalsList.map((arrival, i) => (
           i < maxUpdates ? (
-            <Text style={styles.arrival} key={`${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
+            <Text style={styles.arrival} key={`${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
               {" "}{arrival.routeId}{"  "}{arrival.directionLabel}
               {"                             ".slice(0, 30 - arrival.directionLabel.length)}
               {"  ".slice(0, arrival.arrivalTime > 9 ? 1 : 2)}{arrival.arrivalTime}{"m "}
@@ -90,6 +90,7 @@ const stationToArrivals = (stationData) => {
       : allStations[stationData[line].stationId].south_label;
       if (dirLabel !== '') // get rid of stations arriving at terminal (and not going anywhere next)
         arrivalsList.push({
+          stationId: stationData[line].stationId,
           routeId: stationData[line].routeId,
           arrivalTime: stationData[line].nextArrivals[arrival].arrivalTime,
           direction: dir,
@@ -97,7 +98,7 @@ const stationToArrivals = (stationData) => {
         })
     }
   }
-  const arrivalsSorted = arrivalsList.sort((arrivalA, arrivalB) => arrivalA.arrivalTime > arrivalB.arrivalTime);
+  // const arrivalsSorted = arrivalsList.sort((arrivalA, arrivalB) => arrivalA.arrivalTime > arrivalB.arrivalTime);
   // console.log('SORTED ASS LIST sample:')
   // for (let i=0; i < Math.min(arrivalsSorted.length, 10); i++){
   //   if (arrivalsSorted[i])
