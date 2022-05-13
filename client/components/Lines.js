@@ -67,7 +67,6 @@ const getColor = (color, selected) =>
       height: 30,
       width: 30,
       borderRadius: 15,
-      // color: color,
       backgroundColor: "#000",
       borderColor: color,
       borderWidth: "3",
