@@ -45,7 +45,7 @@ export default function LineUpdates({ station, line }) {
   // });
   const { data, loading, error, refetch } = useQuery(STATION_UPDATE, {
     variables: { stationId: station },
-    pollInterval: 1000,
+    pollInterval: 20000,
   });
 
   // prevent refetch on first render by comparing with previous props
@@ -70,7 +70,10 @@ export default function LineUpdates({ station, line }) {
       ) : (
         arrivalsList.map((arrival, i) =>
           i < maxUpdates ? (
-            <Text style={styles.arrival} key={`${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
+            <Text
+              style={styles.arrival}
+              key={`${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}
+            >
               {" "}
               {arrival.routeId}
               {"  "}
