@@ -102,12 +102,22 @@ class TripFeed extends RESTDataSource {
     return arrivals;
   }
 
-  async getStationUpdate(station) {
-    const lines = allStations[station].lines_at;
-    const updates = lines.map(
-      async (line) => await this.getArrivalTimes(station, line)
-    );
-    return updates;
+  async getStationUpdate(stationId) {
+    const stations = allStations[stationId].complex
+      ? allStations[stationId].stops_at
+      : [stationId];
+
+    const allUpdates = [];
+
+    stations.forEach((station) => {
+      const lines = allStations[station].lines_at;
+      const updates = lines.map(
+        async (line) => await this.getArrivalTimes(station, line)
+      );
+      allUpdates.push(...updates);
+    });
+
+    return allUpdates;
   }
 }
 
