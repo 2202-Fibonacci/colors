@@ -4,6 +4,7 @@ type Query {
   arrivalTimes(stationId: String, train: String, direction: String): TripUpdate
   serviceAlert(train: String, onlyActive: Boolean): ServiceUpdate
   elevatorAlert(stationId: String): [ElevatorUpdate]
+  stationUpdate(stationId: String): [TripUpdate]
 }
 
 type ElevatorUpdate {
@@ -54,14 +55,26 @@ type Station {
   accessible: Boolean! #this means wheelchair accessible?
 }
 
-enum Direction {
-  N
-  S
-}
+# enum Direction {
+#   N
+#   S
+# }
 
 type User {
-  firstName: String!
-  lastName: String!
+  userName: String!
   email: String!
   password: String!
+  routes: [Route]
+  points: Int
+}
+
+type Route {
+  TripUpdate: TripUpdate
+  ServiceUpdate: ServiceUpdate
+}
+
+type Comment {
+  text: String
+  user: User
+  confirms: Int
 }

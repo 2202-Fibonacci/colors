@@ -3,9 +3,11 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 
 async function main(){
-    const allUsers = await prisma.user.findMany()
+    const newUser = await prisma.create()
+    const newComment = await prisma.create()
+    const allComments = await prisma.user.findMany()
     console.log('connected to prisma')
-    console.log(allUsers)
+    console.log(allComments)
 }
 
 main()

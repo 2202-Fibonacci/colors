@@ -15,4 +15,13 @@ model User {
   email              String   @unique
   username       String?
   password       String
+  points              Int
+  comment         Comment[]
+}
+
+model Comment {
+  id                    Int      @id @default(autoincrement())
+  text                 String
+  confirms         Int
+  author             User
 }

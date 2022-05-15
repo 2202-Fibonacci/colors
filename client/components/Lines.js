@@ -2,23 +2,26 @@ import React, { useState, useEffect } from "react";
 import { Platform, StyleSheet, Text, View, Pressable } from "react-native";
 import { lineColor } from "../../MTA/data";
 import LineUpdates from "./LineUpdates";
-import ServiceAlert from "./ServiceAlert"
+import ServiceAlert from "./ServiceAlert";
 
 export default function Lines(props) {
   const [selectedLine, setSelectedLine] = useState(null);
 
+  // useEffect(() => {
+  //   if (!props.lines.includes(selectedLine)) {
+  //     setSelectedLine(props.lines[0]);
+  //   }
+  // });
   useEffect(() => {
-    if (!props.lines.includes(selectedLine)) {
-      setSelectedLine(props.lines[0]);
-    }
-  });
+    setSelectedLine(null);
+  }, [props.station]);
 
   return (
     <>
       <View style={styles.linesContainer}>
         {props.lines.map((line) => (
           <Pressable
-            key={line}
+            key={line + props.station}
             onPress={() => setSelectedLine(line)}
             style={({ pressed }) => [
               {
@@ -45,8 +48,8 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     marginTop: "10%",
-    padding: "5%",
-    backgroundColor: "#fff",
+    paddingVertical: "5%",
+    backgroundColor: "#000",
     color: "#00ffff",
     alignItems: "center",
     justifyContent: "center",
@@ -64,7 +67,9 @@ const getColor = (color, selected) =>
       height: 30,
       width: 30,
       borderRadius: 15,
-      backgroundColor: color,
+      backgroundColor: "#000",
+      borderColor: color,
+      borderWidth: "3",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",

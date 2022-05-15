@@ -9,5 +9,22 @@ module.exports = {
       await dataSources.alertFeed.getServiceAlert(train, onlyActive),
     elevatorAlert: async (_, { stationId }, { dataSources }) =>
       await dataSources.elevatorFeed.getElevatorAlerts(stationId),
+    stationUpdate: async (_, { stationId }, { dataSources }) =>
+      await dataSources.tripFeed.getStationUpdate(stationId),
+    commentFeed: async (root, args, {dataSources}) => {
+      return dataSources.prisma.comment.findMany()
+    }
   },
+  Mutations: {
+    Mutation: {
+        post: (root, args, {dataSources}) => {
+          const newComment = dataSources.prisma.comment.create({
+            data: {
+              text: args.text,
+            }
+          })
+          return newComment
+        }
+    }
+}
 };

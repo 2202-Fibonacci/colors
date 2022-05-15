@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import { Platform, StyleSheet, Text, View, Dimensions } from "react-native";
 import * as Location from "expo-location";
-import { allStations } from "../../MTA/stations";
+const allStations = require("../../MTA/stations");
 import Lines from "./Lines";
 import StationAlerts from "./StationAlerts";
 
@@ -44,10 +44,8 @@ export default function Map() {
   if (errorMsg) {
     text = errorMsg;
   } else if (location) {
-    // console.log("locaish", location.coords.latitude, location.coords.longitude);
     text = "Found";
   }
-  // console.log("text", text);
 
   const stations = Object.keys(allStations);
 
@@ -76,7 +74,9 @@ export default function Map() {
           showsUserLocation={true}
           showsMyLocationButton={true}
         >
-          {stations.map((station) => (
+          {stations
+          .filter(station => (allStations[station].draw))
+          .map((station) => (
             <Marker
               key={station}
               coordinate={{
@@ -105,7 +105,7 @@ export default function Map() {
 const styles = StyleSheet.create({
   mapContainer: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#000",
     color: "#00ffff",
     justifyContent: "center",
     alignItems: "center",
