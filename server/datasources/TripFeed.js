@@ -5,6 +5,7 @@ const tripFeedURL =
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const https = require("https");
 const allStations = require("../../MTA/stations");
+require("dotenv").config();
 
 class TripFeed extends RESTDataSource {
   constructor() {
