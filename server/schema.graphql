@@ -5,6 +5,13 @@ type Query {
   serviceAlert(train: String, onlyActive: Boolean): ServiceUpdate
   elevatorAlert(stationId: String): [ElevatorUpdate]
   stationUpdate(stationId: String): [TripUpdate]
+  commentFeed: [Comment]
+}
+
+type Mutation {
+  post(text: String!):Comment!
+  signup(email: String!, password: String!, username:String): AuthPayload
+  login(email:String!, password:String!): AuthPayload
 }
 
 type ElevatorUpdate {
@@ -61,11 +68,18 @@ type Station {
 # }
 
 type User {
-  userName: String!
+  id: ID!
+  username: String!
   email: String!
   password: String!
   routes: [Route]
   points: Int
+  comments: [Comment]
+}
+
+type AuthPayload {
+  token: String
+  user: User
 }
 
 type Route {
@@ -74,7 +88,8 @@ type Route {
 }
 
 type Comment {
+  id: ID!
   text: String
-  user: User
+  postedBy: User
   confirms: Int
 }

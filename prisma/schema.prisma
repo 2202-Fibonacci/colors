@@ -11,17 +11,18 @@ datasource db {
 }
 
 model User {
-  id                    Int      @id @default(autoincrement())
-  email              String   @unique
-  username       String?
-  password       String
-  points              Int
-  comment         Comment[]
+  id                       Int          @id @default(autoincrement())
+  email                 String    @unique
+  username         String     @unique
+  password          String
+  points                Int           @default(0)
+  comments         Comment[]
 }
 
 model Comment {
-  id                    Int      @id @default(autoincrement())
+  id                     Int      @id @default(autoincrement())
   text                 String
-  confirms         Int
-  author             User
+  confirms         Int        @default(0)
+  postedBy        User @relation(fields: [postedById], references:[id])
+  postedById     Int
 }

@@ -7,10 +7,11 @@ const ServiceAlert = require('./datasources/ServiceAlert')
 const TripFeed = require("./datasources/TripFeed")
 const ElevatorAlert = require("./datasources/ElevatorAlert")
 const { PrismaClient } = require('@prisma/client')
-// const prisma = new PrismaClient()
+const prisma = new PrismaClient()
 //TODO do we need dataloader since we are not really using DataSource? maybe at our level it doesn't matter?
 //dataloader, to "batch and de-dupe requests"
 require("dotenv").config();
+const { getUserId } = require('./utils');
 
 const server = new ApolloServer({
     playground: true,
@@ -20,12 +21,21 @@ const server = new ApolloServer({
             'utf8'
         ),
     resolvers,
-    context: { prisma }, //TODO: test: prisma may need to be added as a datasource!!
+    // context: ({ req }) => {
+    //   return {
+    //     ...req,
+    //     prisma,
+    //     userId:
+    //       req && req.headers.authorization
+    //         ? getUserId(req)
+    //         : null
+    //   }
+    // },
     dataSources: () => ({
         tripFeed: new TripFeed(),
         alertFeed: new ServiceAlert(),
         elevatorFeed: new ElevatorAlert(),
-        // prisma: new PrismaClient() //not sure this correct
+        prisma: new PrismaClient() //not sure this correct
     })
 })
 
