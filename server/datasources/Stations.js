@@ -22,7 +22,6 @@ function getStationByName(stationName) {
       let datapoint = stationInfo[info];
       if (datapoint === stationName) {
         let id = stationInfo.stop_id;
-        console.log(id);
         return this.getStationById(id);
       }
     }
@@ -34,7 +33,6 @@ function getStationByLatAndLong(lat, long) {
     for (let info in stationInfo) {
       let datapoint = stationInfo[info];
       if (datapoint === String(lat)) {
-        console.log("hello",datapoint, stationInfo.stop_lon);
         if (stationInfo.stop_lon === String(long)) {
           let id = stationInfo.stop_id;
           return this.getStationById(id);
