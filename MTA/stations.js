@@ -7734,7 +7734,7 @@ module.exports = {
   comp22: {
     complex: true,
     draw: true,
-    stop_name: "Brookyn Bridge-City Hall / Chambers St",
+    stop_name: "Brookyn Bridge-City Hall",
     stop_lat: "40.713065",
     stop_lon: "-74.004131",
     stops_at: ["640" , "M21"],

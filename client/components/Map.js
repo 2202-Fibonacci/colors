@@ -73,6 +73,9 @@ export default function Map() {
           style={styles.map}
           showsUserLocation={true}
           showsMyLocationButton={true}
+          userInterfaceStyle="dark"
+          tintColor="#ff0000"
+          mapType="mutedStandard"
         >
           {stations
           .filter(station => (allStations[station].draw))
@@ -85,6 +88,7 @@ export default function Map() {
               }}
               title={allStations[station].stop_name}
               description={`Lines: ${allStations[station].lines_at.join(", ")}`}
+              // image={{uri: 'NQRW'}}
               onPress={() => {
                 setSelectedStation(station);
                 // setRegion({
@@ -93,7 +97,7 @@ export default function Map() {
                 //   longitude: Number(allStations[station].stop_lon),
                 // });
               }}
-              pinColor="teal"
+              // pinColor="yellow"
             />
           ))}
         </MapView>
