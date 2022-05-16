@@ -1,17 +1,22 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Pressable, TextInput} from "react-native";
-import { gql } from "@apollo/client";
+import { gql, useMutation, useApolloClient } from "@apollo/client";
+import * as SecureStore from 'expo-secure-store';
+// import AUTH_TOKEN from "../../constants"
+import 'dotenv/config'
 
-const SIGNUP_MUTATION = gql `
+
+
+export const SIGNUP_MUTATION = gql`
     mutation SignupMutation(
         $email:String!
         $password:String!
         $username:String!
     ) {
         signup(
-            email: $email
-            password: $password
-            username: $username
+            email: $email,
+            password: $password,
+            username: $username,
         ) {
             token
         }
@@ -37,16 +42,73 @@ const Login = () => {
         username: ''
     });
 
+    const [login] = useMutation(LOGIN_MUTATION, {
+        variables: {
+            email: formState.email,
+            password: formState.password
+        },
+        onCompleted:  async ({ login }) => {
+            try {
+                await SecureStore.setItemAsync(AUTH_TOKEN, login.token);
+            //TODO:navigate to profile? back to map?
+            //<Profile />
+            console.log('logged in')
+        } catch (err){
+            console.log(err.graphQLErrors)
+        }
+        }
+    });
+
+
+    // const [signup, {data, loading, error}] = useMutation(SIGNUP_MUTATION, {
+    //     variable: {},
+    //     onError: (err) => {
+    //         console.log(err.networkError.result)
+    //     },
+    //     onCompleted: async ({ signup }) => {
+    //         try {
+    //         await SecureStore.setItemAsync(AUTH_TOKEN, signup.token);
+    //         //TODO: navigate to profile? back to map?
+    //          //<Profile />
+    //         console.log('signed up!')
+    //         } catch(err){
+    //         console.log(err)
+    //         }
+    //     }
+    // })
+    // console.log('error ', error)
+    // console.log('loading ', loading)
+    // console.log('data ', data)
+
+    const client = useApolloClient()
+
+    async function signup ({username, email, password} ){
+        try {
+            const res = await client.mutate({
+            mutation:SIGNUP_MUTATION,
+            variables:{
+                username, email, password
+            }
+        })
+        await SecureStore.setItemAsync(AUTH_TOKEN, res.data.signup.token);
+        }catch (e){
+            console.log(e)
+        }
+    }
+
     return (
         <View style={styles.container}>
-                {!formState.login ? <Text>Login</Text> : <Text>Sign Up</Text>}
-                {formState.login ? (
+            <View style={{fontSize: "50", fontWeight: "bold"}}>
+                {formState.login ? <Text>Login</Text> : <Text>Sign Up</Text>}
+            </View>
+                {!formState.login ? (
                     <TextInput
                         value={formState.username}
-                        onChange={(e) => 
+                        onChangeText={(username) => 
+                            // console.log(e.nativeEvent.text, e.target.value) || 
                             setFormState({
                                 ...formState,
-                                username: e.target.value
+                                username
                             })
                         }
                         placeholder='Username'
@@ -54,28 +116,45 @@ const Login = () => {
                 ) : null }
                 <TextInput 
                     value = {formState.email}
-                    onChange= {(e)=> 
+                    onChangeText= {(email)=> 
                         setFormState({
                             ...formState,
-                            email: e.target.value
+                            email
                         })
                     }
                     placeholder='email'
                 />
                 <TextInput
                     value={formState.password}
-                    onChange={(e)=>
+                    onChangeText={(password)=>
                         setFormState({
                             ...formState,
-                            password: e.target.value
+                            password
                         })
                     }
                     placeholder='password'
                 />
-            <Pressable>
-                {formState.login ? <Text>login</Text> : <Text>create an account</Text>}
+            <Pressable style={{backgroundColor: "powderblue", padding:3, borderRadius: 10}}
+                onPress={
+                    async ()=>
+                        {
+                            try {
+                                console.log(formState)
+                                await formState.login ? login : signup(        
+                                    {
+                                            username: formState.username,
+                                            email: formState.email,
+                                            password: formState.password}
+                                )
+                            } catch (e) {
+                                console.log('mutation error')
+                                console.error(e)
+                            } 
+                }}>
+                {formState.login ? <Text>login</Text> : <Text>create account</Text>}
+
             </Pressable>
-            <Pressable onPress={() =>
+            <Pressable style={{backgroundColor:  "steelblue", padding:3, borderRadius: 10}} onPress={() =>
                     setFormState({
                         ...formState,
                         login: !formState.login
@@ -97,8 +176,12 @@ const styles = StyleSheet.create({
       color: "#00ffff",
       margin: "0%",
     //   alignItems: "center",
-      justifyContent: "flex-end",
+      justifyContent: "space-evenly",
       padding:100,
+    //   titleText: {
+    //     fontSize: 20,
+    //     fontWeight: "bold"
+    //   }
     },
   });
 

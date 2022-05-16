@@ -21,21 +21,21 @@ const server = new ApolloServer({
             'utf8'
         ),
     resolvers,
-    // context: ({ req }) => {
-    //   return {
-    //     ...req,
-    //     prisma,
-    //     userId:
-    //       req && req.headers.authorization
-    //         ? getUserId(req)
-    //         : null
-    //   }
-    // },
+    context: ({ req }) => {
+      console.log(req.body)
+      return {
+        ...req,
+        prisma,
+        userId:
+          req && req.headers.authorization
+            ? getUserId(req)
+            : null
+      }
+    },
     dataSources: () => ({
         tripFeed: new TripFeed(),
         alertFeed: new ServiceAlert(),
         elevatorFeed: new ElevatorAlert(),
-        prisma: new PrismaClient() //not sure this correct
     })
 })
 
