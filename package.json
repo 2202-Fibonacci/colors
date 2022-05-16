@@ -39,6 +39,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "babel-plugin-transform-inline-environment-variables": "^0.4.4",
+    "eas-cli": "^0.52.0",
     "metro-react-native-babel-preset": "^0.70.3",
     "react-native-dotenv": "^3.3.1"
   },
