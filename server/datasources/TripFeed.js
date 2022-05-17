@@ -22,7 +22,7 @@ class TripFeed extends RESTDataSource {
       https
         .get(
           FeedURI,
-          { headers: { "x-api-key": process.env.API_KEYS } },
+          { headers: { "x-api-key": process.env.API_KEY } },
           (res) => {
             let data = [];
             res.on("data", (chunk) => {
