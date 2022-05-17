@@ -95,11 +95,8 @@ const stationToArrivals = (stationData) => {
   */
   let arrivalsList = [];
   for (let line = 0; line < stationData.length; line++) {
-    for (
-      let arrival = 0;
-      arrival < stationData[line].nextArrivals.length;
-      arrival++
-    ) {
+    const maxArrivals = (stationData[line] && stationData[line].nextArrivals) ? stationData[line].nextArrivals.length : 0;
+    for (let arrival = 0; arrival < maxArrivals; arrival++) {
       const dir = stationData[line].nextArrivals[arrival].direction;
       const dirLabel =
         dir === "N"
