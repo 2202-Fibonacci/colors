@@ -30,9 +30,14 @@ export default function ServiceAlert({ line }) {
         <Text>Error: {error.message}</Text>
       ) : (
         data.serviceAlert.alerts.map((alert, i) => (
-          <Text key={i}>
-            {alert.type}: {alert.text} ({alert.activePeriodText})
-          </Text>
+          <>
+            <Text key={`update-${i}_main`} style={styles.update}>
+              {alert.type}{':\n'}{alert.text}
+            </Text>
+            <Text key={`update-${i}_period`} style={styles.updatePeriod}>
+              {alert.activePeriodText}{"\n"}
+            </Text>
+          </>
         ))
       )}
     </View>
@@ -41,11 +46,19 @@ export default function ServiceAlert({ line }) {
 
 const styles = StyleSheet.create({
   updatesContainer: {
-    backgroundColor: "#fff",
-    padding: "4%",
-    color: "#00ffff",
+    backgroundColor: "#000",
+    paddingHorizontal: "4%",
+    paddingVerical: "1%",
     alignItems: "flex-start",
     justifyContent: "flex-start",
     width: "100%",
   },
+  update: {
+    color: "#eeff00",
+    fontSize: 12,
+  },
+  updatePeriod: {
+    color: "#eeff00",
+    fontSize: 10,
+  }
 });
