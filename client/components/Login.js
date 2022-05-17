@@ -78,12 +78,13 @@ const Login = () => {
 
     return (
         <View style={styles.container}>
-            <View style={{fontSize: "50", fontWeight: "bold"}}>
-                {formState.login ? <Text>Login</Text> : <Text>Sign Up</Text>}
+            <View>
+                {formState.login ? <Text style={{ fontSize: "20", color: '#eeff00',  fontWeight: "bold",}}>Login</Text> : <Text style={{ fontSize: "20", color: '#eeff00',  fontWeight: "bold",}}>Sign Up</Text>}
             </View>
                 {!formState.login ? (
                     <TextInput
                         value={formState.username}
+                        style = {styles.input}
                         onChangeText={(username) => 
                             // console.log(e.nativeEvent.text, e.target.value) || 
                             setFormState({
@@ -96,6 +97,7 @@ const Login = () => {
                 ) : null }
                 <TextInput 
                     value = {formState.email}
+                    style = {styles.input}
                     onChangeText= {(email)=> 
                         setFormState({
                             ...formState,
@@ -106,6 +108,7 @@ const Login = () => {
                 />
                 <TextInput
                     value={formState.password}
+                    style = {styles.input}
                     onChangeText={(password)=>
                         setFormState({
                             ...formState,
@@ -114,7 +117,7 @@ const Login = () => {
                     }
                     placeholder='password'
                 />
-            <Pressable style={{backgroundColor: "powderblue", padding:3, borderRadius: 10}}
+            <Pressable style={{backgroundColor: "red", padding:3, borderRadius: 10}}
                 onPress={
                     async ()=>
                         {
@@ -134,7 +137,7 @@ const Login = () => {
                 {formState.login ? <Text>login</Text> : <Text>create account</Text>}
 
             </Pressable>
-            <Pressable style={{backgroundColor:  "steelblue", padding:3, borderRadius: 10}} onPress={() =>
+            <Pressable style={{backgroundColor:  "#eeff00", padding:3, borderRadius: 10}} onPress={() =>
                     setFormState({
                         ...formState,
                         login: !formState.login
@@ -152,13 +155,25 @@ const Login = () => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#fff",
-      color: "#00ffff",
+      backgroundColor: "#000",
+      color: '#eeff00',
       margin: "0%",
       justifyContent: "space-evenly",
       padding:100,
     },
+    title:{
+        fontSize: "50", 
+        fontWeight: "bold", 
+        color: '#eeff00'
+    },
+    input:{
+        backgroundColor: "white",
+        color: "black"
+    }
   });
 
 export default Login;
 
+
+// inactiveBackgroundColor: "#000",
+// activeTintColor: '#egreyeff00',
