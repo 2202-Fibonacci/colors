@@ -7790,13 +7790,13 @@ module.exports = {
   },
   comp26: {
     complex: true,
-    draw: true,
+    draw: false,
     stop_name: "Franklin Av - Medgar Evers College",
     stop_lat: "40.670682",
     stop_lon: "-73.958131",
     stops_at: ["239", "S04"],
     lines_at: ["2", "3", "4", "5"], //, "SF"
-    icon: 'default',
+    icon: '_2345',
     borough: "brooklyn",
     accessible: false,
   },
