@@ -22,7 +22,7 @@ const server = new ApolloServer({
         ),
     resolvers,
     context: ({ req }) => {
-      console.log(req.body)
+      // console.log(req.body)
       return {
         ...req,
         prisma,
