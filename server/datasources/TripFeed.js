@@ -5,6 +5,7 @@ const tripFeedURL =
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const https = require("https");
 const allStations = require("../../MTA/stations");
+require("dotenv").config();
 
 class TripFeed extends RESTDataSource {
   constructor() {
@@ -21,7 +22,7 @@ class TripFeed extends RESTDataSource {
       https
         .get(
           FeedURI,
-          { headers: { "x-api-key": process.env.API_KEY } },
+          { headers: { "x-api-key": process.env.API_KEYS } },
           (res) => {
             let data = [];
             res.on("data", (chunk) => {

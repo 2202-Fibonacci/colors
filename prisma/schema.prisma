@@ -1,41 +1,28 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// generator client {
-//   provider = "prisma-client-js"
-// }
+generator client {
+  provider = "prisma-client-js"
+}
 
-// datasource db {
-//   provider = "postgresql"
-//   url      = env("DATABASE_URL")
-// }
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
 
-// model Book {
-//   id        Int      @id @default(autoincrement())
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @updatedAt
-//   title     String   @db.VarChar(255)
-//   content   String?
-//   published Boolean  @default(false)
-//   author    User     @relation(fields: [authorId], references: [id])
-//   authorId  Int
-//   pages     Page[]
-// }
+model User {
+  id                       Int          @id @default(autoincrement())
+  email                 String    @unique
+  username         String     @unique
+  password          String
+  points                Int           @default(0)
+  comments         Comment[]
+}
 
-// model Page {
-//   id        Int      @id @default(autoincrement())
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @updatedAt
-//   title     String   @db.VarChar(255)
-//   number    Int
-//   books     Book     @relation(fields: [bookId], references: [id])
-//   bookId    Int
-// }
-
-// model User {
-//   id       Int     @id @default(autoincrement())
-//   email    String  @unique
-//   username String?
-//   books    Book[]
-//   password String
-// }
+model Comment {
+  id                     Int      @id @default(autoincrement())
+  text                 String
+  confirms         Int        @default(0)
+  postedBy        User @relation(fields: [postedById], references:[id])
+  postedById     Int
+}
