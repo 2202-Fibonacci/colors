@@ -5,7 +5,7 @@ export default function ({ config }) {
     extra: {
       API_URL:
         process.env.NODE_ENV === "PRODUCTION"
-          ? "https://findmyline.herokuapp.com/"
+          ? "https://findmyline.herokuapp.com"
           : "http://localhost:4000",
     },
   };
