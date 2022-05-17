@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View, Pressable } from "react-native";
 import { useQuery, gql } from "@apollo/client";
 // import { allStations } from "../../MTA/stations";
 const allStations = require("../../MTA/stations");
@@ -37,7 +37,7 @@ const STATION_UPDATE = gql`
 
 const maxUpdates = 3;
 
-export default function LineUpdates({ station, line }) {
+export default function LineUpdates({ station, line, direction }) {
   // hook to get arrival data
   // const { data, loading, error, refetch } = useQuery(NEXT_ARRIVALS, {
   //   variables: { stationId: station, train: line } /*, direction: "N" */,
@@ -47,6 +47,11 @@ export default function LineUpdates({ station, line }) {
     variables: { stationId: station },
     pollInterval: 20000,
   });
+  const [selectedDir, setSelectedDir] = useState(null);
+
+  useEffect(() => {
+    setSelectedDir('NS');
+  }, [direction]);
 
   // prevent refetch on first render by comparing with previous props
   useEffect(() => {
@@ -62,13 +67,45 @@ export default function LineUpdates({ station, line }) {
   }
 
   return (
+    <>
+    <View style={styles.directionsContainer}>
+      <Pressable
+        key={`${station}_${(line)?line:'all'}-setNorth`}
+        onPress={() => setSelectedDir('N')}
+        style={({ pressed }) => [{transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],},]}
+      >
+        <View style={styles.button}>
+          <Text style={styles.buttonTxt}>⬈</Text>
+        </View>
+      </Pressable>
+      <Pressable
+        key={`${station}_${(line)?line:'all'}-setBoth`}
+        onPress={() => setSelectedDir('NS')}
+        style={({ pressed }) => [{transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],},]}
+      >
+        <View style={styles.button}>
+          <Text style={styles.buttonTxt}>⇆</Text>
+        </View>
+      </Pressable>
+      <Pressable
+        key={`${station}_${(line)?line:'all'}-setSouth`}
+        onPress={() => setSelectedDir('S')}
+        style={({ pressed }) => [{transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],},]}
+      >
+        <View style={styles.button}>
+          <Text style={styles.buttonTxt}>⬋</Text>
+        </View>
+      </Pressable>
+    </View>
     <View style={styles.updatesContainer}>
       {loading ? (
         <Text>Loading...</Text>
       ) : error ? (
         <Text>Error: {error.message}</Text>
       ) : (
-        arrivalsList.map((arrival, i) =>
+        arrivalsList
+        .filter(arrival => (selectedDir === 'NS') ? arrival : (arrival.direction === selectedDir) ? arrival : null )
+        .map((arrival, i) =>
           i < maxUpdates ? (
             <View style={styles.arrivalContainer}
             key={`${arrival.stationId}_${arrival.routeId}_${line ? line : 'all'}_${i}`}>
@@ -86,6 +123,7 @@ export default function LineUpdates({ station, line }) {
         )
       )}
     </View>
+    </>
   );
 }
 
@@ -122,7 +160,7 @@ const stationToArrivals = (stationData) => {
 const styles = StyleSheet.create({
   updatesContainer: {
     backgroundColor: "#000",
-    paddingVertical: "4%",
+    paddingBottom: "4%",
     paddingHorizontal: "0%",
     color: "#00ffff",
     alignItems: "center",
@@ -173,4 +211,26 @@ const styles = StyleSheet.create({
     paddingVertical: "1%",
     paddingRight: "3%",
   },
+  directionsContainer: {
+    backgroundColor: "#000",
+    paddingHorizontal: "11%",
+    paddingVertical: "0%",
+    color: "#00ffff",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    width: "100%",
+    display: "flex",
+    flexDirection: "row",
+  },
+  button: {
+    backgroundColor: "#000",
+    borderRadius: "15",
+    paddingHorizontal: "1%"
+  },
+  buttonTxt: {
+    color: "#eeff00",
+    fontSize: 26,
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+  }
 });
