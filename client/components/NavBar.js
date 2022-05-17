@@ -30,7 +30,7 @@ export default function NavBar() {
       >
         <Image
           style={styles.icon}
-          source={require("../../assets/settings.png")}
+          source={require("../../assets/escalator.png")}
         />
       </Pressable>
       <Pressable
@@ -64,16 +64,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "#FBEC9D",
+    backgroundColor: "#222",
     paddingHorizontal: "10%",
-    paddingVertical: "5%",
+    paddingTop: "2%",
+    paddingBottom: "4%",
     color: "#00ffff",
     width: Dimensions.get("window").width,
     borderBottomLeftRadius: 12,
     borderBottomRightRadius: 12,
   },
   icon: {
-    height: 20,
-    width: 20,
+    height: 28,
+    width: 28,
   },
 });

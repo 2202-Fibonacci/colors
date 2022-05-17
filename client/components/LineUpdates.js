@@ -45,7 +45,7 @@ export default function LineUpdates({ station, line }) {
   // });
   const { data, loading, error, refetch } = useQuery(STATION_UPDATE, {
     variables: { stationId: station },
-    pollInterval: 1000,
+    pollInterval: 20000,
   });
 
   // prevent refetch on first render by comparing with previous props
@@ -70,19 +70,18 @@ export default function LineUpdates({ station, line }) {
       ) : (
         arrivalsList.map((arrival, i) =>
           i < maxUpdates ? (
-            <Text style={styles.arrival} key={`${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
-              {" "}
-              {arrival.routeId}
-              {"  "}
-              {arrival.directionLabel}
-              {"                             ".slice(
-                0,
-                30 - arrival.directionLabel.length
-              )}
-              {"  ".slice(0, arrival.arrivalTime > 9 ? 1 : 2)}
-              {arrival.arrivalTime}
-              {"m "}
-            </Text>
+            <View style={styles.arrivalContainer}
+            key={`${arrival.stationId}_${arrival.routeId}_${line ? line : 'all'}_${i}`}>
+              <Text style={styles.arrivalLeft} key={`LINE${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
+                {" "}{arrival.routeId}{" "}
+              </Text>
+              <Text style={styles.arrivalCenter} key={`LABEL${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
+              {" "}{arrival.directionLabel}
+              </Text>
+              <Text style={styles.arrivalRight} key={`TIME${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
+              {"  ".slice(0, arrival.arrivalTime > 9 ? 1 : 2)}{arrival.arrivalTime}{"M"}
+              </Text>
+            </View>
           ) : null
         )
       )}
@@ -133,15 +132,48 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     width: "100%",
   },
-  arrival: {
+  arrivalContainer: {
+    width: "95%",
+    minWidth: "95%",
+    backgroundColor: "#000",
+    paddingHorizontal: "0%",
+    marginVertical: "0.5%",
+    color: "#00ffff",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    },
+  arrivalLeft: {
+    backgroundColor: "#222",
+    color: "#eeff00",
+    fontSize: 16,
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+    textAlign: "left",
+    textTransform: "uppercase",
+    paddingVertical: "1%",
+  },
+  arrivalCenter: {
+    flexGrow: 1,
+    backgroundColor: "#222",
+    color: "#eeff00",
+    fontSize: 16,
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+    textAlign: "left",
+    textTransform: "uppercase",
+    paddingVertical: "1%",
+  },
+  arrivalRight: {
     backgroundColor: "#222",
     color: "#eeff00",
     fontSize: 16,
     fontFamily: "Courier New",
     fontWeight: "bold",
     textTransform: "uppercase",
-    borderWidth: 1,
-    borderColor: "#eeff00",
+    textAlign: "right",
     paddingVertical: "1%",
+    paddingRight: "3%",
   },
 });

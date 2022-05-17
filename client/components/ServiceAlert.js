@@ -20,7 +20,7 @@ export default function ServiceAlert({ line }) {
     variables: { train: line, onlyActive: true },
   });
 
-  if (!line) return null;
+  if (!line || (data && data.serviceAlert.alerts.length === 0)) return null;
 
   return (
     <View style={styles.updatesContainer}>
