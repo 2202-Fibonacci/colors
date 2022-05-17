@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View, Pressable, TextInput} from "react-native";
 import { gql, useMutation, useApolloClient } from "@apollo/client";
 import * as SecureStore from 'expo-secure-store';
-// import AUTH_TOKEN from "../../constants"
-import 'dotenv/config'
+import AUTH_TOKEN from "../../constants"
+// import 'dotenv/config' => this causes error with 'fs'
 
 
 
-export const SIGNUP_MUTATION = gql`
+const SIGNUP_MUTATION = gql`
     mutation SignupMutation(
         $email:String!
         $password:String!
@@ -28,13 +28,17 @@ const LOGIN_MUTATION = gql`
         $email: String!
         $password: String!
     ) {
-        login(email: $email, password: $password){
+        login(
+            email: $email, 
+            password: $password
+        ){
             token
         }
     }
 `;
 
 const Login = () => {
+    const client = useApolloClient()
     const [formState, setFormState] = useState({
         login: true,
         email: '',
@@ -42,45 +46,20 @@ const Login = () => {
         username: ''
     });
 
-    const [login] = useMutation(LOGIN_MUTATION, {
-        variables: {
-            email: formState.email,
-            password: formState.password
-        },
-        onCompleted:  async ({ login }) => {
-            try {
-                await SecureStore.setItemAsync(AUTH_TOKEN, login.token);
-            //TODO:navigate to profile? back to map?
-            //<Profile />
-            console.log('logged in')
-        } catch (err){
-            console.log(err.graphQLErrors)
+    async function login ({email, password} ){
+        try {
+            const res = await client.mutate({
+            mutation:LOGIN_MUTATION,
+            variables:{
+                email, password
+            }
+        })
+        console.log('logged in!')
+        await SecureStore.setItemAsync("key", res.data.signup.token);
+        }catch (e){
+            console.log(e)
         }
-        }
-    });
-
-
-    // const [signup, {data, loading, error}] = useMutation(SIGNUP_MUTATION, {
-    //     variable: {},
-    //     onError: (err) => {
-    //         console.log(err.networkError.result)
-    //     },
-    //     onCompleted: async ({ signup }) => {
-    //         try {
-    //         await SecureStore.setItemAsync(AUTH_TOKEN, signup.token);
-    //         //TODO: navigate to profile? back to map?
-    //          //<Profile />
-    //         console.log('signed up!')
-    //         } catch(err){
-    //         console.log(err)
-    //         }
-    //     }
-    // })
-    // console.log('error ', error)
-    // console.log('loading ', loading)
-    // console.log('data ', data)
-
-    const client = useApolloClient()
+    }
 
     async function signup ({username, email, password} ){
         try {
@@ -90,7 +69,8 @@ const Login = () => {
                 username, email, password
             }
         })
-        await SecureStore.setItemAsync(AUTH_TOKEN, res.data.signup.token);
+        await SecureStore.setItemAsync("key", res.data.signup.token);
+        console.log('signed up!')
         }catch (e){
             console.log(e)
         }
@@ -98,12 +78,13 @@ const Login = () => {
 
     return (
         <View style={styles.container}>
-            <View style={{fontSize: "50", fontWeight: "bold"}}>
-                {formState.login ? <Text>Login</Text> : <Text>Sign Up</Text>}
+            <View>
+                {formState.login ? <Text style={{ fontSize: "20", color: '#eeff00',  fontWeight: "bold",}}>Login</Text> : <Text style={{ fontSize: "20", color: '#eeff00',  fontWeight: "bold",}}>Sign Up</Text>}
             </View>
                 {!formState.login ? (
                     <TextInput
                         value={formState.username}
+                        style = {styles.input}
                         onChangeText={(username) => 
                             // console.log(e.nativeEvent.text, e.target.value) || 
                             setFormState({
@@ -116,6 +97,7 @@ const Login = () => {
                 ) : null }
                 <TextInput 
                     value = {formState.email}
+                    style = {styles.input}
                     onChangeText= {(email)=> 
                         setFormState({
                             ...formState,
@@ -126,6 +108,7 @@ const Login = () => {
                 />
                 <TextInput
                     value={formState.password}
+                    style = {styles.input}
                     onChangeText={(password)=>
                         setFormState({
                             ...formState,
@@ -134,17 +117,17 @@ const Login = () => {
                     }
                     placeholder='password'
                 />
-            <Pressable style={{backgroundColor: "powderblue", padding:3, borderRadius: 10}}
+            <Pressable style={{backgroundColor: "red", padding:3, borderRadius: 10}}
                 onPress={
                     async ()=>
                         {
                             try {
-                                console.log(formState)
                                 await formState.login ? login : signup(        
                                     {
-                                            username: formState.username,
-                                            email: formState.email,
-                                            password: formState.password}
+                                        username: formState.username,
+                                        email: formState.email,
+                                        password: formState.password
+                                    }
                                 )
                             } catch (e) {
                                 console.log('mutation error')
@@ -154,7 +137,7 @@ const Login = () => {
                 {formState.login ? <Text>login</Text> : <Text>create account</Text>}
 
             </Pressable>
-            <Pressable style={{backgroundColor:  "steelblue", padding:3, borderRadius: 10}} onPress={() =>
+            <Pressable style={{backgroundColor:  "#eeff00", padding:3, borderRadius: 10}} onPress={() =>
                     setFormState({
                         ...formState,
                         login: !formState.login
@@ -172,18 +155,25 @@ const Login = () => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#fff",
-      color: "#00ffff",
+      backgroundColor: "#000",
+      color: '#eeff00',
       margin: "0%",
-    //   alignItems: "center",
       justifyContent: "space-evenly",
       padding:100,
-    //   titleText: {
-    //     fontSize: 20,
-    //     fontWeight: "bold"
-    //   }
     },
+    title:{
+        fontSize: "50", 
+        fontWeight: "bold", 
+        color: '#eeff00'
+    },
+    input:{
+        backgroundColor: "white",
+        color: "black"
+    }
   });
 
 export default Login;
 
+
+// inactiveBackgroundColor: "#000",
+// activeTintColor: '#egreyeff00',
