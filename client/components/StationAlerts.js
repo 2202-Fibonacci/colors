@@ -38,12 +38,12 @@ export default function StationAlerts( {station}) {
   return (
     <View style={styles.alertsContainer}>
       {
-        (elevator.length>0)
+        (elevator && elevator.length>0)
         ? <Text style={styles.alert}>Elevator Alerts</Text>
         : null
       }
       {
-        (elevator.length>0)
+        (elevator && elevator.length>0)
         ? elevator.map((alert, i) => (
             <View style={styles.alertLi} key={`esc_${station}-${i}`}>
               <Text style={styles.alert}>{"• "}</Text>
@@ -53,12 +53,12 @@ export default function StationAlerts( {station}) {
         : null
       }
       {
-        (escalator.length>0)
+        (escalator && escalator.length>0)
         ? <Text style={styles.alert}>Escalator Alerts</Text>
         : null
       }
       {
-        (escalator.length>0)
+        (escalator && escalator.length>0)
         ? escalator.map((alert, i) => (
             <View style={styles.alertLi} key={`esc_${station}-${i}`}>
               <Text style={styles.alert}>{"• "}</Text>
@@ -75,12 +75,12 @@ const groupAlerts = (data) => {
   let elevator = [];
   let escalator = [];
   for (let i=0; i<data.length; i++) {
-    console.log('i:', data[i]);
+    // console.log('i:', data[i]);
     data[i].equipmenttype === 'ES'
     ? escalator.push(data[i].serving)
     : elevator.push(data[i].serving)
   }
-  console.log('elev:', elevator.length, 'esc:', escalator.length)
+  // console.log('elev:', elevator.length, 'esc:', escalator.length)
   return {elevator, escalator};
 }
 

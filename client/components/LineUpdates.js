@@ -54,7 +54,6 @@ export default function LineUpdates({ station, line }) {
   }, [line]);
 
   const stationData = (data && data.stationUpdate) || [];
-  console.log('line?', line)
 
   let arrivalsList = stationData ? stationToArrivals(stationData) : [];
   // arrivalsList = arrivalsList.filter((arrival) => arrival.direction === "S");
