@@ -3,11 +3,10 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 import Map from "./client/components/Map";
 import NavBar from "./client/components/NavBar";
-import {LogBox} from "react-native";
+import { LogBox } from "react-native";
+import Constants from "expo-constants";
 
-LogBox.ignoreLogs([
-"exported from 'deprecated-react-native-prop-types'.",
-])
+LogBox.ignoreLogs(["exported from 'deprecated-react-native-prop-types'."]);
 
 import {
   ApolloProvider,
@@ -18,7 +17,7 @@ import {
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  uri: "http://localhost:4000",
+  uri: Constants.manifest.extra.API_URL,
 });
 
 export default function App() {
