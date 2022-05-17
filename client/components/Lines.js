@@ -23,6 +23,21 @@ export default function Lines(props) {
         <Text style={styles.station}>{allStations[props.station].stop_name}</Text>
       </View>
       <View style={styles.linesContainer}>
+
+        <Pressable
+          key={`all-${props.station}`}
+          onPress={() => setSelectedLine(null)}
+          style={({ pressed }) => [
+            {
+              transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
+            },
+          ]}
+        >
+          <View style={getColor(lineColor['all'], selectedLine === 'all').circle}>
+            <Text style={styles.line}>all</Text>
+          </View>
+        </Pressable>
+
         {props.lines.map((line) => (
           <Pressable
             key={line + props.station}
