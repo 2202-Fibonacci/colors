@@ -15,6 +15,11 @@ import {
   gql,
 } from "@apollo/client";
 
+// console.log("EXPO_ENV", process.env.EXPO_ENV);
+console.log("NODE_ENV", process.env);
+// console.log("PORT", process.env.PORT);
+console.log("API_URL", Constants.manifest.extra.API_URL);
+
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   uri: Constants.manifest.extra.API_URL,
