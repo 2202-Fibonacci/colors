@@ -3,14 +3,15 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 import Map from "./client/components/Map";
 import NavBar from "./client/components/NavBar";
-import {LogBox} from "react-native";
-import Login from "./client/components/Login"
-import MainContainer from "./client/components/MainContainer"
+import { LogBox } from "react-native";
+import Constants from "expo-constants";
+import Login from "./client/components/Login";
+import User from "./client/components/User";
+// import MainContainer from "./client/components/MainContainer";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-
-LogBox.ignoreLogs([
-"exported from 'deprecated-react-native-prop-types'.",
-])
+LogBox.ignoreLogs(["exported from 'deprecated-react-native-prop-types'."]);
 
 import {
   ApolloProvider,
@@ -21,30 +22,44 @@ import {
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  uri: "http://localhost:4000",
+  uri: Constants.manifest.extra.API_URL,
 });
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    // <View style={styles.container}>
-      <ApolloProvider client={client}>
-        <MainContainer />
+    <ApolloProvider client={client}>
+    <View style={styles.container}>
+        <View style={styles.statusBar}>
+          <StatusBar style="light" />
+        </View>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="Map" component={Map} options={{headerShown: false}} />
+            <Stack.Screen name="User" component={User} options={{headerShown: false}} />
+          </Stack.Navigator>
+          <NavBar />
+        </NavigationContainer>
+        {/* <MainContainer /> */}
+
         {/* <Map />
         <Login />
-        <NavBar /> */}
-        <StatusBar style="dark" />
+         */}
+    </View>
       </ApolloProvider>
-    // </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#000",
-    color: "#00ffff",
-    margin: "0%",
-    alignItems: "center",
-    justifyContent: "flex-end",
+    flex: 1,
+    justifyContent: "space-evenly",
   },
+  statusBar: {
+    backgroundColor: "#000",
+    height: 40,
+    margin: "0%",
+  }
 });
