@@ -5,6 +5,8 @@ import Map from "./client/components/Map";
 import NavBar from "./client/components/NavBar";
 import { LogBox } from "react-native";
 import Constants from "expo-constants";
+import Login from "./client/components/Login";
+import MainContainer from "./client/components/MainContainer";
 
 LogBox.ignoreLogs(["exported from 'deprecated-react-native-prop-types'."]);
 
@@ -22,13 +24,15 @@ const client = new ApolloClient({
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <ApolloProvider client={client}>
-        <Map />
-        <NavBar />
-        <StatusBar style="dark" />
-      </ApolloProvider>
-    </View>
+    // <View style={styles.container}>
+    <ApolloProvider client={client}>
+      <MainContainer />
+      {/* <Map />
+        <Login />
+        <NavBar /> */}
+      <StatusBar style="dark" />
+    </ApolloProvider>
+    // </View>
   );
 }
 

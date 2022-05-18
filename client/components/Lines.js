@@ -8,11 +8,6 @@ const allStations = require("../../MTA/stations");
 export default function Lines(props) {
   const [selectedLine, setSelectedLine] = useState(null);
 
-  // useEffect(() => {
-  //   if (!props.lines.includes(selectedLine)) {
-  //     setSelectedLine(props.lines[0]);
-  //   }
-  // });
   useEffect(() => {
     setSelectedLine(null);
   }, [props.station]);
@@ -22,7 +17,23 @@ export default function Lines(props) {
       <View style={styles.stationHeading}>
         <Text style={styles.station}>{allStations[props.station].stop_name}</Text>
       </View>
+
       <View style={styles.linesContainer}>
+
+        <Pressable
+          key={`all-${props.station}`}
+          onPress={() => setSelectedLine(null)}
+          style={({ pressed }) => [
+            {
+              transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
+            },
+          ]}
+        >
+          <View style={getColor(lineColor['all'], selectedLine === 'all').circle}>
+            <Text style={styles.line}>all</Text>
+          </View>
+        </Pressable>
+
         {props.lines.map((line) => (
           <Pressable
             key={line + props.station}
@@ -41,7 +52,7 @@ export default function Lines(props) {
           </Pressable>
         ))}
       </View>
-      <LineUpdates line={selectedLine} station={props.station} />
+      <LineUpdates line={selectedLine} station={props.station} direction={'NS'}/>
       <ServiceAlert line={selectedLine} />
     </>
   );

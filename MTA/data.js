@@ -49,7 +49,8 @@ const lineColor = {
   J: "#996633",
   Z: "#996633",
   L: "#A7A9AC",
-  SIR: "gray",
+  SIR: "#00A1DE",
+  all: "white",
 };
 
 module.exports = { baseURI, URIs, lineColor };
