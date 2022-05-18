@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "play": "EXPO_ENV=production expo start",
+    "play": "EXPO_ENV=production expo publish",
     "play:dev": "EXPO_ENV=development expo start",
     "start": "EXPO_ENV=production node server",
     "start:dev": "EXPO_ENV=development node server",
