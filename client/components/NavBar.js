@@ -8,11 +8,16 @@ import {
   Text,
   View,
 } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function NavBar() {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.navContainer}>
       <Pressable
+        onPress={() => navigation.navigate('Map')}
         style={({ pressed }) => [
           {
             transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
@@ -33,7 +38,7 @@ export default function NavBar() {
           source={require("../../assets/escalator.png")}
         />
       </Pressable>
-      <Pressable
+      {/* <Pressable
         style={({ pressed }) => [
           {
             transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
@@ -44,8 +49,9 @@ export default function NavBar() {
           style={styles.icon}
           source={require("../../assets/paper-plane.png")}
         />
-      </Pressable>
+      </Pressable> */}
       <Pressable
+        onPress={() => navigation.navigate('User')}
         style={({ pressed }) => [
           {
             transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
@@ -66,8 +72,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     backgroundColor: "#222",
     paddingHorizontal: "10%",
-    paddingTop: "2%",
-    paddingBottom: "4%",
+    paddingTop: "5%",
+    paddingBottom: "6%",
     color: "#00ffff",
     width: Dimensions.get("window").width,
     borderBottomLeftRadius: 12,

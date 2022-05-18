@@ -94,12 +94,12 @@ export default function Map() {
     default: require("../../assets/marker/default.png"),
   };
   return (
-    <>
+    <View style={styles.mapPageContainer}>
       <Lines
         lines={allStations[selectedStation].lines_at}
         station={selectedStation}
       />
-      <StationAlerts station={selectedStation} />
+      {/* <StationAlerts station={selectedStation} /> */}
       <View style={styles.mapContainer}>
         {/* {text === "Found" ? (
         <Text>
@@ -154,23 +154,33 @@ export default function Map() {
             )
           })}
         </MapView>
+        <StationAlerts station={selectedStation} />
       </View>
-    </>
+    </View>
   );
 }
 
-
 const styles = StyleSheet.create({
+  mapPageContainer: {
+    backgroundColor: "#000",
+    flex:1,
+    padding: 0,
+    margin: 0,
+    justifyContent: "start",
+    alignItems: "center",
+  },
   mapContainer: {
     flex: 1,
     backgroundColor: "#000",
     color: "#00ffff",
     justifyContent: "center",
     alignItems: "center",
+    padding: "0%",
+    margin: "0%",
   },
   map: {
     flex: 1,
     width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height * 0.6,
+    height: Dimensions.get("window").height,
   },
 });
