@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { useQuery, gql } from "@apollo/client";
+import {v4 as uuid } from "uuid";
 
 const SERVICE_ALERT = gql`
   query ServiceAlert($train: String!, $onlyActive: Boolean) {
@@ -15,7 +16,7 @@ const SERVICE_ALERT = gql`
   }
 `;
 
-export default function ServiceAlert({ line }) {
+export default function ServiceAlert({ line, station }) {
   const { data, loading, error } = useQuery(SERVICE_ALERT, {
     variables: { train: line, onlyActive: true },
   });
@@ -25,16 +26,20 @@ export default function ServiceAlert({ line }) {
   return (
     <View style={styles.updatesContainer}>
       {loading ? (
-        <Text>Loading...</Text>
+        <>
+          <Text style={styles.update}>Loading...</Text>
+          <Text style={styles.hidden}>Loading...</Text>
+          <Text style={styles.hidden}>Loading...</Text>
+        </>
       ) : error ? (
         <Text>Error: {error.message}</Text>
       ) : (
         data.serviceAlert.alerts.map((alert, i) => (
           <>
-            <Text key={`update-${i}_main`} style={styles.update}>
+            <Text key={`update-${station}_${i}_main`} style={styles.update}>
               {alert.type}{':\n'}{alert.text}
             </Text>
-            <Text key={`update-${i}_period`} style={styles.updatePeriod}>
+            <Text key={`update-${station}_${i}_period`} style={styles.updatePeriod}>
               {alert.activePeriodText}{"\n"}
             </Text>
           </>
@@ -55,6 +60,10 @@ const styles = StyleSheet.create({
   },
   update: {
     color: "#eeff00",
+    fontSize: 12,
+  },
+  hidden: {
+    color: "#000",
     fontSize: 12,
   },
   updatePeriod: {
