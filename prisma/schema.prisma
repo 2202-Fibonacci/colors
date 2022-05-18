@@ -17,12 +17,46 @@ model User {
   password          String
   points                Int           @default(0)
   comments         Comment[]
+  stations              StationsFavoredByUsers[]
+  // trains                  Train[]
 }
 
+model Station {
+  id                        String      @id
+  user                    StationsFavoredByUsers[]
+}
+
+model StationsFavoredByUsers {
+  user                   User         @relation(fields:[userId], references: [id])
+  userId                Int            
+  station               Station    @relation(fields:[stationId], references: [id])
+  stationId            String
+
+  @@id([userId, stationId])
+}
+
+
+// model Station {
+//   id                        Int      @id
+//   stopId                String
+//   favoritedBy        User   @relation(fields: [favoritedById], references:[id])
+//   favoritedById     Int
+// }
+
+
+
+// model Train {
+//   id                        Int      @id @default(autoincrement())
+//   stopId                String
+//   favoritedBy        User   @relation(fields: [favoritedById], references:[id])
+//   favoritedById     Int
+//   belongsTo          Station
+// stop
+
 model Comment {
-  id                     Int      @id @default(autoincrement())
+  id                     Int       @id @default(autoincrement())
   text                 String
   confirms         Int        @default(0)
-  postedBy        User @relation(fields: [postedById], references:[id])
+  postedBy        User    @relation(fields: [postedById], references:[id])
   postedById     Int
 }

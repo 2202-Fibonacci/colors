@@ -17,6 +17,10 @@ module.exports = {
       await dataSources.tripFeed.getStationUpdate(stationId),
     commentFeed: async (root, args, context) =>   
       await context.prisma.comment.findMany(),
+    getFavorites: async (root, {userId}, context) =>{
+      const user = await context.prisma.user.findByPk(userId)
+      
+    }
   },
   Mutation: {
     signup: async (parent, args, context) => {
@@ -52,8 +56,39 @@ module.exports = {
               postedBy: { connect: { id: userId }}
           }
       })
-    }
-  }
+    },
+    favorite: async (root, {stopId}, context) => {
+      const { userId } = context;
+      const station = await context.prisma.station.findUnique({
+        where: {
+          id: stopId
+        }
+      })
+
+      return await station.update({
+          data: {
+            user: [...userId]
+          }
+      })
+    },
+  //   favorite: async (root, {stopId}, context) => {
+  //     const { userId } = context;
+  //     return await context.prisma.station.create({
+  //       data: {
+  //         stopId: args.stopId,
+  //         favoritedBy: { connect: {id: userId }}
+  //       }
+  //     })
+  //   },
+  // },
+  // User:{
+  //   stations: async (root, args, context) => {
+  //     return context.prisma.user.findUnique({ where: { id: parent.id } }).stations()
+  //   }
+  },
+  // favoritedBy(root, args, context) {
+  //   return context.prisma.comment.findUnique({ where: { id: parent.id } }).favoritedBy()
+  // }
 }
 
 
