@@ -1,7 +1,9 @@
 {
   "expo": {
-    "name": "colors",
-    "slug": "colors",
+    "name": "Find My Line",
+    "slug": "findmyline",
+    "privacy": "public",
+    "description": "MTA data like you've never seen it before",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -17,7 +19,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.jennifermklein.colors"
     },
     "android": {
       "adaptiveIcon": {

@@ -3,17 +3,15 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 import Map from "./client/components/Map";
 import NavBar from "./client/components/NavBar";
-import {LogBox} from "react-native";
+import { LogBox } from "react-native";
+import Constants from "expo-constants";
 import Login from "./client/components/Login";
 import User from "./client/components/User";
 // import MainContainer from "./client/components/MainContainer";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-
-LogBox.ignoreLogs([
-"exported from 'deprecated-react-native-prop-types'.",
-])
+LogBox.ignoreLogs(["exported from 'deprecated-react-native-prop-types'."]);
 
 import {
   ApolloProvider,
@@ -24,7 +22,7 @@ import {
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  uri: "http://localhost:4000",
+  uri: Constants.manifest.extra.API_URL,
 });
 
 const Stack = createNativeStackNavigator();
