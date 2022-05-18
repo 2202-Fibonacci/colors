@@ -68,6 +68,34 @@ export default function LineUpdates({ station, line, direction }) {
 
   return (
     <>
+    <View style={styles.updatesContainer}>
+      {loading ? (
+        <View style={styles.arrivalContainer}>
+          <Text style={styles.arrivalLoading}>Loading...</Text>
+        </View>
+      ) : error ? (
+        <Text>Error: {error.message}</Text>
+      ) : (
+        arrivalsList
+        .filter(arrival => (selectedDir === 'NS') ? arrival : (arrival.direction === selectedDir) ? arrival : null )
+        .map((arrival, i) =>
+          i < maxUpdates ? (
+            <View style={styles.arrivalContainer}
+            key={`${arrival.stationId}_${arrival.routeId}_${line ? line : 'all'}_${i}`}>
+              <Text style={styles.arrivalLeft} key={`LINE${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
+                {" "}{arrival.routeId}{" "}
+              </Text>
+              <Text style={styles.arrivalCenter} key={`LABEL${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
+              {" "}{arrival.directionLabel}
+              </Text>
+              <Text style={styles.arrivalRight} key={`TIME${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
+              {"  ".slice(0, arrival.arrivalTime > 9 ? 1 : 2)}{arrival.arrivalTime}{"M"}
+              </Text>
+            </View>
+          ) : null
+        )
+      )}
+    </View>
     <View style={styles.directionsContainer}>
       <Pressable
         key={`${station}_${(line)?line:'all'}-setNorth`}
@@ -96,32 +124,6 @@ export default function LineUpdates({ station, line, direction }) {
           <Text style={styles.buttonTxt}>⬋</Text>
         </View>
       </Pressable>
-    </View>
-    <View style={styles.updatesContainer}>
-      {loading ? (
-        <Text>Loading...</Text>
-      ) : error ? (
-        <Text>Error: {error.message}</Text>
-      ) : (
-        arrivalsList
-        .filter(arrival => (selectedDir === 'NS') ? arrival : (arrival.direction === selectedDir) ? arrival : null )
-        .map((arrival, i) =>
-          i < maxUpdates ? (
-            <View style={styles.arrivalContainer}
-            key={`${arrival.stationId}_${arrival.routeId}_${line ? line : 'all'}_${i}`}>
-              <Text style={styles.arrivalLeft} key={`LINE${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
-                {" "}{arrival.routeId}{" "}
-              </Text>
-              <Text style={styles.arrivalCenter} key={`LABEL${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
-              {" "}{arrival.directionLabel}
-              </Text>
-              <Text style={styles.arrivalRight} key={`TIME${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
-              {"  ".slice(0, arrival.arrivalTime > 9 ? 1 : 2)}{arrival.arrivalTime}{"M"}
-              </Text>
-            </View>
-          ) : null
-        )
-      )}
     </View>
     </>
   );
@@ -159,12 +161,45 @@ const stationToArrivals = (stationData) => {
 
 const styles = StyleSheet.create({
   updatesContainer: {
+    minHeight: 100,
     backgroundColor: "#000",
-    paddingBottom: "4%",
+    paddingBottom: "0%",
     paddingHorizontal: "0%",
     color: "#00ffff",
     alignItems: "center",
     justifyContent: "flex-start",
+    width: "100%",
+  },
+  hidden: {
+    backgroundColor: "#222",
+    color: "#222",
+    fontSize: 16,
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+    textAlign: "left",
+    textTransform: "uppercase",
+    paddingVertical: "1%",
+  },
+  loadingContainer: {
+    width: "95%",
+    minWidth: "95%",
+    backgroundColor: "#000",
+    paddingHorizontal: "0%",
+    marginVertical: "0.5%",
+    color: "#00ffff",
+    display: "flex",
+    flexDirection: "column",
+  },
+  arrivalLoading: {
+    flex: 1,
+    backgroundColor: "#222",
+    color: "#eeff00",
+    fontSize: 16,
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+    textAlign: "left",
+    textTransform: "uppercase",
+    paddingVertical: "1%",
     width: "100%",
   },
   arrivalContainer: {
@@ -214,7 +249,8 @@ const styles = StyleSheet.create({
   directionsContainer: {
     backgroundColor: "#000",
     paddingHorizontal: "11%",
-    paddingVertical: "0%",
+    paddingTop: "0%",
+    paddingBottom: "4%",
     color: "#00ffff",
     alignItems: "center",
     justifyContent: "flex-start",

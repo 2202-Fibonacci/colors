@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Platform, StyleSheet, Text, View, Dimensions } from "react-native";
 import { useQuery, gql } from "@apollo/client";
+const allStations = require("../../MTA/stations");
 
 const STATION_ALERTS = gql `
   query StationAlert(
@@ -23,20 +24,23 @@ const STATION_ALERTS = gql `
   }
 `
 
-export default function StationAlerts( {station}) {
+export default function StationAlerts( {station} ) {
   const [alerts, setAlerts] = useState([]);
   
   const { data, loading, error } = useQuery(STATION_ALERTS, {
     variables: { stationId: station }
   })
 
-  if(loading) return <Text>Loading . . .</Text>
+  if(loading) return null
   if(error) console.log('Error ', error)
   
   const {elevator, escalator} = (data) ? groupAlerts(data.elevatorAlert) : [];
 
+  if (!allStations[station].accessible || (elevator.length === 0 && escalator.length === 0)) return null;
+  
   return (
     <View style={styles.alertsContainer}>
+      {/* <Text style={styles.station}>{allStations[station].stop_name}</Text> */}
       {
         (elevator && elevator.length>0)
         ? <Text style={styles.alert}>Elevator Alerts</Text>
@@ -104,5 +108,18 @@ const styles = StyleSheet.create({
   alertContent: {
     fontWeight: "normal",
     color: "#eeff00",
+  },
+  station: {
+    width: "100%",
+    backgroundColor: "#222",
+    color: "#eeff00",
+    fontSize: 17,
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    textAlign: "center",
+    margin: "0%",
+    paddingVertical: "1%",
+    paddingHorizontal: "3%"
   },
 });

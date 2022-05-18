@@ -78,23 +78,23 @@ const Login = () => {
 
     return (
         <View style={styles.container}>
-            <View>
-                {formState.login ? <Text style={{ fontSize: "20", color: '#eeff00',  fontWeight: "bold",}}>Login</Text> : <Text style={{ fontSize: "20", color: '#eeff00',  fontWeight: "bold",}}>Sign Up</Text>}
+            <View style={styles.header}>
+                {formState.login ? <Text style={styles.header}>Login</Text> : <Text style={styles.header}>Sign Up</Text>}
             </View>
                 {!formState.login ? (
+                  <>
+                    <Text style={styles.title}>username</Text>
                     <TextInput
-                        value={formState.username}
-                        style = {styles.input}
-                        onChangeText={(username) => 
-                            // console.log(e.nativeEvent.text, e.target.value) || 
-                            setFormState({
-                                ...formState,
-                                username
-                            })
-                        }
-                        placeholder='Username'
-                    />
+                      value={formState.username}
+                      style={styles.input}
+                      onChangeText={(username) =>
+                        // console.log(e.nativeEvent.text, e.target.value) || 
+                        setFormState({...formState,username}
+                      )}
+                      placeholder='Username' />
+                  </>
                 ) : null }
+                <Text style={styles.title}>email</Text>
                 <TextInput 
                     value = {formState.email}
                     style = {styles.input}
@@ -106,6 +106,7 @@ const Login = () => {
                     }
                     placeholder='email'
                 />
+                <Text style={styles.title}>password</Text>
                 <TextInput
                     value={formState.password}
                     style = {styles.input}
@@ -117,12 +118,12 @@ const Login = () => {
                     }
                     placeholder='password'
                 />
-            <Pressable style={{backgroundColor: "red", padding:3, borderRadius: 10}}
+            <Pressable style={styles.button}
                 onPress={
                     async ()=>
                         {
                             try {
-                                await formState.login ? login : signup(        
+                                await formState.login ? login : signup(
                                     {
                                         username: formState.username,
                                         email: formState.email,
@@ -134,10 +135,10 @@ const Login = () => {
                                 console.error(e)
                             } 
                 }}>
-                {formState.login ? <Text>login</Text> : <Text>create account</Text>}
+                {formState.login ? <Text style={styles.buttontxt}>login</Text> : <Text style={styles.buttontxt}>create account</Text>}
 
             </Pressable>
-            <Pressable style={{backgroundColor:  "#eeff00", padding:3, borderRadius: 10}} onPress={() =>
+            <Pressable style={styles.button} onPress={() =>
                     setFormState({
                         ...formState,
                         login: !formState.login
@@ -145,31 +146,65 @@ const Login = () => {
                 }
             >
                     {formState.login
-                        ? <Text>need to create an account?</Text>
-                        : <Text>already have an account?</Text>}
+                        ? <Text style={styles.buttontxt}>need to create an account?</Text>
+                        : <Text style={styles.buttontxt}>already have an account?</Text>}
             </Pressable>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#000",
-      color: '#eeff00',
-      margin: "0%",
-      justifyContent: "space-evenly",
-      padding:100,
-    },
-    title:{
-        fontSize: "50", 
-        fontWeight: "bold", 
-        color: '#eeff00'
-    },
-    input:{
-        backgroundColor: "white",
-        color: "black"
-    }
+  container: {
+    flex:1,
+    backgroundColor: "#000",
+    color: '#eeff00',
+    margin: "0%",
+    justifyContent: "space-evenly",
+    padding:100,
+    width: "100%",
+    justifyContent: "center",
+  },
+  header: {
+    width: "100%",
+    marginBottom: "0%",
+    backgroundColor: "#222",
+    color: '#eeff00',
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    fontSize: 28,
+  },
+  title:{
+    width: "100%",
+    marginVertical: "4%",
+    fontSize: 18,
+    color: '#eeff00',
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+  },
+  input:{
+    width: "100%",
+    backgroundColor: "#000",
+    color: "#eeff00",
+    height: "8%",
+    padding: "3%",
+    borderWidth: 2, 
+    borderColor: "#eeff00",
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  button: {
+    backgroundColor:  "#eeff00",
+    padding:3,
+    borderRadius: 10,
+    marginVertical: 10,
+  },
+  buttontxt: {
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+  },
   });
 
 export default Login;

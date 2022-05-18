@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Platform, StyleSheet, Text, View, Pressable } from "react-native";
+import { Platform, StyleSheet, Button, Text, View, Pressable } from "react-native";
 import { lineColor } from "../../MTA/data";
 import LineUpdates from "./LineUpdates";
 import ServiceAlert from "./ServiceAlert";
@@ -7,20 +7,27 @@ const allStations = require("../../MTA/stations");
 
 export default function Lines(props) {
   const [selectedLine, setSelectedLine] = useState(null);
+  const [favStation, setFavStation] = useState(null);
 
   useEffect(() => {
-    setSelectedLine(null);
+    setSelectedLine((props.lines.length > 1) ? null : props.lines[0]);
   }, [props.station]);
+
+  useEffect(() => {
+    setFavStation(null);
+  });
 
   return (
     <>
       <View style={styles.stationHeading}>
         <Text style={styles.station}>{allStations[props.station].stop_name}</Text>
+        <Button style={styles.heart} title="♡" color="#eeff00" onPress={() => setFavStation}/>
       </View>
 
       <View style={styles.linesContainer}>
-
-        <Pressable
+        {props.lines.length > 1
+        ? (
+          <Pressable
           key={`all-${props.station}`}
           onPress={() => setSelectedLine(null)}
           style={({ pressed }) => [
@@ -33,7 +40,7 @@ export default function Lines(props) {
             <Text style={styles.line}>all</Text>
           </View>
         </Pressable>
-
+        ) : null}
         {props.lines.map((line) => (
           <Pressable
             key={line + props.station}
@@ -53,7 +60,7 @@ export default function Lines(props) {
         ))}
       </View>
       <LineUpdates line={selectedLine} station={props.station} direction={'NS'}/>
-      <ServiceAlert line={selectedLine} />
+      <ServiceAlert line={selectedLine} station={props.station} />
     </>
   );
 }
@@ -62,7 +69,7 @@ const styles = StyleSheet.create({
   stationHeading: {
     display: "flex",
     flexDirection: "row",
-    marginTop: "10%",
+    marginTop: "4%",
     paddingTop: "1%",
     paddingBottom: "3%",
     backgroundColor: "#000",
@@ -70,12 +77,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
-    
   },
   linesContainer: {
     display: "flex",
     flexDirection: "row",
-    paddingVertical: "1%",
+    paddingTop: "1%",
+    paddingBottom: "4%",
     backgroundColor: "#000",
     color: "#00ffff",
     alignItems: "center",
@@ -88,8 +95,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
 
   },
+  heart: {
+    backgroundColor: "#222",
+    color: "#eeff00",
+  },
   station: {
-    width: "95%",
+    width: "90%",
     backgroundColor: "#222",
     color: "#eeff00",
     fontSize: 17,
@@ -97,8 +108,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textTransform: "uppercase",
     textAlign: "center",
-    // borderWidth: 1,
-    // borderColor: "#eeff00",
+    margin: "0%",
     paddingVertical: "1%",
     paddingHorizontal: "3%"
   },
