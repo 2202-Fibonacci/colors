@@ -7,6 +7,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "play": "NODE_ENV=production expo start",
+    "play:dev": "expo start",
     "start": "NODE_ENV=production node server",
     "start:dev": "node server",
     "android": "expo start --android",
