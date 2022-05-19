@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Image, Modal, StyleSheet, Text, Pressable, View } from "react-native";
-import StationAlerts from "./StationAlerts";
+import ServiceAlert from "./ServiceAlert";
 const allStations = require("../../MTA/stations");
 
-const ElevatorModal = ({ stationId }) => {
+const ServiceAlertModal = ({ stationId, line }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -21,7 +21,7 @@ const ElevatorModal = ({ stationId }) => {
           onPress={() => setModalVisible(!modalVisible)}
         >
           <View style={styles.modalView}>
-            <StationAlerts station={stationId} />
+            <ServiceAlert station={stationId} line={line} />
           </View>
         </Pressable>
       </Modal>
@@ -30,15 +30,16 @@ const ElevatorModal = ({ stationId }) => {
         style={({ pressed }) => [
           {
             transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-            display: !allStations[stationId].accessible ? "none" : "inline",
+            display: line === "" ? "none" : "inline",
           },
         ]}
         onPress={() => setModalVisible(true)}
       >
-        <Image
+        {/* <Image
           style={styles.icon}
-          source={require("../../assets/escalator.png")}
-        />
+          source={require("../../assets/station.png")}
+        /> */}
+        <Text>Alert</Text>
       </Pressable>
     </>
   );
@@ -89,4 +90,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ElevatorModal;
+export default ServiceAlertModal;

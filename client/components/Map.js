@@ -102,7 +102,6 @@ function Map(props) {
         lines={allStations[selectedStation].lines_at}
         station={selectedStation}
       />
-      {/* <StationAlerts station={selectedStation} /> */}
       <View style={styles.mapContainer}>
         {/* {text === "Found" ? (
         <Text>
@@ -113,9 +112,10 @@ function Map(props) {
       )} */}
         <MapView
           onRegionChangeComplete={(region) => setRegion(region)}
+          onRegionChange={(region) => setRegion(region)}
           // provider={PROVIDER_GOOGLE}
           initialRegion={region}
-          region={region}
+          // region={region}
           style={styles.map}
           showsUserLocation={true}
           showsMyLocationButton={true}
@@ -176,7 +176,6 @@ function Map(props) {
               );
             })}
         </MapView>
-        {/* <StationAlerts station={selectedStation} /> */}
       </View>
     </View>
   );
