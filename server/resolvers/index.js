@@ -24,7 +24,6 @@ module.exports = {
   },
   Mutation: {
     signup: async (parent, args, context) => {
-      console.log(args.username)
       const password = await bcrypt.hash(args.password, 10)
       const user = await context.prisma.user.create({ data: { ...args, password } })
       const token = jwt.sign({ userId: user.id }, APP_SECRET)
@@ -57,20 +56,91 @@ module.exports = {
           }
       })
     },
-    favorite: async (root, {stopId}, context) => {
-      const { userId } = context;
-      const station = await context.prisma.station.findUnique({
-        where: {
-          id: stopId
+    // favorite: async (root, args, context) => {
+    //   const { userId } = context;
+
+    //   return await context.prisma.StationsFavoredByUsers.create({
+    //     data:{
+    //       userId: userId,
+    //       stationId: args.stopId
+    //     }
+    //   })
+    // },
+    favorite: async (root, args, context) => {
+      return await context.prisma.StationsFavoredByUsers.create({
+        data:{
+          userId: context.userId,
+          stationId: args.stopId
         }
       })
-
-      return await station.update({
-          data: {
-            user: [...userId]
-          }
-      })
     },
+    // favorite: async (root, {stopId}, context) => {
+    //   const { userId } = context;
+
+    //   return await context.prisma.user.update({
+    //     where: {
+    //       id: userId
+    //     },
+    //     data:{
+    //       stations:{
+    //         connect:{
+    //           id: stopId
+    //         }
+    //       }
+    //     }
+    //   })
+    // },
+    // favorite: async (root, {stopId}, context) => {
+    //   const { userId } = context;
+    //   const station = await context.prisma.station.findUnique({
+    //     where: {
+    //       id: stopId
+    //     }
+    //   })
+
+    //   return await context.prisma.station.update({
+    //     data:{
+    //       user:{
+    //         connect:{
+    //           id: userId
+    //         }
+    //       }
+    //     }
+    //   })
+    // },
+    // favorite: async (root, {stopId}, context) => {
+    //   const { userId } = context;
+    //   const station = await context.prisma.station.findUnique({
+    //     where: {
+    //       id: stopId
+    //     }
+    //   })
+
+    //   return await context.prisma.station.update({
+    //     data:{
+    //       user:{
+    //         connect:{
+    //           id: userId
+    //         }
+    //       }
+    //     }
+    //   })
+    // },
+    // favorite: async (root, {stopId}, context) => {
+    //   const { userId } = context;
+    //   return await context.prisma.station.update({
+    //     where: {
+    //       id: stopId
+    //     },
+    //     data: {
+    //       user: { connect: {
+    //         id: userId 
+    //       }
+    //     }
+    //     }
+    //   })
+    // },
+  // },
   //   favorite: async (root, {stopId}, context) => {
   //     const { userId } = context;
   //     return await context.prisma.station.create({
@@ -85,7 +155,7 @@ module.exports = {
   //   stations: async (root, args, context) => {
   //     return context.prisma.user.findUnique({ where: { id: parent.id } }).stations()
   //   }
-  },
+  //},
   // favoritedBy(root, args, context) {
   //   return context.prisma.comment.findUnique({ where: { id: parent.id } }).favoritedBy()
   // }
@@ -105,4 +175,4 @@ module.exports = {
 //   Mutation,
 //   User,
 //   Comment
-// }
+}
