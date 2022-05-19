@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { Platform, StyleSheet, Button, Text, View, Pressable } from "react-native";
+import { StyleSheet, Button, Text, View, Pressable } from "react-native";
 import { lineColor } from "../../MTA/data";
 import LineUpdates from "./LineUpdates";
 import ServiceAlert from "./ServiceAlert";
 const allStations = require("../../MTA/stations");
+import { selectLine } from "../store";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-export default function Lines(props) {
+function Lines(props) {
   const [selectedLine, setSelectedLine] = useState(null);
   const [favStation, setFavStation] = useState(null);
 
   useEffect(() => {
-    setSelectedLine((props.lines.length > 1) ? null : props.lines[0]);
+    setSelectedLine(props.lines.length > 1 ? null : props.lines[0]);
+    props.selectLine(props.lines.length > 1 ? "" : props.lines[0]);
   }, [props.station]);
 
   useEffect(() => {
@@ -20,31 +24,45 @@ export default function Lines(props) {
   return (
     <>
       <View style={styles.stationHeading}>
-        <Text style={styles.station}>{allStations[props.station].stop_name}</Text>
-        <Button style={styles.heart} title="♡" color="#eeff00" onPress={() => setFavStation}/>
+        <Text style={styles.station}>
+          {allStations[props.station].stop_name}
+        </Text>
+        <Button
+          style={styles.heart}
+          title="♡"
+          color="#eeff00"
+          onPress={() => setFavStation}
+        />
       </View>
 
       <View style={styles.linesContainer}>
-        {props.lines.length > 1
-        ? (
+        {props.lines.length > 1 ? (
           <Pressable
-          key={`all-${props.station}`}
-          onPress={() => setSelectedLine(null)}
-          style={({ pressed }) => [
-            {
-              transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-            },
-          ]}
-        >
-          <View style={getColor(lineColor['all'], selectedLine === 'all').circle}>
-            <Text style={styles.line}>all</Text>
-          </View>
-        </Pressable>
+            key={`all-${props.station}`}
+            onPress={() => {
+              setSelectedLine(null);
+              props.selectLine("");
+            }}
+            style={({ pressed }) => [
+              {
+                transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
+              },
+            ]}
+          >
+            <View
+              style={getColor(lineColor["all"], selectedLine === "all").circle}
+            >
+              <Text style={styles.line}>all</Text>
+            </View>
+          </Pressable>
         ) : null}
         {props.lines.map((line) => (
           <Pressable
             key={line + props.station}
-            onPress={() => setSelectedLine(line)}
+            onPress={() => {
+              setSelectedLine(line);
+              props.selectLine(line);
+            }}
             style={({ pressed }) => [
               {
                 transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
@@ -59,11 +77,25 @@ export default function Lines(props) {
           </Pressable>
         ))}
       </View>
-      <LineUpdates line={selectedLine} station={props.station} direction={'NS'}/>
-      <ServiceAlert line={selectedLine} station={props.station} />
+      <LineUpdates
+        line={selectedLine}
+        station={props.station}
+        direction={"NS"}
+      />
+      {/* <ServiceAlert line={selectedLine} station={props.station} /> */}
     </>
   );
 }
+
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    {
+      selectLine,
+    },
+    dispatch
+  );
+
+export default connect(null, mapDispatchToProps)(Lines);
 
 const styles = StyleSheet.create({
   stationHeading: {
@@ -93,7 +125,6 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     fontSize: 14,
-
   },
   heart: {
     backgroundColor: "#222",
@@ -110,7 +141,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     margin: "0%",
     paddingVertical: "1%",
-    paddingHorizontal: "3%"
+    paddingHorizontal: "3%",
   },
 });
 

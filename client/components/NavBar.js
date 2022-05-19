@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import ElevatorModal from "./ElevatorModal";
+import ServiceAlertModal from "./ServiceAlertModal";
 import { connect } from "react-redux";
 
 function NavBar(props) {
@@ -31,6 +32,7 @@ function NavBar(props) {
           />
         </Pressable>
         <ElevatorModal stationId={props.stationId} />
+        <ServiceAlertModal stationId={props.stationId} line={props.line} />
         <Pressable
           onPress={() => navigation.navigate("User")}
           style={({ pressed }) => [
@@ -50,7 +52,7 @@ function NavBar(props) {
 }
 
 const mapStateToProps = (state) => {
-  return { stationId: state.selectedStation };
+  return { stationId: state.selectedStation, line: state.selectedLine };
 };
 
 export default connect(mapStateToProps)(NavBar);
@@ -63,8 +65,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     backgroundColor: "#222",
     paddingHorizontal: "10%",
-    paddingTop: "5%",
-    paddingBottom: "6%",
+    paddingTop: "4%",
+    paddingBottom: "5%",
     color: "#00ffff",
     width: Dimensions.get("window").width,
     borderBottomLeftRadius: 12,

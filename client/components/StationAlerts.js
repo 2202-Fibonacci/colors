@@ -44,7 +44,6 @@ export default function StationAlerts({ station }) {
 
   return (
     <View style={styles.alertsContainer}>
-      {/* <Text style={styles.station}>{allStations[station].stop_name}</Text> */}
       {elevator && elevator.length > 0 ? (
         <Text style={styles.alert}>Elevator Alerts</Text>
       ) : null}
@@ -75,12 +74,10 @@ const groupAlerts = (data) => {
   let elevator = [];
   let escalator = [];
   for (let i = 0; i < data.length; i++) {
-    // console.log('i:', data[i]);
     data[i].equipmenttype === "ES"
       ? escalator.push(data[i].serving)
       : elevator.push(data[i].serving);
   }
-  // console.log('elev:', elevator.length, 'esc:', escalator.length)
   return { elevator, escalator };
 };
 
@@ -104,18 +101,5 @@ const styles = StyleSheet.create({
   alertContent: {
     fontWeight: "normal",
     color: "#eeff00",
-  },
-  station: {
-    width: "100%",
-    backgroundColor: "#222",
-    color: "#eeff00",
-    fontSize: 17,
-    fontFamily: "Courier New",
-    fontWeight: "bold",
-    textTransform: "uppercase",
-    textAlign: "center",
-    margin: "0%",
-    paddingVertical: "1%",
-    paddingHorizontal: "3%",
   },
 });
