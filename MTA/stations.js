@@ -7653,6 +7653,8 @@ module.exports = {
     icon: '_6EM',
     borough: "manhattan",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp13: {
     complex: true,
