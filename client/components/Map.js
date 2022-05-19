@@ -38,12 +38,12 @@ function Map(props) {
       console.log('nearest station:', nearestStationCode);
       if(nearestStationCode) setSelectedStation(nearestStationCode);
       // set region to center around user's location - commented out because goes to SF now
-      if(isWithinNYC(location))
-      setRegion({
-        ...region,
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
-      });
+      // if(isWithinNYC(location))
+      // setRegion({
+      //   ...region,
+      //   latitude: location.coords.latitude,
+      //   longitude: location.coords.longitude,
+      // });
     })();
   }, []);
 
