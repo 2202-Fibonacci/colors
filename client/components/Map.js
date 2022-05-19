@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
-import { Platform, StyleSheet, Text, View, Dimensions, Image } from "react-native";
+import { StyleSheet, Text, View, Dimensions, Image } from "react-native";
 import * as Location from "expo-location";
 const allStations = require("../../MTA/stations");
 import Lines from "./Lines";
 import StationAlerts from "./StationAlerts";
+import { selectStation } from "../store";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-export default function Map() {
+function Map(props) {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
   const [region, setRegion] = useState({
@@ -48,7 +51,7 @@ export default function Map() {
   }
 
   const stations = Object.keys(allStations);
-  
+
   const images = {
     _7: require("../../assets/marker/7.png"),
     _7BDFM: require("../../assets/marker/7BDFM.png"),
@@ -121,49 +124,78 @@ export default function Map() {
           mapType="mutedStandard"
         >
           {stations
-          .filter(station => (allStations[station].draw))
-          .map((station) => {
-            {/* let markerImg = '../../assets/marker/default.png'; */}
-            let markerImg = allStations[station].icon;
-            {/* let markerImg = images[allStations[station].icon]; */}
-            if (!allStations[station].icon) console.log(`${station} missing icon`)
-            {/* else console.log(`${allStations[station].icon}.png`); */}
-            {/* if (allStations[station].icon) markerImg = '../../assets/marker/' + allStations[station].icon + '.png'; */}
-            return (
-            <Marker
-              key={station}
-              coordinate={{
-                latitude: Number(allStations[station].stop_lat),
-                longitude: Number(allStations[station].stop_lon),
-              }}
-              title={allStations[station].stop_name}
-              description={`Lines: ${allStations[station].lines_at.join(", ")}`}
-              // icon={require('../../assets/NQRW.png')}
-              onPress={() => {
-                setSelectedStation(station);
-                // setRegion({
-                //   ...region,
-                //   latitude: Number(allStations[station].stop_lat),
-                //   longitude: Number(allStations[station].stop_lon),
-                // });
-              }}
-              // pinColor="yellow"
-            >
-            <Image source={images[markerImg]} style={(allStations[station].complex)? {height: 20, width:15} : {height: 13, width:10}} />
-            </Marker>
-            )
-          })}
+            .filter((station) => allStations[station].draw)
+            .map((station) => {
+              {
+                /* let markerImg = '../../assets/marker/default.png'; */
+              }
+              let markerImg = allStations[station].icon;
+              {
+                /* let markerImg = images[allStations[station].icon]; */
+              }
+              if (!allStations[station].icon)
+                console.log(`${station} missing icon`);
+              {
+                /* else console.log(`${allStations[station].icon}.png`); */
+              }
+              {
+                /* if (allStations[station].icon) markerImg = '../../assets/marker/' + allStations[station].icon + '.png'; */
+              }
+              return (
+                <Marker
+                  key={station}
+                  coordinate={{
+                    latitude: Number(allStations[station].stop_lat),
+                    longitude: Number(allStations[station].stop_lon),
+                  }}
+                  title={allStations[station].stop_name}
+                  description={`Lines: ${allStations[station].lines_at.join(
+                    ", "
+                  )}`}
+                  // icon={require('../../assets/NQRW.png')}
+                  onPress={() => {
+                    setSelectedStation(station);
+                    props.selectStation(station);
+                    // setRegion({
+                    //   ...region,
+                    //   latitude: Number(allStations[station].stop_lat),
+                    //   longitude: Number(allStations[station].stop_lon),
+                    // });
+                  }}
+                  // pinColor="yellow"
+                >
+                  <Image
+                    source={images[markerImg]}
+                    style={
+                      allStations[station].complex
+                        ? { height: 20, width: 15 }
+                        : { height: 13, width: 10 }
+                    }
+                  />
+                </Marker>
+              );
+            })}
         </MapView>
-        <StationAlerts station={selectedStation} />
+        {/* <StationAlerts station={selectedStation} /> */}
       </View>
     </View>
   );
 }
 
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    {
+      selectStation,
+    },
+    dispatch
+  );
+
+export default connect(null, mapDispatchToProps)(Map);
+
 const styles = StyleSheet.create({
   mapPageContainer: {
     backgroundColor: "#000",
-    flex:1,
+    flex: 1,
     padding: 0,
     margin: 0,
     justifyContent: "start",

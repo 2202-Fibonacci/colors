@@ -10,10 +10,10 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import ElevatorModal from "./ElevatorModal";
+import { connect } from "react-redux";
 
-export default function NavBar() {
+function NavBar(props) {
   const navigation = useNavigation();
-
   return (
     <>
       <View style={styles.navContainer}>
@@ -30,7 +30,7 @@ export default function NavBar() {
             source={require("../../assets/home.png")}
           />
         </Pressable>
-        <ElevatorModal />
+        <ElevatorModal stationId={props.stationId} />
         <Pressable
           onPress={() => navigation.navigate("User")}
           style={({ pressed }) => [
@@ -48,6 +48,12 @@ export default function NavBar() {
     </>
   );
 }
+
+const mapStateToProps = (state) => {
+  return { stationId: state.selectedStation };
+};
+
+export default connect(mapStateToProps)(NavBar);
 
 const styles = StyleSheet.create({
   navContainer: {

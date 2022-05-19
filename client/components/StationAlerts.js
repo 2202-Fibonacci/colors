@@ -29,7 +29,7 @@ export default function StationAlerts({ station }) {
     variables: { stationId: station },
   });
 
-  if (loading) return null;
+  if (loading) return <Text style={styles.alertContent}>Loading...</Text>;
   if (error) console.log("Error ", error);
 
   const { elevator, escalator } = data ? groupAlerts(data.elevatorAlert) : [];
@@ -38,7 +38,7 @@ export default function StationAlerts({ station }) {
   if (elevator.length === 0 && escalator.length === 0)
     return (
       <Text style={styles.alertContent}>
-        All elevators and escalators currently operating
+        Elevators and escalators currently operating
       </Text>
     );
 

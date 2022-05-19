@@ -11,9 +11,9 @@ import {
 import StationAlerts from "./StationAlerts";
 const allStations = require("../../MTA/stations");
 
-const ElevatorModal = () => {
+const ElevatorModal = ({ stationId }) => {
   const [modalVisible, setModalVisible] = useState(false);
-  const stationId = "128";
+  //   const stationId = "128";
   return (
     <>
       <Modal
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
   },
   button: {
     padding: "2%",
+    marginTop: "3%",
     height: 24,
     width: 24,
     alignSelf: "flex-end",
