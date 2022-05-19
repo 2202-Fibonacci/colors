@@ -8,59 +8,44 @@ import {
   Text,
   View,
 } from "react-native";
-import { useNavigation } from '@react-navigation/native';
-
+import { useNavigation } from "@react-navigation/native";
+import ElevatorModal from "./ElevatorModal";
 
 export default function NavBar() {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.navContainer}>
-      <Pressable
-        onPress={() => navigation.navigate('Map')}
-        style={({ pressed }) => [
-          {
-            transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-          },
-        ]}
-      >
-        <Image style={styles.icon} source={require("../../assets/home.png")} />
-      </Pressable>
-      <Pressable
-        style={({ pressed }) => [
-          {
-            transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-          },
-        ]}
-      >
-        <Image
-          style={styles.icon}
-          source={require("../../assets/escalator.png")}
-        />
-      </Pressable>
-      {/* <Pressable
-        style={({ pressed }) => [
-          {
-            transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-          },
-        ]}
-      >
-        <Image
-          style={styles.icon}
-          source={require("../../assets/paper-plane.png")}
-        />
-      </Pressable> */}
-      <Pressable
-        onPress={() => navigation.navigate('User')}
-        style={({ pressed }) => [
-          {
-            transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-          },
-        ]}
-      >
-        <Image style={styles.icon} source={require("../../assets/user.png")} />
-      </Pressable>
-    </View>
+    <>
+      <View style={styles.navContainer}>
+        <Pressable
+          onPress={() => navigation.navigate("Map")}
+          style={({ pressed }) => [
+            {
+              transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
+            },
+          ]}
+        >
+          <Image
+            style={styles.icon}
+            source={require("../../assets/home.png")}
+          />
+        </Pressable>
+        <ElevatorModal />
+        <Pressable
+          onPress={() => navigation.navigate("User")}
+          style={({ pressed }) => [
+            {
+              transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
+            },
+          ]}
+        >
+          <Image
+            style={styles.icon}
+            source={require("../../assets/user.png")}
+          />
+        </Pressable>
+      </View>
+    </>
   );
 }
 
