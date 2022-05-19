@@ -9,9 +9,11 @@ import {
   View,
 } from "react-native";
 import StationAlerts from "./StationAlerts";
+const allStations = require("../../MTA/stations");
 
 const ElevatorModal = () => {
   const [modalVisible, setModalVisible] = useState(false);
+  const stationId = "128";
   return (
     <>
       <Modal
@@ -25,7 +27,7 @@ const ElevatorModal = () => {
       >
         <View style={styles.container}>
           <View style={styles.modalView}>
-            <StationAlerts station={"128"} />
+            <StationAlerts station={stationId} />
             <Pressable
               style={[styles.button]}
               onPress={() => setModalVisible(!modalVisible)}
@@ -40,6 +42,7 @@ const ElevatorModal = () => {
         style={({ pressed }) => [
           {
             transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
+            display: !allStations[stationId].accessible ? "none" : "inline",
           },
         ]}
         onPress={() => setModalVisible(true)}
@@ -56,7 +59,7 @@ const ElevatorModal = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: "50%",
+    marginTop: "60%",
     justifyContent: "center",
     alignItems: "center",
   },
