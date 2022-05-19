@@ -35,11 +35,11 @@ const ServiceAlertModal = ({ stationId, line }) => {
         ]}
         onPress={() => setModalVisible(true)}
       >
-        {/* <Image
+        <Image
           style={styles.icon}
           source={require("../../assets/station.png")}
-        /> */}
-        <Text>Alert</Text>
+        />
+        {/* <Text>Alert</Text> */}
       </Pressable>
     </>
   );
