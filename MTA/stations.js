@@ -7499,6 +7499,8 @@ module.exports = {
     icon: 'FML',
     borough: "manhattan",
     accessible: false,
+    north_label: "north",
+    south_label: "south",
   },
   comp02: {
     complex: true,
@@ -7511,6 +7513,8 @@ module.exports = {
     icon: '_4LN',
     borough: "manhattan",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp03: {
     complex: true,
@@ -7523,6 +7527,8 @@ module.exports = {
     icon: '_2345',
     borough: "bronx",
     accessible: false,
+    north_label: "north",
+    south_label: "south",
   },
   comp04: {
     complex: true,
@@ -7535,6 +7541,8 @@ module.exports = {
     icon: '_6BDFM',
     borough: "bronx",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp05: {
     complex: true,
@@ -7547,6 +7555,8 @@ module.exports = {
     icon: '_1AC',
     borough: "manhattan",
     accessible: false,
+    north_label: "north",
+    south_label: "south",
   },
   comp06: {
     complex: true,
@@ -7559,6 +7569,8 @@ module.exports = {
     icon: '_7EM',
     borough: "queens",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp07: {
     complex: true,
@@ -7571,6 +7583,8 @@ module.exports = {
     icon: 'BDNQ',
     borough: "manhattan",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp08: {
     complex: true,
@@ -7583,6 +7597,8 @@ module.exports = {
     icon: 'FGR',
     borough: "brooklyn",
     accessible: false,
+    north_label: "north",
+    south_label: "south",
   },
   comp09: {
     complex: true,
@@ -7595,6 +7611,8 @@ module.exports = {
     icon: '_7BDFM',
     borough: "manhattan",
     accessible: false,
+    north_label: "north",
+    south_label: "south",
   },
   comp10: {
     complex: true,
@@ -7607,6 +7625,8 @@ module.exports = {
     icon: '_4567',
     borough: "manhattan",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp11: {
     complex: true,
@@ -7619,6 +7639,8 @@ module.exports = {
     icon: 'TimesSq',
     borough: "manhattan",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp12: {
     complex: true,
@@ -7643,6 +7665,8 @@ module.exports = {
     icon: '_456NRW',
     borough: "manhattan",
     accessible: false,
+    north_label: "north",
+    south_label: "south",
   },
   comp14: {
     complex: true,
@@ -7655,6 +7679,8 @@ module.exports = {
     icon: '_1AB',
     borough: "manhattan",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp15: {
     complex: true,
@@ -7667,6 +7693,8 @@ module.exports = {
     icon: 'BDNQ',
     borough: "brooklyn",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp16: {
     complex: true,
@@ -7679,6 +7707,8 @@ module.exports = {
     icon: 'JacksonHts',
     borough: "queens",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp17: {
     complex: true,
@@ -7691,6 +7721,8 @@ module.exports = {
     icon: 'AtlanticTer',
     borough: "brooklyn",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp18: {
     complex: true,
@@ -7703,6 +7735,8 @@ module.exports = {
     icon: 'ACL',
     borough: "manhattan",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp19: {
     complex: true,
@@ -7715,6 +7749,8 @@ module.exports = {
     icon: '_6BDFM',
     borough: "Manhattan",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp20: {
     complex: true,
@@ -7727,6 +7763,8 @@ module.exports = {
     icon: '_2345R',
     borough: "brooklyn",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp21: {
     complex: true,
@@ -7739,6 +7777,8 @@ module.exports = {
     icon: 'ACLJZ',
     borough: "brooklyn",
     accessible: false,
+    north_label: "north",
+    south_label: "south",
   },
   comp22: {
     complex: true,
@@ -7751,6 +7791,8 @@ module.exports = {
     icon: '_456JZ',
     borough: "manhattan",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp23: {
     complex: true,
@@ -7763,6 +7805,8 @@ module.exports = {
     icon: '_456NRJZ',
     borough: "manhattan",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp24: {
     complex: true,
@@ -7775,6 +7819,8 @@ module.exports = {
     icon: '_23ACERW',
     borough: "manhatan",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp25: {
     complex: true,
@@ -7787,6 +7833,8 @@ module.exports = {
     icon: 'JMZ',
     borough: "manhattan",
     accessible: false,
+    north_label: "north",
+    south_label: "south",
   },
   comp26: {
     complex: true,
@@ -7799,6 +7847,8 @@ module.exports = {
     icon: '_2345',
     borough: "brooklyn",
     accessible: false,
+    north_label: "north",
+    south_label: "south",
   },
   // comp27: {
   //   complex: true,
@@ -7823,6 +7873,8 @@ module.exports = {
     icon: 'FultonSt',
     borough: "mahattan",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp29: {
     complex: true,
@@ -7835,6 +7887,8 @@ module.exports = {
     icon: 'default',
     borough: "brooklyn",
     accessible: false,
+    north_label: "north",
+    south_label: "south",
   },
   comp29: {
     complex: true,
@@ -7847,6 +7901,8 @@ module.exports = {
     icon: 'FML',
     borough: "brooklyn",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp30: {
     complex: true,
@@ -7859,6 +7915,8 @@ module.exports = {
     icon: '_1RW',
     borough: "manhattan",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
   comp36: {
     complex: true,
@@ -7871,5 +7929,7 @@ module.exports = {
     icon: 'EFMR',
     borough: "brooklyn",
     accessible: true,
+    north_label: "north",
+    south_label: "south",
   },
 }
