@@ -13,29 +13,31 @@ const allStations = require("../../MTA/stations");
 
 const ElevatorModal = ({ stationId }) => {
   const [modalVisible, setModalVisible] = useState(false);
-  //   const stationId = "128";
+
   return (
     <>
       <Modal
-        animationType="slide"
+        animationType="fade"
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
         }}
       >
-        <View style={styles.container}>
+        <Pressable
+          style={styles.container}
+          onPress={() => setModalVisible(!modalVisible)}
+        >
           <View style={styles.modalView}>
             <StationAlerts station={stationId} />
-            <Pressable
+            {/* <Pressable
               style={[styles.button]}
               onPress={() => setModalVisible(!modalVisible)}
             >
               <Text style={styles.textStyle}>X</Text>
-            </Pressable>
+            </Pressable> */}
           </View>
-        </View>
+        </Pressable>
       </Modal>
       {/* escalator button to open modal */}
       <Pressable
@@ -58,19 +60,26 @@ const ElevatorModal = ({ stationId }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: "60%",
-    justifyContent: "center",
+    height: "100%",
+    justifyContent: "flex-end",
     alignItems: "center",
+    backgroundColor: "rgba(255, 255, 255, .3)",
   },
   modalView: {
     backgroundColor: "black",
-    margin: "5%",
-    padding: "4%",
+    // height: "30%",
+    marginBottom: "50%",
+    margin: "6%",
+    padding: "6%",
     alignItems: "center",
+    justifyContent: "space-between",
     elevation: 2,
     borderWidth: 2,
     borderColor: "yellow",
+    shadowColor: "#000",
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 4,
   },
   button: {
     padding: "2%",
