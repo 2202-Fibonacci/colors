@@ -1,12 +1,13 @@
 import * as React from "react";
-import { StyleSheet, View, Text, ScrollView, Button } from "react-native";
+import { StyleSheet, View, Text, ScrollView, Pressable } from "react-native";
 import LineUpdates from "./LineUpdates";
 import ElevatorModal from "./ElevatorModal";
 const allStations = require("../../MTA/stations");
 import { connect } from "react-redux";
+import { removeFavorite } from "../store";
 
 function Favorites(props) {
-  const { favorites } = props;
+  const { favorites, removeFavorite } = props;
   return (
     <View style={styles.container}>
       <Text style={styles.header}>My favorites</Text>
@@ -17,9 +18,17 @@ function Favorites(props) {
               style={styles.stationContainer}
               key={`stationUpdates-${stationId}`}
             >
-              <Text style={styles.station}>
-                {allStations[stationId].stop_name}
-              </Text>
+              <View style={styles.heading}>
+                <Text style={styles.station}>
+                  {allStations[stationId].stop_name}
+                </Text>
+                <Pressable
+                  style={styles.button}
+                  onPress={() => removeFavorite(stationId)}
+                >
+                  <Text style={styles.buttonText}>X</Text>
+                </Pressable>
+              </View>
               <ElevatorModal stationId={stationId} />
               <LineUpdates
                 numUpdates={6}
@@ -39,7 +48,11 @@ const mapStateToProps = (state) => ({
   favorites: state.favorites,
 });
 
-export default connect(mapStateToProps)(Favorites);
+const mapDispatchToProps = (dispatch) => ({
+  removeFavorite: (stationId) => dispatch(removeFavorite(stationId)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
 
 const styles = StyleSheet.create({
   container: {
@@ -47,6 +60,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
     alignItems: "center",
     justifyContent: "start",
+  },
+  heading: {
+    flexDirection: "row",
+    alignItems: "center",
   },
   header: {
     color: "#eeff00",
@@ -60,8 +77,6 @@ const styles = StyleSheet.create({
   stationContainer: {
     display: "flex",
     flexDirection: "column",
-    // marginTop: "4%",
-    // paddingTop: "1%",
     marginBottom: "2%",
     backgroundColor: "#000",
     color: "#00ffff",
@@ -81,6 +96,24 @@ const styles = StyleSheet.create({
     margin: "0%",
     paddingVertical: "1%",
     paddingHorizontal: "3%",
+    marginVertical: "1%",
+    height: 30,
+  },
+  button: {
+    width: "10%",
+    backgroundColor: "#333",
+    paddingVertical: "1%",
+    marginVertical: "1%",
+    height: 30,
+  },
+  buttonText: {
+    color: "#eeff00",
+    fontSize: 17,
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    textAlign: "center",
+    paddingVertical: "1%",
     marginVertical: "1%",
   },
 });

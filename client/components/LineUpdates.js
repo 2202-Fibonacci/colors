@@ -239,8 +239,8 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   arrivalContainer: {
-    width: "95%",
-    minWidth: "95%",
+    width: "100%",
+    // minWidth: "95%",
     backgroundColor: "#000",
     paddingHorizontal: "0%",
     marginVertical: "0.5%",
