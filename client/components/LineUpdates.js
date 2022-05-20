@@ -35,7 +35,6 @@ const STATION_UPDATE = gql`
   }
 `;
 
-
 export default function LineUpdates({ station, line, direction, numUpdates }) {
   // hook to get arrival data
   // const { data, loading, error, refetch } = useQuery(NEXT_ARRIVALS, {
@@ -51,7 +50,7 @@ export default function LineUpdates({ station, line, direction, numUpdates }) {
   const maxUpdates = numUpdates || 3;
 
   useEffect(() => {
-    setSelectedDir('NS');
+    setSelectedDir("NS");
   }, [direction]);
 
   // prevent refetch on first render by comparing with previous props
@@ -69,63 +68,96 @@ export default function LineUpdates({ station, line, direction, numUpdates }) {
 
   return (
     <>
-    <View style={styles.updatesContainer}>
-      {loading ? (
-        <View style={styles.arrivalContainer}>
-          <Text style={styles.arrivalLoading}>Loading...</Text>
-        </View>
-      ) : error ? (
-        <Text>Error: {error.message}</Text>
-      ) : (
-        arrivalsList
-        .filter(arrival => (selectedDir === 'NS') ? arrival : (arrival.direction === selectedDir) ? arrival : null )
-        .map((arrival, i) =>
-          i < maxUpdates ? (
-            <View style={styles.arrivalContainer}
-            key={`${arrival.stationId}_${arrival.routeId}_${line ? line : 'all'}_${i}`}>
-              <Text style={styles.arrivalLeft} key={`LINE${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
-                {" "}{arrival.routeId}{" "}
-              </Text>
-              <Text style={styles.arrivalCenter} key={`LABEL${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
-              {" "}{arrival.directionLabel}
-              </Text>
-              <Text style={styles.arrivalRight} key={`TIME${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}>
-              {"  ".slice(0, arrival.arrivalTime > 9 ? 1 : 2)}{arrival.arrivalTime}{"M"}
-              </Text>
-            </View>
-          ) : null
-        )
-      )}
-    </View>
-    <View style={styles.directionsContainer}>
-      <Pressable
-        key={`${station}_${(line)?line:'all'}-setNorth`}
-        onPress={() => setSelectedDir('N')}
-        style={({ pressed }) => [{transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],},]}
-      >
-        <View style={styles.button}>
-          <Text style={styles.buttonTxt}>{allStations[station].north_label}</Text>
-        </View>
-      </Pressable>
-      <Pressable
-        key={`${station}_${(line)?line:'all'}-setBoth`}
-        onPress={() => setSelectedDir('NS')}
-        style={({ pressed }) => [{transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],},]}
-      >
-        <View style={styles.button}>
-          <Text style={styles.buttonArrow}>⇆</Text>
-        </View>
-      </Pressable>
-      <Pressable
-        key={`${station}_${(line)?line:'all'}-setSouth`}
-        onPress={() => setSelectedDir('S')}
-        style={({ pressed }) => [{transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],},]}
-      >
-        <View style={styles.button}>
-          <Text style={styles.buttonTxt}>{allStations[station].south_label}</Text>
-        </View>
-      </Pressable>
-    </View>
+      <View style={styles.updatesContainer}>
+        {loading ? (
+          <View style={styles.arrivalContainer}>
+            <Text style={styles.arrivalLoading}>Loading...</Text>
+          </View>
+        ) : error ? (
+          <Text>Error: {error.message}</Text>
+        ) : (
+          arrivalsList
+            .filter((arrival) =>
+              selectedDir === "NS"
+                ? arrival
+                : arrival.direction === selectedDir
+                ? arrival
+                : null
+            )
+            .map((arrival, i) =>
+              i < maxUpdates ? (
+                <View
+                  style={styles.arrivalContainer}
+                  key={`${arrival.stationId}_${arrival.routeId}_${
+                    line ? line : "all"
+                  }_${i}`}
+                >
+                  <Text
+                    style={styles.arrivalLeft}
+                    key={`LINE${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}
+                  >
+                    {" "}
+                    {arrival.routeId}{" "}
+                  </Text>
+                  <Text
+                    style={styles.arrivalCenter}
+                    key={`LABEL${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}
+                  >
+                    {" "}
+                    {arrival.directionLabel}
+                  </Text>
+                  <Text
+                    style={styles.arrivalRight}
+                    key={`TIME${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}
+                  >
+                    {"  ".slice(0, arrival.arrivalTime > 9 ? 1 : 2)}
+                    {arrival.arrivalTime}
+                    {"M"}
+                  </Text>
+                </View>
+              ) : null
+            )
+        )}
+      </View>
+      <View style={styles.directionsContainer}>
+        <Pressable
+          key={`${station}_${line ? line : "all"}-setNorth`}
+          onPress={() => setSelectedDir("N")}
+          style={({ pressed }) => [
+            { transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }] },
+          ]}
+        >
+          <View style={styles.button}>
+            <Text style={styles.buttonTxt}>
+              {allStations[station].north_label}
+            </Text>
+          </View>
+        </Pressable>
+        <Pressable
+          key={`${station}_${line ? line : "all"}-setBoth`}
+          onPress={() => setSelectedDir("NS")}
+          style={({ pressed }) => [
+            { transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }] },
+          ]}
+        >
+          <View style={styles.button}>
+            <Text style={styles.buttonArrow}>⇆</Text>
+          </View>
+        </Pressable>
+        <Pressable
+          key={`${station}_${line ? line : "all"}-setSouth`}
+          onPress={() => setSelectedDir("S")}
+          style={({ pressed }) => [
+            { transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }] },
+          ]}
+        >
+          <View style={styles.button}>
+            <Text style={styles.buttonTxt}>
+              {allStations[station].south_label}
+            </Text>
+          </View>
+        </Pressable>
+      </View>
     </>
   );
 }
@@ -136,7 +168,10 @@ const stationToArrivals = (stationData) => {
   */
   let arrivalsList = [];
   for (let line = 0; line < stationData.length; line++) {
-    const maxArrivals = (stationData[line] && stationData[line].nextArrivals) ? stationData[line].nextArrivals.length : 0;
+    const maxArrivals =
+      stationData[line] && stationData[line].nextArrivals
+        ? stationData[line].nextArrivals.length
+        : 0;
     for (let arrival = 0; arrival < maxArrivals; arrival++) {
       const dir = stationData[line].nextArrivals[arrival].direction;
       const dirLabel =
@@ -214,7 +249,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-start",
-    },
+  },
   arrivalLeft: {
     backgroundColor: "#222",
     color: "#eeff00",
@@ -251,7 +286,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
     paddingHorizontal: "0%",
     paddingTop: "0%",
-    paddingBottom: "4%",
+    paddingBottom: "3%",
     color: "#00ffff",
     alignItems: "center",
     justifyContent: "center",
@@ -262,7 +297,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#000",
     borderRadius: "15",
-    paddingHorizontal: "1%"
+    paddingHorizontal: "1%",
   },
   buttonArrow: {
     fontSize: 30,
@@ -273,5 +308,5 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: "Courier New",
     fontWeight: "bold",
-  }
+  },
 });

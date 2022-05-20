@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, ScrollView, Button } from "react-native";
 import LineUpdates from "./LineUpdates";
 const allStations = require("../../MTA/stations");
 import { connect } from "react-redux";
@@ -8,24 +8,26 @@ function Favorites({ favorites }) {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>My favorites</Text>
-      {favorites.map((stationId) => {
-        return (
-          <View
-            style={styles.stationContainer}
-            key={`stationUpdates-${stationId}`}
-          >
-            <Text style={styles.station}>
-              {allStations[stationId].stop_name}
-            </Text>
-            <LineUpdates
-              numUpdates={6}
-              station={stationId}
-              line={null}
-              direction={"NS"}
-            />
-          </View>
-        );
-      })}
+      <ScrollView>
+        {favorites.map((stationId) => {
+          return (
+            <View
+              style={styles.stationContainer}
+              key={`stationUpdates-${stationId}`}
+            >
+              <Text style={styles.station}>
+                {allStations[stationId].stop_name}
+              </Text>
+              <LineUpdates
+                numUpdates={6}
+                station={stationId}
+                line={null}
+                direction={"NS"}
+              />
+            </View>
+          );
+        })}
+      </ScrollView>
     </View>
   );
 }
@@ -55,9 +57,9 @@ const styles = StyleSheet.create({
   stationContainer: {
     display: "flex",
     flexDirection: "column",
-    marginTop: "4%",
-    paddingTop: "1%",
-    paddingBottom: "3%",
+    // marginTop: "4%",
+    // paddingTop: "1%",
+    marginBottom: "2%",
     backgroundColor: "#000",
     color: "#00ffff",
     alignItems: "center",
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
   },
   station: {
     width: "90%",
-    backgroundColor: "#222",
+    backgroundColor: "#333",
     color: "#eeff00",
     fontSize: 17,
     fontFamily: "Courier New",
