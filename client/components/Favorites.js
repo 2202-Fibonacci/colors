@@ -1,6 +1,7 @@
 import * as React from "react";
 import { StyleSheet, View, Text, ScrollView, Button } from "react-native";
 import LineUpdates from "./LineUpdates";
+import ElevatorModal from "./ElevatorModal";
 const allStations = require("../../MTA/stations");
 import { connect } from "react-redux";
 
@@ -19,6 +20,7 @@ function Favorites(props) {
               <Text style={styles.station}>
                 {allStations[stationId].stop_name}
               </Text>
+              <ElevatorModal stationId={stationId} />
               <LineUpdates
                 numUpdates={6}
                 station={stationId}
