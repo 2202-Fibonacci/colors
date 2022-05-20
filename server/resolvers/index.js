@@ -19,7 +19,6 @@ module.exports = {
       await context.prisma.comment.findMany(),
     getFavorites: async (root, {userId}, context) =>{
       const user = await context.prisma.user.findByPk(userId)
-      
     }
   },
   Mutation: {
