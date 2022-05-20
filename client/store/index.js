@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 const SELECT_STATION = "SELECT_STATION";
 const SELECT_LINE = "SELECT_LINE";
 const SET_USER = "SET_USER";
+const ADD_FAVORITE = "ADD_FAVORITE";
 
 export const selectStation = (stationId) => ({
   type: SELECT_STATION,
@@ -19,9 +20,20 @@ export const setUser = (user) => ({
   user,
 });
 
-const initialState = { selectedLine: "", selectedStation: "128", user: {} };
+export const addFavorite = (stationId) => ({
+  type: ADD_FAVORITE,
+  stationId,
+});
+
+const initialState = {
+  selectedLine: "",
+  selectedStation: "128",
+  user: {},
+  favorites: [],
+};
 
 export const stationReducer = (state = initialState, action) => {
+  console.log(action);
   switch (action.type) {
     case SELECT_STATION:
       return { ...state, selectedStation: action.stationId };
@@ -29,6 +41,11 @@ export const stationReducer = (state = initialState, action) => {
       return { ...state, selectedLine: action.line };
     case SET_USER:
       return { ...state, user: action.user };
+    case ADD_FAVORITE:
+      const newFavs = state.favorites.includes(action.stationId)
+        ? state.favorites
+        : [...state.favorites, action.stationId];
+      return { ...state, favorites: newFavs };
     default:
       return state;
   }
