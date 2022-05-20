@@ -38,12 +38,13 @@ function Map(props) {
       console.log('nearest station:', nearestStationCode);
       if(nearestStationCode) setSelectedStation(nearestStationCode);
       // set region to center around user's location - commented out because goes to SF now
-      // if(isWithinNYC(location))
-      // setRegion({
-      //   ...region,
-      //   latitude: location.coords.latitude,
-      //   longitude: location.coords.longitude,
-      // });
+      // if(isWithinNYC(location)) {
+        setRegion({
+          ...region,
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
+        });
+      // }
     })();
   }, []);
 
@@ -103,7 +104,7 @@ function Map(props) {
   };
   return (
     <View style={styles.mapPageContainer}>
-    <Text style={styles.txt}>{(location && location.coords)?`${location.coords.latitude}, ${location.coords.longitude}`:'loading location'}</Text>
+    {/* <Text style={styles.txt}>{(location && location.coords)?`${isWithinNYC(location)} ${location.coords.latitude}, ${location.coords.longitude}`:'loading location'}</Text> */}
       <Lines
         lines={allStations[selectedStation].lines_at}
         station={selectedStation}
@@ -181,13 +182,14 @@ function Map(props) {
 }
 
 const isWithinNYC = (location) => {
-  // const northLat = ;
-  // const southLat = ;
-  // const westLon = ;
-  // const eastLon = ;
+  const lat = location.coords.latitude;
+  const lon = location.coords.longitude;
+  const northLat = 41;
+  const southLat = 40;
+  const westLon = -74;
+  const eastLon = -73;
 
-  // if (location.coords.latitude > )
-  return true;
+  return (lat > southLat && lat < northLat && lon < eastLon && lon > westLon)
 }
 
 const mapDispatchToProps = (dispatch) =>
