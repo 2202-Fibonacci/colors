@@ -8,6 +8,7 @@ import StationAlerts from "./StationAlerts";
 import { selectStation } from "../store";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { nearestStation } from "../../MTA/nearestStation";
 
 function Map(props) {
   const [location, setLocation] = useState(null);
@@ -18,6 +19,7 @@ function Map(props) {
     latitudeDelta: 0.05,
     longitudeDelta: 0.05,
   });
+
   const [selectedStation, setSelectedStation] = useState("128");
 
   useEffect(() => {
@@ -32,13 +34,17 @@ function Map(props) {
       // set current location to users location
       let location = await Location.getCurrentPositionAsync({});
       setLocation(location);
-
+      const nearestStationCode = (location.coords) ? nearestStation(location.coords.latitude, location.coords.longitude) : "128";
+      console.log('nearest station:', nearestStationCode);
+      if(nearestStationCode) setSelectedStation(nearestStationCode);
       // set region to center around user's location - commented out because goes to SF now
-      // setRegion({
-      //   ...region,
-      //   latitude: location.coords.latitude,
-      //   longitude: location.coords.longitude,
-      // });
+      // if(isWithinNYC(location)) {
+        setRegion({
+          ...region,
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
+        });
+      // }
     })();
   }, []);
 
@@ -98,18 +104,12 @@ function Map(props) {
   };
   return (
     <View style={styles.mapPageContainer}>
+    {/* <Text style={styles.txt}>{(location && location.coords)?`${isWithinNYC(location)} ${location.coords.latitude}, ${location.coords.longitude}`:'loading location'}</Text> */}
       <Lines
         lines={allStations[selectedStation].lines_at}
         station={selectedStation}
       />
       <View style={styles.mapContainer}>
-        {/* {text === "Found" ? (
-        <Text>
-          Hello you're at {location.coords.latitude}x{location.coords.longitude}
-        </Text>
-      ) : (
-        <Text>{text}</Text>
-      )} */}
         <MapView
           onRegionChangeComplete={(region) => setRegion(region)}
           onRegionChange={(region) => setRegion(region)}
@@ -181,6 +181,17 @@ function Map(props) {
   );
 }
 
+const isWithinNYC = (location) => {
+  const lat = location.coords.latitude;
+  const lon = location.coords.longitude;
+  const northLat = 41;
+  const southLat = 40;
+  const westLon = -74;
+  const eastLon = -73;
+
+  return (lat > southLat && lat < northLat && lon < eastLon && lon > westLon)
+}
+
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
@@ -214,4 +225,10 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
     height: Dimensions.get("window").height,
   },
+  txt: {
+    color: "#eeff00",
+    fontSize: 12,
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+  }
 });
