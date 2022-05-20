@@ -1,35 +1,46 @@
 import * as React from "react";
-import { StyleSheet, View, Text } from 'react-native';
-import LineUpdates from './LineUpdates';
+import { StyleSheet, View, Text } from "react-native";
+import LineUpdates from "./LineUpdates";
 const allStations = require("../../MTA/stations");
+import { connect } from "react-redux";
 
-export default function Favorites() {
-  const favStations = ["comp07", "M14", "251"];
-
+function Favorites({ favorites }) {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>My favorites</Text>
-      {
-        favStations.map(stationId => {
-          return (
-            <View style={styles.stationContainer}>
-              <Text key={`stationName-${stationId}`} style={styles.station}>
-                {allStations[stationId].stop_name}
-              </Text>
-              <LineUpdates numUpdates={6} key={`stationUpdates-${stationId}`} station={stationId} line={null} direction={'NS'}/>
-            </View>
-          )
-        })
-      }
+      {favorites.map((stationId) => {
+        return (
+          <View
+            style={styles.stationContainer}
+            key={`stationUpdates-${stationId}`}
+          >
+            <Text style={styles.station}>
+              {allStations[stationId].stop_name}
+            </Text>
+            <LineUpdates
+              numUpdates={6}
+              station={stationId}
+              line={null}
+              direction={"NS"}
+            />
+          </View>
+        );
+      })}
     </View>
-  )
+  );
 }
 
-const styles = StyleSheet.create({ 
+const mapStateToProps = (state) => ({
+  favorites: state.favorites,
+});
+
+export default connect(mapStateToProps)(Favorites);
+
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#000",
-    alignItems: "start",
+    alignItems: "center",
     justifyContent: "start",
   },
   header: {
@@ -52,7 +63,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
-
   },
   station: {
     width: "90%",
@@ -68,4 +78,4 @@ const styles = StyleSheet.create({
     paddingHorizontal: "3%",
     marginVertical: "1%",
   },
-})
+});

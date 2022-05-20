@@ -6,7 +6,6 @@ import ServiceAlert from "./ServiceAlert";
 const allStations = require("../../MTA/stations");
 import { selectLine, addFavorite } from "../store";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 
 function Lines(props) {
   const [selectedLine, setSelectedLine] = useState(null);
@@ -15,8 +14,6 @@ function Lines(props) {
     setSelectedLine(props.lines.length > 1 ? null : props.lines[0]);
     props.selectLine(props.lines.length > 1 ? "" : props.lines[0]);
   }, [props.station]);
-
-  console.log(props.favorites);
 
   return (
     <>
@@ -86,16 +83,12 @@ function Lines(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  favorites: state.favorites,
-});
-
 const mapDispatchToProps = (dispatch) => ({
   selectLine: (line) => dispatch(selectLine(line)),
   addFavorite: (stationId) => dispatch(addFavorite(stationId)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Lines);
+export default connect(null, mapDispatchToProps)(Lines);
 
 const styles = StyleSheet.create({
   stationHeading: {

@@ -33,7 +33,6 @@ const initialState = {
 };
 
 export const stationReducer = (state = initialState, action) => {
-  console.log(action);
   switch (action.type) {
     case SELECT_STATION:
       return { ...state, selectedStation: action.stationId };
@@ -42,10 +41,12 @@ export const stationReducer = (state = initialState, action) => {
     case SET_USER:
       return { ...state, user: action.user };
     case ADD_FAVORITE:
-      const newFavs = state.favorites.includes(action.stationId)
-        ? state.favorites
-        : [...state.favorites, action.stationId];
-      return { ...state, favorites: newFavs };
+      return {
+        ...state,
+        favorites: state.favorites.includes(action.stationId)
+          ? state.favorites
+          : [...state.favorites, action.stationId],
+      };
     default:
       return state;
   }
