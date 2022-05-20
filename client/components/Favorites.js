@@ -4,7 +4,8 @@ import LineUpdates from "./LineUpdates";
 const allStations = require("../../MTA/stations");
 import { connect } from "react-redux";
 
-function Favorites({ favorites }) {
+function Favorites(props) {
+  const { favorites } = props;
   return (
     <View style={styles.container}>
       <Text style={styles.header}>My favorites</Text>
