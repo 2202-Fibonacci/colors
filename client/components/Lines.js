@@ -4,35 +4,32 @@ import { lineColor } from "../../MTA/data";
 import LineUpdates from "./LineUpdates";
 import ServiceAlert from "./ServiceAlert";
 const allStations = require("../../MTA/stations");
-import { selectLine } from "../store";
+import { selectLine, addFavorite } from "../store";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 
 function Lines(props) {
   const [selectedLine, setSelectedLine] = useState(null);
-  const [favStation, setFavStation] = useState(null);
 
   useEffect(() => {
     setSelectedLine(props.lines.length > 1 ? null : props.lines[0]);
     props.selectLine(props.lines.length > 1 ? "" : props.lines[0]);
   }, [props.station]);
 
-  useEffect(() => {
-    setFavStation(null);
-  });
-
   return (
     <>
       <View style={styles.stationHeading}>
-        <Text style={styles.station}>
-          {allStations[props.station].stop_name}
-        </Text>
-        <Button
-          style={styles.heart}
-          title="♡"
-          color="#eeff00"
-          onPress={() => setFavStation}
-        />
+        <View style={styles.stationContainer}>
+          <Text style={styles.station}>
+            {allStations[props.station].stop_name}
+          </Text>
+        </View>
+        <View style={styles.heart}>
+          <Button
+            title="♡"
+            color="#eeff00"
+            onPress={() => props.addFavorite(props.station)}
+          />
+        </View>
       </View>
 
       <View style={styles.linesContainer}>
@@ -82,38 +79,33 @@ function Lines(props) {
         station={props.station}
         direction={"NS"}
       />
-      {/* <ServiceAlert line={selectedLine} station={props.station} /> */}
     </>
   );
 }
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      selectLine,
-    },
-    dispatch
-  );
+const mapDispatchToProps = (dispatch) => ({
+  selectLine: (line) => dispatch(selectLine(line)),
+  addFavorite: (stationId) => dispatch(addFavorite(stationId)),
+});
 
 export default connect(null, mapDispatchToProps)(Lines);
 
 const styles = StyleSheet.create({
   stationHeading: {
-    display: "flex",
     flexDirection: "row",
-    marginTop: "4%",
-    paddingTop: "1%",
-    paddingBottom: "3%",
-    backgroundColor: "#000",
+    marginTop: "2%",
+    marginBottom: "2%",
+    backgroundColor: "#333",
     color: "#00ffff",
     alignItems: "center",
     justifyContent: "center",
-    width: "100%",
+    width: "95%",
+    minHeight: "7%",
   },
   linesContainer: {
     display: "flex",
     flexDirection: "row",
-    paddingTop: "1%",
+    paddingTop: "2%",
     paddingBottom: "4%",
     backgroundColor: "#000",
     color: "#00ffff",
@@ -126,21 +118,17 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 14,
   },
-  heart: {
-    backgroundColor: "#222",
-    color: "#eeff00",
+  stationContainer: {
+    width: "90%",
   },
   station: {
-    width: "90%",
-    backgroundColor: "#222",
+    width: "100%",
     color: "#eeff00",
     fontSize: 17,
     fontFamily: "Courier New",
     fontWeight: "bold",
     textTransform: "uppercase",
     textAlign: "center",
-    margin: "0%",
-    paddingVertical: "1%",
     paddingHorizontal: "3%",
   },
 });

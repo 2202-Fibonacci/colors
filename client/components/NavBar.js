@@ -14,40 +14,44 @@ import ServiceAlertModal from "./ServiceAlertModal";
 import { connect } from "react-redux";
 
 function NavBar(props) {
+  const [onHomePage, setOnHomePage] = useState(true);
   const navigation = useNavigation();
+
   return (
-    <>
-      <View style={styles.navContainer}>
-        <Pressable
-          onPress={() => navigation.navigate("Map")}
-          style={({ pressed }) => [
-            {
-              transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-            },
-          ]}
-        >
-          <Image
-            style={styles.icon}
-            source={require("../../assets/home.png")}
-          />
-        </Pressable>
-        <ElevatorModal stationId={props.stationId} />
+    <View style={styles.navContainer}>
+      <Pressable
+        onPress={() => {
+          navigation.navigate("Map");
+          setOnHomePage(true);
+        }}
+        style={({ pressed }) => [
+          {
+            transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
+          },
+        ]}
+      >
+        <Image style={styles.icon} source={require("../../assets/home.png")} />
+      </Pressable>
+
+      {onHomePage ? <ElevatorModal stationId={props.stationId} /> : null}
+      {onHomePage ? (
         <ServiceAlertModal stationId={props.stationId} line={props.line} />
-        <Pressable
-          onPress={() => navigation.navigate("User")}
-          style={({ pressed }) => [
-            {
-              transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-            },
-          ]}
-        >
-          <Image
-            style={styles.icon}
-            source={require("../../assets/user.png")}
-          />
-        </Pressable>
-      </View>
-    </>
+      ) : null}
+
+      <Pressable
+        onPress={() => {
+          navigation.navigate("User");
+          setOnHomePage(false);
+        }}
+        style={({ pressed }) => [
+          {
+            transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
+          },
+        ]}
+      >
+        <Image style={styles.icon} source={require("../../assets/user.png")} />
+      </Pressable>
+    </View>
   );
 }
 
@@ -67,6 +71,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: "10%",
     paddingTop: "4%",
     paddingBottom: "5%",
+    // borderWidth: 0.5,
+    // borderTopColor: "#eeff00",
     color: "#00ffff",
     width: Dimensions.get("window").width,
     borderBottomLeftRadius: 12,
