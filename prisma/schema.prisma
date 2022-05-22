@@ -16,32 +16,15 @@ model User {
   username         String     @unique
   password          String
   points                Int           @default(0)
-  comments         Comment[]
-  stations              StationsFavoredByUsers[]
-  // trains                  Train[]
+  stations             Station[]
 }
 
 model Station {
-  id                        String      @id
-  user                    StationsFavoredByUsers[]
+  id                        Int      @id @default(autoincrement())
+  stopId                String
+  favoritedBy        User   @relation(fields: [favoritedById], references:[id])
+  favoritedById     Int
 }
-
-model StationsFavoredByUsers {
-  user                   User         @relation(fields:[userId], references: [id])
-  userId                Int            
-  station               Station    @relation(fields:[stationId], references: [id])
-  stationId            String
-
-  @@id([userId, stationId])
-}
-
-
-// model Station {
-//   id                        Int      @id
-//   stopId                String
-//   favoritedBy        User   @relation(fields: [favoritedById], references:[id])
-//   favoritedById     Int
-// }
 
 
 
@@ -53,10 +36,10 @@ model StationsFavoredByUsers {
 //   belongsTo          Station
 // stop
 
-model Comment {
-  id                     Int       @id @default(autoincrement())
-  text                 String
-  confirms         Int        @default(0)
-  postedBy        User    @relation(fields: [postedById], references:[id])
-  postedById     Int
-}
+// model Comment {
+//   id                     Int       @id @default(autoincrement())
+//   text                 String
+//   confirms         Int        @default(0)
+//   postedBy        User    @relation(fields: [postedById], references:[id])
+//   postedById     Int
+// }

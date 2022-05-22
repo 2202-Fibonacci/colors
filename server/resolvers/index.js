@@ -15,11 +15,14 @@ module.exports = {
       await dataSources.elevatorFeed.getElevatorAlerts(stationId),
     stationUpdate: async (_, { stationId }, { dataSources }) =>
       await dataSources.tripFeed.getStationUpdate(stationId),
-    commentFeed: async (root, args, context) =>   
-      await context.prisma.comment.findMany(),
-    getFavorites: async (root, {userId}, context) =>{
-      const user = await context.prisma.user.findByPk(userId)
-    }
+    getFavorites: async (_, __, context) => {
+      const { userId } = context;
+      return await context.prisma.station.findMany({
+        where: {
+          favoritedById: userId
+          }
+        })
+      },
   },
   Mutation: {
     signup: async (parent, args, context) => {
@@ -46,16 +49,35 @@ module.exports = {
         user,
       }
     },
-    post: async (root, args, context) => {
+    favorite: async (root, args, context) => {
       const { userId } = context;
-      return await context.prisma.comment.create({
+      return await context.prisma.station.create({
           data: {
-              text: args.text,
-              postedBy: { connect: { id: userId }}
+              stopId: args.stopId,
+              favoritedBy: { connect: { id: userId }}
           }
       })
     },
-    // favorite: async (root, args, context) => {
+  }
+}
+
+
+
+
+// const Query = require('./Query')
+// const Mutation = require('./Mutation')
+// const User = require('./User')
+// const Comment = require('./Comment')
+
+
+// module.exports = {
+//   Query,
+//   Mutation,
+//   User,
+//   Comment
+// 
+
+ // favorite: async (root, args, context) => {
     //   const { userId } = context;
 
     //   return await context.prisma.StationsFavoredByUsers.create({
@@ -65,14 +87,14 @@ module.exports = {
     //     }
     //   })
     // },
-    favorite: async (root, args, context) => {
-      return await context.prisma.StationsFavoredByUsers.create({
-        data:{
-          userId: context.userId,
-          stationId: args.stopId
-        }
-      })
-    },
+    // favorite: async (root, args, context) => {
+    //   return await context.prisma.StationsFavoredByUsers.create({
+    //     data:{
+    //       userId: context.userId,
+    //       stationId: args.stopId
+    //     }
+    //   })
+    // },
     // favorite: async (root, {stopId}, context) => {
     //   const { userId } = context;
 
@@ -139,8 +161,8 @@ module.exports = {
     //     }
     //   })
     // },
-  // },
-  //   favorite: async (root, {stopId}, context) => {
+  // // },
+  //   favorite: async (root, args, context) => {
   //     const { userId } = context;
   //     return await context.prisma.station.create({
   //       data: {
@@ -158,20 +180,3 @@ module.exports = {
   // favoritedBy(root, args, context) {
   //   return context.prisma.comment.findUnique({ where: { id: parent.id } }).favoritedBy()
   // }
-}
-
-
-
-
-// const Query = require('./Query')
-// const Mutation = require('./Mutation')
-// const User = require('./User')
-// const Comment = require('./Comment')
-
-
-// module.exports = {
-//   Query,
-//   Mutation,
-//   User,
-//   Comment
-}

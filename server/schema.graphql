@@ -6,14 +6,15 @@ type Query {
   elevatorAlert(stationId: String): [ElevatorUpdate]
   stationUpdate(stationId: String): [TripUpdate]
   commentFeed: [Comment]
-  getFavorites(userId:String):String
+  getFavorites:[Station]
+  getUser(userId:ID):User
 }
 
 type Mutation {
   post(text: String!):Comment!
   signup(email: String!, password: String!, username:String!): AuthPayload
   login(email:String!, password:String!): AuthPayload
-  favorite(stopId: String!):Station!
+  favorite(stopId: String!):Station
 }
 
 type ElevatorUpdate {
