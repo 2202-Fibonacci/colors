@@ -5,7 +5,6 @@ import Profile from './Profile';
 import * as SecureStore from 'expo-secure-store';
 
 export default function Logout(){
-
     const removeToken = async () =>{
         try{
             console.log('logging out...')

@@ -38,7 +38,7 @@ export default function StationAlerts({ station }) {
   if (elevator.length === 0 && escalator.length === 0)
     return (
       <Text style={styles.alertContent}>
-        Elevators and escalators currently operating
+        Station elevators and escalators are currently operating
       </Text>
     );
 
