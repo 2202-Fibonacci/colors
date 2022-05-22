@@ -35,9 +35,8 @@ const STATION_UPDATE = gql`
   }
 `;
 
-const maxUpdates = 3;
 
-export default function LineUpdates({ station, line, direction }) {
+export default function LineUpdates({ station, line, direction, numUpdates }) {
   // hook to get arrival data
   // const { data, loading, error, refetch } = useQuery(NEXT_ARRIVALS, {
   //   variables: { stationId: station, train: line } /*, direction: "N" */,
@@ -48,6 +47,8 @@ export default function LineUpdates({ station, line, direction }) {
     pollInterval: 20000,
   });
   const [selectedDir, setSelectedDir] = useState(null);
+
+  const maxUpdates = numUpdates || 3;
 
   useEffect(() => {
     setSelectedDir('NS');
@@ -103,7 +104,7 @@ export default function LineUpdates({ station, line, direction }) {
         style={({ pressed }) => [{transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],},]}
       >
         <View style={styles.button}>
-          <Text style={styles.buttonTxt}>⬈</Text>
+          <Text style={styles.buttonTxt}>{allStations[station].north_label}</Text>
         </View>
       </Pressable>
       <Pressable
@@ -112,7 +113,7 @@ export default function LineUpdates({ station, line, direction }) {
         style={({ pressed }) => [{transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],},]}
       >
         <View style={styles.button}>
-          <Text style={styles.buttonTxt}>⇆</Text>
+          <Text style={styles.buttonArrow}>⇆</Text>
         </View>
       </Pressable>
       <Pressable
@@ -121,7 +122,7 @@ export default function LineUpdates({ station, line, direction }) {
         style={({ pressed }) => [{transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],},]}
       >
         <View style={styles.button}>
-          <Text style={styles.buttonTxt}>⬋</Text>
+          <Text style={styles.buttonTxt}>{allStations[station].south_label}</Text>
         </View>
       </Pressable>
     </View>
@@ -248,12 +249,12 @@ const styles = StyleSheet.create({
   },
   directionsContainer: {
     backgroundColor: "#000",
-    paddingHorizontal: "11%",
+    paddingHorizontal: "0%",
     paddingTop: "0%",
     paddingBottom: "4%",
     color: "#00ffff",
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     width: "100%",
     display: "flex",
     flexDirection: "row",
@@ -263,9 +264,13 @@ const styles = StyleSheet.create({
     borderRadius: "15",
     paddingHorizontal: "1%"
   },
+  buttonArrow: {
+    fontSize: 30,
+    color: "#eeff00",
+  },
   buttonTxt: {
     color: "#eeff00",
-    fontSize: 26,
+    fontSize: 12,
     fontFamily: "Courier New",
     fontWeight: "bold",
   }

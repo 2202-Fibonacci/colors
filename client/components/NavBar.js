@@ -8,61 +8,54 @@ import {
   Text,
   View,
 } from "react-native";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
+import ElevatorModal from "./ElevatorModal";
+import ServiceAlertModal from "./ServiceAlertModal";
+import { connect } from "react-redux";
 
-
-export default function NavBar() {
+function NavBar(props) {
   const navigation = useNavigation();
-
   return (
-    <View style={styles.navContainer}>
-      <Pressable
-        onPress={() => navigation.navigate('Map')}
-        style={({ pressed }) => [
-          {
-            transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-          },
-        ]}
-      >
-        <Image style={styles.icon} source={require("../../assets/home.png")} />
-      </Pressable>
-      <Pressable
-        style={({ pressed }) => [
-          {
-            transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-          },
-        ]}
-      >
-        <Image
-          style={styles.icon}
-          source={require("../../assets/escalator.png")}
-        />
-      </Pressable>
-      {/* <Pressable
-        style={({ pressed }) => [
-          {
-            transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-          },
-        ]}
-      >
-        <Image
-          style={styles.icon}
-          source={require("../../assets/paper-plane.png")}
-        />
-      </Pressable> */}
-      <Pressable
-        onPress={() => navigation.navigate('User')}
-        style={({ pressed }) => [
-          {
-            transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-          },
-        ]}
-      >
-        <Image style={styles.icon} source={require("../../assets/user.png")} />
-      </Pressable>
-    </View>
+    <>
+      <View style={styles.navContainer}>
+        <Pressable
+          onPress={() => navigation.navigate("Map")}
+          style={({ pressed }) => [
+            {
+              transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
+            },
+          ]}
+        >
+          <Image
+            style={styles.icon}
+            source={require("../../assets/home.png")}
+          />
+        </Pressable>
+        <ElevatorModal stationId={props.stationId} />
+        <ServiceAlertModal stationId={props.stationId} line={props.line} />
+        <Pressable
+          onPress={() => navigation.navigate("User")}
+          style={({ pressed }) => [
+            {
+              transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
+            },
+          ]}
+        >
+          <Image
+            style={styles.icon}
+            source={require("../../assets/user.png")}
+          />
+        </Pressable>
+      </View>
+    </>
   );
 }
+
+const mapStateToProps = (state) => {
+  return { stationId: state.selectedStation, line: state.selectedLine };
+};
+
+export default connect(mapStateToProps)(NavBar);
 
 const styles = StyleSheet.create({
   navContainer: {
@@ -72,8 +65,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     backgroundColor: "#222",
     paddingHorizontal: "10%",
-    paddingTop: "5%",
-    paddingBottom: "6%",
+    paddingTop: "4%",
+    paddingBottom: "5%",
     color: "#00ffff",
     width: Dimensions.get("window").width,
     borderBottomLeftRadius: 12,

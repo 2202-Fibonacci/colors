@@ -18,17 +18,19 @@ function distance(userLat, userLon, stationLat, stationLon) {
   return dist
 }
 
-const nearestStations = (userLat, userLong, maxDistance) => {
-  let nearest = [];
+const nearestStation = (userLat, userLong) => {
+  let nearest = '';
+  let dist = 9999;
+
+  const stations = allStations
 
   for (const station in allStations) {
-    if (distance(userLat, userLong, station.stop_lat, station.stop_lon) <= maxDistance) {
-        nearest.push(station)
+    if (!station.complex && distance(userLat, userLong, station.stop_lat, station.stop_lon) <= dist) {
+      console.log('nearer station:', station.stop_name)
+      nearest = station.stop_id;
     }
   }
   return nearest;
 }
 
-console.log(nearestStations(40.7748231, -73.9258586, 1.7))
-console.log('irving plaza')
-console.log(nearestStations(40.7331922, -73.9937395, 1.7))
+module.exports = { nearestStation };
