@@ -3,7 +3,7 @@ import { Image, Modal, StyleSheet, Text, Pressable, View } from "react-native";
 import StationAlerts from "./StationAlerts";
 const allStations = require("../../MTA/stations");
 
-const ElevatorModal = ({ stationId }) => {
+const ElevatorModal = ({ stationId, disable }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -30,14 +30,18 @@ const ElevatorModal = ({ stationId }) => {
         style={({ pressed }) => [
           {
             transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-            display: !allStations[stationId].accessible ? "none" : "inline",
           },
         ]}
+        disabled={!allStations[stationId].accessible || disable}
         onPress={() => setModalVisible(true)}
       >
         <Image
           style={styles.icon}
-          source={require("../../assets/escalator.png")}
+          source={
+            allStations[stationId].accessible && !disable
+              ? require("../../assets/escalator.png")
+              : require("../../assets/escalator_inactive.png")
+          }
         />
       </Pressable>
     </>

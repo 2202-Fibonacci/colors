@@ -33,10 +33,12 @@ function NavBar(props) {
         <Image style={styles.icon} source={require("../../assets/home.png")} />
       </Pressable>
 
-      {onHomePage ? <ElevatorModal stationId={props.stationId} /> : null}
-      {onHomePage ? (
-        <ServiceAlertModal stationId={props.stationId} line={props.line} />
-      ) : null}
+      <ElevatorModal stationId={props.stationId} disable={!onHomePage} />
+      <ServiceAlertModal
+        stationId={props.stationId}
+        line={props.line}
+        disable={!onHomePage}
+      />
 
       <Pressable
         onPress={() => {
