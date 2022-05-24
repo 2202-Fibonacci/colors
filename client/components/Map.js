@@ -15,7 +15,6 @@ import { bindActionCreators } from "redux";
 import { nearestStation } from "../../MTA/nearestStation";
 
 function Map(props) {
-  // const [currLocation, setCurrLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
   const [initialRegion, setInitialRegion] = useState({
     latitude: 40.752287,
@@ -23,7 +22,6 @@ function Map(props) {
     latitudeDelta: 0.2,
     longitudeDelta: 0.2,
   });
-  // const [region, setRegion] = useState(null);
   let mapRef = useRef(null);
 
   const [selectedStation, setSelectedStation] = useState("128");
@@ -42,8 +40,8 @@ function Map(props) {
       console.log(location);
       if (isWithinNYC(location)) {
         setInitialRegion({
-          latitudeDelta: 0.05,
-          longitudeDelta: 0.05,
+          latitudeDelta: 0.04,
+          longitudeDelta: 0.04,
           latitude: location.coords.latitude,
           longitude: location.coords.longitude,
         });
@@ -51,8 +49,8 @@ function Map(props) {
         setInitialRegion({
           latitude: 40.752287,
           longitude: -73.993391,
-          latitudeDelta: 0.05,
-          longitudeDelta: 0.05,
+          latitudeDelta: 0.04,
+          longitudeDelta: 0.04,
         });
       }
 
