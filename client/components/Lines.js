@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, Button, Text, View, Pressable } from "react-native";
 import { lineColor } from "../../MTA/data";
 import LineUpdates from "./LineUpdates";
-import ServiceAlert from "./ServiceAlert";
 const allStations = require("../../MTA/stations");
 import { selectLine, addFavorite } from "../store";
 import { connect } from "react-redux";
@@ -22,13 +21,6 @@ function Lines(props) {
           <Text style={styles.station}>
             {allStations[props.station].stop_name}
           </Text>
-        </View>
-        <View style={styles.heart}>
-          <Button
-            title="♡"
-            color="#eeff00"
-            onPress={() => props.addFavorite(props.station)}
-          />
         </View>
       </View>
 
@@ -99,8 +91,8 @@ const styles = StyleSheet.create({
     color: "#00ffff",
     alignItems: "center",
     justifyContent: "center",
-    width: "95%",
-    minHeight: "7%",
+    width: "100%",
+    paddingVertical: "1%",
   },
   linesContainer: {
     display: "flex",

@@ -3,7 +3,7 @@ import { Image, Modal, StyleSheet, Text, Pressable, View } from "react-native";
 import ServiceAlert from "./ServiceAlert";
 const allStations = require("../../MTA/stations");
 
-const ServiceAlertModal = ({ stationId, line }) => {
+const ServiceAlertModal = ({ stationId, line, disable }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -25,21 +25,24 @@ const ServiceAlertModal = ({ stationId, line }) => {
           </View>
         </Pressable>
       </Modal>
-      {/* escalator button to open modal */}
+      {/* alert button to open modal */}
       <Pressable
         style={({ pressed }) => [
           {
             transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-            display: line === "" ? "none" : "inline",
           },
         ]}
+        disabled={line === "" || disable}
         onPress={() => setModalVisible(true)}
       >
         <Image
           style={styles.icon}
-          source={require("../../assets/station.png")}
+          source={
+            line === "" || disable
+              ? require("../../assets/station_inactive.png")
+              : require("../../assets/station.png")
+          }
         />
-        {/* <Text>Alert</Text> */}
       </Pressable>
     </>
   );

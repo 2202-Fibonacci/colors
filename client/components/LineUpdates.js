@@ -1,25 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Platform, StyleSheet, Text, View, Pressable } from "react-native";
 import { useQuery, gql } from "@apollo/client";
-// import { allStations } from "../../MTA/stations";
 const allStations = require("../../MTA/stations");
-
-// const NEXT_ARRIVALS = gql`
-//   query ArrivalsQuery(
-//     $stationId: String!
-//     $train: String!
-//     $direction: String
-//   ) {
-//     arrivalTimes(stationId: $stationId, train: $train, direction: $direction) {
-//       routeId
-//       nextArrivals {
-//         tripId
-//         direction
-//         arrivalTime
-//       }
-//     }
-//   }
-// `;
 
 const STATION_UPDATE = gql`
   query StationQuery($stationId: String!) {
@@ -36,11 +18,6 @@ const STATION_UPDATE = gql`
 `;
 
 export default function LineUpdates({ station, line, direction, numUpdates }) {
-  // hook to get arrival data
-  // const { data, loading, error, refetch } = useQuery(NEXT_ARRIVALS, {
-  //   variables: { stationId: station, train: line } /*, direction: "N" */,
-  //   pollInterval: 1000,
-  // });
   const { data, loading, error, refetch } = useQuery(STATION_UPDATE, {
     variables: { stationId: station },
     pollInterval: 20000,
@@ -61,7 +38,6 @@ export default function LineUpdates({ station, line, direction, numUpdates }) {
   const stationData = (data && data.stationUpdate) || [];
 
   let arrivalsList = stationData ? stationToArrivals(stationData) : [];
-  // arrivalsList = arrivalsList.filter((arrival) => arrival.direction === "S");
   if (line) {
     arrivalsList = arrivalsList.filter((arrival) => arrival.routeId === line);
   }
