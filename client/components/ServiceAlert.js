@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { useQuery, gql } from "@apollo/client";
-import { v4 as uuid } from "uuid";
 
 const SERVICE_ALERT = gql`
   query ServiceAlert($train: String!, $onlyActive: Boolean) {
@@ -21,8 +20,9 @@ export default function ServiceAlert({ line, station }) {
     variables: { train: line, onlyActive: true },
   });
 
-  if (!line || (data && data.serviceAlert.alerts.length === 0))
+  if (!line || (data && data.serviceAlert.alerts.length === 0)) {
     return <Text style={styles.update}>No current alerts</Text>;
+  }
 
   return (
     <View style={styles.updatesContainer}>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   type: {
     fontWeight: "bold",
     color: "#eeff00",
-    marginBottom: "2%",
+    marginBottom: "1%",
   },
   update: {
     fontWeight: "normal",
@@ -63,6 +63,6 @@ const styles = StyleSheet.create({
   },
   updatePeriod: {
     color: "#eeff00",
-    // fontSize: 10,
+    marginBottom: "3%",
   },
 });
