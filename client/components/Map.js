@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from "react";
-import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
+import React, { useState, useEffect, useRef } from "react";
+import MapView, {
+  PROVIDER_GOOGLE,
+  Marker,
+  AnimatedRegion,
+} from "react-native-maps";
 import { StyleSheet, Text, View, Dimensions, Image } from "react-native";
 import * as Location from "expo-location";
 const allStations = require("../../MTA/stations");
@@ -13,12 +17,14 @@ import { nearestStation } from "../../MTA/nearestStation";
 function Map(props) {
   // const [currLocation, setCurrLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
-  const [region, setRegion] = useState({
+  const [initialRegion, setInitialRegion] = useState({
     latitude: 40.752287,
     longitude: -73.993391,
-    latitudeDelta: 0.05,
-    longitudeDelta: 0.05,
+    latitudeDelta: 0.2,
+    longitudeDelta: 0.2,
   });
+  // const [region, setRegion] = useState(null);
+  let mapRef = useRef(null);
 
   const [selectedStation, setSelectedStation] = useState("128");
 
@@ -33,21 +39,29 @@ function Map(props) {
 
       // set current location to users location
       let location = await Location.getCurrentPositionAsync({});
-
-      // get nearest station
-      const nearestStationCode = location.coords
-        ? nearestStation(location.coords.latitude, location.coords.longitude)
-        : "128";
-      console.log("nearest station:", nearestStationCode);
-      if (nearestStationCode) setSelectedStation(nearestStationCode);
-
+      console.log(location);
       if (isWithinNYC(location)) {
-        setRegion({
-          ...region,
+        setInitialRegion({
+          latitudeDelta: 0.05,
+          longitudeDelta: 0.05,
           latitude: location.coords.latitude,
           longitude: location.coords.longitude,
         });
+      } else {
+        setInitialRegion({
+          latitude: 40.752287,
+          longitude: -73.993391,
+          latitudeDelta: 0.05,
+          longitudeDelta: 0.05,
+        });
       }
+
+      // // get nearest station
+      // const nearestStationCode = location.coords
+      //   ? nearestStation(location.coords.latitude, location.coords.longitude)
+      //   : "128";
+      // console.log("nearest station:", nearestStationCode);
+      // if (nearestStationCode) setSelectedStation(nearestStationCode);
     })();
   }, []);
 
@@ -58,6 +72,14 @@ function Map(props) {
   // } else if (location) {
   //   text = "Found";
   // }
+
+  const goToInitialRegion = () => {
+    mapRef.current.animateToRegion(initialRegion, 2000);
+  };
+
+  useEffect(() => {
+    goToInitialRegion();
+  }, [initialRegion]);
 
   const stations = Object.keys(allStations);
 
@@ -70,14 +92,18 @@ function Map(props) {
       />
       <View style={styles.mapContainer}>
         <MapView
+          ref={mapRef}
           // onRegionChangeComplete={(region) => setRegion(region)}
-          // onRegionChange={(region) => setRegion(region)}
+          // onRegionChange={(region) => setInitialRegion(region)}
           // provider={PROVIDER_GOOGLE}
-          initialRegion={region}
-          region={region}
-          style={styles.map}
+          // zoomEnabled={true}
+          // followsUserLocation={true}
+          // initialRegion={initialRegion}
+          // region={region}
+          onMapReady={goToInitialRegion}
           showsUserLocation={true}
           showsMyLocationButton={true}
+          style={styles.map}
           userInterfaceStyle="dark"
           tintColor="#ff0000"
           mapType="mutedStandard"
