@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Button, Pressable, Image, StyleSheet, Text, View } from "react-native";
-import { addFavorite } from "../store";
+import { addFavorite, removeFavorite } from "../store";
 import { connect } from "react-redux";
 
-function Heart({ station, addFavorite, disable, favorites }) {
+function Heart({ station, addFavorite, disable, favorites, removeFavorite }) {
   return (
     <Pressable
       style={({ pressed }) => [
@@ -12,7 +12,11 @@ function Heart({ station, addFavorite, disable, favorites }) {
         },
       ]}
       disabled={disable}
-      onPress={() => addFavorite(station)}
+      onPress={() =>
+        favorites.includes(station)
+          ? removeFavorite(station)
+          : addFavorite(station)
+      }
     >
       <Image
         style={styles.icon}
@@ -34,6 +38,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   addFavorite: (station) => dispatch(addFavorite(station)),
+  removeFavorite: (station) => dispatch(removeFavorite(station)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Heart);
