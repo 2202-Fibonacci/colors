@@ -39,7 +39,10 @@ export default function LineUpdates({ station, line, direction, numUpdates }) {
 
   let arrivalsList = stationData ? stationToArrivals(stationData) : [];
   if (line) {
-    arrivalsList = arrivalsList.filter((arrival) => arrival.routeId === line);
+    arrivalsList = arrivalsList.filter(
+      (arrival) =>
+        arrival.routeId === line && selectedDir.includes(arrival.direction)
+    );
   }
 
   return (
@@ -51,48 +54,44 @@ export default function LineUpdates({ station, line, direction, numUpdates }) {
           </View>
         ) : error ? (
           <Text>Error: {error.message}</Text>
+        ) : arrivalsList.length === 0 ? (
+          <View style={styles.noArrivalsContainer}>
+            <Text style={styles.noArrivalsText}>No Upcoming Arrivals</Text>
+          </View>
         ) : (
-          arrivalsList
-            .filter((arrival) =>
-              selectedDir === "NS"
-                ? arrival
-                : arrival.direction === selectedDir
-                ? arrival
-                : null
-            )
-            .map((arrival, i) =>
-              i < maxUpdates ? (
-                <View
-                  style={styles.arrivalContainer}
-                  key={`${arrival.stationId}_${arrival.routeId}_${
-                    line ? line : "all"
-                  }_${i}`}
+          arrivalsList.map((arrival, i) =>
+            i < maxUpdates ? (
+              <View
+                style={styles.arrivalContainer}
+                key={`${arrival.stationId}_${arrival.routeId}_${
+                  line ? line : "all"
+                }_${i}`}
+              >
+                <Text
+                  style={styles.arrivalLeft}
+                  key={`LINE${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}
                 >
-                  <Text
-                    style={styles.arrivalLeft}
-                    key={`LINE${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}
-                  >
-                    {" "}
-                    {arrival.routeId}{" "}
-                  </Text>
-                  <Text
-                    style={styles.arrivalCenter}
-                    key={`LABEL${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}
-                  >
-                    {" "}
-                    {arrival.directionLabel}
-                  </Text>
-                  <Text
-                    style={styles.arrivalRight}
-                    key={`TIME${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}
-                  >
-                    {"  ".slice(0, arrival.arrivalTime > 9 ? 1 : 2)}
-                    {arrival.arrivalTime}
-                    {"M"}
-                  </Text>
-                </View>
-              ) : null
-            )
+                  {" "}
+                  {arrival.routeId}{" "}
+                </Text>
+                <Text
+                  style={styles.arrivalCenter}
+                  key={`LABEL${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}
+                >
+                  {" "}
+                  {arrival.directionLabel}
+                </Text>
+                <Text
+                  style={styles.arrivalRight}
+                  key={`TIME${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}
+                >
+                  {"  ".slice(0, arrival.arrivalTime > 9 ? 1 : 2)}
+                  {arrival.arrivalTime}
+                  {"M"}
+                </Text>
+              </View>
+            ) : null
+          )
         )}
       </View>
       <View style={styles.directionsContainer}>
@@ -225,6 +224,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-start",
+  },
+  noArrivalsContainer: {
+    minHeight: 100,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  noArrivalsText: {
+    color: "#eeff00",
+    fontSize: 16,
+    fontFamily: "Courier New",
+    fontWeight: "bold",
+    textAlign: "center",
+    textTransform: "uppercase",
   },
   arrivalLeft: {
     backgroundColor: "#222",
