@@ -9,7 +9,6 @@ function Heart({ station, addFavorite, disable, favorites }) {
       style={({ pressed }) => [
         {
           transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
-          opacity: disable ? 0.4 : 1,
         },
       ]}
       disabled={disable}
@@ -18,7 +17,9 @@ function Heart({ station, addFavorite, disable, favorites }) {
       <Image
         style={styles.icon}
         source={
-          favorites.includes(station) && !disable
+          disable
+            ? require("../../assets/fav_inactive.png")
+            : favorites.includes(station)
             ? require("../../assets/fav.png")
             : require("../../assets/notfav.png")
         }
