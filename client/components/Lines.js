@@ -5,7 +5,6 @@ import LineUpdates from "./LineUpdates";
 const allStations = require("../../MTA/stations");
 import { selectLine, addFavorite } from "../store";
 import { connect } from "react-redux";
-import Heart from "./Heart";
 
 function Lines(props) {
   const [selectedLine, setSelectedLine] = useState(null);
@@ -23,7 +22,6 @@ function Lines(props) {
             {allStations[props.station].stop_name}
           </Text>
         </View>
-        <Heart station={props.station} />
       </View>
 
       <View style={styles.linesContainer}>
@@ -93,8 +91,8 @@ const styles = StyleSheet.create({
     color: "#00ffff",
     alignItems: "center",
     justifyContent: "center",
-    width: "95%",
-    minHeight: "7%",
+    width: "100%",
+    paddingVertical: "1%",
   },
   linesContainer: {
     display: "flex",

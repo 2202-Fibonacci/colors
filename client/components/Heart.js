@@ -1,27 +1,44 @@
 import React, { useState, useEffect } from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Button, Pressable, Image, StyleSheet, Text, View } from "react-native";
 import { addFavorite } from "../store";
 import { connect } from "react-redux";
 
-function Heart({ station, addFavorite }) {
+function Heart({ station, addFavorite, disable, favorites }) {
   return (
-    <Button title="♡" color="#eeff00" onPress={() => addFavorite(station)} />
+    <Pressable
+      style={({ pressed }) => [
+        {
+          transform: pressed ? [{ scale: 0.9 }] : [{ scale: 1.0 }],
+        },
+      ]}
+      disabled={disable}
+      onPress={() => addFavorite(station)}
+    >
+      <Image
+        style={styles.icon}
+        source={
+          favorites.includes(station)
+            ? require("../../assets/fav.png")
+            : require("../../assets/notfav.png")
+        }
+      />
+    </Pressable>
   );
 }
+
+const mapStateToProps = (state) => {
+  return { favorites: state.favorites };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   addFavorite: (station) => dispatch(addFavorite(station)),
 });
 
-export default connect(null, mapDispatchToProps)(Heart);
+export default connect(mapStateToProps, mapDispatchToProps)(Heart);
 
 const styles = StyleSheet.create({
-  updatesContainer: {
-    backgroundColor: "#000",
-    padding: "2%",
-    color: "#eeff00",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-    width: "100%",
+  icon: {
+    height: 24,
+    width: 24,
   },
 });

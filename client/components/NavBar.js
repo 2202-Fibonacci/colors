@@ -12,6 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 import ElevatorModal from "./ElevatorModal";
 import ServiceAlertModal from "./ServiceAlertModal";
 import { connect } from "react-redux";
+import Heart from "./Heart";
 
 function NavBar(props) {
   const [onHomePage, setOnHomePage] = useState(true);
@@ -39,6 +40,7 @@ function NavBar(props) {
         line={props.line}
         disable={!onHomePage}
       />
+      <Heart station={props.stationId} disable={!onHomePage} />
 
       <Pressable
         onPress={() => {
