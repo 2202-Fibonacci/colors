@@ -30,7 +30,6 @@ export default function LineUpdates({ station, line, direction, numUpdates }) {
     setSelectedDir("NS");
   }, [direction]);
 
-  // prevent refetch on first render by comparing with previous props
   useEffect(() => {
     refetch();
   }, [line]);
@@ -42,6 +41,11 @@ export default function LineUpdates({ station, line, direction, numUpdates }) {
     arrivalsList = arrivalsList.filter(
       (arrival) =>
         arrival.routeId === line && selectedDir.includes(arrival.direction)
+    );
+  }
+  if (!line) {
+    arrivalsList = arrivalsList.filter((arrival) =>
+      selectedDir.includes(arrival.direction)
     );
   }
 
