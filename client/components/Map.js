@@ -37,7 +37,6 @@ function Map(props) {
 
       // set current location to users location
       let location = await Location.getCurrentPositionAsync({});
-      console.log(location);
       if (isWithinNYC(location)) {
         setInitialRegion({
           latitudeDelta: 0.04,
