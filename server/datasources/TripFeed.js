@@ -83,9 +83,7 @@ class TripFeed extends RESTDataSource {
         )
         .map((stop) => {
           const time = stop.arrival ? stop.arrival.time : stop.departure.time;
-          return Math.round(
-            Math.max(0, (time - Math.floor(Date.now() / 1000)) / 60)
-          );
+          return Math.round(Math.max(0, time - Math.floor(Date.now() / 1000)));
         })[0];
       return { tripId, direction, arrivalTime };
     });

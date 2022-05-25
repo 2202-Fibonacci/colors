@@ -20,7 +20,7 @@ const STATION_UPDATE = gql`
 export default function LineUpdates({ station, line, direction, numUpdates }) {
   const { data, loading, error, refetch } = useQuery(STATION_UPDATE, {
     variables: { stationId: station },
-    pollInterval: 20000,
+    pollInterval: 10000,
   });
   const [selectedDir, setSelectedDir] = useState(null);
 
@@ -86,9 +86,13 @@ export default function LineUpdates({ station, line, direction, numUpdates }) {
                     style={styles.arrivalRight}
                     key={`TIME${arrival.stationId}-${arrival.direction}${arrival.routeId}_${arrival.arrivalTime}`}
                   >
-                    {"  ".slice(0, arrival.arrivalTime > 9 ? 1 : 2)}
-                    {arrival.arrivalTime}
-                    {"M"}
+                    {"  ".slice(
+                      0,
+                      Math.round(arrival.arrivalTime / 60) > 9 ? 1 : 2
+                    )}
+                    {arrival.arrivalTime < 60
+                      ? "< 1"
+                      : Math.round(arrival.arrivalTime / 60) + "M"}
                   </Text>
                 </View>
               ) : null
