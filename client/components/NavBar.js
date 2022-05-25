@@ -1,22 +1,42 @@
 import React, { useState, useEffect } from "react";
-import {
-  Dimensions,
-  Image,
-  Platform,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Dimensions, Image, Pressable, StyleSheet, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import ElevatorModal from "./ElevatorModal";
 import ServiceAlertModal from "./ServiceAlertModal";
 import { connect } from "react-redux";
 import Heart from "./Heart";
+import { useQuery, gql } from "@apollo/client";
+
+const SERVICE_ALERT = gql`
+  query ServiceAlert($train: String!, $onlyActive: Boolean) {
+    serviceAlert(train: $train, onlyActive: $onlyActive) {
+      routeId
+      alerts {
+        type
+        text
+        activePeriodText
+      }
+    }
+  }
+`;
 
 function NavBar(props) {
-  const [onHomePage, setOnHomePage] = useState(true);
   const navigation = useNavigation();
+
+  const [onHomePage, setOnHomePage] = useState(true);
+  const [activeAlerts, setActiveAlerts] = useState(false);
+
+  const { data, loading, error } = useQuery(SERVICE_ALERT, {
+    variables: { train: props.line, onlyActive: true },
+  });
+
+  useEffect(() => {
+    if (data && data.serviceAlert.alerts.length > 0) {
+      setActiveAlerts(true);
+    } else if (data && data.serviceAlert.alerts.length === 0) {
+      setActiveAlerts(false);
+    }
+  }, [data]);
 
   return (
     <View style={styles.navContainer}>
@@ -38,7 +58,7 @@ function NavBar(props) {
       <ServiceAlertModal
         stationId={props.stationId}
         line={props.line}
-        disable={!onHomePage}
+        disable={!onHomePage || !activeAlerts}
       />
       <Heart station={props.stationId} disable={!onHomePage} />
 
