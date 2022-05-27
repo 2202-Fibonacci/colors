@@ -9,7 +9,7 @@ As long-time New Yorkers, we wanted to build an app that made MTA data accessibl
 ## Acknowledgements
 We'd like to thank 
 
-<img src="http://outpt.net/fml/platform.png" width="250"/>
+<img src="http://outpt.net/fml/platform.jpg" width="250"/>
 
 # Project
 
