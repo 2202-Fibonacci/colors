@@ -1,13 +1,15 @@
 
-[<img src="http://outpt.net/fml/FindMyLine-logo.png" width="250"/>]
+<img src="http://outpt.net/fml/FindMyLine-logo.png" width="250"/>
 
-[<img src="http://outpt.net/fml/findmyline_video.png"/>](https://www.youtube.com/watch?v=su92iSFLy_o)
 # Find My Line: MTA Transit Data like you've never seen it before!
+[<img src="http://outpt.net/fml/findmyline_video.png"/>](https://www.youtube.com/watch?v=su92iSFLy_o)
 ## About
 As long-time New Yorkers, we wanted to build an app that made MTA data accessible the way real New Yorkers need it ...on the run! The MTA API provides data via Google's protocol buffers, a tool for serialized, structured data that does not support Javascript, so one of our first challenges was parsing the data for usable information. Knowing we wanted flexible, dynamic querying led us to use GraphQL with an Apollo server. For the frontend, we used React Native with a React Native Map color coordinated by MTA line colors, so that users can see their closest station, available trains, and the path of individual train lines. Visually, this combines the experience of looking at a MTA map with searching for directions in Google. The UX design updates and extends the MTA visual design, taking the arrival boards as inspiration, but giving the user the options to favorite stations for future use.
 
 ## Acknowledgements
 We'd like to thank 
+
+<img src="http://outpt.net/fml/platform.png" width="250"/>
 
 # Project
 
