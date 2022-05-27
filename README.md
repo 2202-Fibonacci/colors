@@ -8,7 +8,7 @@
 As a team of long-time and native New Yorkers, we wanted to build an app that made MTA data accessible the way real New Yorkers need it ...on the run! The MTA API provides data via Google's protocol buffers, a tool for serialized, structured data that does not support Javascript, so one of our first challenges was parsing the data for usable information. Knowing we wanted flexible, dynamic querying led us to use GraphQL with an Apollo server. For the frontend, we used React Native with a React Native Map which follows the MTA line color scheme, so that users can see their closest station, available trains, and the path of individual train lines. Visually, this combines the experience of looking at a MTA map with searching for directions in Google Maps. The UX design updates and extends the MTA visual design, taking the on-platform arrival boards as inspiration. Users can favorite stations they go to regularly for future use.
 
 ### Acknowledgements
-We'd like to thank our Grace Hopper cohort, our instructors, and our families and friends for all their support. We'd especially like to thank our mentor [Alec Friedman](https://github.com/alecfriedman3) for all his contributions to our success. Video production services provided by [RAMPANT](http://rampant.nyc).
+We'd like to thank our Grace Hopper cohort, our instructors, and our families and friends for their support. We'd especially like to thank our mentor [Alec Friedman](https://github.com/alecfriedman3) for all his contributions to our success. Video production services provided by [RAMPANT](http://rampant.nyc).
 
 
 <img src="http://outpt.net/fml/platform.jpg"/>
